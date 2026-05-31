@@ -6,200 +6,174 @@
     <title>Forever Aayu-Lovie ❤️</title>
     <style>
         :root {
-            --neon-pink: #ff4d6d;
-            --neon-glow: rgba(255, 77, 109, 0.6);
-            --neon-blue: #00f5d4;
-            --bg-dark: #06050c;
-            --card-bg: rgba(20, 15, 35, 0.6);
-            --text-light: #fff0f3;
-            --text-muted: #b0afc5;
+            --luxury-pink: #ff758f;
+            --soft-glow: rgba(255, 117, 143, 0.4);
+            --bg-gradient: linear-gradient(135deg, #0f0c1b 0%, #1a1025 50%, #120a1c 100%);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.07);
+            --text-main: #fff0f3;
+            --text-sub: #bfaec6;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.7;
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.8;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Continuous Floating Hearts Container Background */
+        /* 1. HEART PARTICLES ANIMATION BACKGROUND */
         #hearts-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: 1;
             overflow: hidden;
         }
 
         .floating-heart {
             position: absolute;
-            color: var(--neon-pink);
+            color: var(--luxury-pink);
             opacity: 0;
             font-size: 20px;
             animation: floatUp linear forwards;
-            text-shadow: 0 0 8px var(--neon-pink);
+            filter: drop-shadow(0 0 6px var(--luxury-pink));
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(105vh) scale(0.5); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.4; }
-            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+            0% { transform: translateY(105vh) scale(0.6) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) scale(1.3) rotate(30deg); opacity: 0; }
         }
 
-        /* Ambient Glow Background Orbs */
-        .ambient-glow {
-            position: absolute; width: 450px; height: 450px;
-            background: var(--neon-glow); filter: blur(180px); border-radius: 50%; z-index: -1;
+        /* Ambient Fluid Glow Elements */
+        .aura-glow {
+            position: absolute; border-radius: 50%; filter: blur(160px); z-index: 0; pointer-events: none;
         }
-        .glow-1 { top: 5%; left: -10%; }
-        .glow-2 { top: 40%; right: -10%; background: rgba(0, 245, 212, 0.2); }
-        .glow-3 { bottom: 10%; left: 15%; }
+        .aura-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: rgba(255, 77, 109, 0.15); }
+        .aura-2 { top: 45%; right: -10%; width: 600px; height: 600px; background: rgba(142, 68, 173, 0.12); }
+        .aura-3 { bottom: -5%; left: 10%; width: 500px; height: 500px; background: rgba(255, 117, 143, 0.1); }
 
-        /* Main Container setup */
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        .container { max-width: 1040px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
 
-        /* Header Layout */
-        header { padding: 100px 20px 60px 20px; text-align: center; }
+        /* Elegant Minimalist Header */
+        header { padding: 90px 20px 50px 20px; text-align: center; }
         header h1 { 
-            font-size: 4rem; font-weight: 900; letter-spacing: 3px;
-            color: #fff; text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
-            margin-bottom: 20px;
+            font-size: 3.8rem; font-weight: 800; letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #ffb3c1, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 10px rgba(255,117,143,0.3));
+            margin-bottom: 15px;
         }
-        header p { font-size: 1.3rem; color: var(--neon-blue); text-shadow: 0 0 8px rgba(0,245,212,0.4); font-style: italic; }
+        header p { font-size: 1.15rem; color: var(--text-sub); font-style: italic; letter-spacing: 0.5px; }
 
-        /* Glowing Counter Panel */
+        /* Premium Glass Counter Dashboard */
         .counter-container {
-            margin: 0 auto 70px auto; padding: 35px 25px;
-            background: rgba(15, 10, 25, 0.8);
-            border: 2px solid var(--neon-pink);
-            max-width: 700px; border-radius: 24px;
-            box-shadow: 0 0 25px var(--neon-glow), inset 0 0 15px rgba(255, 77, 109, 0.2);
-            text-align: center; backdrop-filter: blur(12px);
+            margin: 0 auto 80px auto; padding: 35px 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            max-width: 720px; border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            text-align: center;
         }
-        .counter-container h2 { font-size: 1.5rem; color: #fff; margin-bottom: 25px; letter-spacing: 1px; }
+        .counter-container h2 { font-size: 1.25rem; color: #fff; margin-bottom: 30px; font-weight: 500; letter-spacing: 1px; opacity: 0.9; }
         .timer { display: flex; justify-content: space-around; }
-        .timer-box { 
-            background: rgba(255, 255, 255, 0.03); padding: 18px; border-radius: 16px; width: 22%; 
-            border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease;
+        .timer-box { width: 22%; position: relative; }
+        .timer-box span { display: block; font-size: 2.8rem; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 5px; }
+        .timer-box label { font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+        .timer-box:not(:last-child)::after {
+            content: ':'; position: absolute; right: -15%; top: 10%; font-size: 2rem; color: rgba(255,255,255,0.15);
         }
-        .timer-box:hover { border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(0, 245, 212, 0.5); transform: scale(1.05); }
-        .timer-box span { display: block; font-size: 2.8rem; font-weight: bold; color: #fff; text-shadow: 0 0 12px var(--neon-pink); }
-        .timer-box label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
-        /* Section Headings */
         .section-title { 
-            color: #fff; font-size: 2.5rem; margin-bottom: 50px; text-align: center; font-weight: 800;
-            text-shadow: 0 0 10px var(--neon-glow); letter-spacing: 1px;
+            color: #fff; font-size: 2rem; margin-bottom: 45px; text-align: center; font-weight: 600;
+            letter-spacing: 0.5px; position: relative;
+        }
+        .section-title::after {
+            content: ''; display: block; width: 40px; height: 2px; background: var(--luxury-pink); margin: 12px auto 0 auto; border-radius: 2px;
         }
 
-        /* About Her Layout (As-Is but with enhanced glowing attributes) */
-        .about-section {
-            background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 45px; border-radius: 28px; margin-bottom: 80px; backdrop-filter: blur(8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        /* Grid Layouts for Glass Cards */
+        .facts-grid, .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        /* About Section */
+        .about-section { margin-bottom: 80px; }
         .fact-card { 
-            background: rgba(10, 8, 20, 0.8); padding: 25px; border-radius: 18px; 
-            border: 1px solid rgba(255, 255, 255, 0.04); border-top: 4px solid var(--neon-pink);
-            transition: all 0.3s ease;
+            background: var(--glass-bg); padding: 30px; border-radius: 20px; 
+            border: 1px solid var(--glass-border); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
         }
-        .fact-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255, 77, 109, 0.25); border-color: var(--neon-pink); }
-        .fact-card h3 { color: #fff; font-size: 1.25rem; margin-bottom: 12px; text-shadow: 0 0 5px var(--neon-glow); }
-        .fact-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .fact-card:hover { transform: translateY(-5px); border-color: rgba(255, 117, 143, 0.4); box-shadow: 0 15px 30px rgba(255,117,143,0.08); }
+        .fact-card h3 { color: var(--luxury-pink); font-size: 1.2rem; margin-bottom: 12px; font-weight: 600; }
+        .fact-card p { color: var(--text-sub); font-size: 0.95rem; }
 
-        /* ========================================== */
-        /* NEW DYNAMIC EXTENDED SURFACE: DEEP LOVE LETTERS */
-        /* ========================================== --> */
-        .long-surface-letter {
-            background: linear-gradient(145deg, rgba(20,15,35,0.9), rgba(10,5,20,0.9));
-            border: 1px solid rgba(255, 77, 109, 0.2);
-            box-shadow: 0 0 30px rgba(255,77,109,0.05);
-            padding: 50px 40px; border-radius: 28px; margin-bottom: 80px; text-align: left;
-        }
-        .letter-content h3 { font-size: 1.8rem; color: #fff; margin-bottom: 20px; text-shadow: 0 0 8px var(--neon-glow); font-weight: 700;}
-        .letter-content p { color: #e2e1f0; font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 0.5px; }
-        .letter-content p span { color: var(--neon-pink); font-weight: bold; }
-
-        /* ========================================== */
-        /* NEW SURFACE SECTION: ROMANTIC TIMELINE FLOW */
-        /* ========================================== */
-        .timeline-wrapper { position: relative; padding: 20px 0; margin-bottom: 80px; }
-        .timeline-wrapper::before {
-            content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 100%;
-            background: linear-gradient(to bottom, var(--neon-pink), var(--neon-blue), var(--neon-pink));
-            box-shadow: 0 0 10px var(--neon-pink); transform: translateX(-50%);
-        }
-        .timeline-item { width: 100%; margin-bottom: 40px; position: relative; display: flex; justify-content: flex-end; }
-        .timeline-item:nth-child(even) { justify-content: flex-start; }
-        .timeline-dot {
-            position: absolute; left: 50%; top: 25px; width: 16px; height: 16px;
-            background: #fff; border: 3px solid var(--neon-pink); border-radius: 50%;
-            box-shadow: 0 0 10px var(--neon-pink); transform: translateX(-50%); z-index: 5;
-        }
-        .timeline-content {
-            width: 45%; background: var(--card-bg); padding: 25px; border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: 0.3s;
-        }
-        .timeline-item:hover .timeline-content { border-color: var(--neon-pink); box-shadow: 0 0 20px var(--neon-glow); }
-        .timeline-date { color: var(--neon-blue); font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; letter-spacing: 1px; }
-        .timeline-content h4 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
-        .timeline-content p { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* Media queries for vertical layout on phone screen */
-        @media (max-width: 768px) {
-            .timeline-wrapper::before { left: 20px; }
-            .timeline-item { justify-content: flex-end !important; }
-            .timeline-dot { left: 20px; }
-            .timeline-content { width: 85%; margin-left: 40px; }
-        }
-
-        /* Gallery Sections Setup */
-        .gallery-section { margin-bottom: 80px; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
+        /* Gallery Cards Layout */
+        .gallery-section { margin-bottom: 40px; }
         .photo-card {
-            background: rgba(15, 12, 28, 0.8); padding: 20px; border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center;
+            background: var(--glass-bg); padding: 16px; border-radius: 24px;
+            border: 1px solid var(--glass-border); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); text-align: center;
         }
         .photo-card:hover { 
-            transform: translateY(-12px); 
-            border-color: var(--neon-pink);
-            box-shadow: 0 0 30px var(--neon-glow); 
+            transform: translateY(-8px); 
+            border-color: rgba(255, 117, 143, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 117, 143, 0.1); 
         }
         .photo-img-wrapper { 
-            width: 100%; height: 330px; border-radius: 18px; overflow: hidden; 
-            background: #0f0e1a; border: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%; height: 340px; border-radius: 16px; overflow: hidden; 
+            background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03);
         }
-        .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .photo-card:hover img { transform: scale(1.05); }
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .photo-card:hover img { transform: scale(1.04); }
         
         .photo-tag {
-            display: inline-block; background: rgba(255, 77, 109, 0.12); color: #fff;
-            padding: 5px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
-            margin-top: 18px; border: 1px solid var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink);
+            display: inline-block; background: rgba(255, 117, 143, 0.08); color: #fff;
+            padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+            margin-top: 15px; border: 1px solid rgba(255, 117, 143, 0.2); letter-spacing: 0.5px;
         }
-        .photo-card p { margin-top: 14px; font-style: italic; color: #fff; font-weight: 500; font-size: 1rem; }
+        .photo-card p { margin-top: 12px; font-size: 0.95rem; color: #fff; font-weight: 400; opacity: 0.9; }
 
-        footer { padding: 60px; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); position: relative; z-index: 2; }
+        /* ======================================================== */
+        /* PREMIUM INTERACTIVE BIG BOX: BETWEEN GALLERIES */
+        /* ======================================================== */
+        .middle-big-box {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.05);
+            padding: 60px 50px; 
+            border-radius: 28px; 
+            margin: 80px 0; 
+            text-align: left;
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            position: relative;
+        }
+        .middle-big-box h3 { 
+            font-size: 2rem; font-weight: 700; margin-bottom: 25px; text-align: center;
+            background: linear-gradient(to right, #ff99ac, #ffccd5);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .middle-big-box p { color: var(--text-sub); font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 0.3px; }
+        .middle-big-box p span { color: var(--luxury-pink); font-weight: 600; }
+
+        footer { padding: 60px; text-align: center; color: rgba(255,255,255,0.25); font-size: 0.85rem; border-top: 1px solid var(--glass-border); margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <!-- Background Animation Container -->
+    <!-- 1. Animation Background Platform -->
     <div id="hearts-container"></div>
 
-    <!-- Ambient Ambient Light Orbs -->
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
-    <div class="ambient-glow glow-3"></div>
+    <!-- Soft Ambient Lights -->
+    <div class="aura-glow aura-1"></div>
+    <div class="aura-glow aura-2"></div>
+    <div class="aura-glow aura-3"></div>
 
     <div class="container">
 
@@ -208,7 +182,7 @@
             <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
         </header>
 
-        <!-- Dynamic Live Counter -->
+        <!-- Glass Counter Panel -->
         <div class="counter-container">
             <h2>Hamare Sath Ke Haseen Pal ✨</h2>
             <div class="timer">
@@ -219,9 +193,7 @@
             </div>
         </div>
 
-        <!-- ========================================== -->
-        <!-- TEXT SECTION: ABOUT HER (AS REQUESTED) -->
-        <!-- ========================================== -->
+        <!-- ABOUT HER SECTION -->
         <section class="about-section">
             <h2 class="section-title">Everything About Her</h2>
             <div class="facts-grid">
@@ -240,129 +212,68 @@
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- NEW EXTENDED SURFACE AREA: DIL KE JAZBAAT -->
-        <!-- ========================================== -->
-        <section class="long-surface-letter">
-            <div class="letter-content">
-                <h3>Khat - Sirf Tumhare Liye 📜</h3>
-                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai. Tumhare sath bitaya har ek second mere liye ek tohfe jaisa hai. Yeh website sirf ek page nahi hai, ye hamare pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi tumhe ehsaas hoga ki tum mere liye kitni qeemti ho. 💖</p>
-                <p>Log kehte hain ki sacha pyaar milna mushkil hota hai, par jab se tum <span>Aayu</span> ke sath ho, mujhe lagta hai ki maine duniya ki sabse badi khushi pa li hai. Hamesha aise hi muskurati rehna kyunki tumhari muskurahat hi meri har subah ko roshan karti hai.</p>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- NEW SURFACE AREA: OUR ROMANTIC TIMELINE -->
-        <!-- ========================================== -->
-        <section class="timeline-section">
-            <h2 class="section-title">Hamara Safar ✨</h2>
-            <div class="timeline-wrapper">
-
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">DAY ONE</div>
-                        <h4>Pehli Mulaqat 👥</h4>
-                        <p>Wo din jab pehli baar tumse baat hui ya mulaqat hui thi. Ekdum simple se chalte hue jab hamari dunya aapas me mili.</p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">THE CONFESSION</div>
-                        <h4>Dil Ki Baat ❤️</h4>
-                        <p>Wo khaas lamha jab dilon ne aapas me iqraar kiya aur hum sirf doston se badhkar ek doosre ke liye hamesha ke liye ban gaye.</p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">EVERY DAY</div>
-                        <h4>Khatti-Meethi Yaadein 🫂</h4>
-                        <p>Hamari pyaari si ladaiyan, thoda sa gussa aur uske baad ek doosre ko manane ka wo behtareen aur pyaara sa ehsaas.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- MAIN GALLERY: SPECIAL COUPLING MOMENTS -->
-        <!-- ========================================== -->
+        <!-- FIRST GALLERY: OUR MAGICAL MEMORIES -->
         <section class="gallery-section">
             <h2 class="section-title">Our Magical Memories</h2>
             <div class="gallery-grid">
-                
-                <!-- Photo Card 1: First Meet -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <!-- Google Drive link kaise nikalna hai maine niche guide kiya hai -->
-                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=First+Meet+Photo" alt="First Meet">
+                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=First+Meet+Photo" alt="First Meet">
                     </div>
                     <span class="photo-tag">The Beginning</span>
                     <p>"Hamari Pehli Mulaqat" ✨</p>
                 </div>
-
-                <!-- Photo Card 2: Her Smile -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Her+Smile+Photo" alt="Her Smile">
+                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Her+Smile+Photo" alt="Her Smile">
                     </div>
                     <span class="photo-tag">Favorite View</span>
                     <p>"Wo Pyaari Si Smile" 😊</p>
                 </div>
-
-                <!-- Photo Card 3: Together -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Together+Photo" alt="Together">
+                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Together+Photo" alt="Together">
                     </div>
                     <span class="photo-tag">Us Forever</span>
                     <p>"Hamesha Ka Sath" 💖</p>
                 </div>
-
             </div>
         </section>
 
-        <!-- ========================================== -->
-        <!-- EXTENDED GALLERY: INDIVIDUAL AND MORE PICS -->
-        <!-- ========================================== -->
+        <!-- ======================================================== -->
+        <!-- NEW TRANSPARENT MODERN BIG BOX (DONO GALLERIES KE BEECH) -->
+        <!-- ======================================================== -->
+        <section class="middle-big-box">
+            <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
+            <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai. Tumhare sath bitaya har ek second mere liye ek tohfe jaisa hai. Yeh website sirf ek page nahi hai, ye hamare pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi tumhe ehsaas hoga ki tum mere liye kitni qeemti ho. </p>
+            <p>Aap is box me jitna lamba chahein uske baare me poora paragraph update kar sakte hain bhai! Ye naya design ekdum clean frosted glass look me hai jo upar aur niche ki galleries ke sath ekdum elegant lagta hai. <span>Hamesha sath rehna hai.</span></p>
+        </section>
+
+        <!-- SECOND GALLERY: MORE BEAUTIFUL MOMENTS -->
         <section class="gallery-section">
             <h2 class="section-title">More Beautiful Moments</h2>
             <div class="gallery-grid">
-
-                <!-- Photo Card 4: Her Solo Photo -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Her+Solo+Photo" alt="Lavi">
+                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Her+Solo+Photo" alt="Lavi">
                     </div>
                     <span class="photo-tag">The Queen</span>
                     <p>"Uski Sabse Khoobsurat Pic" 😍</p>
                 </div>
-
-                <!-- Photo Card 5: Your Solo Photo -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Your+Solo+Photo" alt="Aayu">
+                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Your+Solo+Photo" alt="Aayu">
                     </div>
                     <span class="photo-tag">King</span>
                     <p>"Aayu ki solid pic" 😎</p>
                 </div>
-
-                <!-- Photo Card 6: Extra Shared space -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Future+Memory+Slot" alt="Future Memory">
+                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Future+Memory+Slot" alt="Future Memory">
                     </div>
                     <span class="photo-tag">Together 2.0</span>
                     <p>"Ek aur pyara lamha" 🌸</p>
                 </div>
-
             </div>
         </section>
 
@@ -373,15 +284,12 @@
     </footer>
 
     <script>
-        // Real anniversary date format: (Year, Month-1, Day, Hour, Minute)
-        // Note: Month indices are 0-based (0 = Jan, 1 = Feb, 4 = May, etc.)
+        // Real anniversary date configuration
         const anniversaryDate = new Date(2025, 0, 1, 0, 0); 
 
-        // 1. DYNAMIC TIME COUNTER LOGIC
         function updateTimer() {
             const now = new Date();
             const diff = now - anniversaryDate;
-
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -395,33 +303,23 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 2. BACKEND ANIMATED HEARTS LOGIC (Butter smooth particle rendering)
+        // High Performance Heart Particles Generator
         function createHeart() {
             const container = document.getElementById('hearts-container');
             if(!container) return;
-            
             const heart = document.createElement('div');
             heart.classList.add('floating-heart');
             heart.innerHTML = '❤️';
-            
-            // Random styling variables for organic flow
-            const startX = Math.random() * 100; // random horizontal position
-            const duration = Math.random() * 5 + 4; // between 4s and 9s
-            const size = Math.random() * 15 + 12; // size variations
-            
+            const startX = Math.random() * 100;
+            const duration = Math.random() * 6 + 5; // smooth speed
+            const size = Math.random() * 14 + 10;
             heart.style.left = startX + 'vw';
             heart.style.fontSize = size + 'px';
             heart.style.animationDuration = duration + 's';
-            
             container.appendChild(heart);
-            
-            // Auto clean memory from DOM
-            setTimeout(() => {
-                heart.remove();
-            }, duration * 1000);
+            setTimeout(() => { heart.remove(); }, duration * 1000);
         }
-        // Continuous organic generator loops every 400ms
-        setInterval(createHeart, 400);
+        setInterval(createHeart, 450);
     </script>
 </body>
 </html>
