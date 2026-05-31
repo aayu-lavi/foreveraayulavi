@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Aayu-Lavi ❤️</title>
+    <style>
+        :root {
+            --pink-dark: #ff4d6d;
+            --pink-light: #fff0f3;
+            --text-color: #4a4a4a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--pink-light);
+            color: var(--text-color);
+            text-align: center;
+        }
+        header {
+            padding: 50px 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 { color: var(--pink-dark); font-size: 2.5rem; margin-bottom: 10px; }
+        .counter-container {
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(255, 77, 109, 0.1);
+        }
+        .timer {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .timer div span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--pink-dark);
+        }
+        .gallery {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .photo-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .photo-card:hover { transform: translateY(-5px); }
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .photo-card p { margin-top: 10px; font-style: italic; }
+        footer { padding: 30px; color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Aayu ❤️ Lavi</h1>
+        <p>Hamesha ke liye, har lamha tumhare sath...</p>
+    </header>
+
+    <!-- Love Counter -->
+    <div class="counter-container">
+        <h2>We have been together for:</h2>
+        <div class="timer" id="countdown">
+            <div><span id="days">00</span>Days</div>
+            <div><span id="hours">00</span>Hours</div>
+            <div><span id="minutes">00</span>Mins</div>
+            <div><span id="seconds">00</span>Secs</div>
+        </div>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="gallery">
+        <div class="photo-card">
+            <img src="https://via.placeholder.com/300" alt="Memory 1">
+            <p>"Hamari Pehli Mulaqat" ✨</p>
+        </div>
+        <div class="photo-card">
+            <img src="https://via.placeholder.com/300" alt="Memory 2">
+            <p>"Wo Pyaari Si Smile" 😊</p>
+        </div>
+        <div class="photo-card">
+            <img src="https://via.placeholder.com/300" alt="Memory 3">
+            <p>"Hamesha Ka Sath" 💖</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ by Vishal</p>
+    </footer>
+
+    <script>
+        // Tumhari anniversary ya jab se sath ho wo date yahan daalo (Year, Month-1, Day)
+        // JavaScript me Month 0 se shuru hota hai (0 = Jan, 4 = May)
+        const anniversaryDate = new Date(2025, 0, 1); 
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - anniversaryDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
