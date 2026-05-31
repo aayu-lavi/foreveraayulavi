@@ -8,10 +8,11 @@
         :root {
             --neon-pink: #ff4d6d;
             --neon-glow: rgba(255, 77, 109, 0.6);
-            --bg-dark: #0a0915;
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --neon-blue: #00f5d4;
+            --bg-dark: #06050c;
+            --card-bg: rgba(20, 15, 35, 0.6);
             --text-light: #fff0f3;
-            --text-muted: #a4a4b5;
+            --text-muted: #b0afc5;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,151 +21,278 @@
             font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Ambient Background Glows */
-        body::before, body::after {
-            content: ''; position: absolute; width: 300px; height: 300px;
-            background: var(--neon-glow); filter: blur(150px); border-radius: 50%; z-index: -1;
+        /* Continuous Floating Hearts Container Background */
+        #hearts-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
         }
-        body::before { top: 10%; left: 10%; }
-        body::after { bottom: 20%; right: 10%; }
 
-        /* Header Section */
-        header {
-            padding: 80px 20px;
-            text-align: center;
+        .floating-heart {
+            position: absolute;
+            color: var(--neon-pink);
+            opacity: 0;
+            font-size: 20px;
+            animation: floatUp linear forwards;
+            text-shadow: 0 0 8px var(--neon-pink);
         }
+
+        @keyframes floatUp {
+            0% { transform: translateY(105vh) scale(0.5); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+
+        /* Ambient Glow Background Orbs */
+        .ambient-glow {
+            position: absolute; width: 450px; height: 450px;
+            background: var(--neon-glow); filter: blur(180px); border-radius: 50%; z-index: -1;
+        }
+        .glow-1 { top: 5%; left: -10%; }
+        .glow-2 { top: 40%; right: -10%; background: rgba(0, 245, 212, 0.2); }
+        .glow-3 { bottom: 10%; left: 15%; }
+
+        /* Main Container setup */
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+
+        /* Header Layout */
+        header { padding: 100px 20px 60px 20px; text-align: center; }
         header h1 { 
-            color: #fff; font-size: 3.5rem; font-weight: 800; letter-spacing: 2px;
-            text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
-            margin-bottom: 15px;
+            font-size: 4rem; font-weight: 900; letter-spacing: 3px;
+            color: #fff; text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+            margin-bottom: 20px;
         }
-        header p { font-size: 1.2rem; color: var(--text-muted); font-style: italic; }
+        header p { font-size: 1.3rem; color: var(--neon-blue); text-shadow: 0 0 8px rgba(0,245,212,0.4); font-style: italic; }
 
-        /* Glowing Counter Container */
+        /* Glowing Counter Panel */
         .counter-container {
-            margin: -20px auto 50px auto;
-            padding: 30px 20px;
-            background: rgba(20, 18, 38, 0.7);
-            border: 1px solid rgba(255, 77, 109, 0.3);
-            max-width: 650px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px var(--neon-glow);
-            text-align: center;
-            backdrop-filter: blur(10px);
+            margin: 0 auto 70px auto; padding: 35px 25px;
+            background: rgba(15, 10, 25, 0.8);
+            border: 2px solid var(--neon-pink);
+            max-width: 700px; border-radius: 24px;
+            box-shadow: 0 0 25px var(--neon-glow), inset 0 0 15px rgba(255, 77, 109, 0.2);
+            text-align: center; backdrop-filter: blur(12px);
         }
-        .counter-container h2 { font-size: 1.4rem; color: #fff; margin-bottom: 25px; font-weight: 600; }
+        .counter-container h2 { font-size: 1.5rem; color: #fff; margin-bottom: 25px; letter-spacing: 1px; }
         .timer { display: flex; justify-content: space-around; }
         .timer-box { 
-            background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 15px; width: 22%; 
-            border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s;
+            background: rgba(255, 255, 255, 0.03); padding: 18px; border-radius: 16px; width: 22%; 
+            border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease;
         }
-        .timer-box:hover { border-color: var(--neon-pink); box-shadow: 0 0 15px var(--neon-glow); }
-        .timer-box span { display: block; font-size: 2.5rem; font-weight: bold; color: #fff; text-shadow: 0 0 10px var(--neon-pink); }
-        .timer-box label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .timer-box:hover { border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(0, 245, 212, 0.5); transform: scale(1.05); }
+        .timer-box span { display: block; font-size: 2.8rem; font-weight: bold; color: #fff; text-shadow: 0 0 12px var(--neon-pink); }
+        .timer-box label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-
-        /* Section Title with Glow */
+        /* Section Headings */
         .section-title { 
-            color: #fff; font-size: 2.2rem; margin-bottom: 40px; text-align: center; font-weight: 700;
-            text-shadow: 0 0 8px var(--neon-glow);
+            color: #fff; font-size: 2.5rem; margin-bottom: 50px; text-align: center; font-weight: 800;
+            text-shadow: 0 0 10px var(--neon-glow); letter-spacing: 1px;
         }
 
-        /* About Section Layout */
+        /* About Her Layout (As-Is but with enhanced glowing attributes) */
         .about-section {
-            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px; border-radius: 25px; margin-bottom: 60px; backdrop-filter: blur(5px);
+            background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 45px; border-radius: 28px; margin-bottom: 80px; backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .fact-card { 
-            background: rgba(20, 18, 38, 0.5); padding: 25px; border-radius: 15px; 
-            border: 1px solid rgba(255, 255, 255, 0.05); border-top: 4px solid var(--neon-pink);
-            transition: 0.3s;
+            background: rgba(10, 8, 20, 0.8); padding: 25px; border-radius: 18px; 
+            border: 1px solid rgba(255, 255, 255, 0.04); border-top: 4px solid var(--neon-pink);
+            transition: all 0.3s ease;
         }
-        .fact-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(255, 77, 109, 0.15); border-color: var(--neon-pink); }
-        .fact-card h3 { color: #fff; font-size: 1.2rem; margin-bottom: 12px; text-shadow: 0 0 5px var(--neon-glow); }
+        .fact-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255, 77, 109, 0.25); border-color: var(--neon-pink); }
+        .fact-card h3 { color: #fff; font-size: 1.25rem; margin-bottom: 12px; text-shadow: 0 0 5px var(--neon-glow); }
         .fact-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Gallery Sections */
-        .gallery-section { margin-bottom: 60px; }
+        /* ========================================== */
+        /* NEW DYNAMIC EXTENDED SURFACE: DEEP LOVE LETTERS */
+        /* ========================================== --> */
+        .long-surface-letter {
+            background: linear-gradient(145deg, rgba(20,15,35,0.9), rgba(10,5,20,0.9));
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            box-shadow: 0 0 30px rgba(255,77,109,0.05);
+            padding: 50px 40px; border-radius: 28px; margin-bottom: 80px; text-align: left;
+        }
+        .letter-content h3 { font-size: 1.8rem; color: #fff; margin-bottom: 20px; text-shadow: 0 0 8px var(--neon-glow); font-weight: 700;}
+        .letter-content p { color: #e2e1f0; font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 0.5px; }
+        .letter-content p span { color: var(--neon-pink); font-weight: bold; }
+
+        /* ========================================== */
+        /* NEW SURFACE SECTION: ROMANTIC TIMELINE FLOW */
+        /* ========================================== */
+        .timeline-wrapper { position: relative; padding: 20px 0; margin-bottom: 80px; }
+        .timeline-wrapper::before {
+            content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 100%;
+            background: linear-gradient(to bottom, var(--neon-pink), var(--neon-blue), var(--neon-pink));
+            box-shadow: 0 0 10px var(--neon-pink); transform: translateX(-50%);
+        }
+        .timeline-item { width: 100%; margin-bottom: 40px; position: relative; display: flex; justify-content: flex-end; }
+        .timeline-item:nth-child(even) { justify-content: flex-start; }
+        .timeline-dot {
+            position: absolute; left: 50%; top: 25px; width: 16px; height: 16px;
+            background: #fff; border: 3px solid var(--neon-pink); border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-pink); transform: translateX(-50%); z-index: 5;
+        }
+        .timeline-content {
+            width: 45%; background: var(--card-bg); padding: 25px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: 0.3s;
+        }
+        .timeline-item:hover .timeline-content { border-color: var(--neon-pink); box-shadow: 0 0 20px var(--neon-glow); }
+        .timeline-date { color: var(--neon-blue); font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; letter-spacing: 1px; }
+        .timeline-content h4 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
+        .timeline-content p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Media queries for vertical layout on phone screen */
+        @media (max-width: 768px) {
+            .timeline-wrapper::before { left: 20px; }
+            .timeline-item { justify-content: flex-end !important; }
+            .timeline-dot { left: 20px; }
+            .timeline-content { width: 85%; margin-left: 40px; }
+        }
+
+        /* Gallery Sections Setup */
+        .gallery-section { margin-bottom: 80px; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .photo-card {
-            background: rgba(20, 18, 38, 0.6); padding: 18px; border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease; text-align: center;
+            background: rgba(15, 12, 28, 0.8); padding: 20px; border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center;
         }
         .photo-card:hover { 
-            transform: translateY(-10px); 
+            transform: translateY(-12px); 
             border-color: var(--neon-pink);
-            box-shadow: 0 0 25px var(--neon-glow); 
+            box-shadow: 0 0 30px var(--neon-glow); 
         }
         .photo-img-wrapper { 
-            width: 100%; height: 320px; border-radius: 15px; overflow: hidden; 
-            background: #151421; border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%; height: 330px; border-radius: 18px; overflow: hidden; 
+            background: #0f0e1a; border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .photo-card:hover img { transform: scale(1.05); }
         
         .photo-tag {
-            display: inline-block; background: rgba(255, 77, 109, 0.15); color: #fff;
-            padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
-            margin-top: 15px; border: 1px solid var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink);
+            display: inline-block; background: rgba(255, 77, 109, 0.12); color: #fff;
+            padding: 5px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+            margin-top: 18px; border: 1px solid var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink);
         }
-        .photo-card p { margin-top: 12px; font-style: italic; color: #fff; font-weight: 500; }
+        .photo-card p { margin-top: 14px; font-style: italic; color: #fff; font-weight: 500; font-size: 1rem; }
 
-        footer { padding: 60px; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        footer { padding: 60px; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); position: relative; z-index: 2; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Aayu & Lovie ❤️</h1>
-        <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
-    </header>
+    <!-- Background Animation Container -->
+    <div id="hearts-container"></div>
 
-    <!-- Love Counter -->
-    <div class="counter-container">
-        <h2>Hamare Sath Ke Haseen Pal ✨</h2>
-        <div class="timer">
-            <div class="timer-box"><span id="days">00</span><label>Days</label></div>
-            <div class="timer-box"><span id="hours">00</span><label>Hours</label></div>
-            <div class="timer-box"><span id="minutes">00</span><label>Mins</label></div>
-            <div class="timer-box"><span id="seconds">00</span><label>Secs</label></div>
-        </div>
-    </div>
+    <!-- Ambient Ambient Light Orbs -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
 
     <div class="container">
-        
+
+        <header>
+            <h1>Aayu & Lovie ❤️</h1>
+            <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
+        </header>
+
+        <!-- Dynamic Live Counter -->
+        <div class="counter-container">
+            <h2>Hamare Sath Ke Haseen Pal ✨</h2>
+            <div class="timer">
+                <div class="timer-box"><span id="days">00</span><label>Days</label></div>
+                <div class="timer-box"><span id="hours">00</span><label>Hours</label></div>
+                <div class="timer-box"><span id="minutes">00</span><label>Mins</label></div>
+                <div class="timer-box"><span id="seconds">00</span><label>Secs</label></div>
+            </div>
+        </div>
+
         <!-- ========================================== -->
-        <!-- TEXT SECTION: USKE BAARE ME BATEIN UPDATE KARO -->
+        <!-- TEXT SECTION: ABOUT HER (AS REQUESTED) -->
         <!-- ========================================== -->
         <section class="about-section">
             <h2 class="section-title">Everything About Her</h2>
             <div class="facts-grid">
                 <div class="fact-card">
                     <h3>Uski Sabse Pyaari Cheez 🌸</h3>
-                    <!-- KAHANI 1: Niche wale text ko mita kar apni baat likho -->
                     <p>Yahan par aap uski pyaari smile, uski aadat ya jo bhi aapko sabse zyada pasand hai uske baare me dil khol kar likh sakte ho.</p>
                 </div>
                 <div class="fact-card">
                     <h3>Favorite Memories 📝</h3>
-                    <!-- KAHANI 2: Niche wale text ko mita kar apni baat likho -->
                     <p>Yahan par aap dono ki pehli guftagu, koi funny lambha ya koi aisi yaad jo aap dono hamesha yaad rakhte ho use update karo.</p>
                 </div>
                 <div class="fact-card">
                     <h3>My Promise To Her 🤝</h3>
-                    <!-- KAHANI 3: Niche wale text ko mita kar apni baat likho -->
                     <p>Ek chota sa promise jo aap Lavi se hamesha ke liye karna chahte hain, wo yahan likh do taaki wo jab bhi khole use apna pan mehsoos ho.</p>
                 </div>
             </div>
         </section>
 
         <!-- ========================================== -->
-        <!-- GALLERY 1: SPECIAL MEMORIES PHOTOS -->
+        <!-- NEW EXTENDED SURFACE AREA: DIL KE JAZBAAT -->
+        <!-- ========================================== -->
+        <section class="long-surface-letter">
+            <div class="letter-content">
+                <h3>Khat - Sirf Tumhare Liye 📜</h3>
+                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai. Tumhare sath bitaya har ek second mere liye ek tohfe jaisa hai. Yeh website sirf ek page nahi hai, ye hamare pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi tumhe ehsaas hoga ki tum mere liye kitni qeemti ho. 💖</p>
+                <p>Log kehte hain ki sacha pyaar milna mushkil hota hai, par jab se tum <span>Aayu</span> ke sath ho, mujhe lagta hai ki maine duniya ki sabse badi khushi pa li hai. Hamesha aise hi muskurati rehna kyunki tumhari muskurahat hi meri har subah ko roshan karti hai.</p>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- NEW SURFACE AREA: OUR ROMANTIC TIMELINE -->
+        <!-- ========================================== -->
+        <section class="timeline-section">
+            <h2 class="section-title">Hamara Safar ✨</h2>
+            <div class="timeline-wrapper">
+
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">DAY ONE</div>
+                        <h4>Pehli Mulaqat 👥</h4>
+                        <p>Wo din jab pehli baar tumse baat hui ya mulaqat hui thi. Ekdum simple se chalte hue jab hamari dunya aapas me mili.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">THE CONFESSION</div>
+                        <h4>Dil Ki Baat ❤️</h4>
+                        <p>Wo khaas lamha jab dilon ne aapas me iqraar kiya aur hum sirf doston se badhkar ek doosre ke liye hamesha ke liye ban gaye.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">EVERY DAY</div>
+                        <h4>Khatti-Meethi Yaadein 🫂</h4>
+                        <p>Hamari pyaari si ladaiyan, thoda sa gussa aur uske baad ek doosre ko manane ka wo behtareen aur pyaara sa ehsaas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MAIN GALLERY: SPECIAL COUPLING MOMENTS -->
         <!-- ========================================== -->
         <section class="gallery-section">
             <h2 class="section-title">Our Magical Memories</h2>
@@ -173,8 +301,8 @@
                 <!-- Photo Card 1: First Meet -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <!-- Drive Link paste karo src="" ke andar -->
-                        <img src="https://via.placeholder.com/400x320/151421/ffffff?text=First+Meet+Photo" alt="First Meet">
+                        <!-- Google Drive link kaise nikalna hai maine niche guide kiya hai -->
+                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=First+Meet+Photo" alt="First Meet">
                     </div>
                     <span class="photo-tag">The Beginning</span>
                     <p>"Hamari Pehli Mulaqat" ✨</p>
@@ -183,8 +311,7 @@
                 <!-- Photo Card 2: Her Smile -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <!-- Drive Link paste karo src="" ke andar -->
-                        <img src="https://via.placeholder.com/400x320/151421/ffffff?text=Her+Smile+Photo" alt="Her Smile">
+                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Her+Smile+Photo" alt="Her Smile">
                     </div>
                     <span class="photo-tag">Favorite View</span>
                     <p>"Wo Pyaari Si Smile" 😊</p>
@@ -193,8 +320,7 @@
                 <!-- Photo Card 3: Together -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <!-- Drive Link paste karo src="" ke andar -->
-                        <img src="https://via.placeholder.com/400x320/151421/ffffff?text=Together+Photo" alt="Together">
+                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Together+Photo" alt="Together">
                     </div>
                     <span class="photo-tag">Us Forever</span>
                     <p>"Hamesha Ka Sath" 💖</p>
@@ -204,7 +330,7 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- GALLERY 2: BAAKI PHOTOS (SOLO & JAYDA PHOTOS) -->
+        <!-- EXTENDED GALLERY: INDIVIDUAL AND MORE PICS -->
         <!-- ========================================== -->
         <section class="gallery-section">
             <h2 class="section-title">More Beautiful Moments</h2>
@@ -213,28 +339,28 @@
                 <!-- Photo Card 4: Her Solo Photo -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x320/151421/ffffff?text=Her+Solo+Photo" alt="Lavi">
+                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Her+Solo+Photo" alt="Lavi">
                     </div>
                     <span class="photo-tag">The Queen</span>
                     <p>"Uski Sabse Khoobsurat Pic" 😍</p>
                 </div>
 
-                <!-- Photo Card 5: Your Solo / Together 2 -->
+                <!-- Photo Card 5: Your Solo Photo -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x320/151421/ffffff?text=Another+Cute+Moment" alt="Memory">
+                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Your+Solo+Photo" alt="Aayu">
                     </div>
-                    <span class="photo-tag">Cute Moments</span>
-                    <p>"Ek aur pyara lamha" 📸</p>
+                    <span class="photo-tag">King</span>
+                    <p>"Aayu ki solid pic" 😎</p>
                 </div>
 
-                <!-- Photo Card 6: Extra Space for future photos -->
+                <!-- Photo Card 6: Extra Shared space -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x320/151421/ffffff?text=Future+Memory" alt="Future">
+                        <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Future+Memory+Slot" alt="Future Memory">
                     </div>
-                    <span class="photo-tag">Life Timeline</span>
-                    <p>"Yahan ek aur naye photo ki jagah" 🌸</p>
+                    <span class="photo-tag">Together 2.0</span>
+                    <p>"Ek aur pyara lamha" 🌸</p>
                 </div>
 
             </div>
@@ -243,14 +369,15 @@
     </div>
 
     <footer>
-        <p>Made with ❤️ by Vev Verma| © 2026</p>
+        <p>Made with ❤️ by Vev Verma | © 2026</p>
     </footer>
 
     <script>
-        // real anniversary date daalo: (Year, Month-1, Day, Hour, Minute)
-        // Jan = 0, Feb = 1, Mar = 2, Apr = 3, May = 4...
+        // Real anniversary date format: (Year, Month-1, Day, Hour, Minute)
+        // Note: Month indices are 0-based (0 = Jan, 1 = Feb, 4 = May, etc.)
         const anniversaryDate = new Date(2025, 0, 1, 0, 0); 
 
+        // 1. DYNAMIC TIME COUNTER LOGIC
         function updateTimer() {
             const now = new Date();
             const diff = now - anniversaryDate;
@@ -265,9 +392,36 @@
             document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
             document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
         }
-
         setInterval(updateTimer, 1000);
         updateTimer();
+
+        // 2. BACKEND ANIMATED HEARTS LOGIC (Butter smooth particle rendering)
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            if(!container) return;
+            
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            
+            // Random styling variables for organic flow
+            const startX = Math.random() * 100; // random horizontal position
+            const duration = Math.random() * 5 + 4; // between 4s and 9s
+            const size = Math.random() * 15 + 12; // size variations
+            
+            heart.style.left = startX + 'vw';
+            heart.style.fontSize = size + 'px';
+            heart.style.animationDuration = duration + 's';
+            
+            container.appendChild(heart);
+            
+            // Auto clean memory from DOM
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
+        }
+        // Continuous organic generator loops every 400ms
+        setInterval(createHeart, 400);
     </script>
 </body>
 </html>
