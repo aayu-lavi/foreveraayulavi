@@ -97,7 +97,7 @@
             text-shadow: 0 0 10px var(--neon-glow); letter-spacing: 1px;
         }
 
-        /* About Her Layout */
+        /* About Her Layout (As-Is but with enhanced glowing attributes) */
         .about-section {
             background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.06);
             padding: 45px; border-radius: 28px; margin-bottom: 80px; backdrop-filter: blur(8px);
@@ -114,35 +114,21 @@
         .fact-card p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* ========================================== */
-        /* TUMHARA BDA BOX: DONO GALLERY KE BEECH ME */
+        /* NEW DYNAMIC EXTENDED SURFACE: DEEP LOVE LETTERS */
         /* ========================================== --> */
-        .middle-big-box {
-            background: linear-gradient(145deg, rgba(25, 15, 40, 0.95), rgba(10, 5, 25, 0.95));
-            border: 2px solid var(--neon-pink);
-            box-shadow: 0 0 35px rgba(255, 77, 109, 0.4), inset 0 0 20px rgba(255, 77, 109, 0.1);
-            padding: 55px 45px; 
-            border-radius: 30px; 
-            margin: 60px 0; 
-            text-align: left;
-            backdrop-filter: blur(15px);
-            position: relative;
+        .long-surface-letter {
+            background: linear-gradient(145deg, rgba(20,15,35,0.9), rgba(10,5,20,0.9));
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            box-shadow: 0 0 30px rgba(255,77,109,0.05);
+            padding: 50px 40px; border-radius: 28px; margin-bottom: 80px; text-align: left;
         }
-        .middle-big-box::before {
-            content: '❤️';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-dark);
-            padding: 0 15px;
-            font-size: 1.8rem;
-            text-shadow: 0 0 10px var(--neon-pink);
-        }
-        .middle-big-box h3 { font-size: 2.2rem; color: #fff; margin-bottom: 25px; text-shadow: 0 0 10px var(--neon-glow); font-weight: 800; text-center; text-align: center; }
-        .middle-big-box p { color: #f0edf8; font-size: 1.15rem; margin-bottom: 22px; letter-spacing: 0.6px; line-height: 1.8; }
-        .middle-big-box p span { color: var(--neon-blue); font-weight: bold; text-shadow: 0 0 5px rgba(0,245,212,0.4); }
+        .letter-content h3 { font-size: 1.8rem; color: #fff; margin-bottom: 20px; text-shadow: 0 0 8px var(--neon-glow); font-weight: 700;}
+        .letter-content p { color: #e2e1f0; font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 0.5px; }
+        .letter-content p span { color: var(--neon-pink); font-weight: bold; }
 
-        /* Romantic Timeline Flow */
+        /* ========================================== */
+        /* NEW SURFACE SECTION: ROMANTIC TIMELINE FLOW */
+        /* ========================================== */
         .timeline-wrapper { position: relative; padding: 20px 0; margin-bottom: 80px; }
         .timeline-wrapper::before {
             content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 100%;
@@ -166,6 +152,7 @@
         .timeline-content h4 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
         .timeline-content p { color: var(--text-muted); font-size: 0.95rem; }
 
+        /* Media queries for vertical layout on phone screen */
         @media (max-width: 768px) {
             .timeline-wrapper::before { left: 20px; }
             .timeline-item { justify-content: flex-end !important; }
@@ -174,7 +161,7 @@
         }
 
         /* Gallery Sections Setup */
-        .gallery-section { margin-bottom: 40px; }
+        .gallery-section { margin-bottom: 80px; }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .photo-card {
@@ -209,7 +196,7 @@
     <!-- Background Animation Container -->
     <div id="hearts-container"></div>
 
-    <!-- Ambient Light Orbs -->
+    <!-- Ambient Ambient Light Orbs -->
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
     <div class="ambient-glow glow-3"></div>
@@ -232,7 +219,9 @@
             </div>
         </div>
 
-        <!-- ABOUT HER SECTION -->
+        <!-- ========================================== -->
+        <!-- TEXT SECTION: ABOUT HER (AS REQUESTED) -->
+        <!-- ========================================== -->
         <section class="about-section">
             <h2 class="section-title">Everything About Her</h2>
             <div class="facts-grid">
@@ -251,40 +240,75 @@
             </div>
         </section>
 
-        <!-- HAMARA SAFAR TIMELINE -->
+        <!-- ========================================== -->
+        <!-- NEW EXTENDED SURFACE AREA: DIL KE JAZBAAT -->
+        <!-- ========================================== -->
+        <section class="long-surface-letter">
+            <div class="letter-content">
+                <h3>Khat - Sirf Tumhare Liye 📜</h3>
+                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai. Tumhare sath bitaya har ek second mere liye ek tohfe jaisa hai. Yeh website sirf ek page nahi hai, ye hamare pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi tumhe ehsaas hoga ki tum mere liye kitni qeemti ho. 💖</p>
+                <p>Log kehte hain ki sacha pyaar milna mushkil hota hai, par jab se tum <span>Aayu</span> ke sath ho, mujhe lagta hai ki maine duniya ki sabse badi khushi pa li hai. Hamesha aise hi muskurati rehna kyunki tumhari muskurahat hi meri har subah ko roshan karti hai.</p>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- NEW SURFACE AREA: OUR ROMANTIC TIMELINE -->
+        <!-- ========================================== -->
         <section class="timeline-section">
             <h2 class="section-title">Hamara Safar ✨</h2>
             <div class="timeline-wrapper">
+
+                <!-- Timeline Item 1 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">DAY ONE</div>
                         <h4>Pehli Mulaqat 👥</h4>
-                        <p>Wo din bhulaye nahi bhulta jab pehli baar tumse guftagu hui thi.</p>
+                        <p>Wo din jab pehli baar tumse baat hui ya mulaqat hui thi. Ekdum simple se chalte hue jab hamari dunya aapas me mili.</p>
                     </div>
                 </div>
+
+                <!-- Timeline Item 2 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">THE CONFESSION</div>
                         <h4>Dil Ki Baat ❤️</h4>
-                        <p>Wo haseen pal jab humne ek doosre se apne pyaar ka izhaar kiya.</p>
+                        <p>Wo khaas lamha jab dilon ne aapas me iqraar kiya aur hum sirf doston se badhkar ek doosre ke liye hamesha ke liye ban gaye.</p>
                     </div>
                 </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">EVERY DAY</div>
+                        <h4>Khatti-Meethi Yaadein 🫂</h4>
+                        <p>Hamari pyaari si ladaiyan, thoda sa gussa aur uske baad ek doosre ko manane ka wo behtareen aur pyaara sa ehsaas.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- FIRST GALLERY: OUR MAGICAL MEMORIES -->
+        <!-- ========================================== -->
+        <!-- MAIN GALLERY: SPECIAL COUPLING MOMENTS -->
+        <!-- ========================================== -->
         <section class="gallery-section">
             <h2 class="section-title">Our Magical Memories</h2>
             <div class="gallery-grid">
+                
+                <!-- Photo Card 1: First Meet -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
+                        <!-- Google Drive link kaise nikalna hai maine niche guide kiya hai -->
                         <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=First+Meet+Photo" alt="First Meet">
                     </div>
                     <span class="photo-tag">The Beginning</span>
                     <p>"Hamari Pehli Mulaqat" ✨</p>
                 </div>
+
+                <!-- Photo Card 2: Her Smile -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
                         <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Her+Smile+Photo" alt="Her Smile">
@@ -292,6 +316,8 @@
                     <span class="photo-tag">Favorite View</span>
                     <p>"Wo Pyaari Si Smile" 😊</p>
                 </div>
+
+                <!-- Photo Card 3: Together -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
                         <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Together+Photo" alt="Together">
@@ -299,22 +325,18 @@
                     <span class="photo-tag">Us Forever</span>
                     <p>"Hamesha Ka Sath" 💖</p>
                 </div>
+
             </div>
         </section>
 
-        <!-- ======================================================== -->
-        <!-- NEW DREAMS & LOVE LETTERS BOX (DONO GALLERIES KE BEECH ME) -->
-        <!-- ======================================================== -->
-        <section class="middle-big-box">
-            <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
-            <p>Yahan par aap jitna lamba chahein uske baare me poora paragraph update kar sakte hain bhai! Ye box ekdum bada hai aur iska background special dark neon border ke sath glow karta hai.</p>
-            <p>Aap likh sakte ho ki wo aapke liye kya ehsaas rakhti hai, kaise usne aapki life ko badal diya, aur aap dono ke aage ke kya haseen sapne hain. Jab wo upar ki teen photos dekh kar niche scroll karegi, toh ye bada box usko poora surprise kar dega! <span>Hamesha sath rehna hai.</span></p>
-        </section>
-
-        <!-- SECOND GALLERY: MORE BEAUTIFUL MOMENTS -->
+        <!-- ========================================== -->
+        <!-- EXTENDED GALLERY: INDIVIDUAL AND MORE PICS -->
+        <!-- ========================================== -->
         <section class="gallery-section">
             <h2 class="section-title">More Beautiful Moments</h2>
             <div class="gallery-grid">
+
+                <!-- Photo Card 4: Her Solo Photo -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
                         <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Her+Solo+Photo" alt="Lavi">
@@ -322,6 +344,8 @@
                     <span class="photo-tag">The Queen</span>
                     <p>"Uski Sabse Khoobsurat Pic" 😍</p>
                 </div>
+
+                <!-- Photo Card 5: Your Solo Photo -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
                         <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Your+Solo+Photo" alt="Aayu">
@@ -329,6 +353,8 @@
                     <span class="photo-tag">King</span>
                     <p>"Aayu ki solid pic" 😎</p>
                 </div>
+
+                <!-- Photo Card 6: Extra Shared space -->
                 <div class="photo-card">
                     <div class="photo-img-wrapper">
                         <img src="https://via.placeholder.com/400x330/110e20/ffffff?text=Future+Memory+Slot" alt="Future Memory">
@@ -336,6 +362,7 @@
                     <span class="photo-tag">Together 2.0</span>
                     <p>"Ek aur pyara lamha" 🌸</p>
                 </div>
+
             </div>
         </section>
 
@@ -346,12 +373,15 @@
     </footer>
 
     <script>
-        // Anniversary date format: (Year, Month-1, Day, Hour, Minute)
+        // Real anniversary date format: (Year, Month-1, Day, Hour, Minute)
+        // Note: Month indices are 0-based (0 = Jan, 1 = Feb, 4 = May, etc.)
         const anniversaryDate = new Date(2025, 0, 1, 0, 0); 
 
+        // 1. DYNAMIC TIME COUNTER LOGIC
         function updateTimer() {
             const now = new Date();
             const diff = now - anniversaryDate;
+
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -365,22 +395,32 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // Hearts Animation Generator
+        // 2. BACKEND ANIMATED HEARTS LOGIC (Butter smooth particle rendering)
         function createHeart() {
             const container = document.getElementById('hearts-container');
             if(!container) return;
+            
             const heart = document.createElement('div');
             heart.classList.add('floating-heart');
             heart.innerHTML = '❤️';
-            const startX = Math.random() * 100;
-            const duration = Math.random() * 5 + 4;
-            const size = Math.random() * 15 + 12;
+            
+            // Random styling variables for organic flow
+            const startX = Math.random() * 100; // random horizontal position
+            const duration = Math.random() * 5 + 4; // between 4s and 9s
+            const size = Math.random() * 15 + 12; // size variations
+            
             heart.style.left = startX + 'vw';
             heart.style.fontSize = size + 'px';
             heart.style.animationDuration = duration + 's';
+            
             container.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, duration * 1000);
+            
+            // Auto clean memory from DOM
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
         }
+        // Continuous organic generator loops every 400ms
         setInterval(createHeart, 400);
     </script>
 </body>
