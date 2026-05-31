@@ -7,110 +7,183 @@
     <style>
         :root {
             --pink-dark: #ff4d6d;
+            --pink-medium: #ff758f;
             --pink-light: #fff0f3;
-            --text-color: #4a4a4a;
+            --text-dark: #2b2d42;
+            --text-muted: #6c757d;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--pink-light);
-            color: var(--text-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        /* Header Section */
+        header {
+            padding: 80px 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(255, 77, 109, 0.08);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
             text-align: center;
         }
-        header {
-            padding: 50px 20px;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h1 { color: var(--pink-dark); font-size: 2.5rem; margin-bottom: 10px; }
+        header h1 { color: var(--pink-dark); font-size: 3rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.2rem; color: var(--text-muted); font-style: italic; }
+
+        /* Counter Container */
         .counter-container {
-            margin: 40px auto;
-            padding: 20px;
+            margin: -40px auto 40px auto;
+            padding: 30px 20px;
             background: white;
-            max-width: 600px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(255, 77, 109, 0.1);
+            max-width: 650px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 77, 109, 0.12);
+            text-align: center;
+            position: relative;
+            z-index: 10;
         }
-        .timer {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            font-size: 1.2rem;
+        .counter-container h2 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 20px; }
+        .timer { display: flex; justify-content: space-around; }
+        .timer-box { background: var(--pink-light); padding: 15px; border-radius: 12px; width: 22%; }
+        .timer-box span { display: block; font-size: 2.2rem; font-weight: bold; color: var(--pink-dark); line-height: 1.2; }
+        .timer-box label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+
+        /* Main Content Wrapper */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
-        .timer div span {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--pink-dark);
-        }
-        .gallery {
-            max-width: 1000px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
+        .section-title { color: var(--pink-dark); font-size: 2rem; margin-bottom: 30px; text-align: center; position: relative; }
+        .section-title::after { content: '❤️'; display: block; font-size: 1rem; margin-top: 5px; }
+        
+        .facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left; }
+        .fact-card { background: var(--pink-light); padding: 20px; border-radius: 12px; border-left: 5px solid var(--pink-dark); }
+        .fact-card h3 { color: var(--pink-dark); font-size: 1.1rem; margin-bottom: 8px; }
+
+        /* Gallery Section */
+        .gallery-container { margin-bottom: 50px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .photo-card {
             background: white;
             padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
         }
-        .photo-card:hover { transform: translateY(-5px); }
-        .photo-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 5px;
+        .photo-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(255, 77, 109, 0.15); }
+        .photo-img-wrapper { width: 100%; height: 300px; border-radius: 10px; overflow: hidden; background: #eee; }
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-tag {
+            display: inline-block;
+            background: var(--pink-light);
+            color: var(--pink-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 15px;
         }
-        .photo-card p { margin-top: 10px; font-style: italic; }
-        footer { padding: 30px; color: #888; font-size: 0.9rem; }
+        .photo-card p { margin-top: 10px; font-style: italic; color: var(--text-dark); font-weight: 500; }
+
+        footer { padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Aayu ❤️ Lavi</h1>
-        <p>Hamesha ke liye, har lamha tumhare sath...</p>
+        <h1>Aayu & Lavi</h1>
+        <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
     </header>
 
     <!-- Love Counter -->
     <div class="counter-container">
-        <h2>We have been together for:</h2>
-        <div class="timer" id="countdown">
-            <div><span id="days">00</span>Days</div>
-            <div><span id="hours">00</span>Hours</div>
-            <div><span id="minutes">00</span>Mins</div>
-            <div><span id="seconds">00</span>Secs</div>
+        <h2>Hamare Sath Ke Haseen Pal ✨</h2>
+        <div class="timer">
+            <div class="timer-box"><span id="days">00</span><label>Days</label></div>
+            <div class="timer-box"><span id="hours">00</span><label>Hours</label></div>
+            <div class="timer-box"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="timer-box"><span id="seconds">00</span><label>Secs</label></div>
         </div>
     </div>
 
-    <!-- Photo Gallery -->
-    <div class="gallery">
-        <div class="photo-card">
-            <img src="https://via.placeholder.com/300" alt="Memory 1">
-            <p>"Hamari Pehli Mulaqat" ✨</p>
-        </div>
-        <div class="photo-card">
-            <img src="https://via.placeholder.com/300" alt="Memory 2">
-            <p>"Wo Pyaari Si Smile" 😊</p>
-        </div>
-        <div class="photo-card">
-            <img src="https://via.placeholder.com/300" alt="Memory 3">
-            <p>"Hamesha Ka Sath" 💖</p>
-        </div>
+    <div class="container">
+        
+        <!-- About Her Section -->
+        <section class="about-section">
+            <h2 class="section-title">Everything About Her</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <h3>Uski Sabse Pyaari Cheez 🌸</h3>
+                    <p>Yahan likho uski smile, uski baatein ya jo bhi tumhe sabse pasand hai.</p>
+                </div>
+                <div class="fact-card">
+                    <h3>Favorite Memories 📝</h3>
+                    <p>Yahan tum dono ke beech ki koi andar ki baat ya koi funny incident daal sakte ho.</p>
+                </div>
+                <div class="fact-card">
+                    <h3>My Promise To Her 🤝</h3>
+                    <p>Ek chota sa pyaara sa promise jo tum usse hamesha ke liye karna chahte ho.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="gallery-container">
+            <h2 class="section-title">Our Magical Memories</h2>
+            <div class="gallery-grid">
+                
+                <!-- Photo 1: First Meet -->
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <!-- Pehli meet ki photo ka link yahan aayega -->
+                        <img src="https://via.placeholder.com/400x300" alt="First Meet">
+                    </div>
+                    <span class="photo-tag">The Beginning</span>
+                    <p>"Hamari Pehli Mulaqat" ✨</p>
+                </div>
+
+                <!-- Photo 2: Smile Forever -->
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <!-- Uski smile waali photo ka link yahan aayega -->
+                        <img src="https://via.placeholder.com/400x300" alt="Her Smile">
+                    </div>
+                    <span class="photo-tag">Favorite View</span>
+                    <p>"Wo Pyaari Si Smile" 😊</p>
+                </div>
+
+                <!-- Photo 3: Together -->
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <!-- Tum dono ki sath waali photo ka link yahan aayega -->
+                        <img src="https://via.placeholder.com/400x300" alt="Together">
+                    </div>
+                    <span class="photo-tag">Us</span>
+                    <p>"Hamesha Ka Sath" 💖</p>
+                </div>
+
+            </div>
+        </section>
+
     </div>
 
     <footer>
-        <p>Made with ❤️ by Vishal</p>
+        <p>Made with ❤️ by Vev | © 2026</p>
     </footer>
 
     <script>
-        // Tumhari anniversary ya jab se sath ho wo date yahan daalo (Year, Month-1, Day)
-        // JavaScript me Month 0 se shuru hota hai (0 = Jan, 4 = May)
-        const anniversaryDate = new Date(2025, 0, 1); 
+        // Real Anniversary Date daalo: (Year, Month-1, Day, Hour, Minute)
+        // Note: Month 0 se shuru hota hai (0 = Jan, 1 = Feb, 4 = May)
+        const anniversaryDate = new Date(2025, 0, 1, 0, 0); 
 
         function updateTimer() {
             const now = new Date();
