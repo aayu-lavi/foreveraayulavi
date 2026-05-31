@@ -6,19 +6,19 @@
     <title>Forever Aayu-Lovie ❤️</title>
     <style>
         :root {
-            --luxury-pink: #ff758f;
-            --soft-glow: rgba(255, 117, 143, 0.4);
-            --bg-gradient: linear-gradient(135deg, #0f0c1b 0%, #1a1025 50%, #120a1c 100%);
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.07);
+            --neon-pink: #ff4d6d;
+            --neon-magenta: #ff007f;
+            --neon-glow: rgba(255, 77, 109, 0.75);
+            --bg-gradient: linear-gradient(135deg, #050409 0%, #0f081d 50%, #06030a 100%);
+            --glass-card: rgba(255, 77, 109, 0.03);
             --text-main: #fff0f3;
-            --text-sub: #bfaec6;
+            --text-sub: #dfdae3;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
-            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--bg-gradient);
             color: var(--text-main);
             line-height: 1.8;
@@ -26,7 +26,7 @@
             position: relative;
         }
 
-        /* 1. HEART PARTICLES ANIMATION BACKGROUND */
+        /* 1. DYNAMIC EMOTION & HEARTS BACKGROUND POOL */
         #hearts-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -35,145 +35,144 @@
             overflow: hidden;
         }
 
-        .floating-heart {
+        .floating-element {
             position: absolute;
-            color: var(--luxury-pink);
             opacity: 0;
-            font-size: 20px;
             animation: floatUp linear forwards;
-            filter: drop-shadow(0 0 6px var(--luxury-pink));
+            filter: drop-shadow(0 0 8px var(--neon-pink));
+            user-select: none;
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(105vh) scale(0.6) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.7; }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(-10vh) scale(1.3) rotate(30deg); opacity: 0; }
+            0% { transform: translateY(105vh) scale(0.5) rotate(0deg); opacity: 0; }
+            15% { opacity: 0.8; }
+            85% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.4) rotate(45deg); opacity: 0; }
         }
 
-        /* Ambient Fluid Glow Elements */
-        .aura-glow {
-            position: absolute; border-radius: 50%; filter: blur(160px); z-index: 0; pointer-events: none;
+        /* Ambient Plasma Glow Orbs */
+        .plasma-glow {
+            position: absolute; border-radius: 50%; filter: blur(150px); z-index: 0; pointer-events: none;
+            animation: pulseAura 8s infinite alternate;
         }
-        .aura-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: rgba(255, 77, 109, 0.15); }
-        .aura-2 { top: 45%; right: -10%; width: 600px; height: 600px; background: rgba(142, 68, 173, 0.12); }
-        .aura-3 { bottom: -5%; left: 10%; width: 500px; height: 500px; background: rgba(255, 117, 143, 0.1); }
+        .plasma-1 { top: -5%; left: -5%; width: 500px; height: 500px; background: rgba(255, 0, 127, 0.2); }
+        .plasma-2 { top: 50%; right: -10%; width: 550px; height: 550px; background: rgba(142, 68, 173, 0.15); }
+        .plasma-3 { bottom: -5%; left: 5%; width: 500px; height: 500px; background: rgba(255, 77, 109, 0.15); }
+
+        @keyframes pulseAura {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.15); opacity: 0.9; }
+        }
 
         .container { max-width: 1040px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
 
-        /* Elegant Minimalist Header */
-        header { padding: 90px 20px 50px 20px; text-align: center; }
+        /* Cinematic Header */
+        header { padding: 100px 20px 60px 20px; text-align: center; }
         header h1 { 
-            font-size: 3.8rem; font-weight: 800; letter-spacing: -1px;
-            background: linear-gradient(to right, #fff, #ffb3c1, #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 10px rgba(255,117,143,0.3));
-            margin-bottom: 15px;
+            font-size: 4rem; font-weight: 900; letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, #ff758f, #ff007f, #fff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px var(--neon-glow));
+            margin-bottom: 20px;
+            animation: textShine 6s infinite linear;
         }
-        header p { font-size: 1.15rem; color: var(--text-sub); font-style: italic; letter-spacing: 0.5px; }
+        header p { font-size: 1.25rem; color: var(--text-sub); font-style: italic; text-shadow: 0 0 10px rgba(255,77,109,0.3); }
 
-        /* Premium Glass Counter Dashboard */
-        .counter-container {
-            margin: 0 auto 80px auto; padding: 35px 20px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            max-width: 720px; border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+        /* ======================================================== */
+        /* NEON GLOW BREATHING BOX LAYOUT (APPLIED TO ALL BOXES) */
+        /* ======================================================== */
+        .glowing-box {
+            background: rgba(12, 8, 24, 0.65);
+            border: 1px solid rgba(255, 77, 109, 0.3);
+            border-radius: 24px;
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 77, 109, 0.1);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            animation: boxBreathe 4s infinite alternate ease-in-out;
         }
-        .counter-container h2 { font-size: 1.25rem; color: #fff; margin-bottom: 30px; font-weight: 500; letter-spacing: 1px; opacity: 0.9; }
+        .glowing-box:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 30px var(--neon-glow), inset 0 0 15px rgba(255, 77, 109, 0.2);
+            transform: translateY(-5px);
+        }
+
+        @keyframes boxBreathe {
+            0% { box-shadow: 0 0 15px rgba(0,0,0,0.6), 0 0 5px rgba(255, 77, 109, 0.1); }
+            100% { box-shadow: 0 0 25px rgba(0,0,0,0.7), 0 0 15px rgba(255, 77, 109, 0.35); border-color: rgba(255, 77, 109, 0.5); }
+        }
+
+        /* Glass Counter Panel Custom Specs */
+        .counter-container {
+            margin: 0 auto 80px auto; padding: 40px 20px; max-width: 720px; text-align: center;
+        }
+        .counter-container h2 { font-size: 1.3rem; color: #fff; margin-bottom: 30px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 8px var(--neon-glow); }
         .timer { display: flex; justify-content: space-around; }
         .timer-box { width: 22%; position: relative; }
-        .timer-box span { display: block; font-size: 2.8rem; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 5px; }
-        .timer-box label { font-size: 0.75rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+        .timer-box span { display: block; font-size: 3rem; font-weight: 800; color: #fff; text-shadow: 0 0 10px var(--neon-pink); line-height: 1.1; margin-bottom: 5px; }
+        .timer-box label { font-size: 0.8rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
         .timer-box:not(:last-child)::after {
-            content: ':'; position: absolute; right: -15%; top: 10%; font-size: 2rem; color: rgba(255,255,255,0.15);
+            content: '💖'; position: absolute; right: -20%; top: 15%; font-size: 1.2rem; opacity: 0.5; animation: pulseAura 1s infinite alternate;
         }
 
         .section-title { 
-            color: #fff; font-size: 2rem; margin-bottom: 45px; text-align: center; font-weight: 600;
-            letter-spacing: 0.5px; position: relative;
-        }
-        .section-title::after {
-            content: ''; display: block; width: 40px; height: 2px; background: var(--luxury-pink); margin: 12px auto 0 auto; border-radius: 2px;
+            color: #fff; font-size: 2.3rem; margin-bottom: 50px; text-align: center; font-weight: 700;
+            letter-spacing: 1px; text-shadow: 0 0 10px var(--neon-glow);
         }
 
-        /* Grid Layouts for Glass Cards */
-        .facts-grid, .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* Grids Setup */
+        .facts-grid, .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
 
-        /* About Section */
-        .about-section { margin-bottom: 80px; }
-        .fact-card { 
-            background: var(--glass-bg); padding: 30px; border-radius: 20px; 
-            border: 1px solid var(--glass-border); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-        }
-        .fact-card:hover { transform: translateY(-5px); border-color: rgba(255, 117, 143, 0.4); box-shadow: 0 15px 30px rgba(255,117,143,0.08); }
-        .fact-card h3 { color: var(--luxury-pink); font-size: 1.2rem; margin-bottom: 12px; font-weight: 600; }
+        /* About Section Specs */
+        .about-section { margin-bottom: 80px; padding: 10px 0; }
+        .fact-card { padding: 30px; }
+        .fact-card h3 { color: #fff; font-size: 1.3rem; margin-bottom: 15px; font-weight: 600; text-shadow: 0 0 5px var(--neon-glow); }
         .fact-card p { color: var(--text-sub); font-size: 0.95rem; }
 
-        /* Gallery Cards Layout */
+        /* Gallery Specs */
         .gallery-section { margin-bottom: 40px; }
-        .photo-card {
-            background: var(--glass-bg); padding: 16px; border-radius: 24px;
-            border: 1px solid var(--glass-border); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); text-align: center;
-        }
-        .photo-card:hover { 
-            transform: translateY(-8px); 
-            border-color: rgba(255, 117, 143, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 117, 143, 0.1); 
-        }
+        .photo-card { padding: 18px; text-align: center; }
         .photo-img-wrapper { 
-            width: 100%; height: 340px; border-radius: 16px; overflow: hidden; 
-            background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03);
+            width: 100%; height: 340px; border-radius: 18px; overflow: hidden; 
+            border: 1px solid rgba(255,255,255,0.05); background: #080511;
         }
-        .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .photo-card:hover img { transform: scale(1.04); }
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .photo-card:hover img { transform: scale(1.05); }
         
         .photo-tag {
-            display: inline-block; background: rgba(255, 117, 143, 0.08); color: #fff;
-            padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
-            margin-top: 15px; border: 1px solid rgba(255, 117, 143, 0.2); letter-spacing: 0.5px;
+            display: inline-block; background: rgba(255, 0, 127, 0.15); color: #fff;
+            padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+            margin-top: 18px; border: 1px solid var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink);
         }
-        .photo-card p { margin-top: 12px; font-size: 0.95rem; color: #fff; font-weight: 400; opacity: 0.9; }
+        .photo-card p { margin-top: 15px; font-size: 1rem; color: #fff; font-weight: 500; }
 
         /* ======================================================== */
-        /* PREMIUM INTERACTIVE BIG BOX: BETWEEN GALLERIES */
+        /* THE BIG BOX: NEON LETTERS BETWEEN GALLERIES */
         /* ======================================================== */
         .middle-big-box {
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.05);
             padding: 60px 50px; 
-            border-radius: 28px; 
-            margin: 80px 0; 
+            margin: 90px 0; 
             text-align: left;
-            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            position: relative;
         }
         .middle-big-box h3 { 
-            font-size: 2rem; font-weight: 700; margin-bottom: 25px; text-align: center;
-            background: linear-gradient(to right, #ff99ac, #ffccd5);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-size: 2.2rem; font-weight: 800; margin-bottom: 30px; text-align: center;
+            color: #fff; text-shadow: 0 0 10px var(--neon-pink);
         }
-        .middle-big-box p { color: var(--text-sub); font-size: 1.1rem; margin-bottom: 20px; letter-spacing: 0.3px; }
-        .middle-big-box p span { color: var(--luxury-pink); font-weight: 600; }
+        .middle-big-box p { color: var(--text-sub); font-size: 1.15rem; margin-bottom: 25px; letter-spacing: 0.5px; }
+        .middle-big-box p span { color: var(--neon-pink); font-weight: bold; text-shadow: 0 0 5px var(--neon-glow); }
 
-        footer { padding: 60px; text-align: center; color: rgba(255,255,255,0.25); font-size: 0.85rem; border-top: 1px solid var(--glass-border); margin-top: 40px; }
+        footer { padding: 60px; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <!-- 1. Animation Background Platform -->
+    <!-- 1. Emoji & Heart Particles Container -->
     <div id="hearts-container"></div>
 
-    <!-- Soft Ambient Lights -->
-    <div class="aura-glow aura-1"></div>
-    <div class="aura-glow aura-2"></div>
-    <div class="aura-glow aura-3"></div>
+    <!-- Soft Plasma Lighting Background -->
+    <div class="plasma-glow plasma-1"></div>
+    <div class="plasma-glow plasma-2"></div>
+    <div class="plasma-glow plasma-3"></div>
 
     <div class="container">
 
@@ -182,8 +181,8 @@
             <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
         </header>
 
-        <!-- Glass Counter Panel -->
-        <div class="counter-container">
+        <!-- Glowing Counter Panel -->
+        <div class="counter-container glowing-box">
             <h2>Hamare Sath Ke Haseen Pal ✨</h2>
             <div class="timer">
                 <div class="timer-box"><span id="days">00</span><label>Days</label></div>
@@ -197,17 +196,17 @@
         <section class="about-section">
             <h2 class="section-title">Everything About Her</h2>
             <div class="facts-grid">
-                <div class="fact-card">
+                <div class="fact-card glowing-box">
                     <h3>Uski Sabse Pyaari Cheez 🌸</h3>
                     <p>Yahan par aap uski pyaari smile, uski aadat ya jo bhi aapko sabse zyada pasand hai uske baare me dil khol kar likh sakte ho.</p>
                 </div>
-                <div class="fact-card">
+                <div class="fact-card glowing-box">
                     <h3>Favorite Memories 📝</h3>
                     <p>Yahan par aap dono ki pehli guftagu, koi funny lambha ya koi aisi yaad jo aap dono hamesha yaad rakhte ho use update karo.</p>
                 </div>
-                <div class="fact-card">
+                <div class="fact-card glowing-box">
                     <h3>My Promise To Her 🤝</h3>
-                    <p>Ek chota sa promise jo aap Lavi se hamesha ke liye karna chahte hain, wo yahan likh do taaki wo jab bhi khole use apna pan mehsoos ho.</p>
+                    <p>Ek chota sa promise jo aap Lavi se hamesha ke liye karna chahte hain, wo yahan likh do taaki wo github page jab bhi khole use apna pan mehsoos ho.</p>
                 </div>
             </div>
         </section>
@@ -216,23 +215,23 @@
         <section class="gallery-section">
             <h2 class="section-title">Our Magical Memories</h2>
             <div class="gallery-grid">
-                <div class="photo-card">
+                <div class="photo-card glowing-box">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=First+Meet+Photo" alt="First Meet">
+                        <img src="https://via.placeholder.com/400x340/130d26/ffffff?text=First+Meet+Photo" alt="First Meet">
                     </div>
                     <span class="photo-tag">The Beginning</span>
                     <p>"Hamari Pehli Mulaqat" ✨</p>
                 </div>
-                <div class="photo-card">
+                <div class="photo-card glowing-box">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Her+Smile+Photo" alt="Her Smile">
+                        <img src="https://via.placeholder.com/400x340/130d26/ffffff?text=Her+Smile+Photo" alt="Her Smile">
                     </div>
                     <span class="photo-tag">Favorite View</span>
                     <p>"Wo Pyaari Si Smile" 😊</p>
                 </div>
-                <div class="photo-card">
+                <div class="photo-card glowing-box">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Together+Photo" alt="Together">
+                        <img src="https://via.placeholder.com/400x340/130d26/ffffff?text=Together+Photo" alt="Together">
                     </div>
                     <span class="photo-tag">Us Forever</span>
                     <p>"Hamesha Ka Sath" 💖</p>
@@ -241,35 +240,35 @@
         </section>
 
         <!-- ======================================================== -->
-        <!-- NEW TRANSPARENT MODERN BIG BOX (DONO GALLERIES KE BEECH) -->
+        <!-- THE GLOWING BIG BOX BETWEEN GALLERIES -->
         <!-- ======================================================== -->
-        <section class="middle-big-box">
+        <section class="middle-big-box glowing-box">
             <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
-            <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai. Tumhare sath bitaya har ek second mere liye ek tohfe jaisa hai. Yeh website sirf ek page nahi hai, ye hamare pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi tumhe ehsaas hoga ki tum mere liye kitni qeemti ho. </p>
-            <p>Aap is box me jitna lamba chahein uske baare me poora paragraph update kar sakte hain bhai! Ye naya design ekdum clean frosted glass look me hai jo upar aur niche ki galleries ke sath ekdum elegant lagta hai. <span>Hamesha sath rehna hai.</span></p>
+            <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai. Tumhare sath bitaya har ek second mere liye ek tohfe jaisa hai. Yeh website sirf ek page nahi hai, ye hamare pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi tumhe ehsaas hoga ki tum mere liye kitni qeemti ho.</p>
+            <p>Aap is box me jitna lamba chahein uske baare me poora paragraph update kar sakte hain bhai! Ye naya design ekdum advanced border breathing neon glow ke sath hai jo pichhe ke emojis ke sath ekdum bomb lagega. <span>Hamesha sath rehna hai.</span></p>
         </section>
 
         <!-- SECOND GALLERY: MORE BEAUTIFUL MOMENTS -->
         <section class="gallery-section">
             <h2 class="section-title">More Beautiful Moments</h2>
             <div class="gallery-grid">
-                <div class="photo-card">
+                <div class="photo-card glowing-box">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Her+Solo+Photo" alt="Lavi">
+                        <img src="https://via.placeholder.com/400x340/130d26/ffffff?text=Her+Solo+Photo" alt="Lavi">
                     </div>
                     <span class="photo-tag">The Queen</span>
                     <p>"Uski Sabse Khoobsurat Pic" 😍</p>
                 </div>
-                <div class="photo-card">
+                <div class="photo-card glowing-box">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Your+Solo+Photo" alt="Aayu">
+                        <img src="https://via.placeholder.com/400x340/130d26/ffffff?text=Your+Solo+Photo" alt="Aayu">
                     </div>
                     <span class="photo-tag">King</span>
                     <p>"Aayu ki solid pic" 😎</p>
                 </div>
-                <div class="photo-card">
+                <div class="photo-card glowing-box">
                     <div class="photo-img-wrapper">
-                        <img src="https://via.placeholder.com/400x340/1f162e/ffffff?text=Future+Memory+Slot" alt="Future Memory">
+                        <img src="https://via.placeholder.com/400x340/130d26/ffffff?text=Future+Memory+Slot" alt="Future Memory">
                     </div>
                     <span class="photo-tag">Together 2.0</span>
                     <p>"Ek aur pyara lamha" 🌸</p>
@@ -284,7 +283,7 @@
     </footer>
 
     <script>
-        // Real anniversary date configuration
+        // Real anniversary configuration
         const anniversaryDate = new Date(2025, 0, 1, 0, 0); 
 
         function updateTimer() {
@@ -303,23 +302,34 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // High Performance Heart Particles Generator
-        function createHeart() {
+        // 2. ADVANCED MIXED EMOJI & HEART GENERATOR POOL
+        const romanticPool = ['❤️', '😘', '😍', '🥰', '🤗', '😚', '💖', '✨'];
+
+        function createFloatingElement() {
             const container = document.getElementById('hearts-container');
             if(!container) return;
-            const heart = document.createElement('div');
-            heart.classList.add('floating-heart');
-            heart.innerHTML = '❤️';
+            
+            const element = document.createElement('div');
+            element.classList.add('floating-element');
+            
+            // Pool se random emoji/heart select karega
+            const randomType = romanticPool[Math.floor(Math.random() * romanticPool.length)];
+            element.innerHTML = randomType;
+            
             const startX = Math.random() * 100;
-            const duration = Math.random() * 6 + 5; // smooth speed
-            const size = Math.random() * 14 + 10;
-            heart.style.left = startX + 'vw';
-            heart.style.fontSize = size + 'px';
-            heart.style.animationDuration = duration + 's';
-            container.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, duration * 1000);
+            const duration = Math.random() * 5 + 5; // smooth physics timing 5s-10s
+            const size = Math.random() * 16 + 14; // random rendering size
+            
+            element.style.left = startX + 'vw';
+            element.style.fontSize = size + 'px';
+            element.style.animationDuration = duration + 's';
+            
+            container.appendChild(element);
+            
+            setTimeout(() => { element.remove(); }, duration * 1000);
         }
-        setInterval(createHeart, 450);
+        // Continuous burst rendering cycle
+        setInterval(createFloatingElement, 350);
     </script>
 </body>
 </html>
