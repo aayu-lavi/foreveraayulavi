@@ -74,10 +74,13 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 15px var(--neon-glow));
             margin-bottom: 20px;
+            animation: textShine 6s infinite linear;
         }
         header p { font-size: 1.25rem; color: var(--text-sub); font-style: italic; text-shadow: 0 0 10px rgba(255,77,109,0.3); }
 
-        /* NEON GLOW BREATHING BOX LAYOUT */
+        /* ======================================================== */
+        /* NEON GLOW BREATHING BOX LAYOUT (APPLIED TO ALL BOXES) */
+        /* ======================================================== */
         .glowing-box {
             background: rgba(12, 8, 24, 0.65);
             border: 1px solid rgba(255, 77, 109, 0.3);
@@ -126,32 +129,6 @@
         .fact-card h3 { color: #fff; font-size: 1.3rem; margin-bottom: 15px; font-weight: 600; text-shadow: 0 0 5px var(--neon-glow); }
         .fact-card p { color: var(--text-sub); font-size: 0.95rem; }
 
-        /* Timeline Flow Section */
-        .timeline-wrapper { position: relative; padding: 20px 0; margin-bottom: 80px; }
-        .timeline-wrapper::before {
-            content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 100%;
-            background: linear-gradient(to bottom, var(--neon-pink), var(--neon-pink), var(--neon-pink));
-            box-shadow: 0 0 10px var(--neon-pink); transform: translateX(-50%);
-        }
-        .timeline-item { width: 100%; margin-bottom: 40px; position: relative; display: flex; justify-content: flex-end; }
-        .timeline-item:nth-child(even) { justify-content: flex-start; }
-        .timeline-dot {
-            position: absolute; left: 50%; top: 25px; width: 16px; height: 16px;
-            background: #fff; border: 3px solid var(--neon-pink); border-radius: 50%;
-            box-shadow: 0 0 10px var(--neon-pink); transform: translateX(-50%); z-index: 5;
-        }
-        .timeline-content { width: 45%; padding: 25px; }
-        .timeline-date { color: var(--neon-pink); font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; letter-spacing: 1px; text-shadow: 0 0 5px var(--neon-glow); }
-        .timeline-content h4 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
-        .timeline-content p { color: var(--text-sub); font-size: 0.95rem; }
-
-        @media (max-width: 768px) {
-            .timeline-wrapper::before { left: 20px; }
-            .timeline-item { justify-content: flex-end !important; }
-            .timeline-dot { left: 20px; }
-            .timeline-content { width: 85%; margin-left: 40px; }
-        }
-
         /* Gallery Specs */
         .gallery-section { margin-bottom: 40px; }
         .photo-card { padding: 18px; text-align: center; }
@@ -169,7 +146,9 @@
         }
         .photo-card p { margin-top: 15px; font-size: 1rem; color: #fff; font-weight: 500; }
 
-        /* THE BIG BOX BETWEEN GALLERIES */
+        /* ======================================================== */
+        /* THE BIG BOX: NEON LETTERS BETWEEN GALLERIES */
+        /* ======================================================== */
         .middle-big-box {
             padding: 60px 50px; 
             margin: 90px 0; 
@@ -213,52 +192,21 @@
             </div>
         </div>
 
-        <!-- ABOUT HER SECTION (REAL CONTENT ADDED) -->
+        <!-- ABOUT HER SECTION -->
         <section class="about-section">
             <h2 class="section-title">Everything About Her</h2>
             <div class="facts-grid">
                 <div class="fact-card glowing-box">
                     <h3>Uski Sabse Pyaari Cheez 🌸</h3>
-                    <p>Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka mere dil ko chhu jata hai[cite: 1]. Aur haan, jab tum gusse me kehti ho na "Mar khani hai kya mujhse, dar nhi lagta aap ko", wo mujhe sabse zyaada pyaara lagta hai[cite: 1]!</p>
+                    <p>Yahan par aap uski pyaari smile, uski aadat ya jo bhi aapko sabse zyada pasand hai uske baare me dil khol kar likh sakte ho.</p>
                 </div>
                 <div class="fact-card glowing-box">
                     <h3>Favorite Memories 📝</h3>
-                    <p>Wo din jab tumne itni fikr me kaha tha ki "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae"[cite: 1]. Tumhara wo haq jatana, dher saari reels share karke hasna, aur raat-raat bhar jaag kar baat karna meri zindgi ki sabse haseen yaadein hain[cite: 1].</p>
+                    <p>Yahan par aap dono ki pehli guftagu, koi funny lambha ya koi aisi yaad jo aap dono hamesha yaad rakhte ho use update karo.</p>
                 </div>
                 <div class="fact-card glowing-box">
                     <h3>My Promise To Her 🤝</h3>
-                    <p>Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha uthaunga[cite: 1]. Plant me rahoon ya khet par, jab bhi tum pareshan hogi, main humesha pehle apni jaan ki sununga[cite: 1].</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- HAMARA SAFAR TIMELINE (REAL CHAT SPECIFIC) -->
-        <section class="timeline-section">
-            <h2 class="section-title">Hamara Safar ✨</h2>
-            <div class="timeline-wrapper">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glowing-box">
-                        <div class="timeline-date">MARCH 27, 2026</div>
-                        <h4>Baaton Ka Silsila 👥</h4>
-                        <p>Wo din jab hamari real guftagu shuru hui aur dilon ne ek doosre ki taraf kadam badhaye.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glowing-box">
-                        <div class="timeline-date">APRIL 2026</div>
-                        <h4>April Ka Mahina 🌱</h4>
-                        <p>Jab baatein gehri hone lagin aur mujhe saccha ehsaas hua ki main tumse kitna zyaada pyaar karne laga hoon.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glowing-box">
-                        <div class="timeline-date">MAY 24, 2026</div>
-                        <h4>Har Dard Me Fikr 🫂</h4>
-                        <p>Wo din jab tum raste me thi aur tumhare pet me dard ho raha tha[cite: 1]. Mera tum par dantiya gussa karna ki "Sari chije le liya karo" sirf tumhari parwah thi[cite: 1]. Tumhara har dard ab mera hai.</p>
-                    </div>
+                    <p>Ek chota sa promise jo aap Lavi se hamesha ke liye karna chahte hain, wo yahan likh do taaki wo github page jab bhi khole use apna pan mehsoos ho.</p>
                 </div>
             </div>
         </section>
@@ -292,12 +240,12 @@
         </section>
 
         <!-- ======================================================== -->
-        <!-- THE GLOWING BIG BOX (REAL CHAT MARRIAGE PROMISE ADDED) -->
+        <!-- THE GLOWING BIG BOX BETWEEN GALLERIES -->
         <!-- ======================================================== -->
         <section class="middle-big-box glowing-box">
-            <h3>Lovie, Tum Sirf Meri Ho 📝💖</h3>
-            <p>Hey Lovie, tum aksar mujhse gusse me poochti ho na ki "Agar mae gusse me kuch kar bhi lu tobhi aap ko fark bhi padega?"[cite: 1] Toh aaj khulle aam is website par suno—tumse baat kiye bina mujhe nind nahi aati[cite: 1], tum meri jaan ho[cite: 1]. Jab tum bolti ho ki "Aap badhe log ho" toh mera dil karta hai tumhe thappad maroon[cite: 1]!</p>
-            <p>Main kisi se darta nahi hoon. Humne jo shaadi ka faisla kiya hai use main poora karunga. Jab main tumse door khet ya plant par kaam par rehta hoon[cite: 1], tab bhi dil me sirf tum chalti ho. Jab main tumhare paas aaunga na, tab dher sara pyaar kar lena[cite: 1]. <span>Aayu humesha sirf apni Lovie ka rahega[cite: 1].</span></p>
+            <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
+            <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai. Tumhare sath bitaya har ek second mere liye ek tohfe jaisa hai. Yeh website sirf ek page nahi hai, ye hamare pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi tumhe ehsaas hoga ki tum mere liye kitni qeemti ho.</p>
+            <p>Aap is box me jitna lamba chahein uske baare me poora paragraph update kar sakte hain bhai! Ye naya design ekdum advanced border breathing neon glow ke sath hai jo pichhe ke emojis ke sath ekdum bomb lagega. <span>Hamesha sath rehna hai.</span></p>
         </section>
 
         <!-- SECOND GALLERY: MORE BEAUTIFUL MOMENTS -->
@@ -335,9 +283,8 @@
     </footer>
 
     <script>
-        // 27 March 2026 ke hisab se exact counter configuration done[cite: 1]
-        const anniversaryDate = new Date(2026, 2, 27, 0, 0); 
-
+        // Real anniversary configuration
+        const anniversaryDate = new Date(2026, 2, 27, 0, 0);
         function updateTimer() {
             const now = new Date();
             const diff = now - anniversaryDate;
@@ -354,7 +301,7 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // MIXED EMOJI & HEART GENERATOR POOL (As Requested)
+        // 2. ADVANCED MIXED EMOJI & HEART GENERATOR POOL
         const romanticPool = ['❤️', '😘', '😍', '🥰', '🤗', '😚', '💖', '✨'];
 
         function createFloatingElement() {
@@ -364,12 +311,13 @@
             const element = document.createElement('div');
             element.classList.add('floating-element');
             
+            // Pool se random emoji/heart select karega
             const randomType = romanticPool[Math.floor(Math.random() * romanticPool.length)];
             element.innerHTML = randomType;
             
             const startX = Math.random() * 100;
-            const duration = Math.random() * 5 + 5; 
-            const size = Math.random() * 16 + 14; 
+            const duration = Math.random() * 5 + 5; // smooth physics timing 5s-10s
+            const size = Math.random() * 16 + 14; // random rendering size
             
             element.style.left = startX + 'vw';
             element.style.fontSize = size + 'px';
@@ -379,6 +327,7 @@
             
             setTimeout(() => { element.remove(); }, duration * 1000);
         }
+        // Continuous burst rendering cycle
         setInterval(createFloatingElement, 350);
     </script>
 </body>
