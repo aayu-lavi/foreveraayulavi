@@ -15,6 +15,16 @@
             --text-sub: #dfdae3;
         }
 
+        /* AUTOMATIC MIDNIGHT ROMANTIC MODE OVERRIDES (10 PM to 6 AM) */
+        body.midnight-mode {
+            --neon-pink: #cc0052;
+            --neon-magenta: #99003d;
+            --neon-glow: rgba(204, 0, 82, 0.6);
+            --bg-gradient: linear-gradient(135deg, #020105 0%, #070310 60%, #020104 100%);
+            --text-main: #ffe6ea;
+            --text-sub: #cbbcc3;
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
@@ -24,6 +34,7 @@
             line-height: 1.8;
             overflow-x: hidden;
             position: relative;
+            transition: all 1s ease-in-out; /* Smooth transition for auto theme change */
         }
 
         /* 1. DYNAMIC EMOTION & HEARTS BACKGROUND POOL */
@@ -84,7 +95,7 @@
             box-shadow: 0 0 15px rgba(255, 77, 109, 0.1);
         }
         
-        /* BOX KE ANDAR CHALNE WALI PATTI ONLY FOR UPCOMING ALERT (SLOW SPEED RIGID 25s) */
+        /* BOX KE ANDAR CHALNE WALI PATTI ONLY FOR UPCOMING ALERT (SLOW SPEED FIXED TO 25s) */
         .marquee-text-flow {
             display: inline-block;
             animation: insideBoxScroll 25s linear infinite;
@@ -283,6 +294,7 @@
         
         .secret-reveal-content { display: none; animation: fadeInView 0.6s ease forwards; margin-top: 20px; padding-top: 20px; border-top: 1px dashed rgba(255,77,109,0.3); }
         .secret-reveal-content p { font-size: 1.1rem; color: #fff; font-style: italic; background: rgba(255,77,109,0.08); padding: 15px; border-radius: 12px; }
+        #clue-text { font-weight: bold; color: var(--neon-pink); display: block; margin-top: 5px; }
 
         /* Scratch Card Specs */
         .scratch-card-box { padding: 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -366,14 +378,14 @@
                 
                 <div class="secret-gate-box glowing-box">
                     <h4>Secret Love Message 🔒</h4>
-                    <p>Enter our special code to open this card (Hint: Anniversary Date DDMM)</p>
+                    <p>Enter our special code to open this card <span id="clue-text">Hint: Anniversary Date DDMM</span></p>
                     <div class="secret-input-wrapper">
                         <input type="password" id="gate-pass" placeholder="••••" maxlength="4">
                     </div>
                     <button class="gate-btn" onclick="verifyPassword()">Unlock Letter 🗝️</button>
                     
                     <div id="gate-reveal" class="secret-reveal-content">
-                        <p>"Lovie, tum meri zindgi ka wo haseen sach ho jise dekh kar main har roz upar wale ka shukriya ada karta hoon. Mera ye khulla dil hamesha ke liye tumhara gulam ban chuka hai! I Love You My Queen! 👑💎"</p>
+                        <p id="dynamic-letter-text">"Lovie, tum meri zindgi ka wo haseen sach ho jise dekh kar main har roz upar wale ka shukriya ada karta hoon. Mera ye khulla dil hamesha ke liye tumhara gulam ban chuka hai! I Love You My Queen! 👑💎"</p>
                     </div>
                 </div>
 
@@ -411,7 +423,7 @@
 
         <div id="tab-gallery" class="tab-content-panel">
             
-            <section class="gallery-section" id="magical-gallery-section">
+            <section class="gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
                 <div class="gallery-grid">
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
@@ -637,6 +649,17 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
+        // 4. AUTOMATIC THEME CHANGER FUNCTION (Raat 10 baje se subah 6 baje tak Midnight soft mode)
+        function applyAutoTheme() {
+            const currentHour = new Date().getHours();
+            if (currentHour >= 22 || currentHour < 6) {
+                document.body.classList.add('midnight-mode');
+            } else {
+                document.body.classList.remove('midnight-mode');
+            }
+        }
+        setInterval(applyAutoTheme, 60000); // Check every minute
+
         // GLOBAL FLAG TO CONTROL LIVE BACKGROUND OBJECT FALL MODES
         let isBirthdayToday = false;
 
@@ -647,7 +670,7 @@
             const currentMonth = now.getMonth();
             const currentDate = now.getDate();
 
-            // CURRENTLY SET TO 24 JUNE (5 DAYS COMING SOON BUFFER ALERT FOR SLOW INSIDE-BOX PATTI TESTING)
+            // TESTING TIMING BUFFER ALERT MODE active (Set to 24 June - 5 days soon alert)
             const events = [
                 { name: "Lovie's Birthday", month: 5, date: 24, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse beintehaan pyaar karta rahega!" },
                 { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge." },
@@ -666,7 +689,7 @@
                     modal.classList.add('show-lightbox', 'show-modal'); 
                     
                     if (ev.type === "birthday") {
-                        isBirthdayToday = true; // Activate special falling layer background engines
+                        isBirthdayToday = true; // Swaps hearts to falling balloons/cakes!
                     }
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
@@ -679,6 +702,47 @@
                     }
                 }
             });
+        }
+
+        // 2. DYNAMIC MONTHLY LOVE LETTERS COMPONENT INJECTOR
+        const monthlyLetters = {
+            0: { clue: "Naye Saal Ki Pehli Date (DDMM)?", text: "January Love Letter: Lovie meri jaan, naye saal me hamara pyaar aur mazboot ho! Aap is saal meri dulhan banogi aur ye mera sabse bada sapna hai! 🌸❤️" },
+            1: { clue: "Rose Day ya Kiss Day wala mahina konsa hai?", text: "February Love Letter: Valentine month me meri Lovie ko dher saara pyaar! Mujhe tumhara gussa aur dher saara sorry bolna duniya me sabse pyaara lagta hai! 🌹✨" },
+            2: { clue: "Hamari Special Anniversary Date (DDMM)?", text: "March Love Letter: Hamare rishte ka sabse khaas mahina! Main danke ki chot par sabke samne tumse pyaar karta hoon aur zindagi bhar nibhaunga! 💍❤️" },
+            3: { clue: "April Fool wala month number?", text: "April Love Letter: Lovie, tum mere dil ki rani ho. Main busy rahoon plant par ya dost ke sath, har second sirf tum meri saas me rehti ho! 👑💎" },
+            4: { clue: "Garmi ki chuttiyan kis mahine shuru hoti hain?", text: "May Love Letter: Meri jaan Lovie, chaho toh kitna bhi pareshan kar lo, par tumse baat kiye bina mujhe neend nahi aati! Hamesha sath rehna hai! 💕" },
+            5: { clue: "Monsoon ka aagman kis mahine hota hai?", text: "June Love Letter: Hey Lovie, badam ke ped ke paas khade hokar bhi sirf tumhara khayal aata hai. Tum meri poori zindgi aur mera sukoon ho! 🌦️💞" },
+            6: { clue: "Lovie ke birthday se theek ek mahine pehle?", text: "July Love Letter: Suna hai barish me pyaar aur gehra hota hai, bilkul hamare rishte ki tarah. Aayu hamesha apni Lovie ka hi rahega! ♾️❤️" },
+            7: { clue: "Lovie Bhabhi ka Birthday Month Number (MM)?", text: "August Love Letter: Tumhara birthday month aa gaya meri rani! Is janam me kya, har janam me main sirf tumhara hath thaam kar chalunga! Happy Birthday Month! 🎂👑" },
+            8: { clue: "Teachers day kis mahine aata hai?", text: "September Love Letter: Lovie, jab tum poochti ho na ki 'fark padega?'... Tumhare bina meri har saans adhoori hai jaan, tum meri sachi dhadkan ho! 🕊️💖" },
+            9: { clue: "Festivals ya Diwali kis mahine ke aas-paas aati hai?", text: "October Love Letter: Hamari shaadi ka faisla upar wale ne tay kiya hai, aur main apni aakhri saans tak har wada poora karunga! Love you queen! 💎📿" },
+            10: { clue: "Aayu ka Birthday kis mahine aata hai?", text: "November Love Letter: Mera birthday month! Aur mera sabse bada gift tum ho Lovie, jo mujhe upar wale ne di hai. Hamesha aise hi muskuraati raho! 🥰🎈" },
+            11: { clue: "Saal ka sabse aakhri mahina?", text: "December Love Letter: Saal khatam ho raha hai par hamara pyaar har roz ek nayi shuruat karta hai. Agla saal hamare liye aur haseen hone wala hai meri jaan! ❄️❤️" }
+        };
+
+        function updateMonthlyClue() {
+            const currentMonth = new Date().getMonth();
+            const clueBox = document.getElementById('clue-text');
+            if(clueBox && monthlyLetters[currentMonth]) {
+                clueBox.innerText = `Hint: ${monthlyLetters[currentMonth].clue}`;
+            }
+        }
+
+        // PASSWORD VERIFICATION BLOCK (CONNECTED TO MONTHLY SYSTEM)
+        function verifyPassword() {
+            const val = document.getElementById('gate-pass').value;
+            const currentMonth = new Date().getMonth();
+            
+            if(val === '2703') { 
+                const letterParagraph = document.getElementById('dynamic-letter-text');
+                if(monthlyLetters[currentMonth]) {
+                    letterParagraph.innerText = monthlyLetters[currentMonth].text;
+                }
+                document.getElementById('gate-reveal').style.display = 'block';
+                alert("🔒 Access Granted! This Month's Secret Letter Unlocked.");
+            } else {
+                alert("❌ Wrong code! Hint: Hamari special date yaad karo.");
+            }
         }
 
         function closeEventModal() {
@@ -700,7 +764,7 @@
         document.addEventListener('click', playSecretMusic);
         document.addEventListener('touchstart', playSecretMusic);
 
-        // LIQUID TAB MANAGER SWITCH SPECS WITH SMOOTH JUMP FIX
+        // LIQUID TAB MANAGER SWITCH SPECS
         function switchTab(panelId) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
             document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.remove('active-panel'));
@@ -713,14 +777,6 @@
             }
 
             if(panelId === 'tab-story') { initScratchCard(); }
-            
-            // Seamless smooth anchor jump scrolling explicitly handling the gallery tab trigger context
-            if(panelId === 'tab-gallery') {
-                setTimeout(() => {
-                    const section = document.getElementById('magical-gallery-section');
-                    if(section) section.scrollIntoView({ behavior: 'smooth' });
-                }, 50);
-            }
             playSecretMusic(); 
         }
 
@@ -736,17 +792,6 @@
 
         function closeLightbox() {
             document.getElementById('lightbox-overlay').classList.remove('show-lightbox');
-        }
-
-        // PASSWORD VERIFICATION BLOCK
-        function verifyPassword() {
-            const val = document.getElementById('gate-pass').value;
-            if(val === '2703') { 
-                document.getElementById('gate-reveal').style.display = 'block';
-                alert("🔒 Access Granted! Letter Unlocked My Love.");
-            } else {
-                alert("❌ Wrong code! Hint: Hamari special date yaad karo.");
-            }
         }
 
         // SCRATCH CARD SURPRISE RENDERING LOGIC
@@ -786,7 +831,7 @@
             canvas.addEventListener('touchmove', scratch);
         }
 
-        // ADVANCED DYNAMICALLY CONFIGURED ADAPTIVE REVERB OBJECT GENERATORS POOL
+        // RECONFIGURED ADAPTIVE LAYER OBJECT FALL POOLS
         const romanticPool = ['❤️', '😘', '😍', '🥰', '🤗', '😚', '💖', '✨'];
         const birthdayPool = ['🎈', '🎂', '🎉', '🎁', '✨', '🧁', '🥳', '❤️'];
 
@@ -797,7 +842,7 @@
             const element = document.createElement('div');
             element.classList.add('floating-element');
             
-            // Swaps out pool data configurations purely depending on status flags dynamically synced
+            // Switch falling pool automatically if it's the main Birthday event
             const activePool = isBirthdayToday ? birthdayPool : romanticPool;
             const randomType = activePool[Math.floor(Math.random() * activePool.length)];
             element.innerHTML = randomType;
@@ -819,6 +864,8 @@
         window.onload = () => { 
             initScratchCard(); 
             checkSpecialEvents(); 
+            applyAutoTheme(); // Trigger theme controller on boot load sync
+            updateMonthlyClue(); // Setup current month hint dynamically
         };
     </script>
 </body>
