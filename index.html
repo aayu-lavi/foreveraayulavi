@@ -380,11 +380,10 @@
                     <div class="secret-input-wrapper">
                         <input type="password" id="gate-pass" placeholder="••••" maxlength="4">
                     </div>
-                    <button class="gate-btn" onclick="verifyPassword()">Unlock Letter 🗝️</button>
-                    
-                    <div id="gate-reveal" class="secret-reveal-content">
+                    <div class="secret-reveal-content" id="gate-reveal">
                         <p id="dynamic-letter-text">Loading daily letter content...</p>
                     </div>
+                    <button class="gate-btn" onclick="verifyPassword()">Unlock Letter 🗝️</button>
                 </div>
 
                 <div class="scratch-card-box glowing-box">
@@ -658,8 +657,9 @@
         }
         setInterval(applyAutoTheme, 60000);
 
-        // GLOBAL FLAG TO CONTROL LIVE BACKGROUND OBJECT FALL MODES
+        // GLOBAL STATES TO CONTROL LIVE BACKGROUND OBJECT FALL MODES
         let isBirthdayToday = false;
+        let isAnniversaryToday = false;
 
         // AUTOMATIC BIRTHDAY & ANNIVERSARY REAL TRACKING ENGINE
         function checkSpecialEvents() {
@@ -668,7 +668,6 @@
             const currentMonth = now.getMonth();
             const currentDate = now.getDate();
 
-            // PURE REAL DATES MATRIX CONFIGURED EXACTLY AS REQUESTED
             const events = [
                 { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse beintehaan pyaar karta rahega!" },
                 { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge." },
@@ -688,6 +687,8 @@
                     
                     if (ev.type === "birthday") {
                         isBirthdayToday = true; 
+                    } else if (ev.type === "anniversary") {
+                        isAnniversaryToday = true; 
                     }
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
@@ -759,15 +760,12 @@
         };
 
         function applyWeeklyContent() {
-            const currentDay = new Date().getDay(); // Get index 0-6 (Sunday-Saturday)
+            const currentDay = new Date().getDay(); 
             const content = weeklyContent[currentDay];
 
             if(content) {
-                // Tab 1 Fields
                 document.getElementById('story-title').innerHTML = content.title;
                 document.getElementById('story-paragraph').innerHTML = content.story;
-
-                // Tab 2 Fields
                 document.getElementById('fact-title-1').innerHTML = content.fact1;
                 document.getElementById('fact-desc-1').innerHTML = content.factDesc1;
                 document.getElementById('fact-title-2').innerHTML = content.fact2;
@@ -777,13 +775,13 @@
             }
         }
 
-        // 31-DAY DYNAMIC LETTER CRYPTO ENGINE MATRIX (Har date ke liye alag text aur hint)
+        // 31-DAY DYNAMIC LETTER CRYPTO ENGINE MATRIX
         const dailyLetters = {
             1: { clue: "Month ki starting digital counting number?", text: "Taarekh 1: Lovie meri jaan, naya din aur hamara pyaar har roz ek nayi unchai ko chhuega! 🌸" },
             2: { clue: "Ek aur ek kitne hote hain?", text: "Taarekh 2: Tum aur main milkar poori ek duniya banate hain, tum meri saans ho! ❤️" },
             3: { clue: "Traffic light me kitne colors hote hain?", text: "Taarekh 3: Meri khushi tumhari ek smile se shuru hoti hai mera baccha! 🥰" },
             4: { clue: "Ek gaadi me kitne tyre hote hain?", text: "Taarekh 4: Tum gusse me jab mar khani hai bolti ho na, mera din ban jata hai! 🤭" },
-            5: { clue: "Haath me kitni ungliyan hoti hain?", text: "Taarekh 5: Main busy rahoon ya free, mera dil aur focus hamesha tumhare paas hi rehta hai! ⚙️" },
+            5: { clue: "Haath me kitni ungliyan hoti hain?", text: "Taarekh 5: Main busy schedule me bhi rahoon, mera dil aur focus hamesha tumhare paas hi rehta hai! ⚙️" },
             6: { clue: "Chhah (6) ko English me kya kehte hain?", text: "Taarekh 6: Tumse baat kiye bina mujhe raat ko nind tak nahi aati, Lovie! 🔒" },
             7: { clue: "Ek hafte (week) me kitne din hote hain?", text: "Taarekh 7: Saath janam tak sirf aur sirf tumhara hi rehna hai mujhe! ♾️" },
             8: { clue: "Oat (8) ko Hindi me kya likhte hain?", text: "Taarekh 8: Danke ki chot par poori duniya ke samne bolta hoon—I Love You Lovie! 💎" },
@@ -827,20 +825,17 @@
             const todayDate = new Date().getDate();
             const todayDay = new Date().getDay();
             
-            // Apply Daily Clue Hints
             const clueBox = document.getElementById('clue-text');
             if(clueBox && dailyLetters[todayDate]) {
                 clueBox.innerText = `Hint: ${dailyLetters[todayDate].clue}`;
             }
 
-            // Apply Daily Scratch Card Rewards
             const rewardBox = document.getElementById('scratch-reward-text');
             if(rewardBox && weeklyRewards[todayDay]) {
                 rewardBox.innerText = weeklyRewards[todayDay];
             }
         }
 
-        // PASSWORD VERIFICATION ENGINE WITH DYNAMIC DATES MAPPED
         function verifyPassword() {
             const val = document.getElementById('gate-pass').value;
             const todayDate = new Date().getDate();
@@ -861,7 +856,6 @@
             document.getElementById('event-overlay-modal').classList.remove('show-modal');
         }
 
-        // 100% INVISIBLE BACKGROUND AUDIO AUTOPLAY TRIGGER (TAP ANYWHERE)
         let musicStarted = false;
         function playSecretMusic() {
             if (!musicStarted) {
@@ -876,7 +870,6 @@
         document.addEventListener('click', playSecretMusic);
         document.addEventListener('touchstart', playSecretMusic);
 
-        // LIQUID TAB MANAGER SWITCH SPECS
         function switchTab(panelId) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
             document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.remove('active-panel'));
@@ -899,7 +892,6 @@
             playSecretMusic(); 
         }
 
-        // PHOTO LIGHTBOX SCREEN SPEC CONTROLS
         function viewLightbox(card) {
             const imgSrc = card.querySelector('img').src;
             const captionText = card.querySelector('p').innerText;
@@ -913,7 +905,6 @@
             document.getElementById('lightbox-overlay').classList.remove('show-lightbox');
         }
 
-        // SCRATCH CARD SURPRISE RENDERING LOGIC
         function initScratchCard() {
             const canvas = document.getElementById('scratch-layer');
             if(!canvas) return;
@@ -950,9 +941,10 @@
             canvas.addEventListener('touchmove', scratch);
         }
 
-        // RECONFIGURED ADAPTIVE LAYER OBJECT FALL POOLS
+        // 3-WAY LAYER OBJECT FALL POOLS (ROMANTIC, BIRTHDAY & ANNIVERSARY ADDED)
         const romanticPool = ['❤️', '😘', '😍', '🥰', '🤗', '😚', '💖', '✨'];
         const birthdayPool = ['🎈', '🎂', '🎉', '🎁', '✨', '🧁', '🥳', '❤️'];
+        const anniversaryPool = ['💍', '❤️', '✨', '👩‍❤️‍👨', '🥂', '💖', '💎', '🌹'];
 
         function createFloatingElement() {
             const container = document.getElementById('hearts-container');
@@ -961,7 +953,14 @@
             const element = document.createElement('div');
             element.classList.add('floating-element');
             
-            const activePool = isBirthdayToday ? birthdayPool : romanticPool;
+            // Evaluates exact status flags to shift falling pools safely
+            let activePool = romanticPool;
+            if (isBirthdayToday) {
+                activePool = birthdayPool;
+            } else if (isAnniversaryToday) {
+                activePool = anniversaryPool;
+            }
+            
             const randomType = activePool[Math.floor(Math.random() * activePool.length)];
             element.innerHTML = randomType;
             
@@ -984,7 +983,7 @@
             checkSpecialEvents(); 
             applyAutoTheme(); 
             updateDailyFeatures(); 
-            applyWeeklyContent(); // Load dynamic modern weekly narrative text on load sync
+            applyWeeklyContent(); 
         };
     </script>
 </body>
