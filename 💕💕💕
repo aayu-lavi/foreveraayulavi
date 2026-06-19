@@ -149,7 +149,7 @@
             100% { box-shadow: 0 0 25px rgba(0,0,0,0.7), 0 0 15px rgba(255, 77, 109, 0.35); border-color: rgba(255, 77, 109, 0.5); }
         }
 
-    /* Glass Counter Panel */
+        /* Glass Counter Panel */
         .counter-container {
             margin: 0 auto 40px auto; padding: 25px 15px; max-width: 720px; text-align: center;
         }
@@ -160,6 +160,11 @@
         .timer-box label { display: block; font-size: 0.65rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
         .timer-box:not(:last-child)::after {
             content: '❤️'; position: absolute; right: -15%; top: 15%; font-size: 0.9rem; opacity: 0.8; animation: pulseAura 1s infinite alternate;
+        }
+
+        .section-title { 
+            color: #fff; font-size: 2.3rem; margin-bottom: 50px; text-align: center; font-weight: 700;
+            letter-spacing: 1px; text-shadow: 0 0 10px var(--neon-glow);
         }
 
         /* Grids Setup */
@@ -266,9 +271,9 @@
     <div class="plasma-glow plasma-2"></div>
     <div class="plasma-glow plasma-3"></div>
 
-   <!-- HIDDEN AUDIO STREAM ELEMENT MODULE -->
-<audio id="romantic-audio" src="romantic.mp3" loop></audio>
-    
+    <!-- 100% INVISIBLE LOCAL AUDIO STREAM MODULE -->
+    <audio id="romantic-audio" src="romantic.mp3" loop></audio>
+
     <div class="container">
 
         <header>
@@ -300,7 +305,7 @@
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
-                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai, har ek din jo tumhare sath beet raha hai wo mere liye upar wale ka sabse bada tohfa hai. Yeh website sirf ek normal page nahi hai meri jaan, ye hamare us beintehaan pyaar ka ek chota sa aaina hai jise github par jab bhi tum dekhogi toh tumhe ehsaas hoga ki tum is duniya me mere liye kitni qeemti aur sabse upar ho. Jab tum baat-baat par mujhe pareshan karne ki baat karti ho aur dher saare "sorry" bhejti ho na, toh tum nahi jaanti ki mujhe tumhara wo pareshan karna bhi duniya me sabse pyaara lagta hai.</p>
+                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai, har ek din jo tumhare sath beet raha hai wo mere liye upar wale ka sabse bada tohfa hai. Yeh website sirf ek normal page nahi hai meri jaan, ye hamare us beintehaan pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi toh tumhe ehsaas hoga ki tum is duniya me mere liye kitni qeemti aur sabse upar ho. Jab tum baat-baat par mujhe pareshan karne ki baat karti ho aur dher saare "sorry" bhejti ho na, toh tum nahi jaanti ki mujhe tumhara wo pareshan karna bhi duniya me sabse pyaara lagta hai.</p>
                 <p>Tum jab gusse me ya udaas hokar mujhse poochti ho na ki "Agar mae gusse me kuch kar bhi lu tobhi aap ko fark bhi padega?", toh kaan khol kar sun lo Lovie—tumse baat kiye bina mujhe raat ko nind tak nahi aati, tum meri har ek saans ho, meri poori jaan ho! Jab main khet par rahoon ya plant par kaam ke beech kitna bhi busy rahoon, chahe main apne dost Chulbuli ke sath rahoon ya badam ke ped ke pass, mere dil aur dimaag me har ek second sirf aur sirf tumhari yaadein chalti hain. Main is duniya me kisi se darta nahi hoon, khuleaam sabke samne danke ki chot par pyaar karta hoon tumse, aur humne jo hamesha ke liye ek doosre ke sath shaadi ka faisla kiya hai use main apni aakhri saans tak har haal me poora karunga. Jab main saare kaam chhod kar tumhare paas aaunga na, tab jitna man kare utna dher sara pyaar kar lena aur dher saari baatein kar lena. <span>Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Hamesha ke liye sath rehna hai, Lovie.</span></p>
             </section>
 
@@ -591,20 +596,19 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 100% INVISIBLE BACKGROUND AUDIO AUTOPLAY TRIGGER
+        // 100% INVISIBLE BACKGROUND AUDIO AUTOPLAY TRIGGER (TAP ANYWHERE)
         let musicStarted = false;
         function playSecretMusic() {
             if (!musicStarted) {
                 const audio = document.getElementById('romantic-audio');
-                // Cross-browser volume normalization
-                audio.volume = 0.6; 
+                audio.volume = 0.55; // Perfect background volume for Lofi reverb
                 audio.play().then(() => {
                     musicStarted = true;
-                    console.log("Romantic track triggered invisibly via tap!");
-                }).catch(e => console.log("Waiting for screen click..."));
+                    console.log("Dhun Lofi activated perfectly!");
+                }).catch(e => console.log("Waiting for touch interaction..."));
             }
         }
-        // Purii screen par kahi bhi click/tap karne par automatic play ho jayega
+        // Purii body par kahi bhi click/tap karne par automatic play ho jayega
         document.addEventListener('click', playSecretMusic);
         document.addEventListener('touchstart', playSecretMusic);
 
@@ -621,7 +625,7 @@
             }
 
             if(panelId === 'tab-story') { initScratchCard(); }
-            playSecretMusic(); // Switch karne par bhi automatic music handle karega
+            playSecretMusic(); // Switch tabs will also activate the audio
         }
 
         // PHOTO LIGHTBOX SCREEN SPEC CONTROLS
