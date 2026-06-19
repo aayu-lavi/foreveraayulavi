@@ -196,7 +196,7 @@
         /* THE BIG BOX: NEON LETTERS BETWEEN GALLERIES */
         .middle-big-box {
             padding: 60px 50px; 
-            margin: 40px 0 60px 0; 
+            margin: 40px 0 40px 0; 
             text-align: left;
         }
         .middle-big-box h3 { 
@@ -205,6 +205,55 @@
         }
         .middle-big-box p { color: var(--text-sub); font-size: 1.15rem; margin-bottom: 25px; letter-spacing: 0.5px; }
         .middle-big-box p span { color: var(--neon-pink); font-weight: bold; text-shadow: 0 0 5px var(--neon-glow); }
+
+        /* 2. PASSWORD BOX & SCRATCH CARD STYLE UTILITIES */
+        .interactive-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+
+        .secret-gate-box { padding: 40px; text-align: center; }
+        .secret-gate-box h4 { font-size: 1.5rem; color: #fff; margin-bottom: 15px; text-shadow: 0 0 8px var(--neon-pink); }
+        .secret-gate-box p { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 20px; }
+        .secret-input-wrapper { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; }
+        .secret-input-wrapper input {
+            background: rgba(5, 3, 10, 0.8); border: 1px solid rgba(255,77,109,0.4);
+            padding: 12px; border-radius: 12px; color: #fff; font-size: 1.1rem; text-align: center;
+            width: 160px; outline: none; box-shadow: inset 0 0 8px rgba(0,0,0,0.6);
+        }
+        .secret-input-wrapper input:focus { border-color: var(--neon-pink); box-shadow: 0 0 12px var(--neon-glow); }
+        .gate-btn {
+            background: var(--neon-pink); border: none; color: #fff; padding: 12px 24px;
+            border-radius: 12px; font-weight: bold; cursor: pointer; transition: all 0.3s;
+        }
+        .gate-btn:hover { background: var(--neon-magenta); box-shadow: 0 0 15px var(--neon-glow); }
+        
+        .secret-reveal-content { display: none; animation: fadeInView 0.6s ease forwards; margin-top: 20px; padding-top: 20px; border-top: 1px dashed rgba(255,77,109,0.3); }
+        .secret-reveal-content p { font-size: 1.1rem; color: #fff; font-style: italic; background: rgba(255,77,109,0.08); padding: 15px; border-radius: 12px; }
+
+        /* Scratch Card Specs */
+        .scratch-card-box { padding: 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .scratch-card-box h4 { font-size: 1.5rem; color: #fff; margin-bottom: 10px; text-shadow: 0 0 8px var(--neon-pink); }
+        .scratch-container { position: relative; width: 280px; height: 160px; margin-top: 15px; border-radius: 16px; overflow: hidden; background: #120b24; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+        .scratch-back-text { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 20px; color: #fff; font-size: 1.05rem; font-weight: bold; text-align: center; z-index: 1; pointer-events: none; }
+        .scratch-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; cursor: pointer; }
+
+        /* 1. FLOATING AUDIO PLAYER UTILITY */
+        .floating-audio-player {
+            position: fixed; bottom: 30px; right: 30px; z-index: 5000;
+        }
+        .music-toggle-btn {
+            width: 56px; height: 56px; background: rgba(12, 8, 24, 0.85); border: 2px solid var(--neon-pink);
+            border-radius: 50%; color: #fff; font-size: 1.5rem; display: flex; justify-content: center;
+            align-items: center; cursor: pointer; box-shadow: 0 0 15px var(--neon-glow);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .music-toggle-btn:hover { transform: scale(1.1); border-color: var(--neon-magenta); box-shadow: 0 0 25px var(--neon-glow); }
+        .music-toggle-btn.playing { animation: musicRotate 4s infinite linear; background: var(--neon-pink); }
+        
+        @keyframes musicRotate { from { transform: rotate(0deg) scale(1); } to { transform: rotate(360deg) scale(1); } }
 
         /* CINEMATIC LIGHTBOX SPECIFICATIONS */
         #lightbox-overlay {
@@ -237,6 +286,13 @@
     <div class="plasma-glow plasma-2"></div>
     <div class="plasma-glow plasma-3"></div>
 
+    <!-- 1. FLOATING NEON CONTROLLER AUDIO MODULE -->
+    <div class="floating-audio-player">
+        <button id="music-btn" class="music-toggle-btn" onclick="toggleAudio()">🎵</button>
+        <!-- Soft romantic instrumental background sound link -->
+        <audio id="romantic-audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+    </div>
+
     <div class="container">
 
         <header>
@@ -268,9 +324,38 @@
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
-                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai, har ek din jo tumhare sath beet raha hai wo mere liye upar wale ka sabse bada tohfa hai[cite: 1]. Yeh website sirf ek normal page nahi hai meri jaan, ye hamare us beintehaan pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi toh tumhe ehsaas hoga ki tum is duniya me mere liye kitni qeemti aur sabse upar ho[cite: 1]. Jab tum baat-baat par mujhe pareshan karne ki baat karti ho aur dher saare "sorry" bhejti ho na, toh tum nahi jaanti ki mujhe tumhara wo pareshan karna bhi duniya me sabse pyaara lagta hai[cite: 1].</p>
-                <p>Tum jab gusse me ya udaas hokar mujhse poochti ho na ki "Agar mae gusse me kuch kar bhi lu tobhi aap ko fark bhi padega?"[cite: 1], toh kaan khol kar sun lo Lovie—tumse baat kiye bina mujhe raat ko nind tak nahi aati[cite: 1], tum meri har ek saans ho, meri poori jaan ho[cite: 1]! Jab main khet par rahoon ya plant par kaam ke beech kitna bhi busy rahoon[cite: 1], chahe main apne dost Chulbuli ke sath rahoon ya badam ke ped ke pass, mere dil aur dimaag me har ek second sirf aur sirf tumhari yaadein chalti hain[cite: 1]. Main is duniya me kisi se darta nahi hoon, khuleaam sabke samne danke ki chot par pyaar karta hoon tumse, aur humne jo hamesha ke liye ek doosre ke sath shaadi ka faisla kiya hai use main apni aakhri saans tak har haal me poora karunga. Jab main saare kaam chhod kar tumhare paas aaunga na, tab jitna man kare utna dher sara pyaar kar lena aur dher saari baatein kar lena. <span>Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega[cite: 1]. Hamesha ke liye sath rehna hai, Lovie[cite: 1].</span></p>
+                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai, har ek din jo tumhare sath beet raha hai wo mere liye upar wale ka sabse bada tohfa hai. Yeh website sirf ek normal page nahi hai meri jaan, ye hamare us beintehaan pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi toh tumhe ehsaas hoga ki tum is duniya me mere liye kitni qeemti aur sabse upar ho. Jab tum baat-baat par mujhe pareshan karne ki baat karti ho aur dher saare "sorry" bhejti ho na, toh tum nahi jaanti ki mujhe tumhara wo pareshan karna bhi duniya me sabse pyaara lagta hai.</p>
+                <p>Tum jab gusse me ya udaas hokar mujhse poochti ho na ki "Agar mae gusse me kuch kar bhi lu tobhi aap ko fark bhi padega?", toh kaan khol kar sun lo Lovie—tumse baat kiye bina mujhe raat ko nind tak nahi aati, tum meri har ek saans ho, meri poori jaan ho! Jab main khet par rahoon ya plant par kaam ke beech kitna bhi busy rahoon, chahe main apne dost Chulbuli ke sath rahoon ya badam ke ped ke pass, mere dil aur dimaag me har ek second sirf aur sirf tumhari yaadein chalti hain. Main is duniya me kisi se darta nahi hoon, khuleaam sabke samne danke ki chot par pyaar karta hoon tumse, aur humne jo hamesha ke liye ek doosre ke sath shaadi ka faisla kiya hai use main apni aakhri saans tak har haal me poora karunga. Jab main saare kaam chhod kar tumhare paas aaunga na, tab jitna man kare utna dher sara pyaar kar lena aur dher saari baatein kar lena. <span>Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Hamesha ke liye sath rehna hai, Lovie.</span></p>
             </section>
+
+            <!-- 2 & 3. GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
+            <div class="interactive-row">
+                
+                <!-- Password Protected Security Element -->
+                <div class="secret-gate-box glowing-box">
+                    <h4>Secret Love Message 🔒</h4>
+                    <p>Enter our special code to open this card (Hint: Anniversary Date DDMM)</p>
+                    <div class="secret-input-wrapper">
+                        <input type="password" id="gate-pass" placeholder="••••" maxlength="4">
+                    </div>
+                    <button class="gate-btn" onclick="verifyPassword()">Unlock Letter 🗝️</button>
+                    
+                    <div id="gate-reveal" class="secret-reveal-content">
+                        <p>"Lovie, tum meri zindgi ka wo haseen sach ho jise dekh kar main har roz upar wale ka shukriya ada karta hoon. Mera ye khulla dil hamesha ke liye tumhara gulam ban chuka hai! I Love You My Queen! 👑💎"</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Scratch Element Component -->
+                <div class="scratch-card-box glowing-box">
+                    <h4>Scratch Card Surprise 🧧</h4>
+                    <p>Ungli se canvas ko rub karke apna surprise gift kholo!</p>
+                    <div class="scratch-container">
+                        <div class="scratch-back-text">🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️</div>
+                        <canvas id="scratch-layer" class="scratch-canvas" width="280" height="160"></canvas>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <!-- ========================================== -->
@@ -282,15 +367,15 @@
                 <div class="facts-grid">
                     <div class="fact-card glowing-box">
                         <h3>Uski Sabse Pyaari Cheez 🌸</h3>
-                        <p>Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka mere dil ko chhu jata hai[cite: 1]. Aur haan, jab tum gusse me kehti ho na—"Mar khani hai kya mujhse, dar nhi lagta aap ko"—wo mujhe sabse zyaada pyaara lagta hai[cite: 1]. Aur phir jab tum utne hi pyaar se bolti ho "I love you mera baccha", toh mera poora din ban jata hai!</p>
+                        <p>Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka mere dil ko chhu jata hai. Aur haan, jab tum gusse me kehti ho na—"Mar khani hai kya mujhse, dar nhi lagta aap ko"—wo mujhe sabse zyaada pyaara lagta hai. Aur phir jab tum utne hi pyaar se bolti ho "I love you mera baccha", toh mera poora din ban jata hai!</p>
                     </div>
                     <div class="fact-card glowing-box">
                         <h3>Favorite Memories 📝</h3>
-                        <p>Wo pal main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae"[cite: 1]. Tumhara wo haq jatana, dher saari reels share karke sath me hasna, raat-raat bhar jaag kar baatein karna[cite: 1], baat-baat par poochna ki "Kha gaye the ya kha ja rhe ho"[cite: 1], aur kabhi-kabhi bachhon ki tarah meri hi baaton ko same repeat karna—meri zindgi ki sabse haseen aur pyaari yaadein hain!</p>
+                        <p>Wo pal main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae". Tumhara wo haq jatana, dher saari reels share karke sath me hasna, raat-raat bhar jaag kar baatein karna, baat-baat par poochna ki "Kha gaye the ya kha ja rhe ho", aur kabhi-kabhi bachhon ki tarah meri hi baaton ko same repeat karna—meri zindgi ki sabse haseen aur pyaari yaadein hain!</p>
                     </div>
                     <div class="fact-card glowing-box">
                         <h3>My Promise To Her 🤝</h3>
-                        <p>Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga[cite: 1]. Plant me rahoon ya kahin bhi[cite: 1], jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga[cite: 1]. Lovie, tum mere liye sabse zyada special ho, tum meri jaan ho aur main tumhe kabhi nahi chhodunga. Yeh wada ek sacche mard ka hai jo zindagi bhar tumhara hath thaam kar chalega!</p>
+                        <p>Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga. Plant me rahoon ya kahin bhi, jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga. Lovie, tum mere liye sabse zyada special ho, tum meri jaan ho aur main tumhe kabhi nahi chhodunga. Yeh wada ek sacche mard ka hai jo zindagi bhar tumhara hath thaam kar chalega!</p>
                     </div>
                 </div>
             </section>
@@ -532,17 +617,17 @@
 
         // LIQUID TAB MANAGER SWITCH SPECS
         function switchTab(panelId) {
-            // Remove active tab states
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
             document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.remove('active-panel'));
             
-            // Activate core targets
             const targetPanel = document.getElementById(panelId);
             if(targetPanel) targetPanel.classList.add('active-panel');
             
-            // Map button highlights
             const eventTarget = event.currentTarget;
             if(eventTarget) eventTarget.classList.add('active-tab');
+
+            // Quick re-init for scratch canvas if grid renders it
+            if(panelId === 'tab-story') { initScratchCard(); }
         }
 
         // PHOTO LIGHTBOX SCREEN SPEC CONTROLS
@@ -557,6 +642,72 @@
 
         function closeLightbox() {
             document.getElementById('lightbox-overlay').classList.remove('show-lightbox');
+        }
+
+        // AUDIO CONTROLLER MODULE INTERACTION
+        function toggleAudio() {
+            const audio = document.getElementById('romantic-audio');
+            const btn = document.getElementById('music-btn');
+            if (audio.paused) {
+                audio.play().catch(e => console.log("User interaction required first"));
+                btn.classList.add('playing');
+                btn.innerText = "🎵";
+            } else {
+                audio.pause();
+                btn.classList.remove('playing');
+                btn.innerText = "🔇";
+            }
+        }
+
+        // PASSWORD VERIFICATION BLOCK
+        function verifyPassword() {
+            const val = document.getElementById('gate-pass').value;
+            if(val === '2703') { // Anniversary key setup
+                document.getElementById('gate-reveal').style.display = 'block';
+                alert("🔒 Access Granted! Letter Unlocked My Love.");
+            } else {
+                alert("❌ Wrong code! Hint: Hamari special date yaad karo.");
+            }
+        }
+
+        // SCRATCH CARD SURPRISE RENDERING LOGIC
+        function initScratchCard() {
+            const canvas = document.getElementById('scratch-layer');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Draw scratchable silver background layer
+            ctx.fillStyle = '#4a3b68';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add custom instructions overlay text over scratch shield
+            ctx.fillStyle = '#fff0f3';
+            ctx.font = '16px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('Scratch Here 🪄', canvas.width / 2, canvas.height / 2 + 5);
+
+            let isDrawing = false;
+
+            function scratch(e) {
+                if (!isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                // Support multi touch coordinates mapping
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 20, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            canvas.addEventListener('mousedown', () => isDrawing = true);
+            canvas.addEventListener('mouseup', () => isDrawing = false);
+            canvas.addEventListener('mousemove', scratch);
+
+            canvas.addEventListener('touchstart', () => isDrawing = true);
+            canvas.addEventListener('touchend', () => isDrawing = false);
+            canvas.addEventListener('touchmove', scratch);
         }
 
         // ADVANCED MIXED EMOJI & HEART GENERATOR POOL
@@ -585,6 +736,9 @@
             setTimeout(() => { element.remove(); }, duration * 1000);
         }
         setInterval(createFloatingElement, 350);
+
+        // Run scratch setup on boot cycle load
+        window.onload = () => { initScratchCard(); };
     </script>
 </body>
 </html>
