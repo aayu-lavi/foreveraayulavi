@@ -149,7 +149,7 @@
             100% { box-shadow: 0 0 25px rgba(0,0,0,0.7), 0 0 15px rgba(255, 77, 109, 0.35); border-color: rgba(255, 77, 109, 0.5); }
         }
 
-     /* Glass Counter Panel */
+    /* Glass Counter Panel */
         .counter-container {
             margin: 0 auto 40px auto; padding: 25px 15px; max-width: 720px; text-align: center;
         }
@@ -158,9 +158,8 @@
         .timer-box { width: 24%; position: relative; }
         .timer-box span { display: block; font-size: 1.8rem; font-weight: 800; color: #fff; text-shadow: 0 0 10px var(--neon-pink); line-height: 1.1; margin-bottom: 3px; }
         .timer-box label { display: block; font-size: 0.65rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-        .section-title { 
-            color: #fff; font-size: 2.3rem; margin-bottom: 50px; text-align: center; font-weight: 700;
-            letter-spacing: 1px; text-shadow: 0 0 10px var(--neon-glow);
+        .timer-box:not(:last-child)::after {
+            content: '❤️'; position: absolute; right: -15%; top: 15%; font-size: 0.9rem; opacity: 0.8; animation: pulseAura 1s infinite alternate;
         }
 
         /* Grids Setup */
