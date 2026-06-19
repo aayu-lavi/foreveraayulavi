@@ -292,7 +292,7 @@
         .gate-btn:hover { background: var(--neon-magenta); box-shadow: 0 0 15px var(--neon-glow); }
         
         .secret-reveal-content { display: none; animation: fadeInView 0.6s ease forwards; margin-top: 20px; padding-top: 20px; border-top: 1px dashed rgba(255,77,109,0.3); }
-        .secret-reveal-content p { font-size: 1.1rem; color: #fff; font-style: italic; background: rgba(255,77,109,0.08); padding: 15px; border-radius: 12px; }
+        .secret-reveal-content p { font-size: 1.1rem; color: #fff; font-style: italic; background: rgba(255, 77, 109, 0.08); padding: 15px; border-radius: 12px; }
         #clue-text { font-weight: bold; color: var(--neon-pink); display: block; margin-top: 5px; }
 
         /* Scratch Card Specs */
@@ -325,7 +325,6 @@
 </head>
 <body>
 
-    <!-- Dynamic Event Fullscreen Modal -->
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
@@ -334,15 +333,12 @@
         </div>
     </div>
 
-    <!-- Emoji & Heart Particles Container -->
     <div id="hearts-container"></div>
 
-    <!-- Soft Plasma Lighting Background -->
     <div class="plasma-glow plasma-1"></div>
     <div class="plasma-glow plasma-2"></div>
     <div class="plasma-glow plasma-3"></div>
 
-    <!-- 100% INVISIBLE LOCAL AUDIO STREAM MODULE -->
     <audio id="romantic-audio" src="romantic.mp3" loop></audio>
 
     <div class="container">
@@ -352,10 +348,8 @@
             <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
         </header>
 
-        <!-- Advance Coming Soon Event Banner -->
         <div id="event-banner" class="advance-event-banner"></div>
 
-        <!-- Glowing Counter Panel -->
         <div class="counter-container glowing-box">
             <h2>Hamare Sath Ke Haseen Pal ✨</h2>
             <div class="timer">
@@ -366,27 +360,20 @@
             </div>
         </div>
 
-        <!-- NEW PREMIUM STYLE TABS NAVIGATION CONTROLS -->
         <div class="tabs-nav">
-            <button class="tab-btn active-tab" onclick="switchTab('tab-story')">Hamari Kahani 📖</button>
-            <button class="tab-btn" onclick="switchTab('tab-about')">Everything About Her 🌸</button>
-            <button class="tab-btn" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
+            <button class="tab-btn active-tab" id="btn-story" onclick="switchTab('tab-story')">Hamari Kahani 📖</button>
+            <button class="tab-btn" id="btn-about" onclick="switchTab('tab-about')">Everything About Her 🌸</button>
+            <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
         </div>
 
-        <!-- ========================================== -->
-        <!-- TAB MODULE 1: HAMARI KAHANI PANEL -->
-        <!-- ========================================== -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
-                <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
-                <p>Hey Lovie, ye zindgi tumhare aane ke baad se ekdum badal si gayi hai, har ek din jo tumhare sath beet raha hai wo mere liye upar wale ka sabse bada tohfa hai. Yeh website sirf ek normal page nahi hai meri jaan, ye hamare us beintehaan pyaar ka ek chota sa aaina hai jise jab bhi tum dekhogi toh tumhe ehsaas hoga ki tum is duniya me mere liye kitni qeemti aur sabse upar ho. Jab tum baat-baat par mujhe pareshan karne ki baat karti ho aur dher saare "sorry" bhejti ho na, toh tum nahi jaanti ki mujhe tumhara wo pareshan karna bhi duniya me sabse pyaara lagta hai.</p>
-                <p>Tum jab gusse me ya udaas hokar mujhse poochti ho na ki "Agar mae gusse me kuch kar bhi lu tobhi aap ko fark bhi padega?", toh kaan khol kar sun lo Lovie—tumse baat kiye bina mujhe raat ko nind tak nahi aati, tum meri har ek saans ho, meri poori jaan ho! Jab main khet par rahoon ya plant par kaam ke beech kitna bhi busy rahoon, chahe main apne dost Chulbuli ke sath rahoon ya badam ke ped ke pass, mere dil aur dimaag me har ek second sirf aromatic aur tumhari yaadein chalti hain. Main is duniya me kisi se darta nahi hoon, khuleaam sabke samne danke ki chot par pyaar karta hoon tumse, aur humne jo hamesha ke liye ek doosre ke sath shaadi ka faisla kiya hai use main apni aakhri saans tak har haal me poora karunga. Jab main saare kaam chhod kar tumhare paas aaunga na, tab jitna man kare utna dher sara pyaar kar lena aur dher saari baatein kar lena. <span>Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Hamesha ke liye sath rehna hai, Lovie.</span></p>
+                <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
+                <p id="story-paragraph">Loading our aesthetic journey text...</p>
             </section>
 
-            <!-- GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
             <div class="interactive-row">
                 
-                <!-- Password Protected Security Element -->
                 <div class="secret-gate-box glowing-box">
                     <h4>Secret Love Message 🔒</h4>
                     <p>Enter our special code to open this card <span id="clue-text">Hint: Loading Daily Clue...</span></p>
@@ -400,7 +387,6 @@
                     </div>
                 </div>
 
-                <!-- Interactive Scratch Element Component -->
                 <div class="scratch-card-box glowing-box">
                     <h4>Scratch Card Surprise 🧧</h4>
                     <p>Ungli se canvas ko rub karke apna surprise gift kholo!</p>
@@ -413,35 +399,28 @@
             </div>
         </div>
 
-        <!-- ========================================== -->
-        <!-- TAB MODULE 2: ABOUT HER PANEL -->
-        <!-- ========================================== -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Everything About Her</h2>
                 <div class="facts-grid">
                     <div class="fact-card glowing-box">
-                        <h3>Uski Sabse Pyaari Cheez 🌸</h3>
-                        <p>Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka mere dil ko chhu jata hai. Aur haan, jab tum gusse me kehti ho na—"Mar khani hai kya mujhse, dar nhi lagta aap ko"—wo mujhe sabse zyaada pyaara lagta hai. Aur phir jab tum utne hi pyaar se bolti ho "I love you mera baccha", toh mera poora din ban jata hai!</p>
+                        <h3 id="fact-title-1">Uski Sabse Pyaari Cheez 🌸</h3>
+                        <p id="fact-desc-1">Loading today's cute trait details...</p>
                     </div>
                     <div class="fact-card glowing-box">
-                        <h3>Favorite Memories 📝</h3>
-                        <p>Wo pal main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae". Tumhara wo haq jatana, dher saari reels share karke sath me hasna, raat-raat bhar jaag kar baatein karna, baat-baat par poochna ki "Kha gaye the ya kha ja rhe ho", aur kabhi-kabhi bachhon ki tarah meri hi baaton ko same repeat karna—meri zindgi ki sabse haseen aur pyaari yaadein hain!</p>
+                        <h3 id="fact-title-2">Favorite Memories 📝</h3>
+                        <p id="fact-desc-2">Loading today's beautiful memory archive...</p>
                     </div>
                     <div class="fact-card glowing-box">
-                        <h3>My Promise To Her 🤝</h3>
-                        <p>Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga. Plant me rahoon ya kaihin bhi, jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga. Lovie, tum mere liye sabse zyada special ho, tum meri jaan ho aur main tumhe kabhi nahi chhodunga. Yeh wada ek sacche mard ka hai jo zindagi bhar tumhara hath thaam kar chalega!</p>
+                        <h3 id="fact-title-3">My Promise To Her 🤝</h3>
+                        <p id="fact-desc-3">Loading today's loyalty commitment...</p>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- ========================================== -->
-        <!-- TAB MODULE 3: THE COMPREHENSIVE MAGICAL GALLERY PANEL -->
-        <!-- ========================================== -->
         <div id="tab-gallery" class="tab-content-panel">
             
-            <!-- SUB-GALLERY 1: 15 SLOTS -->
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
                 <div class="gallery-grid">
@@ -508,7 +487,6 @@
                 </div>
             </section>
 
-            <!-- SUB-GALLERY 2: 30 SLOTS -->
             <section class="gallery-section">
                 <h2 class="section-title">More Beautiful Moments</h2>
                 <div class="gallery-grid">
@@ -638,7 +616,6 @@
 
     </div>
 
-    <!-- HIGH-TECH THEATRICAL LIGHTBOX COMPONENT OVERLAY -->
     <div id="lightbox-overlay" onclick="closeLightbox()">
         <div class="lightbox-window" onclick="event.stopPropagation()">
             <button class="lightbox-close-btn" onclick="closeLightbox()">×</button>
@@ -728,16 +705,88 @@
             });
         }
 
+        // MODERN HIGH-AESTHETIC WEEKLY ROTATION CONTENT MATRIX
+        const weeklyContent = {
+            0: { // Sunday
+                title: "Our Infinite Serenity 🌌💖",
+                story: "Lovie, life with you feels like a beautiful sunset that never fades. Out of all the chaos in the world, your embrace is the only place where my soul finds true peace. This platform isn't just code; it's a living archive of my absolute devotion to you. Every laugh we share, every late-night conversation, and even the sweet little moments when you call me to check up on me—they all remind me how incredibly blessed I am to have you as my forever.",
+                fact1: "Her Soulful Grace ✨", factDesc1: "The elegant way you handle everything and your natural warmth just pull me closer to you every single day. You inspire me to be the best version of myself.",
+                fact2: "Midnight Echoes 🌙", factDesc2: "Those endless hours when the world sleeps, but we are completely lost in our own conversations, mapping out our beautiful future together.",
+                fact3: "The Lifetime Vow 💍", factDesc3: "No matter how demanding the day gets, my ultimate priority will always be you. I promise to always preserve this beautiful bond we share."
+            },
+            1: { // Monday
+                title: "A New Dawn of Us 🕊️✨",
+                story: "Starting a new week always reminds me of how far we've come, Lovie. Even when we are miles apart or stuck in our daily routines, you remain the constant anchor of my mind. Your love gives me the clarity and strength to handle anything life throws at me. Knowing that we belong together, and that every passing day brings us closer to our forever, makes every single moment completely worth it.",
+                fact1: "Radiant Aura 🌸", factDesc1: "Your breathtaking smile has this rare capability to instantly light up even my most stressful days. You are my permanent happiness.",
+                fact2: "Unspoken Synergy 🎯", factDesc2: "How we naturally finish each other's sentences and understand exactly what the other is feeling without even saying a single word.",
+                fact3: "Constant Sanctuary 🛡️", factDesc3: "I promise to be your safest space. Whenever you feel overwhelmed, just close your eyes and remember that my heart beats entirely for you."
+            },
+            2: { // Tuesday
+                title: "Elegance In Every Heartbeat 💎💞",
+                story: "They say true love changes your entire perspective, and you did exactly that to my universe. You've brought an effortless grace into my life that I never knew existed. When you check up on me with so much genuine care, asking me if I've eaten or if I'm resting well, it fills my heart with a profound warmth. I choose you today, tomorrow, and for all the lifetimes that follow.",
+                fact1: "Purest Core 🤍", factDesc1: "Your empathy and the beautiful way you care for everyone around you make you stand out completely. You possess a genuinely rare heart.",
+                fact2: "Playful Comfort 🤭", factDesc2: "Those cute, spontaneous moments when you mimic my words or double-text just to catch my attention. It's the most adorable thing ever.",
+                fact3: "Unshakable Loyalty ♾️", factDesc3: "My commitment to you is absolute. No matter the distance or the hour, when you call, I will always be there to listen to your voice."
+            },
+            3: { // Wednesday
+                title: "Symphony of Two Souls 🎵❤️",
+                story: "Lovie, you are the melody that plays softly in the background of my thoughts all day long. Every milestone we reach, big or small, feels like a beautiful step toward the lifetime we've planned together. I look at your pictures and I see my entire world staring right back at me. We are building something incredibly beautiful, and I am fiercely protective of this sacred bond we hold.",
+                fact1: "Mesmerizing Eyes 🧿", factDesc1: "There's a deep, unspoken comfort in your gaze that makes all my worries fade away instantly. You are my ultimate sukoon.",
+                fact2: "Shared Dreams 🌌", factDesc2: "The beautiful plans we've made for our wedding day and the home we are going to build. Every detail is safely etched into my heart.",
+                fact3: "Sovereign Protection 🛡️", factDesc3: "I will stand by you against any tide. A true partner protects your peace, and I intend to do exactly that for you, always."
+            },
+            4: { // Thursday
+                title: "Deep Roots, Infinite Skies 🌱👑",
+                story: "Our foundation is built on absolute trust and an irreplaceable connection. When you express your deepest thoughts to me, it makes me realize how beautifully transparent we are with each other. I love that you feel entirely safe with me, just as I am completely secure in your love. There's no room for doubt here; we are standard-setters in a world full of temporary things.",
+                fact1: "Strong Intuition 🧠", factDesc1: "Your mature understanding of situations and your wisdom always leave me amazed. You are a true queen in every aspect.",
+                fact2: "Vulnerability Shared 🫂", factDesc2: "The comfort of showing our rawest, truest selves to each other without a single drop of fear or judgment. That's real luxury.",
+                fact3: "Endless Premium Time ⏳", factDesc3: "I promise to never let our spark fade. I will actively invest my time, energy, and love into making you feel special every single day."
+            },
+            5: { // Friday
+                title: "The Ultimate Masterpiece 🎨💖",
+                story: "Lovie, out of all the beautiful things in this universe, you are my absolute favorite. Your presence has turned my life into a premium romantic cinema. I find myself constantly smiling thinking about our dynamic chemistry and the gorgeous memories we've accumulated. Standing proudly before the world, I claim you as mine, and I am ready to fulfill every single promise we've made to each other.",
+                fact1: "Captivating Voice 🎶", factDesc1: "Hearing your voice at the end of a long day is literally the best therapy. It melts away all my exhaustion within seconds.",
+                fact2: "Reel Reflections 💫", factDesc2: "Sifting through the endless beautiful reels we exchange, finding our own love story reflected perfectly in those small melodies.",
+                fact3: "Sacred Security 🔒", factDesc3: "I promise you full transparency and absolute security. Your trust is my greatest treasure, and I will always guard it with my life."
+            },
+            6: { // Saturday
+                title: "Architects of Forever 💍🏛️",
+                story: "As the week winds down, my heart overflows with deep gratitude for you, my queen. We are meticulously crafting a legacy of love that will stand the test of time. Our upcoming wedding isn't just an event; it's the official union of two destinies that were always meant to align. Thank you for choosing me, for staying by my side, and for loving me with such an unmatched intensity.",
+                fact1: "Unmatched Charm ⭐", factDesc1: "Your class, your elegance, and the way you carry yourself are simply unparalleled. You are a masterpiece, Lovie.",
+                fact2: "The First Glimpse 🗓️", factDesc2: "The unforgettable memory of our early days when the universe first brought us together. The moment my heart knew you were the one.",
+                fact3: "The Ultimate Covenant ♾️", factDesc3: "A true man honors his word until his very last breath. My hand is yours forever, and I will walk this path with you proudly."
+            }
+        };
+
+        function applyWeeklyContent() {
+            const currentDay = new Date().getDay(); // Get index 0-6 (Sunday-Saturday)
+            const content = weeklyContent[currentDay];
+
+            if(content) {
+                // Tab 1 Fields
+                document.getElementById('story-title').innerHTML = content.title;
+                document.getElementById('story-paragraph').innerHTML = content.story;
+
+                // Tab 2 Fields
+                document.getElementById('fact-title-1').innerHTML = content.fact1;
+                document.getElementById('fact-desc-1').innerHTML = content.factDesc1;
+                document.getElementById('fact-title-2').innerHTML = content.fact2;
+                document.getElementById('fact-desc-2').innerHTML = content.factDesc2;
+                document.getElementById('fact-title-3').innerHTML = content.fact3;
+                document.getElementById('fact-desc-3').innerHTML = content.factDesc3;
+            }
+        }
+
         // 31-DAY DYNAMIC LETTER CRYPTO ENGINE MATRIX (Har date ke liye alag text aur hint)
         const dailyLetters = {
             1: { clue: "Month ki starting digital counting number?", text: "Taarekh 1: Lovie meri jaan, naya din aur hamara pyaar har roz ek nayi unchai ko chhuega! 🌸" },
             2: { clue: "Ek aur ek kitne hote hain?", text: "Taarekh 2: Tum aur main milkar poori ek duniya banate hain, tum meri saans ho! ❤️" },
             3: { clue: "Traffic light me kitne colors hote hain?", text: "Taarekh 3: Meri khushi tumhari ek smile se shuru hoti hai mera baccha! 🥰" },
             4: { clue: "Ek gaadi me kitne tyre hote hain?", text: "Taarekh 4: Tum gusse me jab mar khani hai bolti ho na, mera din ban jata hai! 🤭" },
-            5: { clue: "Haath me kitni ungliyan hoti hain?", text: "Taarekh 5: Main plant me busy rahoon ya khet par, mera dil hamesha tumhare paas rehta hai! ⚙️" },
+            5: { clue: "Haath me kitni ungliyan hoti hain?", text: "Taarekh 5: Main busy rahoon ya free, mera dil aur focus hamesha tumhare paas hi rehta hai! ⚙️" },
             6: { clue: "Chhah (6) ko English me kya kehte hain?", text: "Taarekh 6: Tumse baat kiye bina mujhe raat ko nind tak nahi aati, Lovie! 🔒" },
             7: { clue: "Ek hafte (week) me kitne din hote hain?", text: "Taarekh 7: Saath janam tak sirf aur sirf tumhara hi rehna hai mujhe! ♾️" },
-            8: { clue: "Oat (8) ko Hindi me kya likhte hain?", text: "Taarekh 8: Dankey ki chot par poori duniya ke samne bolta hoon—I Love You Lovie! 💎" },
+            8: { clue: "Oat (8) ko Hindi me kya likhte hain?", text: "Taarekh 8: Danke ki chot par poori duniya ke samne bolta hoon—I Love You Lovie! 💎" },
             9: { clue: "Nau (9) number ki english spelling short shape?", text: "Taarekh 9: Hamari shaadi ka faisla mera sabse bada aur sachha wada hai! 📿" },
             10: { clue: "Ek dashak (decade) me kitne saal hote hain?", text: "Taarekh 10: Tumse door hone ka khayal hi meri aakhon me aansu la deta hai! 🥺" },
             11: { clue: "Aayu ka birthday day number kya hai?", text: "Taarekh 11: Aaj ka din bohot special hai kyunki tum mere dil ke sabse paas ho! ✨" },
@@ -745,7 +794,7 @@
             13: { clue: "Lovie bhabhi ki birthday date number kya hai?", text: "Taarekh 13: Aaj ka din hamari rani ka hai! Tum is duniya ka sabse khoobsurat sach ho! 👑" },
             14: { clue: "Valentine's Day kis date ko hota hai?", text: "Taarekh 14: Main call uthane me kabhi gussa nahi hoonga, hamesha tumhari sununga! 📞" },
             15: { clue: "Aadha mahina (half month) kitne din ka hota hai?", text: "Taarekh 15: Tumhara haq jatana aur reels share karna mera sukoon hai! 💫" },
-            16: { clue: "Satarah (17) se ek kam number kya hai?", text: "Taarekh 16: Badam ke ped ke paas baith kar bhi sirf tumhari hi yaadein aati hain! 🌳" },
+            16: { clue: "Satarah (17) se ek kam number kya hai?", text: "Taarekh 16: Jab main busy schedule me bhi rahoon, mere dil me sirf tumhari yaadein aati hain! 🌳" },
             17: { clue: "Khatre ka nishan kis number ko maana jata hai?", text: "Taarekh 17: Main kisi se darta nahi hoon, khuleaam sirf tumse pyaar karta hoon! 🔥" },
             18: { clue: "Voting karne ki legal age kya hoti hai?", text: "Taarekh 18: Yeh wada ek sacche mard ka hai jo zindagi bhar hath nahi chhodega! 🤝" },
             19: { clue: "Unnees (19) number ki value?", text: "Taarekh 19: Har lamha, har ek second tumhari baatein mere dil me chalti hain! 💞" },
@@ -765,13 +814,13 @@
 
         // 7-DAY DYNAMIC WEEKLY SCRATCH REWARDS ROTATOR
         const weeklyRewards = {
-            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️", // Sunday
-            1: "🌹 Reward: Aayu ki taraf se ek full day personal long romantic phone call! 📞🥰", // Monday
-            2: "👑 Reward: Lovie bhabhi ko milta hai ek special 'Sorry' card aur unka favorite kiss! 😘👑", // Tuesday
-            3: "🎁 Reward: Ek badi chocolate aur Aayu ki taraf se zindagi bhar ka sachha wada! 🍫🤝", // Wednesday
-            4: "💫 Reward: Aaj Aayu bina gussa kiye bhabhi ki saari gusse wali baatein sunega! 😡❤️", // Thursday
-            5: "🌍 Reward: Aapko milta hai Aayu ka poora dil aur unki saari saansein lifetime ke liye! 🔒🧬", // Friday
-            6: "💍 Reward: Ek cute video call date aur dher saari purani yaadon wali baatein! 📸💞" // Saturday
+            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️", 
+            1: "🌹 Reward: Aayu ki taraf se ek full day personal long romantic phone call! 📞🥰", 
+            2: "👑 Reward: Lovie bhabhi ko milta hai ek special 'Sorry' card aur unka favorite kiss! 😘👑", 
+            3: "🎁 Reward: Ek badi chocolate aur Aayu ki taraf se zindagi bhar ka sachha wada! 🍫🤝", 
+            4: "💫 Reward: Aaj Aayu bina gussa kiye bhabhi ki saari gusse wali baatein sunega! 😡❤️", 
+            5: "🌍 Reward: Aapko milta hai Aayu ka poora dil aur unki saari saansein lifetime ke liye! 🔒🧬", 
+            6: "💍 Reward: Ek cute video call date aur dher saari purani yaadon wali baatein! 📸💞" 
         };
 
         function updateDailyFeatures() {
@@ -835,18 +884,18 @@
             const targetPanel = document.getElementById(panelId);
             if(targetPanel) targetPanel.classList.add('active-panel');
             
-            if(event && event.currentTarget) {
-                event.currentTarget.classList.add('active-tab');
-            }
-
-            if(panelId === 'tab-story') { initScratchCard(); }
-            
-            if(panelId === 'tab-gallery') {
+            if(panelId === 'tab-story') {
+                document.getElementById('btn-story').classList.add('active-tab');
+            } else if(panelId === 'tab-about') {
+                document.getElementById('btn-about').classList.add('active-tab');
+            } else if(panelId === 'tab-gallery') {
+                document.getElementById('btn-gallery').classList.add('active-tab');
                 setTimeout(() => {
                     const section = document.getElementById('magical-gallery-section');
                     if(section) section.scrollIntoView({ behavior: 'smooth' });
                 }, 50);
             }
+            if(panelId === 'tab-story') { initScratchCard(); }
             playSecretMusic(); 
         }
 
@@ -934,7 +983,8 @@
             initScratchCard(); 
             checkSpecialEvents(); 
             applyAutoTheme(); 
-            updateDailyFeatures(); // Run dynamic daily engine systems on boot boot loader sync
+            updateDailyFeatures(); 
+            applyWeeklyContent(); // Load dynamic modern weekly narrative text on load sync
         };
     </script>
 </body>
