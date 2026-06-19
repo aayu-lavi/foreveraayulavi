@@ -84,10 +84,10 @@
             box-shadow: 0 0 15px rgba(255, 77, 109, 0.1);
         }
         
-        /* BOX KE ANDAR CHALNE WALI PATTI ONLY FOR UPCOMING ALERT */
+        /* BOX KE ANDAR CHALNE WALI PATTI ONLY FOR UPCOMING ALERT (SLOW SPEED FIXED TO 25s) */
         .marquee-text-flow {
             display: inline-block;
-            animation: insideBoxScroll 12s linear infinite;
+            animation: insideBoxScroll 25s linear infinite;
             font-weight: 600;
             letter-spacing: 1px;
             font-size: 1.05rem;
@@ -301,7 +301,7 @@
         }
         #lightbox-overlay.show-lightbox { opacity: 1; pointer-events: auto; }
         .lightbox-window { max-width: 90%; max-height: 85%; position: relative; text-align: center; }
-        .lightbox-window img { max-width: 100%; max-height: 72vh; border-radius: 20px; border: 1px solid rgba(255,77,109,0.4); box-shadow: 0 0 40px var(--neon-glow); }
+        .lightbox-window img { max-width: 100%; max-height: 72vh; border-radius: 20px; border: 1px solid rgba(255, 77, 109, 0.4); box-shadow: 0 0 40px var(--neon-glow); }
         .lightbox-caption { color: #fff; font-size: 1.2rem; margin-top: 15px; font-weight: 500; text-shadow: 0 0 10px var(--neon-pink); }
         .lightbox-close-btn {
             position: absolute; top: -50px; right: 0; background: none; border: none; color: #fff;
@@ -599,7 +599,7 @@
                     </div>
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 25"></div>
-                        <span class="photo-tag">Aesthetic</span><p>"Haseen Shaam" 🌆 	</p>
+                        <span class="photo-tag">Aesthetic</span><p>"Haseen Shaam" 🌆</p>
                     </div>
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 26"></div>
@@ -666,7 +666,7 @@
             const currentMonth = now.getMonth();
             const currentDate = now.getDate();
 
-            // TESTING ALERT: CURRENTLY MONTH: 5 (JUNE) & DATE: 24 (FOR 5 DAYS COMING SOON TEST DISPLAY)
+            // TESTING TIMING MODE: MONTH June(5) & DATE 24 (5 Days advance scrolling alert check)
             const events = [
                 { name: "Lovie's Birthday", month: 5, date: 24, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse beintehaan pyaar karta rahega!" },
                 { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge." },
@@ -679,13 +679,11 @@
             const modalMsg = document.getElementById('modal-message');
 
             events.forEach(ev => {
-                // Check if today is the exact event day
                 if (currentMonth === ev.month && currentDate === ev.date) {
                     modalTitle.innerText = `✨ ${ev.name} Wish ✨`;
                     modalMsg.innerText = ev.msg;
                     modal.classList.add('show-lightbox', 'show-modal'); 
                 } else {
-                    // Check for Advance Alert Warning (10 days buffer)
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
                     let timeDiff = eventTargetThisYear - now;
                     let daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
