@@ -66,12 +66,37 @@
 
         .container { max-width: 1040px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
 
-        /* ADVANCED EVENT TRACKING STYLES */
+        /* ADVANCED EVENT TRACKING INSIDE-BOX SCROLL SYSTEM */
         .advance-event-banner {
-            display: none; background: rgba(255, 77, 109, 0.08); border: 1px dashed var(--neon-pink);
-            padding: 12px 20px; border-radius: 15px; text-align: center; font-weight: 600;
-            margin: -20px auto 30px auto; max-width: 600px; color: #fff;
-            text-shadow: 0 0 8px var(--neon-pink); animation: boxBreathe 3s infinite alternate;
+            display: none; 
+            background: rgba(255, 77, 109, 0.08); 
+            border: 1px dashed var(--neon-pink);
+            padding: 12px 0; 
+            border-radius: 15px; 
+            text-align: center; 
+            margin: -20px auto 30px auto; 
+            max-width: 600px; 
+            width: 90%;
+            overflow: hidden; 
+            white-space: nowrap;
+            color: #fff;
+            text-shadow: 0 0 8px var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 77, 109, 0.1);
+        }
+        
+        /* BOX KE ANDAR CHALNE WALI PATTI ONLY FOR UPCOMING ALERT */
+        .marquee-text-flow {
+            display: inline-block;
+            animation: insideBoxScroll 12s linear infinite;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 1.05rem;
+            padding-left: 100%;
+        }
+
+        @keyframes insideBoxScroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
 
         #event-overlay-modal {
@@ -86,8 +111,9 @@
             padding: 50px 30px; border-radius: 28px; text-align: center; max-width: 550px; width: 90%;
             box-shadow: 0 0 50px var(--neon-glow); position: relative;
         }
-        .modal-wish-card h2 { font-size: 2.5rem; background: linear-gradient(to right, #ff007f, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px var(--neon-pink)); margin-bottom: 20px; }
-        .modal-wish-card p { font-size: 1.15rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 25px; }
+        /* MAIN WISH TEXT - NEVER SCROLLS, STAYS STILL AND CLEAN */
+        .modal-wish-card h2 { font-size: 2.5rem; background: linear-gradient(to right, #ff007f, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px var(--neon-pink)); margin-bottom: 20px; font-weight: 800; }
+        .modal-wish-card p { font-size: 1.15rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 25px; white-space: normal; }
         .modal-close-txt { color: rgba(255,255,255,0.4); font-size: 0.9rem; text-decoration: underline; cursor: pointer; transition: color 0.2s; }
         .modal-close-txt:hover { color: var(--neon-pink); }
 
@@ -393,7 +419,7 @@
                     </div>
                     <div class="fact-card glowing-box">
                         <h3>My Promise To Her 🤝</h3>
-                        <p>Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga. Plant me rahoon ya kahin bhi, jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga. Lovie, tum mere liye sabse zyada special ho, tum meri jaan ho aur main tumhe kabhi nahi chhodunga. Yeh wada ek sacche mard ka hai jo zindagi bhar tumhara hath thaam kar chalega!</p>
+                        <p>Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga. Plant me rahoon ya kaihin bhi, jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga. Lovie, tum mere liye sabse zyada special ho, tum meri jaan ho aur main tumhe kabhi nahi chhodunga. Yeh wada ek sacche mard ka hai jo zindagi bhar tumhara hath thaam kar chalega!</p>
                     </div>
                 </div>
             </section>
@@ -573,7 +599,7 @@
                     </div>
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 25"></div>
-                        <span class="photo-tag">Aesthetic</span><p>"Haseen Shaam" 🌆</p>
+                        <span class="photo-tag">Aesthetic</span><p>"Haseen Shaam" 🌆 	</p>
                     </div>
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 26"></div>
@@ -604,7 +630,7 @@
     <!-- HIGH-TECH THEATRICAL LIGHTBOX COMPONENT OVERLAY -->
     <div id="lightbox-overlay" onclick="closeLightbox()">
         <div class="lightbox-window" onclick="event.stopPropagation()">
-            <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-close-btn" onclick="closeLightbox()">×</button>
             <img id="lightbox-img" src="" alt="View Enlarge">
             <div id="lightbox-txt" class="lightbox-caption"></div>
         </div>
@@ -640,16 +666,11 @@
             const currentMonth = now.getMonth();
             const currentDate = now.getDate();
 
-           // Special Event Target Config Data Setup
-
+            // TESTING ALERT: CURRENTLY MONTH: 5 (JUNE) & DATE: 24 (FOR 5 DAYS COMING SOON TEST DISPLAY)
             const events = [
-
-                { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse beintehaan pyaar karta rahega!" },
-
+                { name: "Lovie's Birthday", month: 5, date: 24, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse beintehaan pyaar karta rahega!" },
                 { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge." },
-
                 { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aayu's Special Birthday! 🎈✨ Lovie, aapka baccha aaj ke din is duniya me aaya tha sirf aur sirf aapka banne ke liye!" }
-
             ];
             
             const banner = document.getElementById('event-banner');
@@ -662,7 +683,7 @@
                 if (currentMonth === ev.month && currentDate === ev.date) {
                     modalTitle.innerText = `✨ ${ev.name} Wish ✨`;
                     modalMsg.innerText = ev.msg;
-                    modal.classList.add('show-lightbox', 'show-modal'); // Trigger live display overlay smoothly
+                    modal.classList.add('show-lightbox', 'show-modal'); 
                 } else {
                     // Check for Advance Alert Warning (10 days buffer)
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
@@ -671,7 +692,7 @@
 
                     if (daysDiff > 0 && daysDiff <= 10) {
                         banner.style.display = 'block';
-                        banner.innerText = `💖 Alert: ${ev.name} is coming soon in ${daysDiff} days! 🎂✨`;
+                        banner.innerHTML = `<span class="marquee-text-flow">💖 Alert: ${ev.name} is coming soon in ${daysDiff} days! 🎂✨</span>`;
                     }
                 }
             });
@@ -803,7 +824,7 @@
 
         window.onload = () => { 
             initScratchCard(); 
-            checkSpecialEvents(); // Run real-time automatic event checkers on load boot sync
+            checkSpecialEvents(); 
         };
     </script>
 </body>
