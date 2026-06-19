@@ -206,7 +206,7 @@
         .middle-big-box p { color: var(--text-sub); font-size: 1.15rem; margin-bottom: 25px; letter-spacing: 0.5px; }
         .middle-big-box p span { color: var(--neon-pink); font-weight: bold; text-shadow: 0 0 5px var(--neon-glow); }
 
-        /* 2. PASSWORD BOX & SCRATCH CARD STYLE UTILITIES */
+        /* PASSWORD BOX & SCRATCH CARD STYLE UTILITIES */
         .interactive-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -240,7 +240,7 @@
         .scratch-back-text { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 20px; color: #fff; font-size: 1.05rem; font-weight: bold; text-align: center; z-index: 1; pointer-events: none; }
         .scratch-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; cursor: pointer; }
 
-        /* 1. FLOATING AUDIO PLAYER UTILITY */
+        /* FLOATING AUDIO PLAYER UTILITY */
         .floating-audio-player {
             position: fixed; bottom: 30px; right: 30px; z-index: 5000;
         }
@@ -286,11 +286,11 @@
     <div class="plasma-glow plasma-2"></div>
     <div class="plasma-glow plasma-3"></div>
 
-    <!-- 1. FLOATING NEON CONTROLLER AUDIO MODULE -->
+    <!-- FLOATING NEON CONTROLLER AUDIO MODULE -->
     <div class="floating-audio-player">
-        <button id="music-btn" class="music-toggle-btn" onclick="toggleAudio()">🎵</button>
-        <!-- Soft romantic instrumental background sound link -->
-        <audio id="romantic-audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+        <button id="music-btn" class="music-toggle-btn" onclick="toggleAudio()">🔇</button>
+        <!-- Soft beautiful romantic background sound stream -->
+        <audio id="romantic-audio" src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" loop></audio>
     </div>
 
     <div class="container">
@@ -328,7 +328,7 @@
                 <p>Tum jab gusse me ya udaas hokar mujhse poochti ho na ki "Agar mae gusse me kuch kar bhi lu tobhi aap ko fark bhi padega?", toh kaan khol kar sun lo Lovie—tumse baat kiye bina mujhe raat ko nind tak nahi aati, tum meri har ek saans ho, meri poori jaan ho! Jab main khet par rahoon ya plant par kaam ke beech kitna bhi busy rahoon, chahe main apne dost Chulbuli ke sath rahoon ya badam ke ped ke pass, mere dil aur dimaag me har ek second sirf aur sirf tumhari yaadein chalti hain. Main is duniya me kisi se darta nahi hoon, khuleaam sabke samne danke ki chot par pyaar karta hoon tumse, aur humne jo hamesha ke liye ek doosre ke sath shaadi ka faisla kiya hai use main apni aakhri saans tak har haal me poora karunga. Jab main saare kaam chhod kar tumhare paas aaunga na, tab jitna man kare utna dher sara pyaar kar lena aur dher saari baatein kar lena. <span>Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Hamesha ke liye sath rehna hai, Lovie.</span></p>
             </section>
 
-            <!-- 2 & 3. GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
+            <!-- GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
             <div class="interactive-row">
                 
                 <!-- Password Protected Security Element -->
@@ -615,6 +615,23 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
+        // SMART AUTOPLAY BYPASS IMPLEMENTATION
+        let musicStarted = false;
+        function autoPlayMusic() {
+            if (!musicStarted) {
+                const audio = document.getElementById('romantic-audio');
+                const btn = document.getElementById('music-btn');
+                audio.play().then(() => {
+                    musicStarted = true;
+                    btn.classList.add('playing');
+                    btn.innerText = "🎵";
+                }).catch(e => console.log("Waiting for user interaction..."));
+            }
+        }
+        // Listen to any interaction anywhere on screen to trigger music instantly
+        document.body.addEventListener('click', autoPlayMusic);
+        document.body.addEventListener('touchstart', autoPlayMusic);
+
         // LIQUID TAB MANAGER SWITCH SPECS
         function switchTab(panelId) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
@@ -623,11 +640,12 @@
             const targetPanel = document.getElementById(panelId);
             if(targetPanel) targetPanel.classList.add('active-panel');
             
-            const eventTarget = event.currentTarget;
-            if(eventTarget) eventTarget.classList.add('active-tab');
+            if(event && event.currentTarget) {
+                event.currentTarget.classList.add('active-tab');
+            }
 
-            // Quick re-init for scratch canvas if grid renders it
             if(panelId === 'tab-story') { initScratchCard(); }
+            autoPlayMusic(); // Trigger music on tab switch too
         }
 
         // PHOTO LIGHTBOX SCREEN SPEC CONTROLS
@@ -644,14 +662,15 @@
             document.getElementById('lightbox-overlay').classList.remove('show-lightbox');
         }
 
-        // AUDIO CONTROLLER MODULE INTERACTION
+        // AUDIO CONTROLLER MODULE MANUAL INTERACTION
         function toggleAudio() {
             const audio = document.getElementById('romantic-audio');
             const btn = document.getElementById('music-btn');
             if (audio.paused) {
-                audio.play().catch(e => console.log("User interaction required first"));
+                audio.play();
                 btn.classList.add('playing');
                 btn.innerText = "🎵";
+                musicStarted = true;
             } else {
                 audio.pause();
                 btn.classList.remove('playing');
@@ -662,7 +681,7 @@
         // PASSWORD VERIFICATION BLOCK
         function verifyPassword() {
             const val = document.getElementById('gate-pass').value;
-            if(val === '2703') { // Anniversary key setup
+            if(val === '2703') { 
                 document.getElementById('gate-reveal').style.display = 'block';
                 alert("🔒 Access Granted! Letter Unlocked My Love.");
             } else {
@@ -676,11 +695,9 @@
             if(!canvas) return;
             const ctx = canvas.getContext('2d');
             
-            // Draw scratchable silver background layer
             ctx.fillStyle = '#4a3b68';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
-            // Add custom instructions overlay text over scratch shield
             ctx.fillStyle = '#fff0f3';
             ctx.font = '16px sans-serif';
             ctx.textAlign = 'center';
@@ -691,7 +708,6 @@
             function scratch(e) {
                 if (!isDrawing) return;
                 const rect = canvas.getBoundingClientRect();
-                // Support multi touch coordinates mapping
                 const x = (e.clientX || e.touches[0].clientX) - rect.left;
                 const y = (e.clientY || e.touches[0].clientY) - rect.top;
 
@@ -737,7 +753,6 @@
         }
         setInterval(createFloatingElement, 350);
 
-        // Run scratch setup on boot cycle load
         window.onload = () => { initScratchCard(); };
     </script>
 </body>
