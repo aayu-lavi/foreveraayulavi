@@ -34,7 +34,7 @@
             line-height: 1.8;
             overflow-x: hidden;
             position: relative;
-            transition: all 1s ease-in-out; /* Smooth transition for auto theme change */
+            transition: all 1s ease-in-out;
         }
 
         /* 1. DYNAMIC EMOTION & HEARTS BACKGROUND POOL */
@@ -122,7 +122,6 @@
             padding: 50px 30px; border-radius: 28px; text-align: center; max-width: 550px; width: 90%;
             box-shadow: 0 0 50px var(--neon-glow); position: relative;
         }
-        /* MAIN WISH TEXT - NEVER SCROLLS, STAYS STILL AND CLEAN */
         .modal-wish-card h2 { font-size: 2.5rem; background: linear-gradient(to right, #ff007f, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px var(--neon-pink)); margin-bottom: 20px; font-weight: 800; }
         .modal-wish-card p { font-size: 1.15rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 25px; white-space: normal; }
         .modal-close-txt { color: rgba(255,255,255,0.4); font-size: 0.9rem; text-decoration: underline; cursor: pointer; transition: color 0.2s; }
@@ -326,6 +325,7 @@
 </head>
 <body>
 
+    <!-- Dynamic Event Fullscreen Modal -->
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
@@ -334,12 +334,15 @@
         </div>
     </div>
 
+    <!-- Emoji & Heart Particles Container -->
     <div id="hearts-container"></div>
 
+    <!-- Soft Plasma Lighting Background -->
     <div class="plasma-glow plasma-1"></div>
     <div class="plasma-glow plasma-2"></div>
     <div class="plasma-glow plasma-3"></div>
 
+    <!-- 100% INVISIBLE LOCAL AUDIO STREAM MODULE -->
     <audio id="romantic-audio" src="romantic.mp3" loop></audio>
 
     <div class="container">
@@ -349,8 +352,10 @@
             <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
         </header>
 
+        <!-- Advance Coming Soon Event Banner -->
         <div id="event-banner" class="advance-event-banner"></div>
 
+        <!-- Glowing Counter Panel -->
         <div class="counter-container glowing-box">
             <h2>Hamare Sath Ke Haseen Pal ✨</h2>
             <div class="timer">
@@ -361,12 +366,16 @@
             </div>
         </div>
 
+        <!-- NEW PREMIUM STYLE TABS NAVIGATION CONTROLS -->
         <div class="tabs-nav">
             <button class="tab-btn active-tab" onclick="switchTab('tab-story')">Hamari Kahani 📖</button>
             <button class="tab-btn" onclick="switchTab('tab-about')">Everything About Her 🌸</button>
             <button class="tab-btn" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
         </div>
 
+        <!-- ========================================== -->
+        <!-- TAB MODULE 1: HAMARI KAHANI PANEL -->
+        <!-- ========================================== -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3>Meri Zindgi - Meri Lovie 📝💖</h3>
@@ -374,26 +383,29 @@
                 <p>Tum jab gusse me ya udaas hokar mujhse poochti ho na ki "Agar mae gusse me kuch kar bhi lu tobhi aap ko fark bhi padega?", toh kaan khol kar sun lo Lovie—tumse baat kiye bina mujhe raat ko nind tak nahi aati, tum meri har ek saans ho, meri poori jaan ho! Jab main khet par rahoon ya plant par kaam ke beech kitna bhi busy rahoon, chahe main apne dost Chulbuli ke sath rahoon ya badam ke ped ke pass, mere dil aur dimaag me har ek second sirf aromatic aur tumhari yaadein chalti hain. Main is duniya me kisi se darta nahi hoon, khuleaam sabke samne danke ki chot par pyaar karta hoon tumse, aur humne jo hamesha ke liye ek doosre ke sath shaadi ka faisla kiya hai use main apni aakhri saans tak har haal me poora karunga. Jab main saare kaam chhod kar tumhare paas aaunga na, tab jitna man kare utna dher sara pyaar kar lena aur dher saari baatein kar lena. <span>Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Hamesha ke liye sath rehna hai, Lovie.</span></p>
             </section>
 
+            <!-- GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
             <div class="interactive-row">
                 
+                <!-- Password Protected Security Element -->
                 <div class="secret-gate-box glowing-box">
                     <h4>Secret Love Message 🔒</h4>
-                    <p>Enter our special code to open this card <span id="clue-text">Hint: Anniversary Date DDMM</span></p>
+                    <p>Enter our special code to open this card <span id="clue-text">Hint: Loading Daily Clue...</span></p>
                     <div class="secret-input-wrapper">
                         <input type="password" id="gate-pass" placeholder="••••" maxlength="4">
                     </div>
                     <button class="gate-btn" onclick="verifyPassword()">Unlock Letter 🗝️</button>
                     
                     <div id="gate-reveal" class="secret-reveal-content">
-                        <p id="dynamic-letter-text">"Lovie, tum meri zindgi ka wo haseen sach ho jise dekh kar main har roz upar wale ka shukriya ada karta hoon. Mera ye khulla dil hamesha ke liye tumhara gulam ban chuka hai! I Love You My Queen! 👑💎"</p>
+                        <p id="dynamic-letter-text">Loading daily letter content...</p>
                     </div>
                 </div>
 
+                <!-- Interactive Scratch Element Component -->
                 <div class="scratch-card-box glowing-box">
                     <h4>Scratch Card Surprise 🧧</h4>
                     <p>Ungli se canvas ko rub karke apna surprise gift kholo!</p>
                     <div class="scratch-container">
-                        <div class="scratch-back-text">🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️</div>
+                        <div id="scratch-reward-text" class="scratch-back-text">🎉 Loading dynamic reward...</div>
                         <canvas id="scratch-layer" class="scratch-canvas" width="280" height="160"></canvas>
                     </div>
                 </div>
@@ -401,6 +413,9 @@
             </div>
         </div>
 
+        <!-- ========================================== -->
+        <!-- TAB MODULE 2: ABOUT HER PANEL -->
+        <!-- ========================================== -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Everything About Her</h2>
@@ -421,9 +436,13 @@
             </section>
         </div>
 
+        <!-- ========================================== -->
+        <!-- TAB MODULE 3: THE COMPREHENSIVE MAGICAL GALLERY PANEL -->
+        <!-- ========================================== -->
         <div id="tab-gallery" class="tab-content-panel">
             
-            <section class="gallery-section">
+            <!-- SUB-GALLERY 1: 15 SLOTS -->
+            <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
                 <div class="gallery-grid">
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
@@ -489,6 +508,7 @@
                 </div>
             </section>
 
+            <!-- SUB-GALLERY 2: 30 SLOTS -->
             <section class="gallery-section">
                 <h2 class="section-title">More Beautiful Moments</h2>
                 <div class="gallery-grid">
@@ -618,6 +638,7 @@
 
     </div>
 
+    <!-- HIGH-TECH THEATRICAL LIGHTBOX COMPONENT OVERLAY -->
     <div id="lightbox-overlay" onclick="closeLightbox()">
         <div class="lightbox-window" onclick="event.stopPropagation()">
             <button class="lightbox-close-btn" onclick="closeLightbox()">×</button>
@@ -631,8 +652,8 @@
     </footer>
 
     <script>
-        // Real dates mapping system configuration
-        const anniversaryDate = new Date(2026, 2, 27, 0, 0);
+        // REAL DATES POOL CONFIGURATION SETTINGS
+        const anniversaryDate = new Date(2026, 2, 27, 0, 0); // 27 March 2026 Real Setup
         function updateTimer() {
             const now = new Date();
             const diff = now - anniversaryDate;
@@ -649,7 +670,7 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 4. AUTOMATIC THEME CHANGER FUNCTION (Raat 10 baje se subah 6 baje tak Midnight soft mode)
+        // AUTOMATIC THEME CHANGER FUNCTION (Raat 10 baje se subah 6 baje tak Midnight soft mode)
         function applyAutoTheme() {
             const currentHour = new Date().getHours();
             if (currentHour >= 22 || currentHour < 6) {
@@ -658,21 +679,21 @@
                 document.body.classList.remove('midnight-mode');
             }
         }
-        setInterval(applyAutoTheme, 60000); // Check every minute
+        setInterval(applyAutoTheme, 60000);
 
         // GLOBAL FLAG TO CONTROL LIVE BACKGROUND OBJECT FALL MODES
         let isBirthdayToday = false;
 
-        // AUTOMATIC BIRTHDAY & ANNIVERSARY LIVE TRACKING ENGINE
+        // AUTOMATIC BIRTHDAY & ANNIVERSARY REAL TRACKING ENGINE
         function checkSpecialEvents() {
             const now = new Date();
             const currentYear = now.getFullYear();
             const currentMonth = now.getMonth();
             const currentDate = now.getDate();
 
-            // TESTING TIMING BUFFER ALERT MODE active (Set to 24 June - 5 days soon alert)
+            // PURE REAL DATES MATRIX CONFIGURED EXACTLY AS REQUESTED
             const events = [
-                { name: "Lovie's Birthday", month: 5, date: 24, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse beintehaan pyaar karta rahega!" },
+                { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse beintehaan pyaar karta rahega!" },
                 { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge." },
                 { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aayu's Special Birthday! 🎈✨ Lovie, aapka baccha aaj ke din is duniya me aaya tha sirf aur sirf aapka banne ke liye!" }
             ];
@@ -689,10 +710,13 @@
                     modal.classList.add('show-lightbox', 'show-modal'); 
                     
                     if (ev.type === "birthday") {
-                        isBirthdayToday = true; // Swaps hearts to falling balloons/cakes!
+                        isBirthdayToday = true; 
                     }
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
+                    if (now > eventTargetThisYear) {
+                        eventTargetThisYear.setFullYear(currentYear + 1);
+                    }
                     let timeDiff = eventTargetThisYear - now;
                     let daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
@@ -704,42 +728,81 @@
             });
         }
 
-        // 2. DYNAMIC MONTHLY LOVE LETTERS COMPONENT INJECTOR
-        const monthlyLetters = {
-            0: { clue: "Naye Saal Ki Pehli Date (DDMM)?", text: "January Love Letter: Lovie meri jaan, naye saal me hamara pyaar aur mazboot ho! Aap is saal meri dulhan banogi aur ye mera sabse bada sapna hai! 🌸❤️" },
-            1: { clue: "Rose Day ya Kiss Day wala mahina konsa hai?", text: "February Love Letter: Valentine month me meri Lovie ko dher saara pyaar! Mujhe tumhara gussa aur dher saara sorry bolna duniya me sabse pyaara lagta hai! 🌹✨" },
-            2: { clue: "Hamari Special Anniversary Date (DDMM)?", text: "March Love Letter: Hamare rishte ka sabse khaas mahina! Main danke ki chot par sabke samne tumse pyaar karta hoon aur zindagi bhar nibhaunga! 💍❤️" },
-            3: { clue: "April Fool wala month number?", text: "April Love Letter: Lovie, tum mere dil ki rani ho. Main busy rahoon plant par ya dost ke sath, har second sirf tum meri saas me rehti ho! 👑💎" },
-            4: { clue: "Garmi ki chuttiyan kis mahine shuru hoti hain?", text: "May Love Letter: Meri jaan Lovie, chaho toh kitna bhi pareshan kar lo, par tumse baat kiye bina mujhe neend nahi aati! Hamesha sath rehna hai! 💕" },
-            5: { clue: "Monsoon ka aagman kis mahine hota hai?", text: "June Love Letter: Hey Lovie, badam ke ped ke paas khade hokar bhi sirf tumhara khayal aata hai. Tum meri poori zindgi aur mera sukoon ho! 🌦️💞" },
-            6: { clue: "Lovie ke birthday se theek ek mahine pehle?", text: "July Love Letter: Suna hai barish me pyaar aur gehra hota hai, bilkul hamare rishte ki tarah. Aayu hamesha apni Lovie ka hi rahega! ♾️❤️" },
-            7: { clue: "Lovie Bhabhi ka Birthday Month Number (MM)?", text: "August Love Letter: Tumhara birthday month aa gaya meri rani! Is janam me kya, har janam me main sirf tumhara hath thaam kar chalunga! Happy Birthday Month! 🎂👑" },
-            8: { clue: "Teachers day kis mahine aata hai?", text: "September Love Letter: Lovie, jab tum poochti ho na ki 'fark padega?'... Tumhare bina meri har saans adhoori hai jaan, tum meri sachi dhadkan ho! 🕊️💖" },
-            9: { clue: "Festivals ya Diwali kis mahine ke aas-paas aati hai?", text: "October Love Letter: Hamari shaadi ka faisla upar wale ne tay kiya hai, aur main apni aakhri saans tak har wada poora karunga! Love you queen! 💎📿" },
-            10: { clue: "Aayu ka Birthday kis mahine aata hai?", text: "November Love Letter: Mera birthday month! Aur mera sabse bada gift tum ho Lovie, jo mujhe upar wale ne di hai. Hamesha aise hi muskuraati raho! 🥰🎈" },
-            11: { clue: "Saal ka sabse aakhri mahina?", text: "December Love Letter: Saal khatam ho raha hai par hamara pyaar har roz ek nayi shuruat karta hai. Agla saal hamare liye aur haseen hone wala hai meri jaan! ❄️❤️" }
+        // 31-DAY DYNAMIC LETTER CRYPTO ENGINE MATRIX (Har date ke liye alag text aur hint)
+        const dailyLetters = {
+            1: { clue: "Month ki starting digital counting number?", text: "Taarekh 1: Lovie meri jaan, naya din aur hamara pyaar har roz ek nayi unchai ko chhuega! 🌸" },
+            2: { clue: "Ek aur ek kitne hote hain?", text: "Taarekh 2: Tum aur main milkar poori ek duniya banate hain, tum meri saans ho! ❤️" },
+            3: { clue: "Traffic light me kitne colors hote hain?", text: "Taarekh 3: Meri khushi tumhari ek smile se shuru hoti hai mera baccha! 🥰" },
+            4: { clue: "Ek gaadi me kitne tyre hote hain?", text: "Taarekh 4: Tum gusse me jab mar khani hai bolti ho na, mera din ban jata hai! 🤭" },
+            5: { clue: "Haath me kitni ungliyan hoti hain?", text: "Taarekh 5: Main plant me busy rahoon ya khet par, mera dil hamesha tumhare paas rehta hai! ⚙️" },
+            6: { clue: "Chhah (6) ko English me kya kehte hain?", text: "Taarekh 6: Tumse baat kiye bina mujhe raat ko nind tak nahi aati, Lovie! 🔒" },
+            7: { clue: "Ek hafte (week) me kitne din hote hain?", text: "Taarekh 7: Saath janam tak sirf aur sirf tumhara hi rehna hai mujhe! ♾️" },
+            8: { clue: "Oat (8) ko Hindi me kya likhte hain?", text: "Taarekh 8: Dankey ki chot par poori duniya ke samne bolta hoon—I Love You Lovie! 💎" },
+            9: { clue: "Nau (9) number ki english spelling short shape?", text: "Taarekh 9: Hamari shaadi ka faisla mera sabse bada aur sachha wada hai! 📿" },
+            10: { clue: "Ek dashak (decade) me kitne saal hote hain?", text: "Taarekh 10: Tumse door hone ka khayal hi meri aakhon me aansu la deta hai! 🥺" },
+            11: { clue: "Aayu ka birthday day number kya hai?", text: "Taarekh 11: Aaj ka din bohot special hai kyunki tum mere dil ke sabse paas ho! ✨" },
+            12: { clue: "Ek saal me kitne mahine hote hain?", text: "Taarekh 12: Tumhari thinking aur sabki help karne ka tarika mujhe bohot pasand hai! 🌸" },
+            13: { clue: "Lovie bhabhi ki birthday date number kya hai?", text: "Taarekh 13: Aaj ka din hamari rani ka hai! Tum is duniya ka sabse khoobsurat sach ho! 👑" },
+            14: { clue: "Valentine's Day kis date ko hota hai?", text: "Taarekh 14: Main call uthane me kabhi gussa nahi hoonga, hamesha tumhari sununga! 📞" },
+            15: { clue: "Aadha mahina (half month) kitne din ka hota hai?", text: "Taarekh 15: Tumhara haq jatana aur reels share karna mera sukoon hai! 💫" },
+            16: { clue: "Satarah (17) se ek kam number kya hai?", text: "Taarekh 16: Badam ke ped ke paas baith kar bhi sirf tumhari hi yaadein aati hain! 🌳" },
+            17: { clue: "Khatre ka nishan kis number ko maana jata hai?", text: "Taarekh 17: Main kisi se darta nahi hoon, khuleaam sirf tumse pyaar karta hoon! 🔥" },
+            18: { clue: "Voting karne ki legal age kya hoti hai?", text: "Taarekh 18: Yeh wada ek sacche mard ka hai jo zindagi bhar hath nahi chhodega! 🤝" },
+            19: { clue: "Unnees (19) number ki value?", text: "Taarekh 19: Har lamha, har ek second tumhari baatein mere dil me chalti hain! 💞" },
+            20: { clue: "Bees (20) ko English me kya likhte hain?", text: "Taarekh 20: Tum meri har ek saans ho Lovie, meri poori jaan ho! 🫁" },
+            21: { clue: "Ekkis (21) number?", text: "Taarekh 21: Jab main saare kaam chhod kar aaunga na, tab dher saara pyaar kar lena! 😘" },
+            22: { clue: "Do aur Do (2 and 2) side by side?", text: "Taarekh 22: Tumhari har ek nok-jok aur gussa mere liye sabse pyaara hai! 😡🥰" },
+            23: { clue: "Teis (23) number?", text: "Taarekh 23: Tum gusse me kuch bhi kar lo, mujhe har haal me tumhara sath chahiye! 🔒" },
+            24: { clue: "Chubbis (24) ghante ek din me hote hain?", text: "Taarekh 24: Meri har khushi tumse judi hai, hamesha aise hi muskuraati raho! 😊" },
+            25: { clue: "Christmas day kis date ko hota hai?", text: "Taarekh 25: Aayu hamesha, har janam me sirf apni Lovie ka hi rahega! ♾️" },
+            26: { clue: "Chabbis (26) January Republic day?", text: "Taarekh 26: Tum mere jeene ki wajah ho rani, hamesha sath rehna hai! 👑" },
+            27: { clue: "Hamari Anniversary ka special code starting date?", text: "Taarekh 27: Aaj hamari special tarikh ka aura hai! I Love You My Soulmate! 💍" },
+            28: { clue: "February me normal saal me kitne din hote hain?", text: "Taarekh 28: Tumhara wo pareshan karna bhi duniya me sabse pyaara lagta hai! 🤗" },
+            29: { clue: "Leap year ki February me kitne din hote hain?", text: "Taarekh 29: Meri zindgi tumhare aane ke baad se ekdum jannat ban gayi hai! 🌍" },
+            30: { clue: "Teis (30) number ki value?", text: "Taarekh 30: Apni aakhri saans tak hamara rishta danke ki chot par nibhaunga! ❤️" },
+            31: { clue: "Saal ke aakhri din (31 Dec) ki date number?", text: "Taarekh 31: Mahina khatam ho raha hai par hamara pyaar har roz badhta hi jayega! ♾️💖" }
         };
 
-        function updateMonthlyClue() {
-            const currentMonth = new Date().getMonth();
+        // 7-DAY DYNAMIC WEEKLY SCRATCH REWARDS ROTATOR
+        const weeklyRewards = {
+            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️", // Sunday
+            1: "🌹 Reward: Aayu ki taraf se ek full day personal long romantic phone call! 📞🥰", // Monday
+            2: "👑 Reward: Lovie bhabhi ko milta hai ek special 'Sorry' card aur unka favorite kiss! 😘👑", // Tuesday
+            3: "🎁 Reward: Ek badi chocolate aur Aayu ki taraf se zindagi bhar ka sachha wada! 🍫🤝", // Wednesday
+            4: "💫 Reward: Aaj Aayu bina gussa kiye bhabhi ki saari gusse wali baatein sunega! 😡❤️", // Thursday
+            5: "🌍 Reward: Aapko milta hai Aayu ka poora dil aur unki saari saansein lifetime ke liye! 🔒🧬", // Friday
+            6: "💍 Reward: Ek cute video call date aur dher saari purani yaadon wali baatein! 📸💞" // Saturday
+        };
+
+        function updateDailyFeatures() {
+            const todayDate = new Date().getDate();
+            const todayDay = new Date().getDay();
+            
+            // Apply Daily Clue Hints
             const clueBox = document.getElementById('clue-text');
-            if(clueBox && monthlyLetters[currentMonth]) {
-                clueBox.innerText = `Hint: ${monthlyLetters[currentMonth].clue}`;
+            if(clueBox && dailyLetters[todayDate]) {
+                clueBox.innerText = `Hint: ${dailyLetters[todayDate].clue}`;
+            }
+
+            // Apply Daily Scratch Card Rewards
+            const rewardBox = document.getElementById('scratch-reward-text');
+            if(rewardBox && weeklyRewards[todayDay]) {
+                rewardBox.innerText = weeklyRewards[todayDay];
             }
         }
 
-        // PASSWORD VERIFICATION BLOCK (CONNECTED TO MONTHLY SYSTEM)
+        // PASSWORD VERIFICATION ENGINE WITH DYNAMIC DATES MAPPED
         function verifyPassword() {
             const val = document.getElementById('gate-pass').value;
-            const currentMonth = new Date().getMonth();
+            const todayDate = new Date().getDate();
             
             if(val === '2703') { 
                 const letterParagraph = document.getElementById('dynamic-letter-text');
-                if(monthlyLetters[currentMonth]) {
-                    letterParagraph.innerText = monthlyLetters[currentMonth].text;
+                if(dailyLetters[todayDate]) {
+                    letterParagraph.innerText = dailyLetters[todayDate].text;
                 }
                 document.getElementById('gate-reveal').style.display = 'block';
-                alert("🔒 Access Granted! This Month's Secret Letter Unlocked.");
+                alert("🔒 Access Granted! Today's Daily Letter Unlocked.");
             } else {
                 alert("❌ Wrong code! Hint: Hamari special date yaad karo.");
             }
@@ -777,6 +840,13 @@
             }
 
             if(panelId === 'tab-story') { initScratchCard(); }
+            
+            if(panelId === 'tab-gallery') {
+                setTimeout(() => {
+                    const section = document.getElementById('magical-gallery-section');
+                    if(section) section.scrollIntoView({ behavior: 'smooth' });
+                }, 50);
+            }
             playSecretMusic(); 
         }
 
@@ -842,7 +912,6 @@
             const element = document.createElement('div');
             element.classList.add('floating-element');
             
-            // Switch falling pool automatically if it's the main Birthday event
             const activePool = isBirthdayToday ? birthdayPool : romanticPool;
             const randomType = activePool[Math.floor(Math.random() * activePool.length)];
             element.innerHTML = randomType;
@@ -864,8 +933,8 @@
         window.onload = () => { 
             initScratchCard(); 
             checkSpecialEvents(); 
-            applyAutoTheme(); // Trigger theme controller on boot load sync
-            updateMonthlyClue(); // Setup current month hint dynamically
+            applyAutoTheme(); 
+            updateDailyFeatures(); // Run dynamic daily engine systems on boot boot loader sync
         };
     </script>
 </body>
