@@ -149,19 +149,15 @@
             100% { box-shadow: 0 0 25px rgba(0,0,0,0.7), 0 0 15px rgba(255, 77, 109, 0.35); border-color: rgba(255, 77, 109, 0.5); }
         }
 
-        /* Glass Counter Panel */
+     /* Glass Counter Panel */
         .counter-container {
-            margin: 0 auto 60px auto; padding: 40px 20px; max-width: 720px; text-align: center;
+            margin: 0 auto 40px auto; padding: 25px 15px; max-width: 720px; text-align: center;
         }
-        .counter-container h2 { font-size: 1.3rem; color: #fff; margin-bottom: 30px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 8px var(--neon-glow); }
-        .timer { display: flex; justify-content: space-around; }
-        .timer-box { width: 22%; position: relative; }
-        .timer-box span { display: block; font-size: 3rem; font-weight: 800; color: #fff; text-shadow: 0 0 10px var(--neon-pink); line-height: 1.1; margin-bottom: 5px; }
-        .timer-box label { font-size: 0.8rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
-        .timer-box:not(:last-child)::after {
-            content: '💖'; position: absolute; right: -20%; top: 15%; font-size: 1.2rem; opacity: 0.5; animation: pulseAura 1s infinite alternate;
-        }
-
+        .counter-container h2 { font-size: 1.1rem; color: #fff; margin-bottom: 20px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 8px var(--neon-glow); }
+        .timer { display: flex; justify-content: space-around; gap: 5px; }
+        .timer-box { width: 24%; position: relative; }
+        .timer-box span { display: block; font-size: 1.8rem; font-weight: 800; color: #fff; text-shadow: 0 0 10px var(--neon-pink); line-height: 1.1; margin-bottom: 3px; }
+        .timer-box label { display: block; font-size: 0.65rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
         .section-title { 
             color: #fff; font-size: 2.3rem; margin-bottom: 50px; text-align: center; font-weight: 700;
             letter-spacing: 1px; text-shadow: 0 0 10px var(--neon-glow);
