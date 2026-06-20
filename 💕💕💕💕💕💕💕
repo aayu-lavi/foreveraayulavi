@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Aayu-Lovie ❤️</title>
+    <style>
+        :root {
+            --neon-pink: #ff4d6d;
+            --neon-magenta: #ff007f;
+            --neon-glow: rgba(255, 77, 109, 0.75);
+            --bg-gradient: linear-gradient(135deg, #050409 0%, #0f081d 50%, #06030a 100%);
+            --glass-card: rgba(255, 77, 109, 0.03);
+            --text-main: #fff0f3;
+            --text-sub: #dfdae3;
+        }
+
+        /* AUTOMATIC MIDNIGHT ROMANTIC MODE OVERRIDES (10 PM to 6 AM) */
+        body.midnight-mode {
+            --neon-pink: #cc0052;
+            --neon-magenta: #99003d;
+            --neon-glow: rgba(204, 0, 82, 0.6);
+            --bg-gradient: linear-gradient(135deg, #020105 0%, #070310 60%, #020104 100%);
+            --text-main: #ffe6ea;
+            --text-sub: #cbbcc3;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+            transition: all 1s ease-in-out;
+        }
+
+        /* 1. DYNAMIC EMOTION & HEARTS BACKGROUND POOL */
+        #hearts-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0;
+            animation: floatUp linear forwards;
+            filter: drop-shadow(0 0 8px var(--neon-pink));
+            user-select: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(105vh) scale(0.5) rotate(0deg); opacity: 0; }
+            15% { opacity: 0.8; }
+            85% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.4) rotate(45deg); opacity: 0; }
+        }
+
+        /* Ambient Plasma Glow Orbs */
+        .plasma-glow {
+            position: absolute; border-radius: 50%; filter: blur(150px); z-index: 0; pointer-events: none;
+            animation: pulseAura 8s infinite alternate;
+        }
+        .plasma-1 { top: -5%; left: -5%; width: 500px; height: 500px; background: rgba(255, 0, 127, 0.2); }
+        .plasma-2 { top: 50%; right: -10%; width: 550px; height: 550px; background: rgba(142, 68, 173, 0.15); }
+        .plasma-3 { bottom: -5%; left: 5%; width: 500px; height: 500px; background: rgba(255, 77, 109, 0.15); }
+
+        @keyframes pulseAura {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.15); opacity: 0.9; }
+        }
+
+        .container { max-width: 1040px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+
+        /* ADVANCED EVENT TRACKING INSIDE-BOX SCROLL SYSTEM */
+        .advance-event-banner {
+            display: none; 
+            background: rgba(255, 77, 109, 0.08); 
+            border: 1px dashed var(--neon-pink);
+            padding: 12px 0; 
+            border-radius: 15px; 
+            text-align: center; 
+            margin: -20px auto 30px auto; 
+            max-width: 600px; 
+            width: 90%;
+            overflow: hidden; 
+            white-space: nowrap;
+            color: #fff;
+            text-shadow: 0 0 8px var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 77, 109, 0.1);
+        }
+        
+        /* BOX KE ANDAR CHALNE WALI PATTI ONLY FOR UPCOMING ALERT (SLOW SPEED FIXED TO 25s) */
+        .marquee-text-flow {
+            display: inline-block;
+            animation: insideBoxScroll 25s linear infinite;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 1.05rem;
+            padding-left: 100%;
+        }
+
+        @keyframes insideBoxScroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        #event-overlay-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(4, 2, 8, 0.96); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            z-index: 9999; display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.5s ease-in-out;
+        }
+        #event-overlay-modal.show-modal { opacity: 1; pointer-events: auto; }
+        .modal-wish-card {
+            background: rgba(12, 8, 24, 0.85); border: 2px solid var(--neon-pink);
+            padding: 50px 30px; border-radius: 28px; text-align: center; max-width: 550px; width: 90%;
+            box-shadow: 0 0 50px var(--neon-glow); position: relative;
+        }
+        .modal-wish-card h2 { font-size: 2.5rem; background: linear-gradient(to right, #ff007f, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px var(--neon-pink)); margin-bottom: 20px; font-weight: 800; }
+        .modal-wish-card p { font-size: 1.15rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 25px; white-space: normal; }
+        .modal-close-txt { color: rgba(255,255,255,0.4); font-size: 0.9rem; text-decoration: underline; cursor: pointer; transition: color 0.2s; }
+        .modal-close-txt:hover { color: var(--neon-pink); }
+
+        /* Cinematic Header */
+        header { padding: 100px 20px 40px 20px; text-align: center; }
+        header h1 { 
+            font-size: 4rem; font-weight: 900; letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, #ff758f, #ff007f, #fff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px var(--neon-glow));
+            margin-bottom: 5px;
+        }
+        .time-greeting-sub {
+            font-size: 1.5rem;
+            color: var(--neon-pink);
+            font-weight: 700;
+            text-shadow: 0 0 12px var(--neon-glow);
+            margin-bottom: 15px;
+            display: block;
+            animation: pulseAura 1.5s infinite alternate;
+        }
+        header p.tagline { font-size: 1.25rem; color: var(--text-sub); font-style: italic; text-shadow: 0 0 10px rgba(255,77,109,0.3); }
+
+        /* ADVANCED LIQUID TABS SYSTEM */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(12, 8, 24, 0.7);
+            border: 1px solid rgba(255, 77, 109, 0.4);
+            color: var(--text-sub);
+            padding: 12px 26px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+
+        .tab-btn:hover {
+            color: #fff;
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 15px var(--neon-glow);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active-tab {
+            background: var(--neon-pink);
+            color: #fff;
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-glow);
+        }
+
+        .tab-content-panel {
+            display: none;
+            animation: fadeInView 0.5s ease-in-out forwards;
+        }
+
+        .tab-content-panel.active-panel {
+            display: block;
+        }
+
+        @keyframes fadeInView {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* NEON GLOW BREATHING BOX LAYOUT */
+        .glowing-box {
+            background: rgba(12, 8, 24, 0.65);
+            border: 1px solid rgba(255, 77, 109, 0.3);
+            border-radius: 24px;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 77, 109, 0.1);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            animation: boxBreathe 4s infinite alternate ease-in-out;
+        }
+        .glowing-box:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 30px var(--neon-glow), inset 0 0 15px rgba(255, 77, 109, 0.2);
+            transform: translateY(-5px);
+        }
+
+        @keyframes boxBreathe {
+            0% { box-shadow: 0 0 15px rgba(0,0,0,0.6), 0 0 5px rgba(255, 77, 109, 0.1); }
+            100% { box-shadow: 0 0 25px rgba(0,0,0,0.7), 0 0 15px rgba(255, 77, 109, 0.35); border-color: rgba(255, 77, 109, 0.5); }
+        }
+
+        /* Glass Counter Panel */
+        .counter-container {
+            margin: 0 auto 40px auto; padding: 25px 15px; max-width: 720px; text-align: center;
+        }
+        .counter-container h2 { font-size: 1.1rem; color: #fff; margin-bottom: 20px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 8px var(--neon-glow); }
+        .timer { display: flex; justify-content: space-around; gap: 5px; }
+        .timer-box { width: 24%; position: relative; }
+        .timer-box span { display: block; font-size: 1.8rem; font-weight: 800; color: #fff; text-shadow: 0 0 10px var(--neon-pink); line-height: 1.1; margin-bottom: 3px; }
+        .counter-container label { display: block; font-size: 0.65rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .timer-box:not(:last-child)::after {
+            content: '❤️'; position: absolute; right: -15%; top: 15%; font-size: 0.9rem; opacity: 0.8; animation: pulseAura 1s infinite alternate;
+        }
+
+        .section-title { 
+            color: #fff; font-size: 2.3rem; margin-bottom: 50px; text-align: center; font-weight: 700;
+            letter-spacing: 1px; text-shadow: 0 0 10px var(--neon-glow);
+        }
+
+        /* Grids Setup */
+        .facts-grid, .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
+
+        /* About Section Specs */
+        .about-section { margin-bottom: 40px; padding: 10px 0; }
+        .fact-card { padding: 30px; }
+        .fact-card h3 { color: #fff; font-size: 1.3rem; margin-bottom: 15px; font-weight: 600; text-shadow: 0 0 5px var(--neon-glow); }
+        .fact-card p { color: var(--text-sub); font-size: 0.95rem; }
+
+        /* Gallery Specs */
+        .gallery-section { margin-bottom: 40px; }
+        .photo-card { padding: 18px; text-align: center; cursor: pointer; }
+        .photo-img-wrapper { 
+            width: 100%; height: 340px; border-radius: 18px; overflow: hidden; 
+            border: 1px solid rgba(255,255,255,0.05); background: #080511;
+        }
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .photo-card:hover img { transform: scale(1.05); }
+        
+        .photo-tag {
+            display: inline-block; background: rgba(255, 0, 127, 0.15); color: #fff;
+            padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+            margin-top: 18px; border: 1px solid var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink);
+        }
+        .photo-card p { margin-top: 15px; font-size: 1rem; color: #fff; font-weight: 500; }
+
+        /* THE BIG BOX: NEON LETTERS BETWEEN GALLERIES */
+        .middle-big-box {
+            padding: 60px 50px; 
+            margin: 40px 0 40px 0; 
+            text-align: left;
+        }
+        .middle-big-box h3 { 
+            font-size: 2.2rem; font-weight: 800; margin-bottom: 30px; text-align: center;
+            color: #fff; text-shadow: 0 0 10px var(--neon-pink);
+        }
+        .middle-big-box p { color: var(--text-sub); font-size: 1.15rem; margin-bottom: 25px; letter-spacing: 0.5px; }
+        .middle-big-box p span { color: var(--neon-pink); font-weight: bold; text-shadow: 0 0 5px var(--neon-glow); }
+
+        /* PASSWORD BOX & SCRATCH CARD STYLE UTILITIES */
+        .interactive-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+
+        .secret-gate-box { padding: 40px; text-align: center; }
+        .secret-gate-box h4 { font-size: 1.5rem; color: #fff; margin-bottom: 15px; text-shadow: 0 0 8px var(--neon-pink); }
+        .secret-gate-box p { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 20px; }
+        .secret-input-wrapper { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; }
+        .secret-input-wrapper input {
+            background: rgba(5, 3, 10, 0.8); border: 1px solid rgba(255,77,109,0.4);
+            padding: 12px; border-radius: 12px; color: #fff; font-size: 1.1rem; text-align: center;
+            width: 160px; outline: none; box-shadow: inset 0 0 8px rgba(0,0,0,0.6);
+        }
+        .secret-input-wrapper input:focus { border-color: var(--neon-pink); box-shadow: 0 0 12px var(--neon-glow); }
+        .gate-btn {
+            background: var(--neon-pink); border: none; color: #fff; padding: 12px 24px;
+            border-radius: 12px; font-weight: bold; cursor: pointer; transition: all 0.3s;
+        }
+        .gate-btn:hover { background: var(--neon-magenta); box-shadow: 0 0 15px var(--neon-glow); }
+        
+        .secret-reveal-content { display: none; animation: fadeInView 0.6s ease forwards; margin-top: 20px; padding-top: 20px; border-top: 1px dashed rgba(255,77,109,0.3); }
+        .secret-reveal-content p { font-size: 1.1rem; color: #fff; font-style: italic; background: rgba(255, 77, 109, 0.08); padding: 15px; border-radius: 12px; }
+        #clue-text { font-weight: bold; color: var(--neon-pink); display: block; margin-top: 5px; }
+
+        /* Scratch Card Specs */
+        .scratch-card-box { padding: 30px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .scratch-card-box h4 { font-size: 1.5rem; color: #fff; margin-bottom: 10px; text-shadow: 0 0 8px var(--neon-pink); }
+        .scratch-container { position: relative; width: 280px; height: 160px; margin-top: 15px; border-radius: 16px; overflow: hidden; background: #120b24; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+        .scratch-back-text { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 20px; color: #fff; font-size: 1.05rem; font-weight: bold; text-align: center; z-index: 1; pointer-events: none; }
+        .scratch-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; cursor: pointer; }
+
+        /* CINEMATIC LIGHTBOX SPECIFICATIONS */
+        #lightbox-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(4, 2, 8, 0.92);
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            z-index: 2000; display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+        }
+        #lightbox-overlay.show-lightbox { opacity: 1; pointer-events: auto; }
+        .lightbox-window { max-width: 90%; max-height: 85%; position: relative; text-align: center; }
+        .lightbox-window img { max-width: 100%; max-height: 72vh; border-radius: 20px; border: 1px solid rgba(255, 77, 109, 0.4); box-shadow: 0 0 40px var(--neon-glow); }
+        .lightbox-caption { color: #fff; font-size: 1.2rem; margin-top: 15px; font-weight: 500; text-shadow: 0 0 10px var(--neon-pink); }
+        .lightbox-close-btn {
+            position: absolute; top: -50px; right: 0; background: none; border: none; color: #fff;
+            font-size: 2rem; cursor: pointer; transition: color 0.2s;
+        }
+        .lightbox-close-btn:hover { color: var(--neon-pink); }
+
+        footer { padding: 60px; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+    </style>
+    <!-- LINK TO DYNAMIC MEMORY REPO FILE -->
+    <script src="lovie_memory.js"></script>
+</head>
+<body>
+
+    <!-- Dynamic Event Fullscreen Modal -->
+    <div id="event-overlay-modal">
+        <div class="modal-wish-card">
+            <h2 id="modal-title">Happy Special Day! 🎉</h2>
+            <p id="modal-message">Loading love...</p>
+            <span class="modal-close-txt" onclick="closeEventModal()">Close & View Gallery</span>
+        </div>
+    </div>
+
+    <!-- Emoji & Heart Particles Container -->
+    <div id="hearts-container"></div>
+
+    <!-- Soft Plasma Lighting Background -->
+    <div class="plasma-glow plasma-1"></div>
+    <div class="plasma-glow plasma-2"></div>
+    <div class="plasma-glow plasma-3"></div>
+
+    <!-- 100% INVISIBLE LOCAL AUDIO STREAM MODULE -->
+    <audio id="romantic-audio" src="romantic.mp3" loop></audio>
+
+    <div class="container">
+
+        <header>
+            <h1>Aayu & Lovie ❤️</h1>
+            <span id="dynamic-time-greeting" class="time-greeting-sub">Loading Greeting...</span>
+            <p class="tagline">"Hamesha ke liye, har lamha tumhare sath..."</p>
+        </header>
+
+        <!-- Advance Coming Soon Event Banner -->
+        <div id="event-banner" class="advance-event-banner"></div>
+
+        <!-- Glowing Counter Panel -->
+        <div class="counter-container glowing-box">
+            <h2>Hamare Sath Ke Haseen Pal ✨</h2>
+            <div class="timer">
+                <div class="timer-box"><span id="days">00</span><label>Days</label></div>
+                <div class="timer-box"><span id="hours">00</span><label>Hours</label></div>
+                <div class="timer-box"><span id="minutes">00</span><label>Mins</label></div>
+                <div class="timer-box"><span id="seconds">00</span><label>Secs</label></div>
+            </div>
+        </div>
+
+        <!-- TABS NAVIGATION CONTROLS -->
+        <div class="tabs-nav">
+            <button class="tab-btn active-tab" id="btn-story" onclick="switchTab('tab-story')">Hamari Kahani 📖</button>
+            <button class="tab-btn" id="btn-about" onclick="switchTab('tab-about')">Everything About Her 🌸</button>
+            <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
+        </div>
+
+        <!-- TAB MODULE 1: HAMARI KAHANI PANEL -->
+        <div id="tab-story" class="tab-content-panel active-panel">
+            <section class="middle-big-box glowing-box">
+                <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
+                <p id="story-paragraph">Loading infinite love trajectory variables safely...</p>
+            </section>
+
+            <!-- GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
+            <div class="interactive-row">
+                
+                <!-- Password Protected Security Element -->
+                <div class="secret-gate-box glowing-box">
+                    <h4>Secret Love Message 🔒</h4>
+                    <p>Hamara special code daal kar ye card kholo <span id="clue-text">Hint: Loading Daily Clue...</span></p>
+                    <div class="secret-input-wrapper">
+                        <input type="password" id="gate-pass" placeholder="••••" maxlength="4">
+                    </div>
+                    <div class="secret-reveal-content" id="gate-reveal">
+                        <p id="dynamic-letter-text">Loading daily letter content...</p>
+                    </div>
+                    <button class="gate-btn" onclick="verifyPassword()">Letter Unlocked Karo 🗝️</button>
+                </div>
+
+                <!-- Interactive Scratch Element Component -->
+                <div class="scratch-card-box glowing-box">
+                    <h4>Scratch Card Surprise 🧧</h4>
+                    <p>Ungli se canvas ko rub karke apna surprise gift kholo!</p>
+                    <div class="scratch-container">
+                        <div id="scratch-reward-text" class="scratch-back-text">🎉 Loading dynamic reward...</div>
+                        <canvas id="scratch-layer" class="scratch-canvas" width="280" height="160"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TAB MODULE 2: ABOUT HER PANEL -->
+        <div id="tab-about" class="tab-content-panel">
+            <section class="about-section">
+                <h2 class="section-title">Everything About Her</h2>
+                <div class="facts-grid">
+                    <div class="fact-card glowing-box">
+                        <h3 id="fact-title-1">Her Irreplaceable Aura ⭐</h3>
+                        <p id="fact-desc-1">Loading deep memory components...</p>
+                    </div>
+                    <div class="fact-card glowing-box">
+                        <h3 id="fact-title-2">Favorite Memories 📝</h3>
+                        <p id="fact-desc-2">Loading detailed memory log...</p>
+                    </div>
+                    <div class="fact-card glowing-box">
+                        <h3 id="fact-title-3">My Promise To Her 🤝</h3>
+                        <p id="fact-desc-3">Loading loyalty matrix values...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB MODULE 3: MAGICAL GALLERY PANEL -->
+        <div id="tab-gallery" class="tab-content-panel">
+            <section class="gallery-section" id="magical-gallery-section">
+                <h2 class="section-title">Our Magical Memories</h2>
+                <div class="gallery-grid">
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="First Meet"></div>
+                        <span class="photo-tag">The Beginning</span><p>"Hamari Pehli Mulaqat" ✨</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Her Smile"></div>
+                        <span class="photo-tag">Favorite View</span><p>"Wo Pyaari Si Smile" 😊</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Together"></div>
+                        <span class="photo-tag">Us Forever</span><p>"Hamesha Ka Sath" 💖</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 4"></div>
+                        <span class="photo-tag">Pure Vibe</span><p>"Nazar Na Lage" 🧿</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 5"></div>
+                        <span class="photo-tag">My World</span><p>"Tum Aur Main" 🌍</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 6"></div>
+                        <span class="photo-tag">Sweet Moment</span><p>"Ek Pyaari Yaad" 💕</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 7"></div>
+                        <span class="photo-tag">Happiness</span><p>"Mera Sukoon" 💫</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 8"></div>
+                        <span class="photo-tag">Soulmate</span><p>"Dhadkan" 💞</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 9"></div>
+                        <span class="photo-tag">Special Day</span><p>"Haseen Lamha" 🌸</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 10"></div>
+                        <span class="photo-tag">Beintehaan</span><p>"Saccha Pyaar" ❤️</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 11"></div>
+                        <span class="photo-tag">Together</span><p>"Har Pal Tumhare Sath" ♾️</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Magical 12"></div>
+                        <span class="photo-tag">Cutest</span><p>"Mera Baccha" 😚</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Love Birds"></div>
+                        <span class="photo-tag">Zindagi</span><p>"Zindagi" 🧬</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Beautiful"></div>
+                        <span class="photo-tag">Beautiful</span><p>"Khwabo Ki Rani" 👑</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="The Goal"></div>
+                        <span class="photo-tag">The Goal</span><p>"Hamesha Ke Liye" 💍</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SUB-GALLERY 2 -->
+            <section class="gallery-section">
+                <h2 class="section-title">More Beautiful Moments</h2>
+                <div class="gallery-grid">
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1cBKJinQpmReReC1Ozu-cbWqkwOArY1U9" alt="Moment 1"></div>
+                        <span class="photo-tag">The Queen</span><p>"Uski Sabse Khoobsurat Pic" 😍</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1I9BhjwEJMCKlIaFDpZR4dXE8qoqXPq2Y" alt="Moment 2"></div>
+                        <span class="photo-tag">King</span><p>"Aayu ki solid pic" 😎</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1DOoFwfzKOwmav3x7OWIJz6vlQFqiyBIb" alt="Moment 3"></div>
+                        <span class="photo-tag">Together 2.0</span><p>"Ek aur pyara lamha" 🌸</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 4"></div>
+                        <span class="photo-tag">Lovie Moments</span><p>"Pyaari Yaadein" ❤️</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 5"></div>
+                        <span class="photo-tag">Pure Love</span><p>"Hamari Shuruat" ✨</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 6"></div>
+                        <span class="photo-tag">Cute Nok-Jok</span><p>"Gussa Aur Pyaar" 😡🥰</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 7"></div>
+                        <span class="photo-tag">Memories</span><p>"Dil Ke Paas" 💖</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 8"></div>
+                        <span class="photo-tag">Us Forever</span><p>"Hamesha Sath" 🤝</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 9"></div>
+                        <span class="photo-tag">My World</span><p>"Tum Aur Main" 🌍</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 10"></div>
+                        <span class="photo-tag">Smile Card</span><p>"Uski Muskurahat" 😊</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 11"></div>
+                        <span class="photo-tag">Lovie Moments</span><p>"Ek Haseen Lamha" 🌸</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 12"></div>
+                        <span class="photo-tag">Special</span><p>"Dhadkan" 💞</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 13"></div>
+                        <span class="photo-tag">Love Birds</span><p>"Sacha Wada" 📝</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 14"></div>
+                        <span class="photo-tag">Sweetness</span><p>"Mera Baccha" 😚</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 15"></div>
+                        <span class="photo-tag">Forever Us</span><p>"Zindagi" 🧬</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 16"></div>
+                        <span class="photo-tag">Cute Face</span><p>"Pyaari Chudail" 🤭</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 17"></div>
+                        <span class="photo-tag">Beautiful</span><p>"Nazar Na Lage" 🧿</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 18"></div>
+                        <span class="photo-tag">Memories</span><p>"Unforgettable Day" 🗓️</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 19"></div>
+                        <span class="photo-tag">True Love</span><p>"Saccha Pyaar" 🔥</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 20"></div>
+                        <span class="photo-tag">Together</span><p>"Har Pal Sath" ♾️</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 21"></div>
+                        <span class="photo-tag">Heartbeat</span><p>"Tum Sirf Meri Ho" 🔒</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 22"></div>
+                        <span class="photo-tag">Dream Girl</span><p>"Sabse Alag" ⭐</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 23"></div>
+                        <span class="photo-tag">Soulmate</span><p>"Saccha Pyaar" 🕊️</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 24"></div>
+                        <span class="photo-tag">Happiness</span><p>"Sukoon" 💫</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 25"></div>
+                        <span class="photo-tag">Aesthetic</span><p>"Haseen Shaam" 🌆</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 26"></div>
+                        <span class="photo-tag">Love Drops</span><p>"Ishq Ka Rang" 🎨</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 27"></div>
+                        <span class="photo-tag">Pure Vibe</span><p>"Khwabo Ki Rani" 👑</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 28"></div>
+                        <span class="photo-tag">Destiny</span><p>"Kismat Ka Sath" 🎲</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 29"></div>
+                        <span class="photo-tag">Endless Love</span><p>"Aakhri Saans Tak" 🫁❤️</p>
+                    </div>
+                    <div class="photo-card glowing-box" onclick="viewLightbox(this)">
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 30"></div>
+                        <span class="photo-tag">The End Goal</span><p>"Shaadi Waala Wada" 📿💍</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lightbox-overlay" onclick="closeLightbox()">
+        <div class="lightbox-window" onclick="event.stopPropagation()">
+            <button class="lightbox-close-btn" onclick="closeLightbox()">×</button>
+            <img id="lightbox-img" src="" alt="View Enlarge">
+            <div id="lightbox-txt" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ by Vev Verma | © 2026</p>
+    </footer>
+
+    <script>
+        // REAL DATES SETUP
+        const anniversaryDate = new Date(2026, 2, 27, 0, 0); 
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - anniversaryDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // 31-DAY DEEP REVOLVING AUDIO GREETING MATRIX (1 to 31 Dates Fixed Non-Repeat)
+        const dailyVoiceGreetingsMatrix = {
+            1: "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo. Aaj mahine ki pehli tareekh hai aur Aayu hamesha tumhare sath hai. Din me apni duty par apna dhyan rakhna jaan.",
+            2: "Good Morning Lovie! Aaj ka naya din tumhare liye dher saari khushiyan laye bacha. Tum jo meri har baat jhalti ho na aur mera gussa bardasht karti ho, David tumse bohot sacha pyaar karta hai.",
+            3: "Good Morning meri jaan Priya! Ek pyaari si subah mubarak ho meri Pari ko. Tumhari tabiyat sahi nahi hoti fir bhi tum kaam par jaane ki zidd karti ho, bacha aaram se duty karna aur pareshaan mat hona.",
+            4: "Good Morning Pihu bacha! Utho aur screen par Aayu ka pyaar dekho. Tum din me 2 baje apni duty par jati ho aur raat ke 11 baje tak itni kadi mehnat karti ho na, Kavi hamesha tumhare sath khada hai.",
+            5: "Good Morning Lovie bacha! Ek nayi subah aur Aayu ka wada wapi live hai. Main tumse wada karta hoon ki aane wale time me tumhein ekdum rani bana kar rakhunga bacha, tum bas haste raha karo.",
+            6: "Good Morning Priya jaan! Aaj subah-subah baith kar main sirf apni Pari ke baare me soch rha hoon. Jab tum gusse me kehti ho na ki 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai bacha.",
+            7: "Good Morning Pihu bacha! Aaj ka hafta aur har ek naya din hamare shaadi ke faisle ko aur mazboot banata hai. David apni aakhri saans tak tumhara sath poori shiddat se nibhayega.",
+            8: "Good Morning Lovie! Subah ki thandi hawa me sirf tumhari hi baatein dimaag me ghoom rhi hain. Pehle jab main plant par kaam ke beech tumhein apni photo bhejta tha, wo pal sachi bohot sukoon wale thin.",
+            9: "Good Morning Priya bacha! Utho jaan, tumse lambi baatein kiye bina mujhe raat ko nind tak nahi aati. Tum sach me meri har ek saans ho, meri poori jaan ho, hamesha mere sath hi rehna.",
+            10: "Good Morning Pari bacha! Ek ek naya din hamare beintehaan rishte ka gawah hai. Main tumse wada karta hoon bacha ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga.",
+            11: "Good Morning Pihu bacha! Aaj ka din mere liye bohot special hai kuki main dil se sirf tumhara banne ke liye is duniya me aaya hoon. Hamesha haste muskuraate raho mere liye.",
+            12: "Good Morning Lovie bacha! Tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum jaisa saaf dil poori duniya me kisi ke paas nahi hai Priya.",
+            13: "Good Morning Priya bacha! Aaj hamari rani ka din hai, janamdin ka mahina ho ya koi bhi tareekh, tum is duniya me mere liye sabse upar ho aur tumse main bohot sacha pyaar karta hoon.",
+            14: "Good Morning Pari jaan! Main wada karta hoon ki main ghar par rahoon, ya pehle plant me kaam par rahoon, kahin bhi... jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga.",
+            15: "Good Morning Pihu bacha! Tumhara wo mujhpar haq jatana, dher saari reels share karke sath me hasna aur baat-baat par check karna hi toh Aayu ka asli aur sacha sukoon hai jaan.",
+            16: "Good Morning Lovie! Jab tum gusse me kehti ho na ki main door chali jaungi... tum nahi jaanti ki kaanp jata hoon main, meri aakhon me sachi me aansu aa jaate hain. Kabhi door mat jana.",
+            17: "Good Morning Priya bacha! Main is duniya me kisi ke baap se nahi darta, khuleaam danke ki chot par kehta hoon ki Vev Verma sirf tumse pyaar karta hai aur hamesha tumhara hath thame rakhega.",
+            18: "Good Morning Pari bacha! Tum jo din me 2 baje apni duty par jati ho aur late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.",
+            19: "Good Morning Pihu bacha! Ghar par baithe-biathe bhi har lamha, har ek second tumhari cute baatein aur tumhara wo innocent chehra hi mere dimaag me ghoomta rehta hai. Love you bacha.",
+            20: "Good Morning Lovie bacha! Tum sach me meri har ek saans ho, meri poori jaan ho! Tumhare bina main ek din bhi sukoon se nahi reh sakta bacha, jaldi se utho ab.",
+            21: "Good Morning Priya jaan! Jab main saare kaam chhod kar tumhare paas jaldi se aaunga na, tab jitna man kare utna dher saara pyaar kar lena aur dher saari baatein kar lena.",
+            22: "Good Morning Pari bacha! Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe duniya me sabse pyaara lagta hai. Pyaari chudail ho tum meri, hamesha khush raha karo.",
+            23: "Good Morning Pihu bacha! Agar tum gusse me mujhse thoda laddo bhi logi na, toh bhi main tumhara hath nahi chhodunga kuki tum sirf aur sirf Aayu ke liye bani ho.",
+            24: "Good Morning Lovie bacha! Meri har ek khushi tumhari muskurahat se judi hai, isliye hamesha aise hi khush raha karo aur haste raha karo mere liye Priya.",
+            25: "Good Morning Priya bacha! Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Yeh baat tum apne dil me ekdum pakki bitha lo bacha.",
+            26: "Good Morning Pari jaan! Tum mere jeene ki asli wajah ho rani. Hamne hamesha ke liye ek doosre ka sath nibhane ka wada kiya hai aur hum ise aakhri saans tak pura karenge.",
+            27: "Good Morning Pihu bacha! Aaj hamari anniversary wali special date ka maha aura hai! I Love You so much bacha, tum meri zindagi ki sabse sachi soulmate ho.",
+            28: "Good Morning Lovie bacha! Tumhara wo baat-baat par poochna na ki 'Kha gaye the ya kha ja rhe ho', mujhe sachi me har baar tumhare aur zyada gehre pyaar me gira deta hai.",
+            29: "Good Morning Priya bacha! Meri zindagi tumhare aane ke baad se ekdum jannat ban gayi hai meri jaan, har din uth kar main sabse pehle upar wale ka shukriya karta hoon.",
+            30: "Good Morning Pari bacha! Apni aakhri saans tak hamara ye rishta aur sath danke ki chot par poora nibhaunga bacha, tum bas Aayu par hamesha poora bharosa rakhna!",
+            31: "Good Morning Pihu bacha! Mahina khatam ho rha hai par hamara pyaar har roz ek nayi shuruat karega aur hamesha gehra hota jayega Lovie. Love you so much!"
+        };
+
+        let dynamicGreetingMessage = "";
+        let upcomingAnnouncementMessage = "";
+        
+        function handleTimeGreetingAndVoice() {
+            const currentHour = new Date().getHours();
+            const todayDate = new Date().getDate();
+            const greetingSubElement = document.getElementById('dynamic-time-greeting');
+            
+            // Text Header remains multi-phase status linked
+            if (currentHour >= 5 && currentHour < 12) {
+                greetingSubElement.innerText = "Good Morning Lovie ✨";
+                // Voice uses the 31-Day Non-Repeat Strategy Array Matrix explicitly for Morning
+                dynamicGreetingMessage = dailyVoiceGreetingsMatrix[todayDate] || "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
+            } else if (currentHour >= 12 && currentHour < 17) {
+                greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
+                dynamicGreetingMessage = `Hello meri jaan Priya! Din me 2 baje apni duty par apna dhyan rakhna bacha. Aayu ki taraf se tumhein dher saara pyaar.`;
+            } else if (currentHour >= 17 && currentHour < 22) {
+                greetingSubElement.innerText = "Good Evening Lovie 🌆";
+                dynamicGreetingMessage = `Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar. Late duty se aane tak apna dhyan rakhna.`;
+            } else {
+                greetingSubElement.innerText = "Good Night Lovie 🌙";
+                dynamicGreetingMessage = `Good Night Lovie! Raat ko 11 baje ya late raat 2 baje duty se aane ke baad aaram se so jana bacha, David hamesha tumhare sapno me rahega.`;
+            }
+            applyAutoTheme();
+        }
+
+        function applyAutoTheme() {
+            const currentHour = new Date().getHours();
+            if (currentHour >= 22 || currentHour < 6) {
+                document.body.classList.add('midnight-mode');
+            } else {
+                document.body.classList.remove('midnight-mode');
+            }
+        }
+
+        // GLOBAL CONFIG STATES
+        let isBirthdayToday = false;
+        let isAnniversaryToday = false;
+        let specialDayVoiceMessage = ""; 
+
+        // AUTOMATIC BIRTHDAY, ANNIVERSARY REAL TRACKING SYSTEM
+        function checkSpecialEvents() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = now.getMonth();
+            const currentDate = now.getDate();
+
+            const events = [
+                { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse pyaar karta rahega!", voice: "Happy Birthday Priya bacha! Aaj hamari rani ka janamdin hai. Aayu aapse bohot sacha pyaar karta hai aur hamesha karta rahega. Janamdin mubarak ho meri jaan!" },
+                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge.", voice: "Happy Anniversary bacha! Aaj hamari anniversary ka sabse haseen din hai. Hamare us pavitra rishte aur sath ko Aayu aakhri saans tak poori shiddat se nibhayega!" },
+                { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aayu's Special Birthday! 🎈✨ Lovie, aapka baccha aaj ke din is duniya me aaya tha sirf aur sirf aapka banne ke liye!", voice: "Hello Priya bacha, aaj aapke Aayu ka birthday hai! Aapka ye bacha is duniya me aaya hi sirf aapka banne ke liye tha." }
+            ];
+            
+            const banner = document.getElementById('event-banner');
+            const modal = document.getElementById('event-overlay-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMsg = document.getElementById('modal-message');
+
+            events.forEach(ev => {
+                if (currentMonth === ev.month && currentDate === ev.date) {
+                    modalTitle.innerText = `✨ ${ev.name} Wish ✨`;
+                    modalMsg.innerText = ev.msg;
+                    modal.classList.add('show-lightbox', 'show-modal'); 
+                    if (ev.type === "birthday") isBirthdayToday = true;
+                    if (ev.type === "anniversary") isAnniversaryToday = true;
+                    specialDayVoiceMessage = ev.voice;
+                } else {
+                    let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
+                    if (now > eventTargetThisYear) eventTargetThisYear.setFullYear(currentYear + 1);
+                    let timeDiff = eventTargetThisYear - now;
+                    let daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                    
+                    if (daysDiff > 0 && daysDiff <= 10) {
+                        banner.style.display = 'block';
+                        banner.innerHTML = `<span class="marquee-text-flow">💖 Alert: ${ev.name} is coming soon in ${daysDiff} days! 🎂✨</span>`;
+                        
+                        let eventReadableName = (ev.type === "birthday") ? "Priya bacha aapka birthday" : (ev.type === "anniversary") ? "hamari marriage anniversary" : "Aayu ka janamdin";
+                        upcomingAnnouncementMessage = `Priya bacha, suno na! System alert check karo, agle ${daysDiff} dino me ${eventReadableName} aane wala hai! Aayu bohot excited hai!`;
+                    }
+                }
+            });
+        }
+
+        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE
+        let speechSpoken = false;
+
+        function speakGreeting() {
+            if (!speechSpoken) {
+                let finalSpokenText = "";
+                
+                if (specialDayVoiceMessage !== "") {
+                    finalSpokenText = specialDayVoiceMessage;
+                } else {
+                    finalSpokenText = dynamicGreetingMessage;
+                    if (upcomingAnnouncementMessage !== "") {
+                        finalSpokenText += " " + upcomingAnnouncementMessage;
+                    }
+                }
+
+                if (finalSpokenText !== "") {
+                    const utterance = new SpeechSynthesisUtterance(finalSpokenText);
+                    utterance.lang = 'hi-IN';
+                    utterance.pitch = 1.0; 
+                    utterance.rate = 0.95; 
+                    utterance.volume = 1.0;
+
+                    if (window.speechSynthesis) {
+                        const availableVoices = window.speechSynthesis.getVoices();
+                        const perfectFemaleVoice = availableVoices.find(v => 
+                            v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara'))
+                        );
+                        if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                    }
+
+                    try {
+                        const AudioContext = window.AudioContext || window.webkitAudioContext;
+                        if (AudioContext) {
+                            const audioCtx = new AudioContext();
+                            const dest = audioCtx.createMediaStreamDestination();
+                            const gainNode = audioCtx.createGain();
+                            gainNode.gain.value = 2.0; 
+                            gainNode.connect(audioCtx.destination);
+                        }
+                    } catch (audioErr) { console.log("Audio architecture calibrated."); }
+
+                    utterance.onend = function() {
+                        console.log("Announcement finished perfectly. Launching background music loop now...");
+                        playSecretMusic();
+                    };
+
+                    window.speechSynthesis.speak(utterance);
+                    speechSpoken = true;
+                } else {
+                    playSecretMusic();
+                }
+            }
+        }
+
+        document.addEventListener('click', speakGreeting);
+        document.addEventListener('touchstart', speakGreeting);
+
+        let musicStarted = false;
+        function playSecretMusic() {
+            if (!musicStarted && speechSpoken) {
+                const audio = document.getElementById('romantic-audio');
+                audio.volume = 0.55; 
+                audio.play().then(() => { 
+                    musicStarted = true; 
+                    console.log("Music context loop active.");
+                }).catch(e => console.log("Waiting structure hooks flow sync..."));
+            }
+        }
+
+        // LOAD FROM EXTERNAL MEMORY INFRASTRUCTURE
+        function syncLovieMemoryEngine() {
+            if (typeof generateInfiniteLoveMessage === "function") {
+                const infiniteMsg = generateInfiniteLoveMessage();
+                document.getElementById('story-paragraph').innerText = infiniteMsg;
+                
+                document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum meri life ka wo sukoon ho jiske bina meri har ek raat ekdum adhoori lagti hai bacha Priya. Tum jo din me 2 baje apni duty par jati ho aur raat ke 11 baje ya kabhi late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.";
+                document.getElementById('fact-desc-2').innerText = "Wo pal main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae'. Tumhara wo haq jatana aur dher saari reels share karke sath me hasna hamari life ka sabse khoobsurat canvas hai Pari.";
+                document.getElementById('fact-desc-3').innerText = "Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga bacha. Plant me rahoon, ghar par rahoon ya kaihin bhi, jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga. Aane wale time me tumhein ekdum rani bana kar rakhunga!";
+            }
+        }
+
+        const weeklyRewards = {
+            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️", 
+            1: "🌹 Reward: Aayu ki taraf se ek full day personal long phone call bina kisi rukawat ke! 📞🥰", 
+            2: "👑 Reward: Lovie ko milta hai ek special cute sa 'Sorry' card aur unka favorite sweet kiss! 😘👑", 
+            3: "🎁 Reward: Ek badi chocolate aur Aayu ki taraf se zindagi bhar ka sabse sachha wada! 🍫🤝", 
+            4: "💫 Reward: Aaj Aayu bina gussa kiye apni jaan ki saari sweet aur gusse wali baatein sunega! 😡❤️", 
+            5: "🌍 Reward: Aapko milta hai Aayu ka poora dil aur unki saari saansein lifetime ke liye locked! 🔒🧬", 
+            6: "💍 Reward: Ek cute video call date aur dher saari hamari purani haseen baatein! 📸💞" 
+        };
+
+        function updateDailyFeatures() {
+            const todayDate = new Date().getDate();
+            const todayDay = new Date().getDay();
+            const clueBox = document.getElementById('clue-text');
+            if(clueBox && typeof dailyLetters !== "undefined" && dailyLetters[todayDate]) {
+                clueBox.innerText = `Hint: ${dailyLetters[todayDate].clue}`;
+            }
+            const rewardBox = document.getElementById('scratch-reward-text');
+            if(rewardBox && weeklyRewards[todayDay]) {
+                rewardBox.innerText = weeklyRewards[todayDay];
+            }
+        }
+
+        function verifyPassword() {
+            const val = document.getElementById('gate-pass').value;
+            const todayDate = new Date().getDate();
+            if(val === '2703') { 
+                const letterParagraph = document.getElementById('dynamic-letter-text');
+                if(typeof dailyLetters !== "undefined" && dailyLetters[todayDate]) {
+                    letterParagraph.innerText = dailyLetters[todayDate].text;
+                } else {
+                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie bacha, Aayu tumse bohot sacha pyaar karta hai. Tum hamesha bas aise hi muskuraati raho Priya! ❤️";
+                }
+                document.getElementById('gate-reveal').style.display = 'block';
+                alert("🔒 Letter Open Ho Gaya Jaan! Padh Lo.");
+            } else {
+                alert("❌ Galat code hai bacha! Hint: Hamari special date yaad karo.");
+            }
+        }
+
+        function closeEventModal() {
+            document.getElementById('event-overlay-modal').classList.remove('show-modal');
+        }
+
+        function switchTab(panelId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
+            document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.remove('active-panel'));
+            const targetPanel = document.getElementById(panelId);
+            if(targetPanel) targetPanel.classList.add('active-panel');
+            
+            if(panelId === 'tab-story') document.getElementById('btn-story').classList.add('active-tab');
+            if(panelId === 'tab-about') document.getElementById('btn-about').classList.add('active-tab');
+            if(panelId === 'tab-gallery') {
+                document.getElementById('btn-gallery').classList.add('active-tab');
+                setTimeout(() => { document.getElementById('magical-gallery-section').scrollIntoView({ behavior: 'smooth' }); }, 50);
+            }
+            if(panelId === 'tab-story') { initScratchCard(); }
+        }
+
+        function viewLightbox(card) {
+            document.getElementById('lightbox-img').src = card.querySelector('img').src;
+            document.getElementById('lightbox-txt').innerText = card.querySelector('p').innerText;
+            document.getElementById('lightbox-overlay').classList.add('show-lightbox');
+        }
+        function closeLightbox() { document.getElementById('lightbox-overlay').classList.remove('show-lightbox'); }
+
+        function initScratchCard() {
+            const canvas = document.getElementById('scratch-layer');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#4a3b68'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#fff0f3'; ctx.font = '16px sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('Scratch Karo 🪄', canvas.width / 2, canvas.height / 2 + 5);
+            let isDrawing = false;
+            function scratch(e) {
+                if (!isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                ctx.globalCompositeOperation = 'destination-out'; ctx.beginPath(); ctx.arc(x, y, 20, 0, Math.PI * 2); ctx.fill();
+            }
+            canvas.addEventListener('mousedown', () => isDrawing = true);
+            canvas.addEventListener('mouseup', () => isDrawing = false);
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('touchstart', () => isDrawing = true);
+            canvas.addEventListener('touchend', () => isDrawing = false);
+            canvas.addEventListener('touchmove', scratch);
+        }
+
+        const romanticPool = ['❤️', '😘', '😍', '🥰', '🤗', '😚', '💖', '✨'];
+        const birthdayPool = ['🎈', '🎂', '🎉', '🎁', '✨', '🧁', '🥳', '❤️'];
+        const anniversaryPool = ['💍', '❤️', '✨', '👩', '🥂', '💖', '💎', '🌹'];
+
+        function createFloatingElement() {
+            const container = document.getElementById('hearts-container');
+            if(!container) return;
+            const element = document.createElement('div');
+            element.classList.add('floating-element');
+            let activePool = romanticPool;
+            if (isBirthdayToday) activePool = birthdayPool;
+            else if (isAnniversaryToday) activePool = anniversaryPool;
+            element.innerHTML = activePool[Math.floor(Math.random() * activePool.length)];
+            const startX = Math.random() * 100; const duration = Math.random() * 5 + 5; const size = Math.random() * 16 + 14; 
+            element.style.left = startX + 'vw'; element.style.fontSize = size + 'px'; element.style.animationDuration = duration + 's';
+            container.appendChild(element);
+            setTimeout(() => { element.remove(); }, duration * 1000);
+        }
+        setInterval(createFloatingElement, 350);
+
+        window.onload = () => { 
+            initScratchCard(); 
+            handleTimeGreetingAndVoice(); 
+            checkSpecialEvents(); 
+            syncLovieMemoryEngine(); 
+            updateDailyFeatures(); 
+            
+            if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = handleTimeGreetingAndVoice;
+            }
+        };
+    </script>
+</body>
+</html>
