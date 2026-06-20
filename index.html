@@ -254,7 +254,6 @@
 </head>
 <body>
 
-    <!-- 🔥 UNIVERSAL SCREEN CLICK/TOUCH AUDIO BYPASS LAYER LAYER -->
     <div id="audio-gate-overlay" onclick="unlockAudioAndStartWebsite()">
         <div class="gate-card">
             <h2>Aayu & Lovie World ❤️</h2>
@@ -264,7 +263,6 @@
         </div>
     </div>
 
-    <!-- Dynamic Event Fullscreen Modal -->
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
@@ -305,7 +303,6 @@
             <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
         </div>
 
-        <!-- TAB MODULE 1 -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
@@ -336,7 +333,6 @@
             </div>
         </div>
 
-        <!-- TAB MODULE 2 -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Everything About Her</h2>
@@ -357,7 +353,6 @@
             </section>
         </div>
 
-        <!-- TAB MODULE 3 -->
         <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
@@ -449,7 +444,7 @@
             
             if (currentHour >= 5 && currentHour < 12) {
                 greetingSubElement.innerText = "Good Morning Lovie ✨";
-                dynamicGreetingMessage = dailyVoiceGreetingsMatrix[todayDate] || "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
+                dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
             } else if (currentHour >= 12 && currentHour < 17) {
                 greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
                 dynamicGreetingMessage = "Hello meri jaan Priya! Din me apni duty par apna dhyan rakhna bacha. Aayu ki taraf se tumhein dher saara pyaar.";
@@ -517,12 +512,12 @@
             });
         }
 
-        // 🔥 100% UNIFIED BYPASS ENGINE FOR ANY SCREEN GESTURE CLICKS
+        // 🔥 SCREEN-WIDE GESTURE AUDIO TRIGGER BYPASS FOR IOS AND ANDROID
         let speechSpoken = false;
         let musicStarted = false;
 
         function unlockAudioAndStartWebsite() {
-            // Unlocks strict Audio Threads for Android 16 & iOS WebKit
+            // Unlocks strict Audio Threads for Android 16 & iOS WebKit safely
             try {
                 const AudioContext = window.AudioContext || window.webkitAudioContext;
                 if (AudioContext) {
@@ -531,13 +526,13 @@
                 }
             } catch (e) { console.log("Hardware Sound Channels Unlocked"); }
 
-            // Pre-warm local audio files straight via active client threads
+            // Pre-warm local audio elements loop safely
             const audio = document.getElementById('romantic-audio');
             if(audio) {
                 audio.play().then(() => { audio.pause(); }).catch(e => console.log("Engine sync active"));
             }
 
-            // Remove the overlay screen node instantly
+            // Remove the overlay screen node instantly with a graceful fade
             const overlay = document.getElementById('audio-gate-overlay');
             if (overlay) {
                 overlay.style.opacity = '0';
@@ -553,7 +548,7 @@
                 }
 
                 if (finalSpokenText !== "") {
-                    window.speechSynthesis.cancel(); // Clears any stale Android speech queues
+                    window.speechSynthesis.cancel(); // Clears any stale speech threads
 
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
@@ -567,13 +562,19 @@
                         if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
                     }
 
-                    utterance.onend = function() { playSecretMusic(); };
-                    utterance.onerror = function() { playSecretMusic(); }; 
+                    // 🔥 MATURE AUDIO TIMING CHAIN: Announcement khatam hone ke exact 1.5 seconds (1500ms) baad song bajega
+                    utterance.onend = function() { 
+                        console.log("Announcement ended. Waiting 1.5 seconds for mature smooth transition...");
+                        setTimeout(() => { playSecretMusic(); }, 1500); 
+                    };
+                    utterance.onerror = function() { 
+                        setTimeout(() => { playSecretMusic(); }, 1500); 
+                    }; 
 
                     window.speechSynthesis.speak(utterance);
 
-                    // Safety secondary trigger ensures background loop isn't skipped on rigid phones
-                    setTimeout(() => { if (!musicStarted) playSecretMusic(); }, 4000);
+                    // Universal Safety Backup (Just in case browser drops onend hook thread)
+                    setTimeout(() => { if (!musicStarted) playSecretMusic(); }, 5000);
                 } else {
                     playSecretMusic();
                 }
@@ -597,6 +598,7 @@
             }
         }
 
+        // 🧠 100% REAL DYNAMIC AUTOPILOT STORAGE BINDING SYNCHRONIZER
         function syncLovieMemoryEngine() {
             if (typeof generateInfiniteLoveMessage === "function") {
                 const pureAutoGeneratedText = generateInfiniteLoveMessage();
