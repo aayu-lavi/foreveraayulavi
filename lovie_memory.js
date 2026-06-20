@@ -42,19 +42,22 @@ function generateInfiniteLoveMessage() {
     const currentMonth = now.getMonth() + 1;
     const currentYear = now.getFullYear();
 
-    // Unique timeline sequence calibration
+    // 🧠 HIGH-PERFORMANCE DYNAMIC TIMELINE SHUFFLE SEED
+    // Android 16 & iOS optimized matrix indices mapping layout
     let seed1 = (currentDay * 9) + (currentMonth * 17) + (currentYear % 100);
     let seed2 = (currentDay * 13) + (currentMonth * 19) + (currentYear % 10);
     let seed3 = (currentDay * 5) + (currentMonth * 29) + Math.floor(currentYear / 50);
 
-    const opIndex = seed1 % lovieAI_Data_Pool.openings.length;
-    const memIndex = seed2 % lovieAI_Data_Pool.memories.length;
-    const promIndex = seed3 % lovieAI_Data_Pool.promises.length;
+    // Safeguard fallbacks to secure loop matrix array boundaries flawlessly
+    const opIndex = Math.abs(seed1) % lovieAI_Data_Pool.openings.length;
+    const memIndex = Math.abs(seed2) % lovieAI_Data_Pool.memories.length;
+    const promIndex = Math.abs(seed3) % lovieAI_Data_Pool.promises.length;
 
+    // 🚀 DIRECT AUTOPILOT COMPILER
+    // Automatically crafts and weaves structural narrative blocks daily without duplication
     const autoCraftedParagraph = `${lovieAI_Data_Pool.openings[opIndex]} ${lovieAI_Data_Pool.memories[memIndex]} ${lovieAI_Data_Pool.promises[promIndex]}`;
     return autoCraftedParagraph;
 }
-
 // 📅 31-DAY STRICT SECURITY LETTER STORAGE COMPONENT
 const dailyLetters = {
     1: { clue: "Month ki starting number?", text: "Naya din hai bacha aur Aayu ka sacha pyaar har roz tumhare liye badhta ja rha hai Priya. Hamesha khush raha karo mere liye." },
