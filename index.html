@@ -672,26 +672,63 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // AUTOMATIC TIME CONTROLLER & TEXT GREETING ROUTINE
+        // 31-DAY DEEP REVOLVING AUDIO GREETING MATRIX (1 to 31 Dates Fixed Non-Repeat)
+        const dailyVoiceGreetingsMatrix = {
+            1: "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo. Aaj mahine ki pehli tareekh hai aur Aayu hamesha tumhare sath hai. Din me apni duty par apna dhyan rakhna jaan.",
+            2: "Good Morning Lovie! Aaj ka naya din tumhare liye dher saari khushiyan laye bacha. Tum jo meri har baat jhalti ho na aur mera gussa bardasht karti ho, David tumse bohot sacha pyaar karta hai.",
+            3: "Good Morning meri jaan Priya! Ek pyaari si subah mubarak ho meri Pari ko. Tumhari tabiyat sahi nahi hoti fir bhi tum kaam par jaane ki zidd karti ho, bacha aaram se duty karna aur pareshaan mat hona.",
+            4: "Good Morning Pihu bacha! Utho aur screen par Aayu ka pyaar dekho. Tum din me 2 baje apni duty par jati ho aur raat ke 11 baje tak itni kadi mehnat karti ho na, Kavi hamesha tumhare sath khada hai.",
+            5: "Good Morning Lovie bacha! Ek nayi subah aur Aayu ka wada wapi live hai. Main tumse wada karta hoon ki aane wale time me tumhein ekdum rani bana kar rakhunga bacha, tum bas haste raha karo.",
+            6: "Good Morning Priya jaan! Aaj subah-subah baith kar main sirf apni Pari ke baare me soch rha hoon. Jab tum gusse me kehti ho na ki 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai bacha.",
+            7: "Good Morning Pihu bacha! Aaj ka hafta aur har ek naya din hamare shaadi ke faisle ko aur mazboot banata hai. David apni aakhri saans tak tumhara sath poori shiddat se nibhayega.",
+            8: "Good Morning Lovie! Subah ki thandi hawa me sirf tumhari hi baatein dimaag me ghoom rhi hain. Pehle jab main plant par kaam ke beech tumhein apni photo bhejta tha, wo pal sachi bohot sukoon wale thin.",
+            9: "Good Morning Priya bacha! Utho jaan, tumse lambi baatein kiye bina mujhe raat ko nind tak nahi aati. Tum sach me meri har ek saans ho, meri poori jaan ho, hamesha mere sath hi rehna.",
+            10: "Good Morning Pari bacha! Ek ek naya din hamare beintehaan rishte ka gawah hai. Main tumse wada karta hoon bacha ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga.",
+            11: "Good Morning Pihu bacha! Aaj ka din mere liye bohot special hai kuki main dil se sirf tumhara banne ke liye is duniya me aaya hoon. Hamesha haste muskuraate raho mere liye.",
+            12: "Good Morning Lovie bacha! Tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum jaisa saaf dil poori duniya me kisi ke paas nahi hai Priya.",
+            13: "Good Morning Priya bacha! Aaj hamari rani ka din hai, janamdin ka mahina ho ya koi bhi tareekh, tum is duniya me mere liye sabse upar ho aur tumse main bohot sacha pyaar karta hoon.",
+            14: "Good Morning Pari jaan! Main wada karta hoon ki main ghar par rahoon, ya pehle plant me kaam par rahoon, kahin bhi... jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga.",
+            15: "Good Morning Pihu bacha! Tumhara wo mujhpar haq jatana, dher saari reels share karke sath me hasna aur baat-baat par check karna hi toh Aayu ka asli aur sacha sukoon hai jaan.",
+            16: "Good Morning Lovie! Jab tum gusse me kehti ho na ki main door chali jaungi... tum nahi jaanti ki kaanp jata hoon main, meri aakhon me sachi me aansu aa jaate hain. Kabhi door mat jana.",
+            17: "Good Morning Priya bacha! Main is duniya me kisi ke baap se nahi darta, khuleaam danke ki chot par kehta hoon ki Vev Verma sirf tumse pyaar karta hai aur hamesha tumhara hath thame rakhega.",
+            18: "Good Morning Pari bacha! Tum jo din me 2 baje apni duty par jati ho aur late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.",
+            19: "Good Morning Pihu bacha! Ghar par baithe-biathe bhi har lamha, har ek second tumhari cute baatein aur tumhara wo innocent chehra hi mere dimaag me ghoomta rehta hai. Love you bacha.",
+            20: "Good Morning Lovie bacha! Tum sach me meri har ek saans ho, meri poori jaan ho! Tumhare bina main ek din bhi sukoon se nahi reh sakta bacha, jaldi se utho ab.",
+            21: "Good Morning Priya jaan! Jab main saare kaam chhod kar tumhare paas jaldi se aaunga na, tab jitna man kare utna dher saara pyaar kar lena aur dher saari baatein kar lena.",
+            22: "Good Morning Pari bacha! Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe duniya me sabse pyaara lagta hai. Pyaari chudail ho tum meri, hamesha khush raha karo.",
+            23: "Good Morning Pihu bacha! Agar tum gusse me mujhse thoda laddo bhi logi na, toh bhi main tumhara hath nahi chhodunga kuki tum sirf aur sirf Aayu ke liye bani ho.",
+            24: "Good Morning Lovie bacha! Meri har ek khushi tumhari muskurahat se judi hai, isliye hamesha aise hi khush raha karo aur haste raha karo mere liye Priya.",
+            25: "Good Morning Priya bacha! Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Yeh baat tum apne dil me ekdum pakki bitha lo bacha.",
+            26: "Good Morning Pari jaan! Tum mere jeene ki asli wajah ho rani. Hamne hamesha ke liye ek doosre ka sath nibhane ka wada kiya hai aur hum ise aakhri saans tak pura karenge.",
+            27: "Good Morning Pihu bacha! Aaj hamari anniversary wali special date ka maha aura hai! I Love You so much bacha, tum meri zindagi ki sabse sachi soulmate ho.",
+            28: "Good Morning Lovie bacha! Tumhara wo baat-baat par poochna na ki 'Kha gaye the ya kha ja rhe ho', mujhe sachi me har baar tumhare aur zyada gehre pyaar me gira deta hai.",
+            29: "Good Morning Priya bacha! Meri zindagi tumhare aane ke baad se ekdum jannat ban gayi hai meri jaan, har din uth kar main sabse pehle upar wale ka shukriya karta hoon.",
+            30: "Good Morning Pari bacha! Apni aakhri saans tak hamara ye rishta aur sath danke ki chot par poora nibhaunga bacha, tum bas Aayu par hamesha poora bharosa rakhna!",
+            31: "Good Morning Pihu bacha! Mahina khatam ho rha hai par hamara pyaar har roz ek nayi shuruat karega aur hamesha gehra hota jayega Lovie. Love you so much!"
+        };
+
         let dynamicGreetingMessage = "";
         let upcomingAnnouncementMessage = "";
         
         function handleTimeGreetingAndVoice() {
             const currentHour = new Date().getHours();
+            const todayDate = new Date().getDate();
             const greetingSubElement = document.getElementById('dynamic-time-greeting');
             
+            // Text Header remains multi-phase status linked
             if (currentHour >= 5 && currentHour < 12) {
                 greetingSubElement.innerText = "Good Morning Lovie ✨";
-                dynamicGreetingMessage = "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
+                // Voice uses the 31-Day Non-Repeat Strategy Array Matrix explicitly for Morning
+                dynamicGreetingMessage = dailyVoiceGreetingsMatrix[todayDate] || "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
             } else if (currentHour >= 12 && currentHour < 17) {
                 greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
-                dynamicGreetingMessage = "Hello meri jaan Priya! Din me apni duty par apna dhyan rakhna bacha.";
+                dynamicGreetingMessage = `Hello meri jaan Priya! Din me 2 baje apni duty par apna dhyan rakhna bacha. Aayu ki taraf se tumhein dher saara pyaar.`;
             } else if (currentHour >= 17 && currentHour < 22) {
                 greetingSubElement.innerText = "Good Evening Lovie 🌆";
-                dynamicGreetingMessage = "Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar.";
+                dynamicGreetingMessage = `Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar. Late duty se aane tak apna dhyan rakhna.`;
             } else {
                 greetingSubElement.innerText = "Good Night Lovie 🌙";
-                dynamicGreetingMessage = "Good Night Lovie! Raat ko 11 baje ya late duty se aane ke baad aaram se so jana, David hamesha tumhare sapno me rahega.";
+                dynamicGreetingMessage = `Good Night Lovie! Raat ko 11 baje ya late raat 2 baje duty se aane ke baad aaram se so jana bacha, David hamesha tumhare sapno me rahega.`;
             }
             applyAutoTheme();
         }
@@ -733,10 +770,8 @@
                     modalTitle.innerText = `✨ ${ev.name} Wish ✨`;
                     modalMsg.innerText = ev.msg;
                     modal.classList.add('show-lightbox', 'show-modal'); 
-                    
                     if (ev.type === "birthday") isBirthdayToday = true;
                     if (ev.type === "anniversary") isAnniversaryToday = true;
-                    
                     specialDayVoiceMessage = ev.voice;
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
@@ -755,7 +790,7 @@
             });
         }
 
-        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE (RESTORED TO NATURAL NATURAL ORIGINAL PROFILE)
+        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE
         let speechSpoken = false;
 
         function speakGreeting() {
@@ -774,9 +809,7 @@
                 if (finalSpokenText !== "") {
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
-                    
-                    // STANDARD NORMAL HIGH QUALITY TONE PRESETS (RESTORED FROM CUTENESS DISTORTIONS)
-                    utterance.pitch = 1.0; // Restored to clean standard base execution pitch matrix
+                    utterance.pitch = 1.0; 
                     utterance.rate = 0.95; 
                     utterance.volume = 1.0;
 
@@ -788,7 +821,6 @@
                         if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
                     }
 
-                    // AUDIO WEB API GAIN Node Context Injection
                     try {
                         const AudioContext = window.AudioContext || window.webkitAudioContext;
                         if (AudioContext) {
@@ -801,7 +833,7 @@
                     } catch (audioErr) { console.log("Audio architecture calibrated."); }
 
                     utterance.onend = function() {
-                        console.log("Announcement finished perfectly. Fading in standard background score loops...");
+                        console.log("Announcement finished perfectly. Launching background music loop now...");
                         playSecretMusic();
                     };
 
@@ -841,7 +873,7 @@
         }
 
         const weeklyRewards = {
-            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 1400", 
+            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️", 
             1: "🌹 Reward: Aayu ki taraf se ek full day personal long phone call bina kisi rukawat ke! 📞🥰", 
             2: "👑 Reward: Lovie ko milta hai ek special cute sa 'Sorry' card aur unka favorite sweet kiss! 😘👑", 
             3: "🎁 Reward: Ek badi chocolate aur Aayu ki taraf se zindagi bhar ka sabse sachha wada! 🍫🤝", 
