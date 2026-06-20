@@ -4,13 +4,13 @@
 // Shared WhatsApp log parameters deeply embedded into revolving matrix loops.
 
 const lovieAI_Data_Pool = {
-    // 1. Genuine Dynamic Opening Hooks 
+    // 1. Genuine Dynamic Opening Hooks (Ekdum Mature aur Respectful)
     openings: [
         "Hey Priya bacha, aaj ghar par baith kar jab tumhara khayal aaya na, toh dil ekdum sukoon se bhar gaya jaan.",
         "Lovie meri jaan, subah se hi dimaag me tumhari un pyaari si baaton ka loop chal raha hai bacha.",
         "Pari bacha, ghar par baithe-biathe bhi har lamha, har ek second tumhari cute baatein hi dimaag me ghoomti hain.",
         "Pihu bacha, naya din shuru hote hi Aayu ka poora focus sirf aur sirf apni sachi soulmate par hi chala jata hai.",
-        "Lovie bacha, main khuleaam danke ki chot par sabke samne kehta hu ki tum meri zindagi ka sabse haseen sach ho."
+        "Lovie bacha, David bohot guroor se aur poore samman ke sath kehta hai ki tum meri zindagi ka sabse khoobsurat sach ho."
     ],
 
     // 2. Real Deep Emotional Memories Synced From Real Chat History
@@ -21,44 +21,38 @@ const lovieAI_Data_Pool = {
         "Jab tumhari tabiyat sahi nahi hoti, pet me ya per me dard hota hai periods ke time par, fir bhi tum duty par jaane ki zidd karti ho bacha, aur jab main fikr me thoda dant deta hoon toh mera gussa bhi kitne aaram se bardasht karti ho.",
         "Mujhe aaj bhi yaad hai jab tumhara phone sirf 9 percent charge tha aur tumne kaha tha ghar ja kar karungi, aur maine jab tumhe gussa dilane ke liye laptop se insta par chat karne ko bola tha... tumhari wo bacho ki tarah zidd mujhe sabse pyaari lagti hai.",
         "Wo raat jab main trading ka chart dekh raha tha aur tum chulbuli ki photo dekh kar bol rahi thin kitna cute hai ye baby... aur jab maine plant ke side se tumhe badam ka ped dikhaya tha, wo pal sachi bohot sukoon wale thin bacha.",
-        "Tumhara baat-baat par haq jatana aur bolna na ki 'mar khani hai kya aap ko, mujhse dar nhi lagta kya'... sachi bacha, ek sacche mard ko apni rani ka aisa haq jatana hi duniya ka sabse bada sukoon lagta hai.",
+        "Tumhara baat-baat par haq jatana aur bolna na ki 'mar khani hai kya aap ko, mujhse dar nhi lagta kya'... sachi bacha, ek mature rishte me apni rani ka aisa haq jatana hi duniya ka sabse bada sukoon lagta hai.",
         "Jab tum khet par jaane par ya busy schedule me kehti ho na ki 'aap mujhse kuch chupa rhe ho, jhuth bol rhe ho', wo dher saari sweet queries aur tumhara dher saari baar sorry sorry likhna hi mera asli guroor hai."
     ],
 
     // 3. Absolute Promises & Future Vision Connections
     promises: [
-        "Main tumse wada karta hoon bacha ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga, chahe main soya hi kyu na rahoon, hamesha call uthaunga.",
-        "Halaat chahe jo bhi ho जाएं, Aayu tumhara sath kabhi nahi chhodega aur aane wale time me tumhein ekdum rani bana kar rakhunga.",
-        "Main is duniya me kisi ke baap se nahi darta, apni aakhri saans tak hamara ye pavitra rishta aur shaadi ka faisla poora nibhaunga bacha.",
+        "Main tumse wada karta hoon bacha ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga, chahe main soya hi kyu na rahoon, hamesha poori izzat se call uthaunga.",
+        "Halaat chahe jo bhi ho जाएं, Aayu tumhara sath bohot samman se nibhayega aur aane wale time me tumhein ekdum rani bana kar rakhunga.",
+        "Zindagi ke har mod par poore vishwas ke sath, apni aakhri saans tak hamara ye pavitra rishta aur shaadi ka faisla poora nibhaunga bacha.",
         "Ghar par rahoon, ya pehle plant ke busy schedule me rahoon, jab bhi tum pareshan hogi, main sab kaam chhod kar sabse pehle apni jaan ki baat sununga.",
         "Tumhare gusse ko, tumhari cute nok-jok ko aur tumhare dher saare pyaar ko zindagi bhar poore haq se jhelunga kuki tum sirf aur sirf meri ho Pari bacha."
     ]
 };
 
-// 🧠 THE SHUFFLE ENGINE: Shuffles and automatically designs non-repeat texts for years!
 function generateInfiniteLoveMessage() {
     const now = new Date();
     const currentDay = now.getDate();
     const currentMonth = now.getMonth() + 1;
     const currentYear = now.getFullYear();
 
-    // 🧠 HIGH-PERFORMANCE DYNAMIC TIMELINE SHUFFLE SEED
-    // Android 16 & iOS optimized matrix indices mapping layout
     let seed1 = (currentDay * 9) + (currentMonth * 17) + (currentYear % 100);
     let seed2 = (currentDay * 13) + (currentMonth * 19) + (currentYear % 10);
     let seed3 = (currentDay * 5) + (currentMonth * 29) + Math.floor(currentYear / 50);
 
-    // Safeguard fallbacks to secure loop matrix array boundaries flawlessly
     const opIndex = Math.abs(seed1) % lovieAI_Data_Pool.openings.length;
     const memIndex = Math.abs(seed2) % lovieAI_Data_Pool.memories.length;
     const promIndex = Math.abs(seed3) % lovieAI_Data_Pool.promises.length;
 
-    // 🚀 DIRECT AUTOPILOT COMPILER
-    // Automatically crafts and weaves structural narrative blocks daily without duplication
     const autoCraftedParagraph = `${lovieAI_Data_Pool.openings[opIndex]} ${lovieAI_Data_Pool.memories[memIndex]} ${lovieAI_Data_Pool.promises[promIndex]}`;
     return autoCraftedParagraph;
 }
-// 📅 31-DAY STRICT SECURITY LETTER STORAGE COMPONENT
+
 const dailyLetters = {
     1: { clue: "Month ki starting number?", text: "Naya din hai bacha aur Aayu ka sacha pyaar har roz tumhare liye badhta ja rha hai Priya. Hamesha khush raha karo mere liye." },
     2: { clue: "Ek aur ek kitne hote hain?", text: "Tum aur main milkar poori ek alag hi duniya banate hain na jaan. Tum sach me meri saans ho Pari, tumhare bina sab adhoori hai." },
