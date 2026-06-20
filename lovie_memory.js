@@ -86,3 +86,43 @@ const dailyLetters = {
     30: { clue: "Teis plus saat?", text: "Apni aakhri saans tak hamara ye pavitra rishta aur sath danke ki chot par poora nibhaunga bacha Pihu, tum bas bharosa rakhna! ❤️" },
     31: { clue: "Saal ka aakhri din date?", text: "Yeh din khatam ho rha hai bacha par hamara pyaar har roz ek nayi shuruat karega aur hamesha gehra hota jayega Lovie! ♾️💖" }
 };
+// =================================================================
+// 🎲 AUTOPILOT GAME QUESTION DATABASE (REAL DEEP EMOTIONAL MEMORIES)
+// =================================================================
+const dynamicLoveQuizPool = [
+    {
+        q: "Jab Priya bacha ko lag raha tha ki Aayu ne unhe block kar diya hai, toh unhone itni fikr me rota hua kya kaha tha?",
+        options: ["Main ab baat nahi karungi", "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae 🥺", "Aap bade log ho gae ho", "Main gussa hu aap se"],
+        correct: 1
+    },
+    {
+        q: "Aayu ne jab Priya bacha ko gussa dilane ke liye laptop se insta par chat karne ko bola tha, tab unka phone kitna charge tha?",
+        options: ["Sirf 5 percent charge", "Sirf 15 percent charge", "Sirf 9 percent charge 🔋", "Sirf 25 percent charge"],
+        correct: 2
+    },
+    {
+        q: "Wo haseen raat jab Aayu trading ka chart dekh raha tha, tab Priya meri jaan kya dekh kar bol rahi thin ki kitna cute hai ye baby?",
+        options: ["Chulbuli ki photo dekh kar 🐶", "Koi reel dekh kar", "Apni bachpan ki photo", "Ek cute cartoon"],
+        correct: 0
+    },
+    {
+        q: "Aayu ne jab plant ke side se video call par apni rani ko ek khoobsurat ped dikhaya tha, wo kis cheez ka ped tha?",
+        options: ["Kaju ka ped", "Badam ka ped 🌳", "Aam ka ped", "Peepla ka ped"],
+        correct: 1
+    },
+    {
+        q: "Priya bacha baat-baat par Aayu par apna poora haq jatate huye pyaar se kya danti hain?",
+        options: ["Aap bohot bure ho", "mar khani hai kya aap ko, mujhse dar nhi lagta kya? 😡🥰", "Main block kar dungi", "Mujhse baat mat karo"],
+        correct: 1
+    },
+    {
+        q: "Jab Aayu khet par jata hai ya busy schedule me hota hai, tab Priya bacha pyaari sweet queries me kya kehti hain?",
+        options: ["Aap mujhse kuch chupa rhe ho, jhuth bol rhe ho 🔒", "Aap mujhe bhool gae", "Main busy hu abhi", "Aap kahan gae the"],
+        correct: 0
+    },
+    {
+        q: "Priya meri jaan din me kitne baje apni kadi duty par nikalti hain aur raat ko kadi mehnat karti hain?",
+        options: ["Subah 10 baje", "Dopehar me exact 2 baje ⏰", "Raat ko 8 baje", "Subah 6 baje"],
+        correct: 1
+    }
+];
