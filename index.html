@@ -37,7 +37,7 @@
             transition: all 1s ease-in-out;
         }
 
-        /* 1. DYNAMIC EMOTION & HEARTS BACKGROUND POOL */
+        /* DYNAMIC EMOTION & HEARTS BACKGROUND POOL */
         #hearts-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -52,13 +52,14 @@
             animation: floatUp linear forwards;
             filter: drop-shadow(0 0 8px var(--neon-pink));
             user-select: none;
+            will-change: transform, opacity; /* Force mobile hardware GPU acceleration */
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(105vh) scale(0.5) rotate(0deg); opacity: 0; }
+            0% { transform: translate3d(0, 105vh, 0) scale(0.5) rotate(0deg); opacity: 0; }
             15% { opacity: 0.8; }
             85% { opacity: 0.6; }
-            100% { transform: translateY(-10vh) scale(1.4) rotate(45deg); opacity: 0; }
+            100% { transform: translate3d(0, -10vh, 0) scale(1.4) rotate(45deg); opacity: 0; }
         }
 
         /* Ambient Plasma Glow Orbs */
@@ -95,7 +96,6 @@
             box-shadow: 0 0 15px rgba(255, 77, 109, 0.1);
         }
         
-        /* BOX KE ANDAR CHALNE WALI PATTI ONLY FOR UPCOMING ALERT (SLOW SPEED FIXED TO 25s) */
         .marquee-text-flow {
             display: inline-block;
             animation: insideBoxScroll 25s linear infinite;
@@ -331,12 +331,10 @@
 
         footer { padding: 60px; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
     </style>
-    <!-- LINK TO DYNAMIC MEMORY REPO FILE -->
     <script src="lovie_memory.js"></script>
 </head>
 <body>
 
-    <!-- Dynamic Event Fullscreen Modal -->
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
@@ -345,15 +343,12 @@
         </div>
     </div>
 
-    <!-- Emoji & Heart Particles Container -->
     <div id="hearts-container"></div>
 
-    <!-- Soft Plasma Lighting Background -->
     <div class="plasma-glow plasma-1"></div>
     <div class="plasma-glow plasma-2"></div>
     <div class="plasma-glow plasma-3"></div>
 
-    <!-- 100% INVISIBLE LOCAL AUDIO STREAM MODULE -->
     <audio id="romantic-audio" src="romantic.mp3" loop></audio>
 
     <div class="container">
@@ -364,10 +359,8 @@
             <p class="tagline">"Hamesha ke liye, har lamha tumhare sath..."</p>
         </header>
 
-        <!-- Advance Coming Soon Event Banner -->
         <div id="event-banner" class="advance-event-banner"></div>
 
-        <!-- Glowing Counter Panel -->
         <div class="counter-container glowing-box">
             <h2>Hamare Sath Ke Haseen Pal ✨</h2>
             <div class="timer">
@@ -378,24 +371,20 @@
             </div>
         </div>
 
-        <!-- TABS NAVIGATION CONTROLS -->
         <div class="tabs-nav">
             <button class="tab-btn active-tab" id="btn-story" onclick="switchTab('tab-story')">Hamari Kahani 📖</button>
             <button class="tab-btn" id="btn-about" onclick="switchTab('tab-about')">Everything About Her 🌸</button>
             <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
         </div>
 
-        <!-- TAB MODULE 1: HAMARI KAHANI PANEL -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
                 <p id="story-paragraph">Loading infinite love trajectory variables safely...</p>
             </section>
 
-            <!-- GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
             <div class="interactive-row">
                 
-                <!-- Password Protected Security Element -->
                 <div class="secret-gate-box glowing-box">
                     <h4>Secret Love Message 🔒</h4>
                     <p>Hamara special code daal kar ye card kholo <span id="clue-text">Hint: Loading Daily Clue...</span></p>
@@ -408,7 +397,6 @@
                     <button class="gate-btn" onclick="verifyPassword()">Letter Unlocked Karo 🗝️</button>
                 </div>
 
-                <!-- Interactive Scratch Element Component -->
                 <div class="scratch-card-box glowing-box">
                     <h4>Scratch Card Surprise 🧧</h4>
                     <p>Ungli se canvas ko rub karke apna surprise gift kholo!</p>
@@ -421,7 +409,6 @@
             </div>
         </div>
 
-        <!-- TAB MODULE 2: ABOUT HER PANEL -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Everything About Her</h2>
@@ -442,7 +429,6 @@
             </section>
         </div>
 
-        <!-- TAB MODULE 3: MAGICAL GALLERY PANEL -->
         <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
@@ -510,7 +496,6 @@
                 </div>
             </section>
 
-            <!-- SUB-GALLERY 2 -->
             <section class="gallery-section">
                 <h2 class="section-title">More Beautiful Moments</h2>
                 <div class="gallery-grid">
@@ -535,7 +520,7 @@
                         <span class="photo-tag">Pure Love</span><p>"Hamari Shuruat" ✨</p>
                     </div>
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
-                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Moment 6"></div>
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/YAHAN_DRIVE_ID_DAALO" alt="Cute Nok-Jokを開く"></div>
                         <span class="photo-tag">Cute Nok-Jok</span><p>"Gussa Aur Pyaar" 😡🥰</p>
                     </div>
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
@@ -640,7 +625,6 @@
 
     </div>
 
-    <!-- LIGHTBOX OVERLAY -->
     <div id="lightbox-overlay" onclick="closeLightbox()">
         <div class="lightbox-window" onclick="event.stopPropagation()">
             <button class="lightbox-close-btn" onclick="closeLightbox()">×</button>
@@ -664,49 +648,15 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
         }
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 31-DAY DEEP REVOLVING AUDIO GREETING MATRIX (1 to 31 Dates Fixed Non-Repeat)
-        const dailyVoiceGreetingsMatrix = {
-            1: "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo. Aaj mahine ki pehli tareekh hai aur Aayu hamesha tumhare sath hai. Din me apni duty par apna dhyan rakhna jaan.",
-            2: "Good Morning Lovie! Aaj ka naya din tumhare liye dher saari khushiyan laye bacha. Tum jo meri har baat jhalti ho na aur mera gussa bardasht karti ho, David tumse bohot sacha pyaar karta hai.",
-            3: "Good Morning meri jaan Priya! Ek pyaari si subah mubarak ho meri Pari ko. Tumhari tabiyat sahi nahi hoti fir bhi tum kaam par jaane ki zidd karti ho, bacha aaram se duty karna aur pareshaan mat hona.",
-            4: "Good Morning Pihu bacha! Utho aur screen par Aayu ka pyaar dekho. Tum din me 2 baje apni duty par jati ho aur raat ke 11 baje tak itni kadi mehnat karti ho na, Kavi hamesha tumhare sath khada hai.",
-            5: "Good Morning Lovie bacha! Ek nayi subah aur Aayu ka wada wapi live hai. Main tumse wada karta hoon ki aane wale time me tumhein ekdum rani bana kar rakhunga bacha, tum bas haste raha karo.",
-            6: "Good Morning Priya jaan! Aaj subah-subah baith kar main sirf apni Pari ke baare me soch rha hoon. Jab tum gusse me kehti ho na ki 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai bacha.",
-            7: "Good Morning Pihu bacha! Aaj ka hafta aur har ek naya din hamare shaadi ke faisle ko aur mazboot banata hai. David apni aakhri saans tak tumhara sath poori shiddat se nibhayega.",
-            8: "Good Morning Lovie! Subah ki thandi hawa me sirf tumhari hi baatein dimaag me ghoom rhi hain. Pehle jab main plant par kaam ke beech tumhein apni photo bhejta tha, wo pal sachi bohot sukoon wale thin.",
-            9: "Good Morning Priya bacha! Utho jaan, tumse lambi baatein kiye bina mujhe raat ko nind tak nahi aati. Tum sach me meri har ek saans ho, meri poori jaan ho, hamesha mere sath hi rehna.",
-            10: "Good Morning Pari bacha! Ek ek naya din hamare beintehaan rishte ka gawah hai. Main tumse wada karta hoon bacha ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga.",
-            11: "Good Morning Pihu bacha! Aaj ka din mere liye bohot special hai kuki main dil se sirf tumhara banne ke liye is duniya me aaya hoon. Hamesha haste muskuraate raho mere liye.",
-            12: "Good Morning Lovie bacha! Tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum jaisa saaf dil poori duniya me kisi ke paas nahi hai Priya.",
-            13: "Good Morning Priya bacha! Aaj hamari rani ka din hai, janamdin ka mahina ho ya koi bhi tareekh, tum is duniya me mere liye sabse upar ho aur tumse main bohot sacha pyaar karta hoon.",
-            14: "Good Morning Pari jaan! Main wada karta hoon ki main ghar par rahoon, ya pehle plant me kaam par rahoon, kahin bhi... jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga.",
-            15: "Good Morning Pihu bacha! Tumhara wo mujhpar haq jatana, dher saari reels share karke sath me hasna aur baat-baat par check karna hi toh Aayu ka asli aur sacha sukoon hai jaan.",
-            16: "Good Morning Lovie! Jab tum gusse me kehti ho na ki main door chali jaungi... tum nahi jaanti ki kaanp jata hoon main, meri aakhon me sachi me aansu aa jaate hain. Kabhi door mat jana.",
-            17: "Good Morning Priya bacha! Main is duniya me kisi ke baap se nahi darta, khuleaam danke ki chot par kehta hoon ki Vev Verma sirf tumse pyaar karta hai aur hamesha tumhara hath thame rakhega.",
-            18: "Good Morning Pari bacha! Tum jo din me 2 baje apni duty par jati ho aur late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.",
-            19: "Good Morning Pihu bacha! Ghar par baithe-biathe bhi har lamha, har ek second tumhari cute baatein aur tumhara wo innocent chehra hi mere dimaag me ghoomta rehta hai. Love you bacha.",
-            20: "Good Morning Lovie bacha! Tum sach me meri har ek saans ho, meri poori jaan ho! Tumhare bina main ek din bhi sukoon se nahi reh sakta bacha, jaldi se utho ab.",
-            21: "Good Morning Priya jaan! Jab main saare kaam chhod kar tumhare paas jaldi se aaunga na, tab jitna man kare utna dher saara pyaar kar lena aur dher saari baatein kar lena.",
-            22: "Good Morning Pari bacha! Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe duniya me sabse pyaara lagta hai. Pyaari chudail ho tum meri, hamesha khush raha karo.",
-            23: "Good Morning Pihu bacha! Agar tum gusse me mujhse thoda laddo bhi logi na, toh bhi main tumhara hath nahi chhodunga kuki tum sirf aur sirf Aayu ke liye bani ho.",
-            24: "Good Morning Lovie bacha! Meri har ek khushi tumhari muskurahat se judi hai, isliye hamesha aise hi khush raha karo aur haste raha karo mere liye Priya.",
-            25: "Good Morning Priya bacha! Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Yeh baat tum apne dil me ekdum pakki bitha lo bacha.",
-            26: "Good Morning Pari jaan! Tum mere jeene ki asli wajah ho rani. Hamne hamesha ke liye ek doosre ka sath nibhane ka wada kiya hai aur hum ise aakhri saans tak pura karenge.",
-            27: "Good Morning Pihu bacha! Aaj hamari anniversary wali special date ka maha aura hai! I Love You so much bacha, tum meri zindagi ki sabse sachi soulmate ho.",
-            28: "Good Morning Lovie bacha! Tumhara wo baat-baat par poochna na ki 'Kha gaye the ya kha ja rhe ho', mujhe sachi me har baar tumhare aur zyada gehre pyaar me gira deta hai.",
-            29: "Good Morning Priya bacha! Meri zindagi tumhare aane ke baad se ekdum jannat ban gayi hai meri jaan, har din uth kar main sabse pehle upar wale ka shukriya karta hoon.",
-            30: "Good Morning Pari bacha! Apni aakhri saans tak hamara ye rishta aur sath danke ki chot par poora nibhaunga bacha, tum bas Aayu par hamesha poora bharosa rakhna!",
-            31: "Good Morning Pihu bacha! Mahina khatam ho rha hai par hamara pyaar har roz ek nayi shuruat karega aur hamesha gehra hota jayega Lovie. Love you so much!"
-        };
-
+        // AUTOMATIC TIME CONTROLLER & TEXT GREETING ROUTINE
         let dynamicGreetingMessage = "";
         let upcomingAnnouncementMessage = "";
         
@@ -715,20 +665,18 @@
             const todayDate = new Date().getDate();
             const greetingSubElement = document.getElementById('dynamic-time-greeting');
             
-            // Text Header remains multi-phase status linked
             if (currentHour >= 5 && currentHour < 12) {
                 greetingSubElement.innerText = "Good Morning Lovie ✨";
-                // Voice uses the 31-Day Non-Repeat Strategy Array Matrix explicitly for Morning
-                dynamicGreetingMessage = dailyVoiceGreetingsMatrix[todayDate] || "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
+                dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
             } else if (currentHour >= 12 && currentHour < 17) {
                 greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
-                dynamicGreetingMessage = `Hello meri jaan Priya! Din me 2 baje apni duty par apna dhyan rakhna bacha. Aayu ki taraf se tumhein dher saara pyaar.`;
+                dynamicGreetingMessage = "Hello meri jaan Priya! Din me apni duty par apna dhyan rakhna bacha. Aayu ki taraf se tumhein dher saara pyaar.";
             } else if (currentHour >= 17 && currentHour < 22) {
                 greetingSubElement.innerText = "Good Evening Lovie 🌆";
-                dynamicGreetingMessage = `Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar. Late duty se aane tak apna dhyan rakhna.`;
+                dynamicGreetingMessage = "Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar. Late duty se aane tak apna dhyan rakhna.";
             } else {
                 greetingSubElement.innerText = "Good Night Lovie 🌙";
-                dynamicGreetingMessage = `Good Night Lovie! Raat ko 11 baje ya late raat 2 baje duty se aane ke baad aaram se so jana bacha, David hamesha tumhare sapno me rahega.`;
+                dynamicGreetingMessage = "Good Night Lovie! Raat ko 11 baje ya late raat 2 baje duty se aane ke baad aaram se so jana bacha, David hamesha tumhare sapno me rahega.";
             }
             applyAutoTheme();
         }
@@ -769,9 +717,11 @@
                 if (currentMonth === ev.month && currentDate === ev.date) {
                     modalTitle.innerText = `✨ ${ev.name} Wish ✨`;
                     modalMsg.innerText = ev.msg;
-                    modal.classList.add('show-lightbox', 'show-modal'); 
+                    modal.classList.add('show-modal'); 
+                    
                     if (ev.type === "birthday") isBirthdayToday = true;
                     if (ev.type === "anniversary") isAnniversaryToday = true;
+                    
                     specialDayVoiceMessage = ev.voice;
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
@@ -794,77 +744,71 @@
         let speechSpoken = false;
 
         function speakGreeting() {
-            if (!speechSpoken) {
-                let finalSpokenText = "";
-                
-                if (specialDayVoiceMessage !== "") {
-                    finalSpokenText = specialDayVoiceMessage;
-                } else {
-                    finalSpokenText = dynamicGreetingMessage;
-                    if (upcomingAnnouncementMessage !== "") {
-                        finalSpokenText += " " + upcomingAnnouncementMessage;
-                    }
+            if (speechSpoken) return;
+            speechSpoken = true;
+
+            let finalSpokenText = specialDayVoiceMessage !== "" ? specialDayVoiceMessage : dynamicGreetingMessage;
+            if (specialDayVoiceMessage === "" && upcomingAnnouncementMessage !== "") {
+                finalSpokenText += " " + upcomingAnnouncementMessage;
+            }
+
+            if (finalSpokenText !== "") {
+                const utterance = new SpeechSynthesisUtterance(finalSpokenText);
+                utterance.lang = 'hi-IN';
+                utterance.pitch = 1.0; 
+                utterance.rate = 0.95; 
+                utterance.volume = 1.0;
+
+                if (window.speechSynthesis) {
+                    const availableVoices = window.speechSynthesis.getVoices();
+                    const perfectFemaleVoice = availableVoices.find(v => 
+                        v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara'))
+                    );
+                    if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
                 }
 
-                if (finalSpokenText !== "") {
-                    const utterance = new SpeechSynthesisUtterance(finalSpokenText);
-                    utterance.lang = 'hi-IN';
-                    utterance.pitch = 1.0; 
-                    utterance.rate = 0.95; 
-                    utterance.volume = 1.0;
-
-                    if (window.speechSynthesis) {
-                        const availableVoices = window.speechSynthesis.getVoices();
-                        const perfectFemaleVoice = availableVoices.find(v => 
-                            v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara'))
-                        );
-                        if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                try {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    if (AudioContext) {
+                        const audioCtx = new AudioContext();
+                        const gainNode = audioCtx.createGain();
+                        gainNode.gain.value = 2.0; 
+                        gainNode.connect(audioCtx.destination);
                     }
+                } catch (audioErr) { console.log("Audio architecture calibrated."); }
 
-                    try {
-                        const AudioContext = window.AudioContext || window.webkitAudioContext;
-                        if (AudioContext) {
-                            const audioCtx = new AudioContext();
-                            const dest = audioCtx.createMediaStreamDestination();
-                            const gainNode = audioCtx.createGain();
-                            gainNode.gain.value = 2.0; 
-                            gainNode.connect(audioCtx.destination);
-                        }
-                    } catch (audioErr) { console.log("Audio architecture calibrated."); }
-
-                    utterance.onend = function() {
-                        console.log("Announcement finished perfectly. Launching background music loop now...");
-                        playSecretMusic();
-                    };
-
-                    window.speechSynthesis.speak(utterance);
-                    speechSpoken = true;
-                } else {
+                utterance.onend = function() {
+                    console.log("Announcement finished perfectly. Fading in standard background score loops...");
                     playSecretMusic();
-                }
+                };
+                utterance.onerror = function() { playSecretMusic(); }; 
+
+                window.speechSynthesis.speak(utterance);
+            } else {
+                playSecretMusic();
             }
         }
 
-        document.addEventListener('click', speakGreeting);
-        document.addEventListener('touchstart', speakGreeting);
+        document.addEventListener('click', speakGreeting, { passive: true });
+        document.addEventListener('touchstart', speakGreeting, { passive: true });
 
         let musicStarted = false;
         function playSecretMusic() {
             if (!musicStarted && speechSpoken) {
                 const audio = document.getElementById('romantic-audio');
-                audio.volume = 0.55; 
+                audio.volume = 0.45; 
                 audio.play().then(() => { 
                     musicStarted = true; 
                     console.log("Music context loop active.");
-                }).catch(e => console.log("Waiting structure hooks flow sync..."));
+                }).catch(e => console.log(e));
             }
         }
 
-        // LOAD FROM EXTERNAL MEMORY INFRASTRUCTURE
+        // 🧠 100% REAL DYNAMIC AUTOPILOT STORAGE BINDING SYNCHRONIZER
         function syncLovieMemoryEngine() {
             if (typeof generateInfiniteLoveMessage === "function") {
-                const infiniteMsg = generateInfiniteLoveMessage();
-                document.getElementById('story-paragraph').innerText = infiniteMsg;
+                const pureAutoGeneratedText = generateInfiniteLoveMessage();
+                document.getElementById('story-paragraph').innerText = pureAutoGeneratedText;
                 
                 document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum meri life ka wo sukoon ho jiske bina meri har ek raat ekdum adhoori lagti hai bacha Priya. Tum jo din me 2 baje apni duty par jati ho aur raat ke 11 baje ya kabhi late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.";
                 document.getElementById('fact-desc-2').innerText = "Wo pal main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae'. Tumhara wo haq jatana aur dher saari reels share karke sath me hasna hamari life ka sabse khoobsurat canvas hai Pari.";
@@ -873,7 +817,7 @@
         }
 
         const weeklyRewards = {
-            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️", 
+            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 1400", 
             1: "🌹 Reward: Aayu ki taraf se ek full day personal long phone call bina kisi rukawat ke! 📞🥰", 
             2: "👑 Reward: Lovie ko milta hai ek special cute sa 'Sorry' card aur unka favorite sweet kiss! 😘👑", 
             3: "🎁 Reward: Ek badi chocolate aur Aayu ki taraf se zindagi bhar ka sabse sachha wada! 🍫🤝", 
@@ -912,9 +856,7 @@
             }
         }
 
-        function closeEventModal() {
-            document.getElementById('event-overlay-modal').classList.remove('show-modal');
-        }
+        function closeEventModal() { document.getElementById('event-overlay-modal').classList.remove('show-modal'); }
 
         function switchTab(panelId) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
@@ -967,19 +909,22 @@
 
         function createFloatingElement() {
             const container = document.getElementById('hearts-container');
-            if(!container) return;
+            if(!container || container.children.length > 15) return; // Strict mobile-render capping
+            
             const element = document.createElement('div');
             element.classList.add('floating-element');
             let activePool = romanticPool;
             if (isBirthdayToday) activePool = birthdayPool;
             else if (isAnniversaryToday) activePool = anniversaryPool;
+            
             element.innerHTML = activePool[Math.floor(Math.random() * activePool.length)];
-            const startX = Math.random() * 100; const duration = Math.random() * 5 + 5; const size = Math.random() * 16 + 14; 
+            const startX = Math.random() * 100; const duration = Math.random() * 4 + 5; const size = Math.random() * 12 + 14; 
             element.style.left = startX + 'vw'; element.style.fontSize = size + 'px'; element.style.animationDuration = duration + 's';
+            
             container.appendChild(element);
-            setTimeout(() => { element.remove(); }, duration * 1000);
+            setTimeout(() => { element.remove(); }, duration * 1000); // Garbage collection sync
         }
-        setInterval(createFloatingElement, 350);
+        setInterval(createFloatingElement, 500);
 
         window.onload = () => { 
             initScratchCard(); 
