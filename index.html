@@ -755,7 +755,7 @@
             });
         }
 
-        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE WITH CUTE VOICE ENHANCER SYSTEM
+        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE (RESTORED TO NATURAL NATURAL ORIGINAL PROFILE)
         let speechSpoken = false;
 
         function speakGreeting() {
@@ -775,21 +775,20 @@
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
                     
-                    // CUTE NATIVE ENGINE VOICE INTERCEPTOR (PITCH & RATE TUNING FOR CUTE GIRL SOUND)
-                    utterance.pitch = 1.45; // Extreme High-Pitch to shift tone into a cute girl voice profile
-                    utterance.rate = 0.95;  // Slightly sweet slower delivery rate
+                    // STANDARD NORMAL HIGH QUALITY TONE PRESETS (RESTORED FROM CUTENESS DISTORTIONS)
+                    utterance.pitch = 1.0; // Restored to clean standard base execution pitch matrix
+                    utterance.rate = 0.95; 
                     utterance.volume = 1.0;
 
-                    // Fetch and bind best cute feminine voice candidate dynamically from browser cache
                     if (window.speechSynthesis) {
                         const availableVoices = window.speechSynthesis.getVoices();
-                        const cuteVoiceCandidate = availableVoices.find(v => 
-                            v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('zira'))
+                        const perfectFemaleVoice = availableVoices.find(v => 
+                            v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara'))
                         );
-                        if (cuteVoiceCandidate) utterance.voice = cuteVoiceCandidate;
+                        if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
                     }
 
-                    // AUDIO WEB API GAIN CONTEXT OVERRIDE FOR 200x BOOSTED HARDWARE HARD SYNC
+                    // AUDIO WEB API GAIN Node Context Injection
                     try {
                         const AudioContext = window.AudioContext || window.webkitAudioContext;
                         if (AudioContext) {
@@ -799,10 +798,10 @@
                             gainNode.gain.value = 2.0; 
                             gainNode.connect(audioCtx.destination);
                         }
-                    } catch (audioErr) { console.log("Audio scale boosted explicitly."); }
+                    } catch (audioErr) { console.log("Audio architecture calibrated."); }
 
                     utterance.onend = function() {
-                        console.log("Cute announcement sequence finished perfectly. Playing background song...");
+                        console.log("Announcement finished perfectly. Fading in standard background score loops...");
                         playSecretMusic();
                     };
 
@@ -814,7 +813,6 @@
             }
         }
 
-        // Trigger dynamic audio chain on client touch gesture mapping layers
         document.addEventListener('click', speakGreeting);
         document.addEventListener('touchstart', speakGreeting);
 
@@ -825,8 +823,8 @@
                 audio.volume = 0.55; 
                 audio.play().then(() => { 
                     musicStarted = true; 
-                    console.log("Music tracker live.");
-                }).catch(e => console.log("Waiting for end trigger flow setup..."));
+                    console.log("Music context loop active.");
+                }).catch(e => console.log("Waiting structure hooks flow sync..."));
             }
         }
 
@@ -843,7 +841,7 @@
         }
 
         const weeklyRewards = {
-            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 💍❤️", 
+            0: "🎉 Aapko milta hai Aayu ki taraf se zindagi bhar ka sath aur dher saara pyaar! 1400", 
             1: "🌹 Reward: Aayu ki taraf se ek full day personal long phone call bina kisi rukawat ke! 📞🥰", 
             2: "👑 Reward: Lovie ko milta hai ek special cute sa 'Sorry' card aur unka favorite sweet kiss! 😘👑", 
             3: "🎁 Reward: Ek badi chocolate aur Aayu ki taraf se zindagi bhar ka sabse sachha wada! 🍫🤝", 
@@ -958,7 +956,6 @@
             syncLovieMemoryEngine(); 
             updateDailyFeatures(); 
             
-            // Warm up speech synthesis system buffer voice matrix explicitly
             if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
                 speechSynthesis.onvoiceschanged = handleTimeGreetingAndVoice;
             }
