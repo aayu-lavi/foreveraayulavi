@@ -254,6 +254,7 @@
 </head>
 <body>
 
+    <!-- 🔥 UNIVERSAL SCREEN CLICK/TOUCH AUDIO BYPASS LAYER LAYER -->
     <div id="audio-gate-overlay" onclick="unlockAudioAndStartWebsite()">
         <div class="gate-card">
             <h2>Aayu & Lovie World ❤️</h2>
@@ -263,6 +264,7 @@
         </div>
     </div>
 
+    <!-- Dynamic Event Fullscreen Modal -->
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
@@ -303,6 +305,7 @@
             <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
         </div>
 
+        <!-- TAB MODULE 1 -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
@@ -333,6 +336,7 @@
             </div>
         </div>
 
+        <!-- TAB MODULE 2 -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Everything About Her</h2>
@@ -353,6 +357,7 @@
             </section>
         </div>
 
+        <!-- TAB MODULE 3 -->
         <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
@@ -512,9 +517,14 @@
             });
         }
 
-        // 🔥 SCREEN-WIDE GESTURE AUDIO TRIGGER BYPASS FOR IOS AND ANDROID
+        // 🔥 IOS-SAFARI & ANDROID 16 UNIFIED AUDIO BYPASS SYSTEM
         let speechSpoken = false;
         let musicStarted = false;
+
+        // Force-prime system speech engine context ready for lazy iOS background threads
+        if (typeof speechSynthesis !== 'undefined') {
+            window.speechSynthesis.getVoices();
+        }
 
         function unlockAudioAndStartWebsite() {
             try {
@@ -523,7 +533,7 @@
                     const audioCtx = new AudioContext();
                     if (audioCtx.state === 'suspended') audioCtx.resume();
                 }
-            } catch (e) { console.log("Hardware Sound Channels Unlocked"); }
+            } catch (e) { console.log("Hardware Sync Channel Ready"); }
 
             const audio = document.getElementById('romantic-audio');
             if(audio) {
@@ -544,35 +554,54 @@
                 }
 
                 if (finalSpokenText !== "") {
-                    window.speechSynthesis.cancel(); 
+                    window.speechSynthesis.cancel(); // Clears iOS WebKit stale pipelines
 
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
-                    utterance.pitch = 1.0; utterance.rate = 0.95; utterance.volume = 1.0;
+                    utterance.pitch = 1.0; utterance.rate = 0.92; utterance.volume = 1.0;
 
+                    // 🍏 STRICT FIXED APPLE VOICES COMPILER HACK
                     if (window.speechSynthesis) {
-                        const availableVoices = window.speechSynthesis.getVoices();
-                        const perfectFemaleVoice = availableVoices.find(v => 
-                            v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara'))
-                        );
-                        if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                        let availableVoices = window.speechSynthesis.getVoices();
+                        
+                        // Fallback function loop for asynchronous loading engine inside iPhone Safari
+                        const selectPerfectVoice = () => {
+                            let perfectFemaleVoice = availableVoices.find(v => 
+                                v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('apple'))
+                            );
+                            if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                        };
+
+                        if (!availableVoices.length) {
+                            window.speechSynthesis.onvoiceschanged = () => {
+                                availableVoices = window.speechSynthesis.getVoices();
+                                selectPerfectVoice();
+                            };
+                        } else {
+                            selectPerfectVoice();
+                        }
                     }
 
-                    // 🔥 PERFECT TIMING CHAIN: Announcement khatam hone ke exact 1.5 seconds baad hi baje
+                    // Strict Timing Chain Sequences
                     utterance.onend = function() { 
-                        console.log("Announcement ended. Waiting 1.5 seconds for mature smooth transition...");
+                        console.log("Announcement finished successfully. Triggering song after 1.5 seconds.");
                         setTimeout(() => { playSecretMusic(); }, 1500); 
                     };
-                    utterance.onerror = function() { 
-                        setTimeout(() => { playSecretMusic(); }, 1500); 
+                    
+                    utterance.onerror = function(event) { 
+                        console.log("Speech utterance event handler caught error code:", event);
+                        // FIXED: iPhone zero-voice array fallback trigger prevents premature song initialization
+                        if (!musicStarted) {
+                            setTimeout(() => { playSecretMusic(); }, 1500);
+                        }
                     }; 
 
                     window.speechSynthesis.speak(utterance);
 
-                    // 🛡️ RE-ENGINEERED FALLBACK TIMER: 45s timer prevents overlap on long voice paragraphs
+                    // Robust long-duration fallback timer layer for deep paragraphs data integration
                     setTimeout(() => { 
                         if (!musicStarted) {
-                            console.log("Failsafe safety loop backup triggered after 45s.");
+                            console.log("Failsafe backup loop triggered after 45s.");
                             playSecretMusic();
                         }
                     }, 45000);
@@ -722,7 +751,7 @@
 
         window.onload = () => { 
             initScratchCard(); 
-            handleTimeGreetingAndVoice; 
+            handleTimeGreetingAndVoice(); 
             checkSpecialEvents(); 
             syncLovieMemoryEngine(); 
             updateDailyFeatures(); 
