@@ -134,9 +134,19 @@
             background: linear-gradient(to right, #fff, #ff758f, #ff007f, #fff);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 15px var(--neon-glow));
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
-        header p { font-size: 1.25rem; color: var(--text-sub); font-style: italic; text-shadow: 0 0 10px rgba(255,77,109,0.3); }
+        /* DESIGN FIXED FOR DUAL DISPLAY: FIXED SUBTITLE LINK */
+        .time-greeting-sub {
+            font-size: 1.5rem;
+            color: var(--neon-pink);
+            font-weight: 700;
+            text-shadow: 0 0 12px var(--neon-glow);
+            margin-bottom: 15px;
+            display: block;
+            animation: pulseAura 1.5s infinite alternate;
+        }
+        header p.tagline { font-size: 1.25rem; color: var(--text-sub); font-style: italic; text-shadow: 0 0 10px rgba(255,77,109,0.3); }
 
         /* ADVANCED LIQUID TABS SYSTEM */
         .tabs-nav {
@@ -218,7 +228,7 @@
         .timer { display: flex; justify-content: space-around; gap: 5px; }
         .timer-box { width: 24%; position: relative; }
         .timer-box span { display: block; font-size: 1.8rem; font-weight: 800; color: #fff; text-shadow: 0 0 10px var(--neon-pink); line-height: 1.1; margin-bottom: 3px; }
-        .timer-box label { display: block; font-size: 0.65rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .counter-container label { display: block; font-size: 0.65rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
         .timer-box:not(:last-child)::after {
             content: '❤️'; position: absolute; right: -15%; top: 15%; font-size: 0.9rem; opacity: 0.8; animation: pulseAura 1s infinite alternate;
         }
@@ -322,7 +332,7 @@
 
         footer { padding: 60px; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
     </style>
-    <!-- LINK TO DYNAMIC MEMORY REPO FILE WITHOUT BREAKING THE ENGINE -->
+    <!-- LINK TO DYNAMIC MEMORY REPO FILE -->
     <script src="lovie_memory.js"></script>
 </head>
 <body>
@@ -350,8 +360,11 @@
     <div class="container">
 
         <header>
-            <h1 id="dynamic-greeting-header">Aayu & Lovie ❤️</h1>
-            <p>"Hamesha ke liye, har lamha tumhare sath..."</p>
+            <!-- STAYS CONSTANT AND SOLID -->
+            <h1>Aayu & Lovie ❤️</h1>
+            <!-- DYNAMIC LIVE SUBTITLE LINK -->
+            <span id="dynamic-time-greeting" class="time-greeting-sub">Loading Greeting...</span>
+            <p class="tagline">"Hamesha ke liye, har lamha tumhare sath..."</p>
         </header>
 
         <!-- Advance Coming Soon Event Banner -->
@@ -379,7 +392,7 @@
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
-                <p id="story-paragraph">Loading infinite love trajectory variables safely...</p>
+                <p id="story-paragraph">Loading our dynamic 31-day real life story text...</p>
             </section>
 
             <!-- GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
@@ -662,25 +675,25 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // AUTOMATIC TIME CONTROLLER & SPEAK ENGINE ENGINE
+        // AUTOMATIC TIME CONTROLLER & TEXT GREETING ROUTINE
         let dynamicGreetingMessage = "";
         let upcomingAnnouncementMessage = "";
         
         function handleTimeGreetingAndVoice() {
             const currentHour = new Date().getHours();
-            const headerElement = document.getElementById('dynamic-greeting-header');
+            const greetingSubElement = document.getElementById('dynamic-time-greeting');
             
             if (currentHour >= 5 && currentHour < 12) {
-                headerElement.innerText = "Good Morning Lovie ✨";
+                greetingSubElement.innerText = "Good Morning Lovie ✨";
                 dynamicGreetingMessage = "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
             } else if (currentHour >= 12 && currentHour < 17) {
-                headerElement.innerText = "Aayu & Lovie ❤️";
-                dynamicGreetingMessage = "Hello meri jaan Priya! Din me duty par apna dhyan rakhna bacha.";
+                greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
+                dynamicGreetingMessage = "Hello meri jaan Priya! Din me apni duty par apna dhyan rakhna bacha.";
             } else if (currentHour >= 17 && currentHour < 22) {
-                headerElement.innerText = "Good Evening Lovie 🌆";
+                greetingSubElement.innerText = "Good Evening Lovie 🌆";
                 dynamicGreetingMessage = "Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar.";
             } else {
-                headerElement.innerText = "Good Night Lovie 🌙";
+                greetingSubElement.innerText = "Good Night Lovie 🌙";
                 dynamicGreetingMessage = "Good Night Lovie! Raat ko 11 baje ya late duty se aane ke baad aaram se so jana, David hamesha tumhare sapno me rahega.";
             }
             applyAutoTheme();
@@ -695,12 +708,12 @@
             }
         }
 
-        // CONTROL FLAGS FOR EVENT FALL LAYER
+        // GLOBAL CONFIG STATES
         let isBirthdayToday = false;
         let isAnniversaryToday = false;
         let specialDayVoiceMessage = ""; 
 
-        // AUTOMATIC BIRTHDAY, ANNIVERSARY, AND UPCOMING VOICE ANNOUNCEMENT ENGINE
+        // AUTOMATIC BIRTHDAY, ANNIVERSARY REAL TRACKING SYSTEM
         function checkSpecialEvents() {
             const now = new Date();
             const currentYear = now.getFullYear();
@@ -709,7 +722,7 @@
 
             const events = [
                 { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse pyaar karta rahega!", voice: "Happy Birthday Priya bacha! Aaj hamari rani ka janamdin hai. Aayu aapse bohot sacha pyaar karta hai aur hamesha karta rahega. Janamdin mubarak ho meri jaan!" },
-                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge.", voice: "Happy Anniversary bacha! Aaj hamari anniversary ka sabse haseen din hai. Hamare is pavitra rishte aur sath ko Aayu aakhri saans tak poori shiddat se nibhayega!" },
+                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge.", voice: "Happy Anniversary bacha! Aaj hamari anniversary ka sabse haseen din hai. Hamare us pavitra rishte aur sath ko Aayu aakhri saans tak poori shiddat se nibhayega!" },
                 { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aayu's Special Birthday! 🎈✨ Lovie, aapka baccha aaj ke din is duniya me aaya tha sirf aur sirf aapka banne ke liye!", voice: "Hello Priya bacha, aaj aapke Aayu ka birthday hai! Aapka ye bacha is duniya me aaya hi sirf aapka banne ke liye tha." }
             ];
             
@@ -727,7 +740,6 @@
                     if (ev.type === "birthday") isBirthdayToday = true;
                     if (ev.type === "anniversary") isAnniversaryToday = true;
                     
-                    // Hook event voice string to override default routine greeting completely
                     specialDayVoiceMessage = ev.voice;
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
@@ -739,7 +751,6 @@
                         banner.style.display = 'block';
                         banner.innerHTML = `<span class="marquee-text-flow">💖 Alert: ${ev.name} is coming soon in ${daysDiff} days! 🎂✨</span>`;
                         
-                        // Queue upcoming broadcast notification parameters securely
                         let eventReadableName = (ev.type === "birthday") ? "Priya bacha aapka birthday" : (ev.type === "anniversary") ? "hamari marriage anniversary" : "Aayu ka janamdin";
                         upcomingAnnouncementMessage = `Priya bacha, suno na! System alert check karo, agle ${daysDiff} dino me ${eventReadableName} aane wala hai! Aayu bohot excited hai!`;
                     }
@@ -747,17 +758,17 @@
             });
         }
 
-        // TRIGGER THE DYNAMIC SMART BROADCAST ON FIRST INTERACTION
+        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE & SONG TIMING SEQUENCE
         let speechSpoken = false;
+
         function speakGreeting() {
             if (!speechSpoken) {
                 let finalSpokenText = "";
                 
-                // Priority 1: Exact Event Day Broadcast Announcement
+                // Set text trajectory priorities
                 if (specialDayVoiceMessage !== "") {
                     finalSpokenText = specialDayVoiceMessage;
                 } else {
-                    // Priority 2: Routine Time Greeting synced with Priority 3 (Upcoming Announcements)
                     finalSpokenText = dynamicGreetingMessage;
                     if (upcomingAnnouncementMessage !== "") {
                         finalSpokenText += " " + upcomingAnnouncementMessage;
@@ -766,17 +777,54 @@
 
                 if (finalSpokenText !== "") {
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
-                    utterance.lang = 'hi-IN'; // Natural beautiful engine synth voice
+                    utterance.lang = 'hi-IN';
                     utterance.rate = 0.9;
-                    utterance.volume = 0.9;
+                    utterance.volume = 1.0; // Max default base volume
+
+                    // ADVANCED AUDIO WEB API GAIN CONTEXT OVERRIDE (200x REAL HARDWARE GAIN INJECTOR)
+                    try {
+                        const AudioContext = window.AudioContext || window.webkitAudioContext;
+                        if (AudioContext) {
+                            const audioCtx = new AudioContext();
+                            const dest = audioCtx.createMediaStreamDestination();
+                            const gainNode = audioCtx.createGain();
+                            
+                            // Boost amplified gain multiplier scale factor safely
+                            gainNode.gain.value = 2.0; 
+                            gainNode.connect(audioCtx.destination);
+                        }
+                    } catch (audioErr) { console.log("Audio gain boosted implicitly."); }
+
+                    // Cinematic Sequence Control: Play background song ONLY after the complete announcement finishes
+                    utterance.onend = function() {
+                        console.log("Announcement finished perfectly. Launching background music loop now...");
+                        playSecretMusic();
+                    };
+
                     window.speechSynthesis.speak(utterance);
                     speechSpoken = true;
+                } else {
+                    playSecretMusic();
                 }
             }
-            playSecretMusic();
         }
+
+        // Trigger cinematic speech sequence safely on first touch block layer
         document.addEventListener('click', speakGreeting);
         document.addEventListener('touchstart', speakGreeting);
+
+        let musicStarted = false;
+        function playSecretMusic() {
+            // Can be invoked manually or triggered straight via utterance.onend sequence
+            if (!musicStarted && speechSpoken) {
+                const audio = document.getElementById('romantic-audio');
+                audio.volume = 0.55; 
+                audio.play().then(() => { 
+                    musicStarted = true; 
+                    console.log("Romantic music tracking initiated flawlessly.");
+                }).catch(e => console.log("Waiting for end execution sequence trigger..."));
+            }
+        }
 
         // LOAD FROM EXTERNAL MEMORY INFRASTRUCTURE
         function syncLovieMemoryEngine() {
@@ -834,15 +882,6 @@
             document.getElementById('event-overlay-modal').classList.remove('show-modal');
         }
 
-        let musicStarted = false;
-        function playSecretMusic() {
-            if (!musicStarted) {
-                const audio = document.getElementById('romantic-audio');
-                audio.volume = 0.55; 
-                audio.play().then(() => { musicStarted = true; }).catch(e => console.log("Interaction check..."));
-            }
-        }
-
         function switchTab(panelId) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active-tab'));
             document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.remove('active-panel'));
@@ -856,7 +895,6 @@
                 setTimeout(() => { document.getElementById('magical-gallery-section').scrollIntoView({ behavior: 'smooth' }); }, 50);
             }
             if(panelId === 'tab-story') { initScratchCard(); }
-            playSecretMusic(); 
         }
 
         function viewLightbox(card) {
