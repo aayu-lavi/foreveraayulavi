@@ -254,7 +254,6 @@
 </head>
 <body>
 
-    <!-- 🔥 UNIVERSAL SCREEN CLICK/TOUCH AUDIO BYPASS LAYER LAYER -->
     <div id="audio-gate-overlay" onclick="unlockAudioAndStartWebsite()">
         <div class="gate-card">
             <h2>Aayu & Lovie World ❤️</h2>
@@ -264,7 +263,6 @@
         </div>
     </div>
 
-    <!-- Dynamic Event Fullscreen Modal -->
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
@@ -305,7 +303,6 @@
             <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Magical Gallery 📸</button>
         </div>
 
-        <!-- TAB MODULE 1 -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
@@ -334,9 +331,31 @@
                     </div>
                 </div>
             </div>
+
+            <div class="glowing-box" style="padding: 30px; margin-top: 30px; text-align: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 15px; right: 20px; font-size: 0.95rem; font-weight: bold; color: var(--text-sub);">
+                    Score: <span id="game-score" style="color: #fff; text-shadow: 0 0 8px var(--neon-pink);">0</span>/3 | 
+                    Life: <span id="game-lifeline" style="letter-spacing: 1px;">❤️❤️❤️</span>
+                </div>
+                
+                <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 5px; color: #fff; text-shadow: 0 0 8px var(--neon-pink);">🎲 Our Special Memory Game</h3>
+                <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 25px; font-style: italic;">"Aayu ki baaton ko kitna yaad rakha hai, chalo test karte hain bacha..."</p>
+                
+                <div id="quiz-game-wrapper" style="min-height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h4 id="game-question-text" style="color: #fff; font-size: 1.25rem; margin-bottom: 20px; font-weight: 600; line-height: 1.5; max-width: 500px;">Loading Game Channels...</h4>
+                    <div id="game-options-container" style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 380px;"></div>
+                </div>
+
+                <div id="game-victory-gate" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 2px dashed var(--neon-pink); animation: fadeIn 0.5s ease;">
+                    <h4 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">🎉 Game Level Cleared!</h4>
+                    <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px;">Aap jeet gaye bacha! Aapke liye ek aur hidden gopniya letter unlock ho gaya hai:</p>
+                    <div style="background: rgba(255, 77, 109, 0.09); padding: 15px; border-radius: 16px; border: 1px solid var(--neon-pink); text-align: left; color: #fff; line-height: 1.7; max-width: 550px; margin: 0 auto;">
+                        "Priya bacha, aap sach me meri har ek saans ho. Aapne game ke saare sahi jawab diye, iska matlab aap Aayu se bohot gehra aur sacha pyaar karti ho bacha. Main hamesha aapki har ek parvaah poore samman ke sath karunga, hamesha mere sath hi rehna meri rani! ❤️"
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- TAB MODULE 2 -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Everything About Her</h2>
@@ -357,43 +376,36 @@
             </section>
         </div>
 
-         <!-- TAB MODULE 3: MAGICAL GALLERY WITH ALL SLOTS FLUSHED -->
-        <div id="tab-gallery" class="tab-content-panel">
+         <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
                 <div class="gallery-grid">
                     
-                    <!-- Slot 1 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="First Meet"></div>
                         <span class="photo-tag">The Beginning</span><p>"Hamari Pehli Mulaqat" ✨</p>
                     </div>
                     
-                    <!-- Slot 2 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Her Smile"></div>
                         <span class="photo-tag">Favorite View</span><p>"Wo Pyaari Si Smile" 😊</p>
                     </div>
                     
-                    <!-- Slot 3 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Together"></div>
                         <span class="photo-tag">Us Forever</span><p>"Hamesha Ka Sath" 💖</p>
                     </div>
 
-                    <!-- Slot 4 (Naya Slot) -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="Cute Moment"></div>
                         <span class="photo-tag">My Queen</span><p>"Bacha Ka Pyaara Chehra" 👑</p>
                     </div>
 
-                    <!-- Slot 5 (Naya Slot) -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Cuteness"></div>
                         <span class="photo-tag">Pure Love</span><p>"Nakhre Wali Lovie" 🌹</p>
                     </div>
 
-                    <!-- Slot 6 (Naya Slot) -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Memorable Day"></div>
                         <span class="photo-tag">Zindagi</span><p>"Har Lamha Tumhare Sath" ✨</p>
@@ -436,7 +448,7 @@
             3: "Good Morning meri jaan Priya! Ek pyaari si subah mubarak ho meri Pari ko. Tumhari tabiyat sahi nahi hoti fir bhi tum kaam par jaane ki zidd karti ho, bacha aaram se duty karna aur pareshaan mat hona.",
             4: "Good Morning Pihu bacha! Utho aur screen par Aayu ka pyaar dekho. Tum din me 2 baje apni duty par jati ho aur raat ke 11 baje tak itni kadi mehnat karti ho na, Kavi hamesha tumhare sath khada hai.",
             5: "Good Morning Lovie bacha! Ek nayi subah aur Aayu ka wada wapi live hai. Main tumse wada karta hoon ki aane wale time me tumhein ekdum rani bana kar rakhunga bacha, tum bas haste raha karo.",
-            6: "Good Morning Priya jaan! Aaj subah-subah baith kar main sirf apni Pari ke baare me soch rha hoon. Jab tum gusse me kehti ho na ki 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai bacha.",
+            6: "Good Morning Priya jaan! Aaj subah-subah baith kar main sirf apni Pari ke baare me soch rha hoon. Jab tum gusse me kehti na ki 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai bacha.",
             7: "Good Morning Pihu bacha! Aaj ka hafta aur har ek naya din hamare shaadi ke faisle ko aur mazboot banata hai. David apni aakhri saans tak tumhara sath poori shiddat se nibhayega.",
             8: "Good Morning Lovie! Subah ki thandi hawa me sirf tumhari hi baatein dimaag me ghoom rhi hain. Pehle jab main plant par kaam ke beech tumhein apni photo bhejta tha, wo pal sachi bohot sukoon wale thin.",
             9: "Good Morning Priya bacha! Utho jaan, tumse lambi baatein kiye bina mujhe raat ko nind tak nahi aati. Tum sach me meri har ek saans ho, meri poori jaan ho, hamesha mere sath hi rehna.",
@@ -546,7 +558,6 @@
         let speechSpoken = false;
         let musicStarted = false;
 
-        // Force-prime system speech engine context ready for lazy iOS background threads
         if (typeof speechSynthesis !== 'undefined') {
             window.speechSynthesis.getVoices();
         }
@@ -579,17 +590,14 @@
                 }
 
                 if (finalSpokenText !== "") {
-                    window.speechSynthesis.cancel(); // Clears iOS WebKit stale pipelines
+                    window.speechSynthesis.cancel(); 
 
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
                     utterance.pitch = 1.0; utterance.rate = 0.92; utterance.volume = 1.0;
 
-                    // 🍏 STRICT FIXED APPLE VOICES COMPILER HACK
                     if (window.speechSynthesis) {
                         let availableVoices = window.speechSynthesis.getVoices();
-                        
-                        // Fallback function loop for asynchronous loading engine inside iPhone Safari
                         const selectPerfectVoice = () => {
                             let perfectFemaleVoice = availableVoices.find(v => 
                                 v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('apple'))
@@ -607,15 +615,13 @@
                         }
                     }
 
-                    // Strict Timing Chain Sequences
                     utterance.onend = function() { 
                         console.log("Announcement finished successfully. Triggering song after 1.5 seconds.");
                         setTimeout(() => { playSecretMusic(); }, 1500); 
                     };
                     
                     utterance.onerror = function(event) { 
-                        console.log("Speech utterance event handler caught error code:", event);
-                        // FIXED: iPhone zero-voice array fallback trigger prevents premature song initialization
+                        console.log("Speech utterance handler caught error:", event);
                         if (!musicStarted) {
                             setTimeout(() => { playSecretMusic(); }, 1500);
                         }
@@ -623,7 +629,6 @@
 
                     window.speechSynthesis.speak(utterance);
 
-                    // Robust long-duration fallback timer layer for deep paragraphs data integration
                     setTimeout(() => { 
                         if (!musicStarted) {
                             console.log("Failsafe backup loop triggered after 45s.");
@@ -774,12 +779,108 @@
         }
         setInterval(createFloatingElement, 500);
 
+        // =================================================================
+        // 🎯 INTERACTIVE MEMORY QUIZ GAME LOGIC WITH CANVAS EFFECTS
+        // =================================================================
+        const memoryQuizDatabase = [
+            {
+                q: "Jab bhabhi ko lag raha tha ki Aayu ne unhe block kar diya hai, toh unhone gusse aur fikr me kya bola tha?",
+                options: ["Main baat nahi karungi", "Sachi me aakho me aasu aa gae 🥺", "Aap bade log ho", "Phone chalane ja rhi hu"],
+                correct: 1
+            },
+            {
+                q: "Aayu jab laptop se insta par chat karne ko bol raha tha, tab bhabhi ke phone me kitni battery bachi thi?",
+                options: ["5% Battery", "15% Battery", "9% Battery 🔋", "22% Battery"],
+                correct: 2
+            },
+            {
+                q: "Aayu ne plant ke side se bhabhi ko video/photo me kaun sa anokha ped dikhaya tha?",
+                options: ["Badam ka ped 🌳", "Kaju ka ped", "Aam ka ped", "Gulaab ka pauda"],
+                correct: 0
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let gameScore = 0;
+        let gameLives = 3;
+
+        function loadQuizGameTrack() {
+            if (gameLives <= 0) {
+                document.getElementById('game-question-text').innerText = "💔 Game Over Bacha! Dibba Khali Ho Gaya.";
+                document.getElementById('game-options-container').innerHTML = `<button class="gate-btn" onclick="resetLoveGame()">Dobara Khedo 🔄</button>`;
+                return;
+            }
+
+            if (currentQuestionIndex >= memoryQuizDatabase.length) {
+                document.getElementById('quiz-game-wrapper').style.display = 'none';
+                document.getElementById('game-victory-gate').style.display = 'block';
+                triggerMassiveBalloonBlast();
+                return;
+            }
+
+            const currentData = memoryQuizDatabase[currentQuestionIndex];
+            document.getElementById('game-question-text').innerText = currentData.q;
+            
+            const optionsContainer = document.getElementById('game-options-container');
+            optionsContainer.innerHTML = "";
+
+            currentData.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.innerText = opt;
+                btn.style.cssText = "background: rgba(12, 8, 24, 0.8); border: 1px solid rgba(255, 77, 109, 0.4); color: var(--text-sub); padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-align: center;";
+                
+                btn.onmouseover = () => { btn.style.background = "var(--neon-pink)"; btn.style.color = "#fff"; };
+                btn.onmouseout = () => { btn.style.background = "rgba(12, 8, 24, 0.8)"; btn.style.color = "var(--text-sub)"; };
+                
+                btn.onclick = () => checkGameAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkGameAnswer(selectedIndex) {
+            const currentData = memoryQuizDatabase[currentQuestionIndex];
+            if (selectedIndex === currentData.correct) {
+                gameScore++;
+                document.getElementById('game-score').innerText = gameScore;
+                alert("🎉 Sahi Jawab Bacha! Pyaari Choice.");
+                triggerMassiveBalloonBlast(); 
+                currentQuestionIndex++;
+                loadQuizGameTrack();
+            } else {
+                gameLives--;
+                let lifeHearts = "";
+                for(let i=0; i<gameLives; i++) lifeHearts += "❤️";
+                if(lifeHearts === "") lifeHearts = "💔";
+                document.getElementById('game-lifeline').innerText = lifeHearts;
+                alert("❌ Oho! Galat ho gaya bacha. Yaad karo Aayu ne kya bola tha.");
+                loadQuizGameTrack();
+            }
+        }
+
+        function resetLoveGame() {
+            currentQuestionIndex = 0;
+            gameScore = 0;
+            gameLives = 3;
+            document.getElementById('game-score').innerText = "0";
+            document.getElementById('game-lifeline').innerText = "❤️❤️❤️";
+            document.getElementById('quiz-game-wrapper').style.display = 'flex';
+            document.getElementById('game-victory-gate').style.display = 'none';
+            loadQuizGameTrack();
+        }
+
+        function triggerMassiveBalloonBlast() {
+            for (let i = 0; i < 12; i++) {
+                setTimeout(createFloatingElement, i * 80);
+            }
+        }
+
         window.onload = () => { 
             initScratchCard(); 
             handleTimeGreetingAndVoice(); 
             checkSpecialEvents(); 
             syncLovieMemoryEngine(); 
             updateDailyFeatures(); 
+            loadQuizGameTrack();
             
             if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
                 speechSynthesis.onvoiceschanged = handleTimeGreetingAndVoice;
