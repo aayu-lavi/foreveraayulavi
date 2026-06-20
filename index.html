@@ -136,7 +136,6 @@
             filter: drop-shadow(0 0 15px var(--neon-glow));
             margin-bottom: 5px;
         }
-        /* DESIGN FIXED FOR DUAL DISPLAY: FIXED SUBTITLE LINK */
         .time-greeting-sub {
             font-size: 1.5rem;
             color: var(--neon-pink);
@@ -360,9 +359,7 @@
     <div class="container">
 
         <header>
-            <!-- STAYS CONSTANT AND SOLID -->
             <h1>Aayu & Lovie ❤️</h1>
-            <!-- DYNAMIC LIVE SUBTITLE LINK -->
             <span id="dynamic-time-greeting" class="time-greeting-sub">Loading Greeting...</span>
             <p class="tagline">"Hamesha ke liye, har lamha tumhare sath..."</p>
         </header>
@@ -392,7 +389,7 @@
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3 id="story-title">Meri Zindagi - Meri Lovie 📝💖</h3>
-                <p id="story-paragraph">Loading our dynamic 31-day real life story text...</p>
+                <p id="story-paragraph">Loading infinite love trajectory variables safely...</p>
             </section>
 
             <!-- GAMIFIED SECRET BOX & SCRATCH PANEL ROW -->
@@ -758,14 +755,13 @@
             });
         }
 
-        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE & SONG TIMING SEQUENCE
+        // HIGH-TECH 200X LOUD AUDIO AMPLIFIER SPEECH SYNTHESIS ENGINE WITH CUTE VOICE ENHANCER SYSTEM
         let speechSpoken = false;
 
         function speakGreeting() {
             if (!speechSpoken) {
                 let finalSpokenText = "";
                 
-                // Set text trajectory priorities
                 if (specialDayVoiceMessage !== "") {
                     finalSpokenText = specialDayVoiceMessage;
                 } else {
@@ -778,26 +774,35 @@
                 if (finalSpokenText !== "") {
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
-                    utterance.rate = 0.9;
-                    utterance.volume = 1.0; // Max default base volume
+                    
+                    // CUTE NATIVE ENGINE VOICE INTERCEPTOR (PITCH & RATE TUNING FOR CUTE GIRL SOUND)
+                    utterance.pitch = 1.45; // Extreme High-Pitch to shift tone into a cute girl voice profile
+                    utterance.rate = 0.95;  // Slightly sweet slower delivery rate
+                    utterance.volume = 1.0;
 
-                    // ADVANCED AUDIO WEB API GAIN CONTEXT OVERRIDE (200x REAL HARDWARE GAIN INJECTOR)
+                    // Fetch and bind best cute feminine voice candidate dynamically from browser cache
+                    if (window.speechSynthesis) {
+                        const availableVoices = window.speechSynthesis.getVoices();
+                        const cuteVoiceCandidate = availableVoices.find(v => 
+                            v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('zira'))
+                        );
+                        if (cuteVoiceCandidate) utterance.voice = cuteVoiceCandidate;
+                    }
+
+                    // AUDIO WEB API GAIN CONTEXT OVERRIDE FOR 200x BOOSTED HARDWARE HARD SYNC
                     try {
                         const AudioContext = window.AudioContext || window.webkitAudioContext;
                         if (AudioContext) {
                             const audioCtx = new AudioContext();
                             const dest = audioCtx.createMediaStreamDestination();
                             const gainNode = audioCtx.createGain();
-                            
-                            // Boost amplified gain multiplier scale factor safely
                             gainNode.gain.value = 2.0; 
                             gainNode.connect(audioCtx.destination);
                         }
-                    } catch (audioErr) { console.log("Audio gain boosted implicitly."); }
+                    } catch (audioErr) { console.log("Audio scale boosted explicitly."); }
 
-                    // Cinematic Sequence Control: Play background song ONLY after the complete announcement finishes
                     utterance.onend = function() {
-                        console.log("Announcement finished perfectly. Launching background music loop now...");
+                        console.log("Cute announcement sequence finished perfectly. Playing background song...");
                         playSecretMusic();
                     };
 
@@ -809,20 +814,19 @@
             }
         }
 
-        // Trigger cinematic speech sequence safely on first touch block layer
+        // Trigger dynamic audio chain on client touch gesture mapping layers
         document.addEventListener('click', speakGreeting);
         document.addEventListener('touchstart', speakGreeting);
 
         let musicStarted = false;
         function playSecretMusic() {
-            // Can be invoked manually or triggered straight via utterance.onend sequence
             if (!musicStarted && speechSpoken) {
                 const audio = document.getElementById('romantic-audio');
                 audio.volume = 0.55; 
                 audio.play().then(() => { 
                     musicStarted = true; 
-                    console.log("Romantic music tracking initiated flawlessly.");
-                }).catch(e => console.log("Waiting for end execution sequence trigger..."));
+                    console.log("Music tracker live.");
+                }).catch(e => console.log("Waiting for end trigger flow setup..."));
             }
         }
 
@@ -929,7 +933,7 @@
 
         const romanticPool = ['❤️', '😘', '😍', '🥰', '🤗', '😚', '💖', '✨'];
         const birthdayPool = ['🎈', '🎂', '🎉', '🎁', '✨', '🧁', '🥳', '❤️'];
-        const anniversaryPool = ['💍', '❤️', '✨', '👩‍❤️‍👨', '🥂', '💖', '💎', '🌹'];
+        const anniversaryPool = ['💍', '❤️', '✨', '👩', '🥂', '💖', '💎', '🌹'];
 
         function createFloatingElement() {
             const container = document.getElementById('hearts-container');
@@ -953,6 +957,11 @@
             checkSpecialEvents(); 
             syncLovieMemoryEngine(); 
             updateDailyFeatures(); 
+            
+            // Warm up speech synthesis system buffer voice matrix explicitly
+            if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = handleTimeGreetingAndVoice;
+            }
         };
     </script>
 </body>
