@@ -606,15 +606,30 @@
 
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
-                    utterance.pitch = 1.0; utterance.rate = 0.92; utterance.volume = 1.0;
+                    utterance.pitch = 1.0; 
+                    utterance.rate = 0.88; // 🔥 SLOWED DOWN FOR ABSOLUTE CLARITY IN IPHONE
+                    utterance.volume = 1.0;
 
                     if (window.speechSynthesis) {
                         let availableVoices = window.speechSynthesis.getVoices();
+                        
+                        // 🔥 STRICT APPLE HINDI LANGUAGE VOICE PARSER FOR IOS SAFARI
                         const selectPerfectVoice = () => {
                             let perfectFemaleVoice = availableVoices.find(v => 
-                                v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('apple'))
+                                v.lang.includes('hi') || v.lang.includes('IN')
                             );
-                            if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                            
+                            // Target specific Apple high-quality local voices if available
+                            let appleHindiVoice = availableVoices.find(v => 
+                                (v.lang.includes('hi-IN') || v.lang.includes('IN')) && 
+                                (v.name.toLowerCase().includes('rishi') || v.name.toLowerCase().includes('kanya') || v.name.toLowerCase().includes('apple'))
+                            );
+                            
+                            if (appleHindiVoice) {
+                                utterance.voice = appleHindiVoice;
+                            } else if (perfectFemaleVoice) {
+                                utterance.voice = perfectFemaleVoice;
+                            }
                         };
 
                         if (!availableVoices.length) {
@@ -792,8 +807,46 @@
         setInterval(createFloatingElement, 500);
 
         // =================================================================
-        // 🎯 DYNAMIC SHUFFLE AUTOPILOT GAME ENGINE
+        // 🎯 EMBEDDED AUTOPILOT QUIZ DATABASE & CORE LOGIC ENGINE
         // =================================================================
+        const dynamicLoveQuizPool = [
+            {
+                q: "Jab Priya bacha ko lag raha tha ki Aayu ne unhe block kar diya hai, toh unhone itni fikr me rota hua kya kaha tha?",
+                options: ["Main ab baat nahi karungi", "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae 🥺", "Aap bade log ho gae ho", "Main gussa hu aap se"],
+                correct: 1
+            },
+            {
+                q: "Aayu ne jab Priya bacha ko gussa dilane ke liye laptop se insta par chat karne ko bola tha, tab unka phone kitna charge tha?",
+                options: ["Sirf 5 percent charge", "Sirf 15 percent charge", "Sirf 9 percent charge 🔋", "Sirf 25 percent charge"],
+                correct: 2
+            },
+            {
+                q: "Wo haseen raat jab Aayu trading ka chart dekh raha tha, tab Priya meri jaan kya dekh kar bol rahi thin ki kitna cute hai ye baby?",
+                options: ["Chulbuli ki photo dekh kar 🐶", "Koi reel dekh kar", "Apni bachpan ki photo", "Ek cute cartoon"],
+                correct: 0
+            },
+            {
+                q: "Aayu ne jab plant ke side se video call par apni rani ko ek khoobsurat ped dikhaya tha, wo kis cheez ka ped tha?",
+                options: ["Kaju ka ped", "Badam ka ped 🌳", "Aam ka ped", "Peepla ka ped"],
+                correct: 1
+            },
+            {
+                q: "Priya bacha baat-baat par Aayu par apna poora haq jatate huye pyaar se kya danti hain?",
+                options: ["Aap bohot bure ho", "mar khani hai kya aap ko, mujhse dar nhi lagta kya? 😡🥰", "Main block kar dungi", "Mujhse baat mat karo"],
+                correct: 1
+            },
+            {
+                q: "Jab Aayu khet par jata hai ya busy schedule me hota hai, tab Priya bacha pyaari sweet queries me kya kehti hain?",
+                options: ["Aap mujhse kuch chupa rhe ho, jhuth bol rhe ho 🔒", "Aap mujhe bhool gae", "Main busy hu abhi", "Aap kahan gae the"],
+                correct: 0
+            },
+            {
+                q: "Priya meri jaan din me kitne baje apni kadi duty par nikalti hain aur raat ko kadi mehnat karti hain?",
+                options: ["Subah 10 baje", "Dopehar me exact 2 baje ⏰", "Raat ko 8 baje", "Subah 6 baje"],
+                correct: 1
+            }
+        ];
+
         let activeGameQuestions = [];
         let currentQuestionIndex = 0;
         let gameScore = 0;
@@ -801,7 +854,6 @@
 
         function initAutopilotGame() {
             if (typeof dynamicLoveQuizPool !== "undefined" && dynamicLoveQuizPool.length >= 3) {
-                // Shuffle logic maps a subset list randomly on every fresh page load session
                 let shuffledPool = [...dynamicLoveQuizPool].sort(() => 0.5 - Math.random());
                 activeGameQuestions = shuffledPool.slice(0, 3);
             }
@@ -884,7 +936,7 @@
             checkSpecialEvents(); 
             syncLovieMemoryEngine(); 
             updateDailyFeatures(); 
-            initAutopilotGame(); // 🔥 Initializes the random dynamic matrix automatically!
+            initAutopilotGame(); 
             
             if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
                 speechSynthesis.onvoiceschanged = handleTimeGreetingAndVoice;
