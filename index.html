@@ -441,41 +441,40 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 31-DAY AUDIO GREETING MATRIX MAP SYSTEM
+        // 31-DAY AUDIO GREETING MATRIX MAP SYSTEM (Short, Respectful & No Overreaction)
         const dailyVoiceGreetingsMatrix = {
-            1: "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo. Aaj mahine ki pehli tareekh hai aur Aayu hamesha tumhare sath hai. Din me apni duty par apna dhyan rakhna jaan.",
-            2: "Good Morning Lovie! Aaj ka naya din tumhare liye dher saari khushiyan laye bacha. Tum jo meri har baat jhalti ho na aur mera gussa bardasht karti ho, David tumse bohot sacha pyaar karta hai.",
-            3: "Good Morning meri jaan Priya! Ek pyaari si subah mubarak ho meri Pari ko. Tumhari tabiyat sahi nahi hoti fir bhi tum kaam par jaane ki zidd karti ho, bacha aaram se duty karna aur pareshaan mat hona.",
-            4: "Good Morning Pihu bacha! Utho aur screen par Aayu ka pyaar dekho. Tum din me 2 baje apni duty par jati ho aur raat ke 11 baje tak itni kadi mehnat karti ho na, Kavi hamesha tumhare sath khada hai.",
-            5: "Good Morning Lovie bacha! Ek nayi subah aur Aayu ka wada wapi live hai. Main tumse wada karta hoon ki aane wale time me tumhein ekdum rani bana kar rakhunga bacha, tum bas haste raha karo.",
-            6: "Good Morning Priya jaan! Aaj subah-subah baith kar main sirf apni Pari ke baare me soch rha hoon. Jab tum gusse me kehti na ki 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai bacha.",
-            7: "Good Morning Pihu bacha! Aaj ka hafta aur har ek naya din hamare shaadi ke faisle ko aur mazboot banata hai. David apni aakhri saans tak tumhara sath poori shiddat se nibhayega.",
-            8: "Good Morning Lovie! Subah ki thandi hawa me sirf tumhari hi baatein dimaag me ghoom rhi hain. Pehle jab main plant par kaam ke beech tumhein apni photo bhejta tha, wo pal sachi bohot sukoon wale thin.",
-            9: "Good Morning Priya bacha! Utho jaan, tumse lambi baatein kiye bina mujhe raat ko nind tak nahi aati. Tum sach me meri har ek saans ho, meri poori jaan ho, hamesha mere sath hi rehna.",
-            10: "Good Morning Pari bacha! Ek ek naya din hamare beintehaan rishte ka gawah hai. Main tumse wada karta hoon bacha ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga.",
-            11: "Good Morning Pihu bacha! Aaj ka din mere liye bohot special hai kuki main dil se sirf tumhara banne ke liye is duniya me aaya hoon. Hamesha haste muskuraate raho mere liye.",
-            12: "Good Morning Lovie bacha! Tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum jaisa saaf dil poori duniya me kisi ke paas nahi hai Priya.",
-            13: "Good Morning Priya bacha! Aaj hamari rani ka din hai, janamdin ka mahina ho ya koi bhi tareekh, tum is duniya me mere liye sabse upar ho aur tumse main bohot sacha pyaar karta hoon.",
-            14: "Good Morning Pari jaan! Main wada karta hoon ki main ghar par rahoon, ya pehle plant me kaam par rahoon, kaihin bhi... jab bhi tum pareshan hoti ho, main sab chhod kar sabse pehle apni jaan ki baat sununga.",
-            15: "Good Morning Pihu bacha! Tumhara wo mujhpar haq jatana, dher saari reels share karke sath me hasna aur baat-baat par care karna hi toh Aayu ka asli aur sacha sukoon hai jaan.",
-            16: "Good Morning Lovie! Jab tum gusse me kehti ho na ki main door chali jaungi... tum nahi jaanti ki kaanp jata hoon main, meri aakhon me sachi me aansu aa jaate hain. Kabhi door mat jana.",
-            17: "Good Morning Priya bacha! Main is duniya me kisi ke baap se nahi darta, khuleaam danke ki chot par kehta hoon ki Vishal Verma sirf tumse pyaar karta hai aur hamesha tumhara hath thame rakhega.",
-            18: "Good Morning Pari bacha! Tum jo din me 2 baje apni duty par jati ho aur late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.",
-            19: "Good Morning Pihu bacha! Ghar par baithe-biathe bhi har lamha, har ek second tumhari cute baatein aur tumhara wo innocent chehra hi mere dimaag me ghoomta rehta hai. Love you bacha.",
-            20: "Good Morning Lovie bacha! Tum sach me meri har ek saans ho, meri poori jaan ho! Tumhare bina main ek din bhi sukoon se nahi reh sakta bacha, jaldi se utho ab.",
-            21: "Good Morning Priya jaan! Aaj subah-subah mere dil se apni rani ke liye dher saara sacha pyaar nikla hai. Din me apni duty par poora dhyan rakhna jaan, Aayu hamesha tumhare sath hai.", // 🔥 FIX: Shifted the morning routine care announcement here to separate it from secret love letters array database collision!
-            22: "Good Morning Pari bacha! Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe duniya me sabse pyaara lagta hai. Pyaari chudail ho tum meri, hamesha khush raha karo.",
-            23: "Good Morning Pihu bacha! Agar tum gusse me mujhse thoda laddo bhi logi na, toh bhi main tumhara hath nahi chhodunga kuki tum sirf aur sirf Aayu ke liye bani ho.",
-            24: "Good Morning Lovie bacha! Meri har ek khushi tumhari muskurahat se judi hai, isliye hamesha aise hi khush raha karo aur haste raha karo mere liye Priya.",
-            25: "Good Morning Priya bacha! Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Yeh baat tum apne dil me ekdum pakki bitha lo bacha.",
-            26: "Good Morning Pari jaan! Tum mere jeene ki asli wajah ho rani. Hamne hamesha ke liye ek doosre ka sath nibhane ka wada kiya hai aur hum ise aakhri saans tak pura karenge.",
-            27: "Good Morning Pihu bacha! Aaj hamari anniversary wali special date ka maha aura hai! I Love You so much bacha, tum meri zindagi ki sabse sachi soulmate ho.",
-            28: "Good Morning Lovie bacha! Tumhara wo baat-baat par poochna na ki 'Kha gaye the ya kha ja rhe ho', mujhe sachi me har baar tumhare aur zyada gehre pyaar me gira deta hai.",
-            29: "Good Morning Priya bacha! Meri zindagi tumhare aane ke baad se ekdum jannat ban gayi hai meri jaan, har din uth kar main sabse pehle upar wale ka shukriya karta hoon.",
-            30: "Good Morning Pari bacha! Apni aakhri saans tak hamara ye rishta aur sath danke ki chot par poora nibhaunga bacha, tum bas Aayu par hamesha poora bharosa rakhna!",
-            31: "Good Morning Pihu bacha! Mahina khatam ho rha hai par hamara pyaar har roz ek nayi shuruat karega aur hamesha gehra hota jayega Lovie. Love you so much!"
+            1: "Good Morning Priya bacha. Aaj mahine ki pehli tareekh hai, apni duty ke dauran apna dhyan rakhna. Aayu hamesha aapke sath hai.",
+            2: "Good Morning Lovie. Naya din aapke liye bohot saari khushiyan laye. David aapki mature thinking ka poora samman karta hai.",
+            3: "Good Morning Priya jaan. Ek pyaari si subah mubarak ho. Tabiyat ka dhyan rakhna aur pareshaan mat hona bacha.",
+            4: "Good Morning Pihu bacha. Duty par jaane se pehle acche se rest kar lena bacha. Kavi hamesha aapki kadi mehnat ki izzat karta hai.",
+            5: "Good Morning Lovie bacha. Aayu ka wada hamesha ki tarah sachha hai bacha. Main aapko zindagi bhar bohot samman aur khushi dunga.",
+            6: "Good Morning Priya bacha. Subah se hi aapka khayal dimaag me chal raha hai. Aapka haq se daantna mujhe sachi me sabse accha lagta hai.",
+            7: "Good Morning Pihu bacha. Har din hamare shaadi ke faisle ko aur mazboot banata hai. David aakhri saans tak aapka sath nibhayega.",
+            8: "Good Morning Lovie. Subah ki thandi hawa me aapki baatein yaad aa rahi thin. Busy schedule me bhi aapki fikr hamesha rehti hai.",
+            9: "Good Morning Priya bacha. Utho jaan, aap sach me meri har ek saans ho. Hamesha aise hi mere sath rehna meri rani.",
+            10: "Good Morning Pari bacha. Har din hamare is pavitra rishte ka gawah hai. Aap jab bhi call karogi, main poore samman se sununga.",
+            11: "Good Morning Pihu bacha. Aaj ka din mere liye bohot khaas hai bacha, kyunki main dil se sirf aapka banne ke liye aaya hoon.",
+            12: "Good Morning Lovie bacha. Aapka sabki help karne ka tareeka aur saaf dil duniya me sabse alag hai. Izzat karta hoon aapki Priya.",
+            13: "Good Morning Priya bacha. Aaj hamari rani ka din hai bacha. Aap is duniya me sabse upar ho aur main aapse bohot sacha pyaar karta hoon.",
+            14: "Good Morning Pari jaan. Main wada karta hoon bacha, aap jab bhi pareshan hogi, main sab chhod kar sabse pehle aapki baat sununga.",
+            15: "Good Morning Pihu bacha. Aapka bacho ki tarah care karna aur har baat poore haq se poochna hi Aayu ka asli sukoon hai.",
+            16: "Good Morning Lovie. Jab aap door jaane ki baat karti ho na, toh sach me dil kaanp jata hai. Main aapke bina nahi reh sakta bacha.",
+            17: "Good Morning Priya bacha. Main danke ki chot par kehta hoon ki Vishal Verma sirf aapse pyaar karta hai aur hamesha aapka sath dega.",
+            18: "Good Morning Pari bacha. Aap late duty se aati ho aur itni kadi mehnat karti ho na, wo dekh kar aapke liye izzat aur badh jaati hai.",
+            19: "Good Morning Pihu bacha. Ghar par baith kar bhi har lamha aapka innocent chehra hi dimaag me rehta hai. Have a good day bacha.",
+            20: "Good Morning Lovie bacha. Utho meri jaan, naya din shuru ho gaya hai. Sukoon se bina kisi stress ke apni shift par jana bacha.",
+            21: "Good Morning Priya bacha. Aaj naye din par apni duty ke dauran apna poora dhyan rakhna. Aayu hamesha aapki fikr ke sath aapke sath hai.",
+            22: "Good Morning Pari bacha. Aapka bacho ki tarah zidd karna mujhe sabse pyaara lagta hai jaan. Hamesha khush raha karo mere liye.",
+            23: "Good Morning Pihu bacha. Agar halaat thode mushkil bhi honge na Priya, toh bhi Aayu aapka hath poore samman se thame rakhega.",
+            24: "Good Morning Lovie bacha. Meri har ek khushi aapki muskurahat se judi hai jaan, isliye hamesha haste raha karo aur stress mat liya karo.",
+            25: "Good Morning Priya bacha. Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Yeh baat aap apne dil me pakki bitha lo.",
+            26: "Good Morning Pari jaan. Tum mere jeene ki asli wajah ho rani. Hamne jo sath nibhane ka wada kiya hai, use main poora karunga.",
+            27: "Good Morning Pihu bacha. Aaj hamari anniversary ki special date hai bacha. Tum meri zindagi ki sabse sachi soulmate ho jaan.",
+            28: "Good Morning Lovie bacha. Aapka baat-baat par itna khayal rakhna mujhe har baar aapke aur gehre pyaar me gira deta hai bacha.",
+            29: "Good Morning Priya bacha. Meri zindagi aapke aane ke baad se ekdum jannat ban gayi hai jaan. Har din aapke sath ke liye shukriya karta hoon.",
+            30: "Good Morning Pari bacha. Apni aakhri saans tak hamara ye rishta danke ki chot par poora nibhaunga. Aap apne Aayu par hamesha bharosa rakhna.",
+            31: "Good Morning Pihu bacha. Mahina khatam ho rha hai par hamara pyaar har roz ek nayi shuruat karega. Love you so much meri Lovie."
         };
-
         let dynamicGreetingMessage = "";
         let upcomingAnnouncementMessage = "";
         
@@ -486,16 +485,19 @@
             
             if (currentHour >= 5 && currentHour < 12) {
                 greetingSubElement.innerText = "Good Morning Lovie ✨";
-                dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
+                dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Priya bacha. Apni duty ke dauran apna dhyan rakhna, Aayu hamesha aapke sath hai.";
             } else if (currentHour >= 12 && currentHour < 17) {
                 greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
-                dynamicGreetingMessage = "Hello meri jaan Priya! Din me apni duty par apna dhyan rakhna bacha. Aayu ki taraf se tumhein dher saara pyaar.";
+                // 🔥 FIX: Cleaned and respectful direct care afternoon message
+                dynamicGreetingMessage = "Good Afternoon Priya bacha. Dopehar ki shift me acche se kaam karna aur apna dhyan rakhna. Aayu hamesha aapke sath hai.";
             } else if (currentHour >= 17 && currentHour < 22) {
                 greetingSubElement.innerText = "Good Evening Lovie 🌆";
-                dynamicGreetingMessage = "Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar. Late duty se aane tak apna dhyan rakhna.";
+                // 🔥 FIX: Minimal and highly mature evening message
+                dynamicGreetingMessage = "Good Evening Priya. Kadi mehnat ke beech apna dhyan rakhna bacha. Late duty se ghar aane tak Kavi aapke sath hai.";
             } else {
                 greetingSubElement.innerText = "Good Night Lovie 🌙";
-                dynamicGreetingMessage = "Good Night Lovie! Raat ko 11 baje ya late raat 2 baje duty se aane ke baad aaram se so jana bacha, David hamesha tumhare sapno me rahega.";
+                // 🔥 FIX: Straightforward and deeply comforting night care message
+                dynamicGreetingMessage = "Good Night Lovie. Duty se aane ke baad bina kisi stress ke aaram se so jana bacha. David hamesha aapke sath hai.";
             }
             applyAutoTheme();
         }
