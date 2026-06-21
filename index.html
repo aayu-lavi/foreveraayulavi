@@ -36,7 +36,7 @@
             transition: all 1s ease-in-out;
         }
 
-        /* 🔥 SCREEN-WIDE MASTER AUDIO BYPASS OVERLAY */
+        /* 🔥 SCREEN-WIDE MASTER AUDIO BYPASS OVERLAY FOR ANDROID 16 & IOS */
         #audio-gate-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #050409; backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
@@ -247,11 +247,14 @@
         .lightbox-window img { max-width: 100%; max-height: 65vh; border-radius: 16px; border: 1px solid rgba(255, 77, 109, 0.3); }
         .lightbox-caption { color: #fff; font-size: 1.1rem; margin-top: 12px; }
         .lightbox-close-btn { position: absolute; top: -45px; right: 0; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+
+        footer { padding: 40px 20px; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; }
     </style>
+    <script src="lovie_memory.js"></script>
 </head>
 <body>
 
-    <!-- 🔥 MASTER AUDIO BYPASS OVERLAY -->
+    <!-- 🔥 UNIVERSAL SCREEN CLICK/TOUCH AUDIO BYPASS LAYER LAYER -->
     <div id="audio-gate-overlay" onclick="unlockAudioAndStartWebsite()">
         <div class="gate-card">
             <h2>Aayu & Lovie World ❤️</h2>
@@ -378,35 +381,48 @@
             </section>
         </div>
 
-         <!-- TAB MODULE 3 -->
+         <!-- TAB MODULE 3: MAGICAL GALLERY WITH ALL SLOTS FLUSHED -->
         <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Magical Memories</h2>
                 <div class="gallery-grid">
+                    
+                    <!-- Slot 1 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="First Meet"></div>
                         <span class="photo-tag">The Beginning</span><p>"Hamari Pehli Mulaqat" ✨</p>
                     </div>
+                    
+                    <!-- Slot 2 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Her Smile"></div>
                         <span class="photo-tag">Favorite View</span><p>"Wo Pyaari Si Smile" 😊</p>
                     </div>
+                    
+                    <!-- Slot 3 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Together"></div>
                         <span class="photo-tag">Us Forever</span><p>"Hamesha Ka Sath" 💖</p>
                     </div>
+
+                    <!-- Slot 4 (Naya Slot) -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="Cute Moment"></div>
                         <span class="photo-tag">My Queen</span><p>"Bacha Ka Pyaara Chehra" 👑</p>
                     </div>
+
+                    <!-- Slot 5 (Naya Slot) -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Cuteness"></div>
                         <span class="photo-tag">Pure Love</span><p>"Nakhre Wali Lovie" 🌹</p>
                     </div>
+
+                    <!-- Slot 6 (Naya Slot) -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Memorable Day"></div>
                         <span class="photo-tag">Zindagi</span><p>"Har Lamha Tumhare Sath" ✨</p>
                     </div>
+
                 </div>
             </section>
         </div>
@@ -425,25 +441,6 @@
     </footer>
 
     <script>
-        // =================================================================
-        // 💾 ALL-IN-ONE MERGED DATA ENGINE (Independent of lovie_memory.js)
-        // =================================================================
-        const dailyLetters = {
-            1: { clue: "The Day We Started", text: "Priya bacha, tum meri zindagi ka pehla aur aakhri sach ho..." },
-            27: { clue: "Our Anniversary Code", text: "Happy Anniversary meri jaan! Tumhara sath meri saanson jaisa hai..." }
-        };
-
-        const dailyVoiceGreetingsMatrix = {
-            1: "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo. Aaj mahine ki pehli tareekh hai aur Aayu hamesha tumhare sath hai.",
-            21: "Good Morning Priya jaan! Jab main saare kaam chhod kar tumhare paas jaldi se aaunga na, tab jitna man kare utna dher saara pyaar kar lena.",
-            22: "Good Morning Pari bacha! Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe duniya me sabse pyaara lagta hai.",
-            27: "Good Morning Pihu bacha! Aaj hamari anniversary wali special date ka maha aura hai! I Love You so much bacha."
-        };
-
-        function generateInfiniteLoveMessage() {
-            return "Priya bacha, tum meri zindagi ka wo sukoon ho jiske bina meri har ek raat ekdum adhoori lagti hai. Jab tum gusse me kehti ho na 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai. Tum jo din me 2 baje apni duty par jati ho aur raat ke 11 baje ya kabhi late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai. Aayu hamesha tumhare sath hai meri rani!";
-        }
-
         const anniversaryDate = new Date(2026, 2, 27, 0, 0); 
         function updateTimer() {
             const now = new Date();
@@ -454,6 +451,42 @@
             document.getElementById('seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
         }
         setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // 31-DAY AUDIO GREETING MATRIX MAP SYSTEM
+        const dailyVoiceGreetingsMatrix = {
+            1: "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo. Aaj mahine ki pehli tareekh hai aur Aayu hamesha tumhare sath hai. Din me apni duty par apna dhyan rakhna jaan.",
+            2: "Good Morning Lovie! Aaj ka naya din tumhare liye dher saari khushiyan laye bacha. Tum jo meri har baat jhalti ho na aur mera gussa bardasht karti ho, David tumse bohot sacha pyaar karta hai.",
+            3: "Good Morning meri jaan Priya! Ek pyaari si subah mubarak ho meri Pari ko. Tumhari tabiyat sahi nahi hoti fir bhi tum kaam par jaane ki zidd karti ho, bacha aaram se duty karna aur pareshaan mat hona.",
+            4: "Good Morning Pihu bacha! Utho aur screen par Aayu ka pyaar dekho. Tum din me 2 baje apni duty par jati ho aur raat ke 11 baje tak itni kadi mehnat karti ho na, Kavi hamesha tumhare sath khada hai.",
+            5: "Good Morning Lovie bacha! Ek nayi subah aur Aayu ka wada wapi live hai. Main tumse wada karta hoon ki aane wale time me tumhein ekdum rani bana kar rakhunga bacha, tum bas haste raha karo.",
+            6: "Good Morning Priya jaan! Aaj subah-subah baith kar main sirf apni Pari ke baare me soch rha hoon. Jab tum gusse me kehti na ki 'mar khani hai kya mujhse', toh sachi bohot pyaara lagta hai bacha.",
+            7: "Good Morning Pihu bacha! Aaj ka hafta aur har ek naya din hamare shaadi ke faisle ko aur mazboot banata hai. David apni aakhri saans tak tumhara sath poori shiddat se nibhayega.",
+            8: "Good Morning Lovie! Subah ki thandi hawa me sirf tumhari hi baatein dimaag me ghoom rhi hain. Pehle jab main plant par kaam ke beech tumhein apni photo bhejta tha, wo pal sachi bohot sukoon wale thin.",
+            9: "Good Morning Priya bacha! Utho jaan, tumse lambi baatein kiye bina mujhe raat ko nind tak nahi aati. Tum sach me meri har ek saans ho, meri poori jaan ho, hamesha mere sath hi rehna.",
+            10: "Good Morning Pari bacha! Ek ek naya din hamare beintehaan rishte ka gawah hai. Main tumse wada karta hoon bacha ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga.",
+            11: "Good Morning Pihu bacha! Aaj ka din mere liye bohot special hai kuki main dil se sirf tumhara banne ke liye is duniya me aaya hoon. Hamesha haste muskuraate raho mere liye.",
+            12: "Good Morning Lovie bacha! Tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum jaisa saaf dil poori duniya me kisi ke paas nahi hai Priya.",
+            13: "Good Morning Priya bacha! Aaj hamari rani ka din hai, janamdin ka mahina ho ya koi bhi tareekh, tum is duniya me mere liye sabse upar ho aur tumse main bohot sacha pyaar karta hoon.",
+            14: "Good Morning Pari jaan! Main wada karta hoon ki main ghar par rahoon, ya pehle plant me kaam par rahoon, kaihin bhi... jab bhi tum pareshan hoti ho, main sab chhod kar sabse pehle apni jaan ki baat sununga.",
+            15: "Good Morning Pihu bacha! Tumhara wo mujhpar haq jatana, dher saari reels share karke sath me hasna aur baat-baat par care karna hi toh Aayu ka asli aur sacha sukoon hai jaan.",
+            16: "Good Morning Lovie! Jab tum gusse me kehti ho na ki main door chali jaungi... tum nahi jaanti ki kaanp jata hoon main, meri aakhon me sachi me aansu aa jaate hain. Kabhi door mat jana.",
+            17: "Good Morning Priya bacha! Main is duniya me kisi ke baap se nahi darta, khuleaam danke ki chot par kehta hoon ki Vishal Verma sirf tumse pyaar karta hai aur hamesha tumhara hath thame rakhega.",
+            18: "Good Morning Pari bacha! Tum jo din me 2 baje apni duty par jati ho aur late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.",
+            19: "Good Morning Pihu bacha! Ghar par baithe-biathe bhi har lamha, har ek second tumhari cute baatein aur tumhara wo innocent chehra hi mere dimaag me ghoomta rehta hai. Love you bacha.",
+            20: "Good Morning Lovie bacha! Tum sach me meri har ek saans ho, meri poori jaan ho! Tumhare bina main ek din bhi sukoon se nahi reh sakta bacha, jaldi se utho ab.",
+            21: "Good Morning Priya jaan! Jab main saare kaam chhod kar tumhare paas jaldi se aaunga na, tab jitna man kare utna dher saara pyaar kar lena aur dher saari baatein kar lena.",
+            22: "Good Morning Pari bacha! Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe duniya me sabse pyaara lagta hai. Pyaari chudail ho tum meri, hamesha khush raha karo.",
+            23: "Good Morning Pihu bacha! Agar tum gusse me mujhse thoda laddo bhi logi na, toh bhi main tumhara hath nahi chhodunga kuki tum sirf aur sirf Aayu ke liye bani ho.",
+            24: "Good Morning Lovie bacha! Meri har ek khushi tumhari muskurahat se judi hai, isliye hamesha aise hi khush raha karo aur haste raha karo mere liye Priya.",
+            25: "Good Morning Priya bacha! Aayu humesha, har janam me sirf aur sirf apni Lovie ka hi rahega. Yeh baat tum apne dil me ekdum pakki bitha lo bacha.",
+            26: "Good Morning Pari jaan! Tum mere jeene ki asli wajah ho rani. Hamne hamesha ke liye ek doosre ka sath nibhane ka wada kiya hai aur hum ise aakhri saans tak pura karenge.",
+            27: "Good Morning Pihu bacha! Aaj hamari anniversary wali special date ka maha aura hai! I Love You so much bacha, tum meri zindagi ki sabse sachi soulmate ho.",
+            28: "Good Morning Lovie bacha! Tumhara wo baat-baat par poochna na ki 'Kha gaye the ya kha ja rhe ho', mujhe sachi me har baar tumhare aur zyada gehre pyaar me gira deta hai.",
+            29: "Good Morning Priya bacha! Meri zindagi tumhare aane ke baad se ekdum jannat ban gayi hai meri jaan, har din uth kar main sabse pehle upar wale ka shukriya karta hoon.",
+            30: "Good Morning Pari bacha! Apni aakhri saans tak hamara ye rishta aur sath danke ki chot par poora nibhaunga bacha, tum bas Aayu par hamesha poora bharosa rakhna!",
+            31: "Good Morning Pihu bacha! Mahina khatam ho rha hai par hamara pyaar har roz ek nayi shuruat karega aur hamesha gehra hota jayega Lovie. Love you so much!"
+        };
 
         let dynamicGreetingMessage = "";
         let upcomingAnnouncementMessage = "";
@@ -465,7 +498,7 @@
             
             if (currentHour >= 5 && currentHour < 12) {
                 greetingSubElement.innerText = "Good Morning Lovie ✨";
-                dynamicGreetingMessage = dailyVoiceGreetingsMatrix[todayDate] || "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
+                dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Priya bacha! Utho aur pyaari si smile ke sath apna din shuru karo, Aayu hamesha tumhare sath hai.";
             } else if (currentHour >= 12 && currentHour < 17) {
                 greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
                 dynamicGreetingMessage = "Hello meri jaan Priya! Din me apni duty par apna dhyan rakhna bacha. Aayu ki taraf se tumhein dher saara pyaar.";
@@ -474,7 +507,7 @@
                 dynamicGreetingMessage = "Good Evening Priya! Kadi mehnat ke beech Kavi ki taraf se tumhein dher saara pyaar. Late duty se aane tak apna dhyan rakhna.";
             } else {
                 greetingSubElement.innerText = "Good Night Lovie 🌙";
-                dynamicGreetingMessage = "Good Night Lovie! Raat ko duty se aane ke baad aaram se so jana bacha, David hamesha tumhare sapno me rahega.";
+                dynamicGreetingMessage = "Good Night Lovie! Raat ko 11 baje ya late raat 2 baje duty se aane ke baad aaram se so jana bacha, David hamesha tumhare sapno me rahega.";
             }
             applyAutoTheme();
         }
@@ -500,16 +533,19 @@
 
             const events = [
                 { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday My Beautiful Queen Lovie! 🎂❤️ Aaj ka ye haseen din aapki zindagi me dher saari khushiyan laye. Aayu hamesha aapse pyaar karta rahega!", voice: "Happy Birthday Priya bacha! Aaj hamari rani ka janamdin hai. Aayu aapse bohot sacha pyaar karta hai aur hamesha karta rahega. Janamdin mubarak ho meri jaan!" },
-                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge.", voice: "Happy Anniversary bacha! Aaj hamari anniversary ka sabse haseen din hai. Hamare us pavitra rishte aur sath ko Aayu aakhri saans tak poori shiddat se nibhayega!" }
+                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare us pavitra rishte aur sath ka ek aur haseen saal jise hum aakhri saans tak nibhayenge.", voice: "Happy Anniversary bacha! Aaj hamari anniversary ka sabse haseen din hai. Hamare us pavitra rishte aur sath ko Aayu aakhri saans tak poori shiddat se nibhayega!" },
+                { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aayu's Special Birthday! 🎈✨ Lovie, aapka baccha aaj ke din is duniya me aaya tha sirf aur sirf aapka banne ke liye!", voice: "Hello Priya bacha, aaj aapke Aayu ka birthday hai! Aapka ye bacha is duniya me aaya hi sirf aapka banne ke liye tha." }
             ];
             
             const banner = document.getElementById('event-banner');
             const modal = document.getElementById('event-overlay-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMsg = document.getElementById('modal-message');
 
             events.forEach(ev => {
                 if (currentMonth === ev.month && currentDate === ev.date) {
-                    document.getElementById('modal-title').innerText = `✨ ${ev.name} Wish ✨`;
-                    document.getElementById('modal-message').innerText = ev.msg;
+                    modalTitle.innerText = `✨ ${ev.name} Wish ✨`;
+                    modalMsg.innerText = ev.msg;
                     modal.classList.add('show-modal'); 
                     if (ev.type === "birthday") isBirthdayToday = true;
                     if (ev.type === "anniversary") isAnniversaryToday = true;
@@ -517,22 +553,41 @@
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
                     if (now > eventTargetThisYear) eventTargetThisYear.setFullYear(currentYear + 1);
-                    let daysDiff = Math.ceil((eventTargetThisYear - now) / (1000 * 60 * 60 * 24));
+                    let timeDiff = eventTargetThisYear - now;
+                    let daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
                     
                     if (daysDiff > 0 && daysDiff <= 10) {
                         banner.style.display = 'block';
                         banner.innerHTML = `<span class="marquee-text-flow">💖 Alert: ${ev.name} is coming soon in ${daysDiff} days! 🎂✨</span>`;
-                        let eventReadableName = (ev.type === "birthday") ? "Priya bacha aapka birthday" : "hamari marriage anniversary";
+                        let eventReadableName = (ev.type === "birthday") ? "Priya bacha aapka birthday" : (ev.type === "anniversary") ? "hamari marriage anniversary" : "Aayu ka janamdin";
                         upcomingAnnouncementMessage = `Priya bacha, suno na! System alert check karo, agle ${daysDiff} dino me ${eventReadableName} aane wala hai! Aayu bohot excited hai!`;
                     }
                 }
             });
         }
 
+        // 🔥 IOS-SAFARI & ANDROID 16 UNIFIED AUDIO BYPASS SYSTEM
         let speechSpoken = false;
         let musicStarted = false;
 
+        if (typeof speechSynthesis !== 'undefined') {
+            window.speechSynthesis.getVoices();
+        }
+
         function unlockAudioAndStartWebsite() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (AudioContext) {
+                    const audioCtx = new AudioContext();
+                    if (audioCtx.state === 'suspended') audioCtx.resume();
+                }
+            } catch (e) { console.log("Hardware Sync Channel Ready"); }
+
+            const audio = document.getElementById('romantic-audio');
+            if(audio) {
+                audio.play().then(() => { audio.pause(); }).catch(e => console.log("Engine sync active"));
+            }
+
             const overlay = document.getElementById('audio-gate-overlay');
             if (overlay) {
                 overlay.style.opacity = '0';
@@ -546,23 +601,52 @@
                     finalSpokenText += " " + upcomingAnnouncementMessage;
                 }
 
-                if (finalSpokenText !== "" && typeof speechSynthesis !== 'undefined') {
+                if (finalSpokenText !== "") {
                     window.speechSynthesis.cancel(); 
+
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
-                    utterance.pitch = 1.0; 
-                    utterance.rate = 0.88; 
-                    utterance.volume = 1.0;
+                    utterance.pitch = 1.0; utterance.rate = 0.92; utterance.volume = 1.0;
 
-                    let availableVoices = window.speechSynthesis.getVoices();
-                    let perfectVoice = availableVoices.find(v => (v.lang.includes('hi-IN') || v.lang.includes('IN')) && (v.name.toLowerCase().includes('rishi') || v.name.toLowerCase().includes('kanya') || v.name.toLowerCase().includes('apple') || v.name.toLowerCase().includes('google')));
-                    if (perfectVoice) utterance.voice = perfectVoice;
+                    if (window.speechSynthesis) {
+                        let availableVoices = window.speechSynthesis.getVoices();
+                        const selectPerfectVoice = () => {
+                            let perfectFemaleVoice = availableVoices.find(v => 
+                                v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('apple'))
+                            );
+                            if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                        };
 
-                    utterance.onend = function() { setTimeout(playSecretMusic, 1500); };
-                    utterance.onerror = function() { if (!musicStarted) setTimeout(playSecretMusic, 1500); }; 
+                        if (!availableVoices.length) {
+                            window.speechSynthesis.onvoiceschanged = () => {
+                                availableVoices = window.speechSynthesis.getVoices();
+                                selectPerfectVoice();
+                            };
+                        } else {
+                            selectPerfectVoice();
+                        }
+                    }
+
+                    utterance.onend = function() { 
+                        console.log("Announcement finished successfully. Triggering song after 1.5 seconds.");
+                        setTimeout(() => { playSecretMusic(); }, 1500); 
+                    };
+                    
+                    utterance.onerror = function(event) { 
+                        console.log("Speech utterance handler caught error:", event);
+                        if (!musicStarted) {
+                            setTimeout(() => { playSecretMusic(); }, 1500);
+                        }
+                    }; 
 
                     window.speechSynthesis.speak(utterance);
-                    setTimeout(() => { if (!musicStarted) playSecretMusic(); }, 25000);
+
+                    setTimeout(() => { 
+                        if (!musicStarted) {
+                            console.log("Failsafe backup loop triggered after 45s.");
+                            playSecretMusic();
+                        }
+                    }, 45000);
                 } else {
                     playSecretMusic();
                 }
@@ -574,17 +658,27 @@
                 const audio = document.getElementById('romantic-audio');
                 if (audio) {
                     audio.volume = 0.45; 
-                    audio.play().then(() => { musicStarted = true; }).catch(() => { audio.muted = false; audio.play(); musicStarted = true; });
+                    audio.play().then(() => { 
+                        musicStarted = true; 
+                        console.log("Sound tracking active.");
+                    }).catch(e => {
+                        audio.muted = false;
+                        audio.play();
+                        musicStarted = true;
+                    });
                 }
             }
         }
 
         function syncLovieMemoryEngine() {
-            const pureAutoGeneratedText = generateInfiniteLoveMessage();
-            document.getElementById('story-paragraph').innerText = pureAutoGeneratedText;
-            document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum meri life ka wo sukoon ho jiske bina meri har ek raat ekdum adhoori lagti hai bacha Priya.";
-            document.getElementById('fact-desc-2').innerText = "Wo pal main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae'. Tumhara wo haq jatana aur dher saari reels share karke sath me hasna hamari life ka sabse khoobsurat canvas hai Pari.";
-            document.getElementById('fact-desc-3').innerText = "Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga bacha. Aane wale time me tumhein ekdum rani bana kar rakhunga!";
+            if (typeof generateInfiniteLoveMessage === "function") {
+                const pureAutoGeneratedText = generateInfiniteLoveMessage();
+                document.getElementById('story-paragraph').innerText = pureAutoGeneratedText;
+                
+                document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara behaviour aur tumhara sabki help karne ka tareeka is duniya me sabse alag hai. Tum meri life ka wo sukoon ho jiske bina meri har ek raat ekdum adhoori lagti hai bacha Priya. Tum jo din me 2 baje apni duty par jati ho aur raat ke 11 baje ya kabhi late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye meri izzat aur badh jati hai.";
+                document.getElementById('fact-desc-2').innerText = "Wo pal main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae'. Tumhara wo haq jatana aur dher saari reels share karke sath me hasna hamari life ka sabse khoobsurat canvas hai Pari.";
+                document.getElementById('fact-desc-3').innerText = "Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main kabhi gussa nahi hoonga aur humesha call uthaunga bacha. Plant me rahoon, ghar par rahoon ya kaihin bhi, jab bhi tum pareshan hogi, main sab chhod kar sabse pehle apni jaan ki baat sununga. Aane wale time me tumhein ekdum rani bana kar rakhunga!";
+            }
         }
 
         const weeklyRewards = {
@@ -601,16 +695,25 @@
             const todayDate = new Date().getDate();
             const todayDay = new Date().getDay();
             const clueBox = document.getElementById('clue-text');
-            if(clueBox && dailyLetters[todayDate]) { clueBox.innerText = `Hint: ${dailyLetters[todayDate].clue}`; }
+            if(clueBox && typeof dailyLetters !== "undefined" && dailyLetters[todayDate]) {
+                clueBox.innerText = `Hint: ${dailyLetters[todayDate].clue}`;
+            }
             const rewardBox = document.getElementById('scratch-reward-text');
-            if(rewardBox && weeklyRewards[todayDay]) { rewardBox.innerText = weeklyRewards[todayDay]; }
+            if(rewardBox && weeklyRewards[todayDay]) {
+                rewardBox.innerText = weeklyRewards[todayDay];
+            }
         }
 
         function verifyPassword() {
             const val = document.getElementById('gate-pass').value;
             const todayDate = new Date().getDate();
             if(val === '2703') { 
-                document.getElementById('dynamic-letter-text').innerText = dailyLetters[todayDate] ? dailyLetters[todayDate].text : "Lovie bacha, Aayu tumse bohot sacha pyaar karta hai. Tum hamesha bas aise hi muskuraati raho Priya! ❤️";
+                const letterParagraph = document.getElementById('dynamic-letter-text');
+                if(typeof dailyLetters !== "undefined" && dailyLetters[todayDate]) {
+                    letterParagraph.innerText = dailyLetters[todayDate].text;
+                } else {
+                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie bacha, Aayu tumse bohot sacha pyaar karta hai. Tum hamesha bas aise hi muskuraati raho Priya! ❤️";
+                }
                 document.getElementById('gate-reveal').style.display = 'block';
                 alert("🔒 Letter Open Ho Gaya Jaan! Padh Lo.");
             } else {
@@ -625,12 +728,14 @@
             document.querySelectorAll('.tab-content-panel').forEach(panel => panel.classList.remove('active-panel'));
             const targetPanel = document.getElementById(panelId);
             if(targetPanel) targetPanel.classList.add('active-panel');
-            if(panelId === 'tab-story') { document.getElementById('btn-story').classList.add('active-tab'); initScratchCard(); }
+            
+            if(panelId === 'tab-story') document.getElementById('btn-story').classList.add('active-tab');
             if(panelId === 'tab-about') document.getElementById('btn-about').classList.add('active-tab');
             if(panelId === 'tab-gallery') {
                 document.getElementById('btn-gallery').classList.add('active-tab');
                 setTimeout(() => { document.getElementById('magical-gallery-section').scrollIntoView({ behavior: 'smooth' }); }, 50);
             }
+            if(panelId === 'tab-story') { initScratchCard(); }
         }
 
         function viewLightbox(card) {
@@ -663,24 +768,40 @@
             canvas.addEventListener('touchmove', scratch);
         }
 
-        // =================================================================
-        // 🎯 SHUFFLE GAME LAYER
-        // =================================================================
-        const dynamicLoveQuizPool = [
-            { q: "Jab Priya bacha ko lag raha tha ki Aayu ne unhe block kar diya hai, toh unhone itni fikr me rota hua kya kaha tha?", options: ["Main ab baat nahi karungi", "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae 🥺", "Aap bade log ho gae ho", "Main gussa hu aap se"], correct: 1 },
-            { q: "Aayu ne jab Priya bacha ko gussa dilane ke liye laptop se insta par chat karne ko bola tha, tab unka phone kitna charge tha?", options: ["Sirf 5 percent charge", "Sirf 15 percent charge", "Sirf 9 percent charge 🔋", "Sirf 25 percent charge"], correct: 2 },
-            { q: "Wo haseen raat jb Aayu trading ka chart dekh raha tha, tab Priya meri jaan kya dekh kar bol rahi thin ki kitna cute hai ye baby?", options: ["Chulbuli ki photo dekh kar 🐶", "Koi reel dekh kar", "Apni bachpan ki photo", "Ek cute cartoon"], correct: 0 },
-            { q: "Aayu ne jab plant ke side se video call par apni rani ko ek khoobsurat ped dikhaya tha, wo kis cheez ka ped tha?", options: ["Kaju ka ped", "Badam ka ped 🌳", "Aam ka ped", "Peepla ka ped"], correct: 1 },
-            { q: "Priya bacha baat-baat par Aayu par apna poora haq jatate huye pyaar se kya danti hain?", options: ["Aap bohot bure ho", "mar khani hai kya aap ko, mujhse dar nhi lagta kya? 😡🥰", "Main block kar dungi", "Mujhse baat mat karo"], correct: 1 }
-        ];
+        const romanticPool = ['❤️', '😘', '😍', '🥰', '🤗', '😚', '💖', '✨'];
+        const birthdayPool = ['🎈', '🎂', '🎉', '🎁', '✨', '🧁', '🥳', '❤️'];
+        const anniversaryPool = ['💍', '❤️', '✨', '👩‍❤️‍👨', '🥂', '💖', '💎', '🌹'];
 
+        function createFloatingElement() {
+            const container = document.getElementById('hearts-container');
+            if(!container || container.children.length > 15) return; 
+            
+            const element = document.createElement('div');
+            element.classList.add('floating-element');
+            let activePool = romanticPool;
+            if (isBirthdayToday) activePool = birthdayPool;
+            else if (isAnniversaryToday) activePool = anniversaryPool;
+            
+            element.innerHTML = activePool[Math.floor(Math.random() * activePool.length)];
+            const startX = Math.random() * 100; const duration = Math.random() * 4 + 5; const size = Math.random() * 12 + 14; 
+            element.style.left = startX + 'vw'; element.style.fontSize = size + 'px'; element.style.animationDuration = duration + 's';
+            
+            container.appendChild(element);
+            setTimeout(() => { element.remove(); }, duration * 1000); 
+        }
+        setInterval(createFloatingElement, 500);
+
+        // =================================================================
+        // 🎯 DYNAMIC SHUFFLE AUTOPILOT GAME ENGINE
+        // =================================================================
         let activeGameQuestions = [];
         let currentQuestionIndex = 0;
         let gameScore = 0;
         let gameLives = 3;
 
         function initAutopilotGame() {
-            if (dynamicLoveQuizPool.length >= 3) {
+            if (typeof dynamicLoveQuizPool !== "undefined" && dynamicLoveQuizPool.length >= 3) {
+                // Shuffle logic maps a subset list randomly on every fresh page load session
                 let shuffledPool = [...dynamicLoveQuizPool].sort(() => 0.5 - Math.random());
                 activeGameQuestions = shuffledPool.slice(0, 3);
             }
@@ -693,43 +814,57 @@
                 document.getElementById('game-options-container').innerHTML = `<button class="gate-btn" onclick="resetLoveGame()">Dobara Khedo 🔄</button>`;
                 return;
             }
-            if (currentQuestionIndex >= activeGameQuestions.length) {
+
+            if (currentQuestionIndex >= activeGameQuestions.length || activeGameQuestions.length === 0) {
                 document.getElementById('quiz-game-wrapper').style.display = 'none';
                 document.getElementById('game-victory-gate').style.display = 'block';
-                for(let i=0;i<10;i++) setTimeout(createFloatingElement, i*80);
+                triggerMassiveBalloonBlast();
                 return;
             }
 
             const currentData = activeGameQuestions[currentQuestionIndex];
             document.getElementById('game-question-text').innerText = currentData.q;
-            const container = document.getElementById('game-options-container');
-            container.innerHTML = "";
+            
+            const optionsContainer = document.getElementById('game-options-container');
+            optionsContainer.innerHTML = "";
 
             currentData.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
                 btn.innerText = opt;
-                btn.style.cssText = "background: rgba(12, 8, 24, 0.8); border: 1px solid rgba(255, 77, 109, 0.4); color: var(--text-sub); padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer; text-align: center;";
-                btn.onclick = () => {
-                    if (idx === currentData.correct) {
-                        gameScore++;
-                        document.getElementById('game-score').innerText = gameScore;
-                        alert("🎉 Sahi Jawab Priya bacha!");
-                        currentQuestionIndex++;
-                        loadQuizGameTrack();
-                    } else {
-                        gameLives--;
-                        let hearts = ""; for(let i=0;i<gameLives;i++) hearts+="❤️";
-                        document.getElementById('game-lifeline').innerText = hearts || "💔";
-                        alert("❌ Oho! Galat ho gaya bacha.");
-                        loadQuizGameTrack();
-                    }
-                };
-                container.appendChild(btn);
+                btn.style.cssText = "background: rgba(12, 8, 24, 0.8); border: 1px solid rgba(255, 77, 109, 0.4); color: var(--text-sub); padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-align: center;";
+                
+                btn.onmouseover = () => { btn.style.background = "var(--neon-pink)"; btn.style.color = "#fff"; };
+                btn.onmouseout = () => { btn.style.background = "rgba(12, 8, 24, 0.8)"; btn.style.color = "var(--text-sub)"; };
+                
+                btn.onclick = () => checkGameAnswer(idx);
+                optionsContainer.appendChild(btn);
             });
         }
 
+        function checkGameAnswer(selectedIndex) {
+            const currentData = activeGameQuestions[currentQuestionIndex];
+            if (selectedIndex === currentData.correct) {
+                gameScore++;
+                document.getElementById('game-score').innerText = gameScore;
+                alert("🎉 Sahi Jawab Priya bacha! Pyaari Choice.");
+                triggerMassiveBalloonBlast(); 
+                currentQuestionIndex++;
+                loadQuizGameTrack();
+            } else {
+                gameLives--;
+                let lifeHearts = "";
+                for(let i=0; i<gameLives; i++) lifeHearts += "❤️";
+                if(lifeHearts === "") lifeHearts = "💔";
+                document.getElementById('game-lifeline').innerText = lifeHearts;
+                alert("❌ Oho! Galat ho gaya bacha. Yaad karo Aayu ne kya bola tha.");
+                loadQuizGameTrack();
+            }
+        }
+
         function resetLoveGame() {
-            currentQuestionIndex = 0; gameScore = 0; gameLives = 3;
+            currentQuestionIndex = 0;
+            gameScore = 0;
+            gameLives = 3;
             document.getElementById('game-score').innerText = "0";
             document.getElementById('game-lifeline').innerText = "❤️❤️❤️";
             document.getElementById('quiz-game-wrapper').style.display = 'flex';
@@ -737,26 +872,20 @@
             initAutopilotGame();
         }
 
-        function createFloatingElement() {
-            const container = document.getElementById('hearts-container');
-            if(!container || container.children.length > 15) return; 
-            const element = document.createElement('div');
-            element.classList.add('floating-element');
-            element.innerHTML = ['❤️', '😘', '😍', '🥰', '💖', '✨'][Math.floor(Math.random() * 6)];
-            const duration = Math.random() * 4 + 5;
-            element.style.left = Math.random() * 100 + 'vw'; element.style.fontSize = Math.random() * 12 + 14 + 'px'; element.style.animationDuration = duration + 's';
-            container.appendChild(element);
-            setTimeout(() => element.remove(), duration * 1000); 
+        function triggerMassiveBalloonBlast() {
+            for (let i = 0; i < 12; i++) {
+                setTimeout(createFloatingElement, i * 80);
+            }
         }
-        setInterval(createFloatingElement, 500);
 
-        window.onload = function() { 
+        window.onload = () => { 
             initScratchCard(); 
             handleTimeGreetingAndVoice(); 
             checkSpecialEvents(); 
             syncLovieMemoryEngine(); 
             updateDailyFeatures(); 
-            initAutopilotGame(); 
+            initAutopilotGame(); // 🔥 Initializes the random dynamic matrix automatically!
+            
             if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
                 speechSynthesis.onvoiceschanged = handleTimeGreetingAndVoice;
             }
