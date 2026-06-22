@@ -36,7 +36,7 @@
             transition: all 1s ease-in-out;
         }
 
-        /* 🔥 SCREEN-WIDE MASTER AUDIO BYPASS OVERLAY FOR ANDROID 16 & IOS */
+        /* 🔥 MASTER AUDIO BYPASS OVERLAY */
         #audio-gate-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #050409; backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
@@ -254,11 +254,11 @@
 </head>
 <body>
 
-    <!-- 🔥 UNIVERSAL SCREEN CLICK/TOUCH AUDIO BYPASS LAYER LAYER -->
+    <!-- 🔥 UNIVERSAL SCREEN TOUCH AUDIO BYPASS LAYER -->
     <div id="audio-gate-overlay" onclick="unlockAudioAndStartWebsite()">
         <div class="gate-card">
             <h2>Aayu & Lovie World ❤️</h2>
-            <p>Lovie, is page par hamari haseen chat archive locked hai...</p>
+            <p>Lovie, is page par humari pyaari si chat aur yaadon ka ek chota sa corner hai...</p>
             <p style="font-size: 0.85rem; color: var(--neon-pink); font-style: italic; margin-top: -10px;">[Screen par kahi bhi ek baar touch karo] 🌟</p>
             <button class="gate-start-btn">Open World Karo 🗝️</button>
         </div>
@@ -268,7 +268,7 @@
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
-            <p id="modal-message">Loading love...</p>
+            <p id="modal-message">Loading...</p>
             <span class="modal-close-txt" onclick="closeEventModal()">Close & View Gallery</span>
         </div>
     </div>
@@ -283,9 +283,9 @@
     <div class="container">
         <header>
             <h1>Aayu & Lovie ❤️</h1>
-            <span id="dynamic-time-greeting" class="time-greeting-sub">Loading Greeting...</span>
-            <!-- 🔥 HERO TAGLINE REFINED -->
-            <p class="tagline">"Just a place where our memories live ❤️"</p>
+            <span id="dynamic-time-greeting" class="time-greeting-sub">Loading...</span>
+            <!-- 🌟 IMPROVEMENT 3: HERO TAGLINE IMPROVEMENT -->
+            <p class="tagline">"Built from our chats, calls and memories ❤️"</p>
         </header>
 
         <div id="event-banner" class="advance-event-banner"></div>
@@ -300,7 +300,7 @@
             </div>
         </div>
 
-        <!-- 🔥 SECTION NAME IMPROVEMENTS CHAT ARCHIVE, ABOUT LOVIE, CAPTURED MOMENTS -->
+        <!-- 🌟 IMPROVEMENT 2: SECTION NAME IMPROVEMENTS -->
         <div class="tabs-nav">
             <button class="tab-btn active-tab" id="btn-story" onclick="switchTab('tab-story')">Chat Archive 💬</button>
             <button class="tab-btn" id="btn-about" onclick="switchTab('tab-about')">About Lovie 🌸</button>
@@ -310,8 +310,8 @@
         <!-- TAB MODULE 1 -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
-                <h3 id="story-title">Selected Chat Logs & Memories 📝💖</h3>
-                <p id="story-paragraph">Loading our dynamic autopilot kisse safely...</p>
+                <h3 id="story-title">Hamari Pyaari Baatein 📝💖</h3>
+                <p id="story-paragraph">Loading...</p>
             </section>
 
             <div class="interactive-row">
@@ -322,18 +322,18 @@
                         <input type="password" id="gate-pass" placeholder="••••" maxlength="4">
                     </div>
                     <div class="secret-reveal-content" id="gate-reveal">
-                        <p id="dynamic-letter-text">Loading daily letter content...</p>
+                        <p id="dynamic-letter-text">Loading daily note content...</p>
                     </div>
-                    <!-- 🔥 BUTTON RENAME -->
+                    <!-- 🌟 IMPROVEMENT 4: SECRET LETTER SECTION BUTTON RENAME -->
                     <button class="gate-btn" onclick="verifyPassword()">Read Today's Note 💌</button>
                 </div>
 
-                <!-- 🔥 TODAY'S SURPRISE RENAME -->
+                <!-- 🌟 IMPROVEMENT 5: SCRATCH CARD SECTION RENAME -->
                 <div class="scratch-card-box glowing-box">
                     <h4>Today's Surprise 🎁</h4>
                     <p>Ungli se canvas ko rub karke apna surprise gift kholo!</p>
                     <div class="scratch-container">
-                        <div id="scratch-reward-text" class="scratch-back-text">🎉 Loading dynamic reward...</div>
+                        <div id="scratch-reward-text" class="scratch-back-text">🎉 Loading...</div>
                         <canvas id="scratch-layer" class="scratch-canvas" width="260" height="150"></canvas>
                     </div>
                 </div>
@@ -347,64 +347,65 @@
                 </div>
                 
                 <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 5px; color: #fff; text-shadow: 0 0 8px var(--neon-pink);">🎲 Our Special Memory Game</h3>
-                <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 25px; font-style: italic;">"Hamari puraani baaton ko kitna yaad rakha hai, chalo test karte hain Lovie..."</p>
+                <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 25px; font-style: italic;">"Hamari baaton ko kitna yaad rakha hai, chalo test karte hain Lovie..."</p>
                 
                 <div id="quiz-game-wrapper" style="min-height: 160px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <h4 id="game-question-text" style="color: #fff; font-size: 1.25rem; margin-bottom: 20px; font-weight: 600; line-height: 1.5; max-width: 500px;">Loading Game Channels...</h4>
+                    <h4 id="game-question-text" style="color: #fff; font-size: 1.25rem; margin-bottom: 20px; font-weight: 600; line-height: 1.5; max-width: 500px;">Loading...</h4>
                     <div id="game-options-container" style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 380px;"></div>
                 </div>
 
                 <div id="game-victory-gate" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 2px dashed var(--neon-pink); animation: fadeIn 0.5s ease;">
-                    <h4 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">🎉 Game Level Cleared!</h4>
-                    <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px;">Tum jeet gayi bacha! Tumhare liye ek aur hidden note unlock ho gaya hai:</p>
+                    <h4 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">🎉 Game Clear!</h4>
+                    <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px;">Tum jeet gayi bacha! Tumhare liye ek aur hidden chota sa note unlock ho gaya hai:</p>
                     <div style="background: rgba(255, 77, 109, 0.09); padding: 15px; border-radius: 16px; border: 1px solid var(--neon-pink); text-align: left; color: #fff; line-height: 1.7; max-width: 550px; margin: 0 auto;">
-                        "Lovie, tumhari memory genuinely bohot acchi hai. Tumne game ke saare sahi jawab diye, iska matlab tum hamari har baat ko bohot dhyan se sunti ho. Mujhe tumhari yeh careful nature aur care karne ka tareeka genuinely bohot pasand hai. Hamesha aise hi muskuraati raha karo mere liye. ❤️"
+                        "Lovie, tumhari memory sach me bohot acchi hai. Tumne game ke saare sahi jawab diye, iska matlab tum hamari har baat ko bohot dhyan se sunti ho. Mujhe tumhara ye care karne ka tareeka genuinely bohot pasand hai. Hamesha aise hi hansti raha karo mere liye. ❤️"
                     </div>
                 </div>
             </div>
             
-            <!-- 🗺️ FUTURE PLANS TOGETHER (TECHNICAL PHRASES REMOVED) -->
+            <!-- 🗺️ BUCKET LIST / FUTURE SECTION -->
             <div class="glowing-box" style="padding: 30px; margin-top: 30px; text-align: center;">
                 <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; color: #fff; text-shadow: 0 0 8px var(--neon-pink);">🌿 Future Plans Together 🌿</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; text-align: left; margin-top: 20px;">
                     <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15);">
-                        <h4 style="color: #fff; margin-bottom: 10px;">📍 Places To Travel</h4>
-                        <p style="color: var(--text-sub); font-size: 0.9rem;">Hilly stations, long peaceful road drives, aur unguided town exploring jahan hum dono bina kisi jaldi ke maze se ghumein.</p>
+                        <h4 style="color: #fff; margin-bottom: 10px;">📍 Places To Visit</h4>
+                        <p style="color: var(--text-sub); font-size: 0.9rem;">Hilly stations, long road drives, aur quiet town exploring jahan hum dono bina kisi jaldi ke maze se ghumein.</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15);">
                         <h4 style="color: #fff; margin-bottom: 10px;">🍲 Food To Try</h4>
-                        <p style="color: var(--text-sub); font-size: 0.9rem;">Late night street food stalls testing, authentic local dhabas ka khaana, aur kitchen experiments jahan cook main karunga.</p>
+                        <p style="color: var(--text-sub); font-size: 0.9rem;">Late night street food testing, authentic local dhabas ka khaana, aur kitchen experiments jahan cook main karunga.</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15);">
                         <h4 style="color: #fff; margin-bottom: 10px;">🎯 Shared Goals</h4>
-                        <p style="color: var(--text-sub); font-size: 0.9rem;">Apne career paths ko set karna, secure financial track balance rakhna, aur hamara khud ka cozy clean space design karna.</p>
+                        <p style="color: var(--text-sub); font-size: 0.9rem;">Apne career paths ko acchi tarah streamline karna, life me secure stability balance rakhna, aur hamara khud ka ek cozy clean space setup karna.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- TAB MODULE 2 -->
+        <!-- 🌟 IMPROVEMENT 9: ABOUT SECTION RENAME (Things I Like About You, Random Things I Remember, Why You're Special To Me) -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
-                <h2 class="section-title">Observations & Reality Checks</h2>
+                <h2 class="section-title">Some Little Things</h2>
                 <div class="facts-grid">
                     <div class="fact-card glowing-box">
-                        <h3 id="fact-title-1">Daily Lifestyle & Vibe ⭐</h3>
+                        <h3 id="fact-title-1">Things I Like About You 🌸</h3>
                         <p id="fact-desc-1">Loading deep memory components...</p>
                     </div>
                     <div class="fact-card glowing-box">
-                        <h3 id="fact-title-2">Archived Chat Highlights 📝</h3>
+                        <h3 id="fact-title-2">Random Things I Remember 💭</h3>
                         <p id="fact-desc-2">Loading detailed memory log...</p>
                     </div>
                     <div class="fact-card glowing-box">
-                        <h3 id="fact-title-3">Reality Check & Ground Rules 🤝</h3>
-                        <p id="fact-desc-3">Loading loyalty values...</p>
+                        <h3 id="fact-title-3">Why You're Special To Me ❤️</h3>
+                        <p id="fact-desc-3">Loading loyalty matrix values...</p>
                     </div>
                 </div>
             </section>
         </div>
 
-         <!-- TAB MODULE 3: MAGICAL GALLERY WITH MEMORY-BASED CAPTIONS -->
+         <!-- TAB MODULE 3: CAPTURED MOMENTS WITH MEMORY-BASED CAPTIONS -->
         <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Captured Frames</h2>
@@ -425,19 +426,19 @@
                     <!-- Slot 3 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Together"></div>
-                        <span class="photo-tag">Frame #03</span><p>"Yaha tum mujh par bina kisi solid reason ke gussa thi 😆"</p>
+                        <span class="photo-tag">Frame #03</span><p>"Yaha tum mujh par bina kisi reason ke gussa thi 😆"</p>
                     </div>
 
                     <!-- Slot 4 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="Cute Moment"></div>
-                        <span class="photo-tag">Frame #04</span><p>"Jab tumne bola tha ki tum is outfit me thodi ajeeb lag rahi ho, par aisa nahi thaa 👑"</p>
+                        <span class="photo-tag">Frame #04</span><p>"Jab tumne bola tha ki tum is outfit me moti lag rahi ho, par aisa bilkul nahi tha."</p>
                     </div>
 
                     <!-- Slot 5 -->
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Cuteness"></div>
-                        <span class="photo-tag">Frame #05</span><p>"Raat ke 1 AM waale video call ka low-light screen grab 🌹"</p>
+                        <span class="photo-tag">Frame #05</span><p>"Raat ke late video call ka ek chota sa screenshot note."</p>
                     </div>
 
                     <!-- Slot 6 -->
@@ -459,9 +460,9 @@
         </div>
     </div>
 
-    <!-- 🔥 FOOTER REVERT & IMPROVE -->
+    <!-- 🌟 IMPROVEMENT 1: FOOTER REVERT & IMPROVE -->
     <footer>
-        <p>Made with ❤️ by Aayu for Lovie | © 2026</p>
+        <p>Built from chats, calls and countless memories ❤️</p>
     </footer>
 
     <script>
@@ -477,27 +478,27 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 31-DAY AUDIO GREETING MATRIX MAP SYSTEM (WhatsApp Style, Casual & Authentic 2026)
+        // 🌟 IMPROVEMENT 5: VOICE GREETINGS COMPLETE REWRITE (No script, Pure natural WhatsApp format)
         const dailyVoiceGreetingsMatrix = {
-            1: "Good Morning Lovie. Aaj jaldi uth gaya tha, tumhari yaad aayi toh socha ping kar doon.",
-            2: "Good Morning Lovie. Breakfast time par kar lena, aaj duty par kafi busy routine hai.",
+            1: "Good Morning Lovie, uth gayi ya abhi bhi blanket me ho? Aaj shift par thoda chill rehna.",
+            2: "Good Morning Lovie, breakfast time par kar lena, aaj duty par busy scheduling hai shayad.",
             3: "Good Morning Lovie. Aaj ka din accha jaye bina kisi unnecessary stress ke, bas yahi wish hai.",
             4: "Good Morning Lovie. Kal tumhari wo baat yaad karke mujhe abhi bhi hasi aa rahi hai.",
-            5: "Good Morning Lovie. Shift par jaane se pehle phone charge kar lena properly, connectivity zaruri hai.",
+            5: "Good Morning Lovie. Shift par jaane se pehle phone charge kar lena properly, updates zaruri hain.",
             6: "Good Morning Lovie. Aaj weather thoda clear hai, tumhari shift timing kya hai aaj?",
-            7: "Good Morning Lovie. Kal raat ko tum busy thi fir bhi tumne instant reply kiya, mujhe genuinely accha laga.",
+            7: "Good Morning Lovie. Kal raat ko tum busy thi fir bhi tumne instant reply kiya, accha laga.",
             8: "Good Morning Lovie. Uth jao, shift ka schedule check kar lena, aur chill rehna aaj.",
-            9: "Good Morning Lovie. Aaj mood thoda normal hai, par tumse text par baat karke day secure ho jata hai.",
+            9: "Good Morning Lovie. Aaj mood thoda normal hai, par tumse text par baat karke din set ho jata hai.",
             10: "Good Morning Lovie. Kal jahan hum dono call par be-wajah gussa ho rahe the, wo abhi soch kar funny lag raha hai.",
             11: "Good Morning Lovie. Chaay pi li ya abhi bhi sone ka plan chal raha hai? Inform karna.",
             12: "Good Morning Lovie. Tumhari ek baat genuinely pasand hai, tum har kisi ki help karne ki fully koshish karti ho.",
-            13: "Good Morning Lovie. Happy Special Day. Aaj ka schedule thoda free rakhna, shaam ko baat karte hain regular channel par.",
+            13: "Good Morning Lovie. Happy Special Day. Aaj ka schedule thoda free rakhna, shaam ko baat karte hain.",
             14: "Good Morning Lovie. Aaj kaam ka burden zyada mat lena office me. Headset sath rakhna.",
             15: "Good Morning Lovie. Tumhara wo baat-baat par poochna ki 'kha gaye the ya kha ja rhe ho' genuinely cute hai.",
             16: "Good Morning Lovie. Kal reels share karte-karte jo discussions chal rahe the, unka logic bohot solid tha.",
-            17: "Good Morning Lovie. Uth jao bacha, naya day start ho gaya hai. Fast updates check kar lena settings me.",
+            17: "Good Morning Lovie. Uth jao bacha, naya day start ho gaya hai. Fast updates check kar lena.",
             18: "Good Morning Lovie. Raat ko tum late aayi duty se, thak gayi hogi. Aaj thoda chill format me kaam karna.",
-            19: "Good Morning Lovie. Aaj dhoop tez hai, office niklo toh dhyan rakhna aur dehydration se bachna.",
+            19: "Good Morning Lovie. Aaj dhoop tez hai, office niklo toh dhyan rakhna aur paani sath rakhna.",
             20: "Good Morning Lovie. Sone ke tareeqe thode sudharo, subah jaldi uthne ki habit daalni chahiye.",
             21: "Good Morning Lovie. Aaj naye din par apni duty ke dauran apna poora dhyan rakhna, coordinate karte hain shaam ko.",
             22: "Good Morning Lovie. Tumhari zidd karne ki capacity kaafi high hai, par end me control ho jata hai sab.",
@@ -505,11 +506,11 @@
             24: "Good Morning Lovie. Kuch naye memes check kiye, abhi shaam ko share karunga work shift ke baad.",
             25: "Good Morning Lovie. Tumhara care karne ka straight format aur honesty mujhe genuinely bohot clear lagti hai.",
             26: "Good Morning Lovie. Hamesha focus clear rakha karo, baki problems solve ho hi jaati hain sath me.",
-            27: "Good Morning Lovie. Happy Anniversary date. Hamare is long log format ka ek aur year pass ho gaya.",
+            27: "Good Morning Lovie. Happy Anniversary date. Hamare sath ka ek aur haseen saal pass ho gaya.",
             28: "Good Morning Lovie. Aaj safe transport option hi chunna shift ke liye, traffic checks chal rahe hain.",
             29: "Good Morning Lovie. Kal jahan tum gusse me sorry sorry likh rahi thi, main sach me has raha tha idhar.",
             30: "Good Morning Lovie. Apna calm space maintain rakhna aaj office politics me, bilkul involve mat hona.",
-            31: "Good Morning Lovie. Month ka last day hai, updates review kar lenge raat ko video call parameters par."
+            31: "Good Morning Lovie. Month ka last day hai, updates review kar lenge raat ko video call par."
         };
 
         let dynamicGreetingMessage = "";
@@ -528,10 +529,10 @@
                 dynamicGreetingMessage = "Good Afternoon Lovie. Dopehar ki shift me acche se kaam karna aur apna dhyan rakhna.";
             } else if (currentHour >= 17 && currentHour < 22) {
                 greetingSubElement.innerText = "Good Evening Lovie 🌆";
-                dynamicGreetingMessage = "Good Evening Lovie. Kadi mehnat ke beech apna dhyan rakhna. Late duty se ghar aane tak main line par hoon.";
+                dynamicGreetingMessage = "Good Evening Lovie. Kadi mehnat ke beech apna dhyan rakhna. Late duty se ghar aane tak main hamesha available hoon.";
             } else {
                 greetingSubElement.innerText = "Good Night Lovie 🌙";
-                dynamicGreetingMessage = "Good Night Lovie. Duty se aane ke baad bina kisi stress ke aaram se so jana, catch up targets tomorrow.";
+                dynamicGreetingMessage = "Good Night Lovie. Duty se aane ke baad bina kisi stress ke aaram se so jana, subah baat karte hain.";
             }
             applyAutoTheme();
         }
@@ -556,8 +557,8 @@
             const currentDate = now.getDate();
 
             const events = [
-                { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday Lovie! 🎂❤️ Aaj ka ye din tumhari zindagi me dher saari khushiyan laye. Let's make it better together.", voice: "Happy Birthday Lovie! Aaj tumhara birthday hai. Tum meri life ka bohot important part ho, janamdin mubarak ho!" },
-                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare sath ka ek aur haseen saal, trust checking clear setup.", voice: "Happy Anniversary Lovie! Aaj hamari anniversary ka day hai. Hamare is rishte aur sath ko main hamesha honestly balance rakhunga." },
+                { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday Lovie! 🎂❤️ Aaj ka ye din tumhari zindagi me bohot saari khushiyan laye. Let's make it better together.", voice: "Happy Birthday Lovie! Aaj tumhara birthday hai. Tum meri life ka bohot important part ho, janamdin mubarak ho bacha!" },
+                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare sath ka ek aur pyaara saal, trust aur understanding hamesha clear rahe.", voice: "Happy Anniversary Lovie! Aaj hamari anniversary ka day hai. Hamare is rishte aur sath ko main hamesha honestly balance rakhunga." },
                 { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aayu's Special Birthday! 🎈✨ Lovie, aaj mera day format live hai, hamesha sorted check.", voice: "Hello Lovie, aaj mera birthday hai, naya day segment updated." }
             ];
             
@@ -613,11 +614,11 @@
                     const audioCtx = new AudioContext();
                     if (audioCtx.state === 'suspended') audioCtx.resume();
                 }
-            } catch (e) { console.log("Hardware Sync Channel Ready"); }
+            } catch (e) { console.log("Engine sync ready"); }
 
             const audio = document.getElementById('romantic-audio');
             if(audio) {
-                audio.play().then(() => { audio.pause(); }).catch(e => console.log("Engine sync active"));
+                audio.play().then(() => { audio.pause(); }).catch(e => console.log("Engine active"));
             }
 
             const overlay = document.getElementById('audio-gate-overlay');
@@ -660,12 +661,12 @@
                     }
 
                     utterance.onend = function() { 
-                        console.log("Announcement finished successfully. Triggering song after 1.5 seconds.");
+                        console.log("Finished successfully. Triggering song after 1.5 seconds.");
                         setTimeout(() => { playSecretMusic(); }, 1500); 
                     };
                     
                     utterance.onerror = function(event) { 
-                        console.log("Speech utterance handler caught error:", event);
+                        console.log("Speech utterance error:", event);
                         if (!musicStarted) {
                             setTimeout(() => { playSecretMusic(); }, 1500);
                         }
@@ -675,7 +676,7 @@
 
                     setTimeout(() => { 
                         if (!musicStarted) {
-                            console.log("Failsafe backup loop triggered after 45s.");
+                            console.log("Failsafe backup loop triggered.");
                             playSecretMusic();
                         }
                     }, 45000);
@@ -692,7 +693,7 @@
                     audio.volume = 0.45; 
                     audio.play().then(() => { 
                         musicStarted = true; 
-                        console.log("Sound tracking active.");
+                        console.log("Active tracking on sound.");
                     }).catch(e => {
                         audio.muted = false;
                         audio.play();
@@ -707,20 +708,21 @@
                 const pureAutoGeneratedText = generateInfiniteLoveMessage();
                 document.getElementById('story-paragraph').innerText = pureAutoGeneratedText;
                 
-                document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara soft behaviour aur work shift me focuses maintain karne ka tareeka genuinely bohot accha hai. Tumhari wajah se mera normal routine coordinate ho jata hai safely. Tum jo din me 2 baje shift par nikalti ho aur late hours tak mehnat karti ho na, mujhe tumhari is dedication par sach me proud feel hota hai.";
-                document.getElementById('fact-desc-2').innerText = "Wo chat logs jahan tumne gusse me thoda rote hue block hone ki baat likhi thi, un baaton ko yaad karke aaj bhi haseen lagta hai. Reels aur notes ka exchange hona hamare beech ka sabse funny aur real part hai.";
-                document.getElementById('fact-desc-3').innerText = "Main regular communication maintain karunga bina kisi friction ke. Work spaces, late night text logs ya personal tasks ke beech jab bhi koi baat share karni ho, main hamesha sabse pehle tumhari baat poore dhyan se sununga.";
+                document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara soft behaviour aur work shift me focuses maintain karne ka tareeka hamesha se bohot accha hai. Tumhari wajah se mera normal routine kaafi better lagta hai. Tum jo din me 2 baje shift par nikalti ho aur late hours tak mehnat karti ho na, mujhe tumhari is dedication par sach me proud feel hota hai.";
+                document.getElementById('fact-desc-2').innerText = "Wo chat jahan tumne gusse me thoda rote hue block hone ki baat likhi thi, un baaton ko yaad karke aaj bhi haseen lagta hai. Reels aur notes ka exchange hona hamare beech ka sabse funny aur real part hai.";
+                document.getElementById('fact-desc-3').innerText = "Main hamesha regular communication maintain karunga bina kisi be-wajah ke argument ke. Work spaces, late night text ya personal tasks ke beech jab bhi koi baat share karni ho, main hamesha sabse pehle tumhari baat poore dhyan se sununga.";
             }
         }
 
+        // 🌟 IMPROVEMENT 8: SCRATCH CARD REWARDS REWRITE (No tech words, purely fun couple coupons)
         const weeklyRewards = {
             0: "🎉 Safe log updates cleared cleanly! ❤️", 
-            1: "🌹 Reward: Weekend space alignment phone call slot block locked! 📞🥰", 
-            2: "👑 Reward: Lovie gets a soft clearing logic pass on active arguments! 😘👑", 
-            3: "🎁 Reward: Real chocolate box delivery drop shared next shift! 🍫🤝", 
-            4: "💫 Reward: No active arguments tracking open for next 24 hours format! 😡❤️", 
-            5: "🌍 Reward: Full heart fields encryption locked exclusively to your sector ID! 🔒🧬", 
-            6: "💍 Reward: Video call streaming resolution optimization pass cleared! 📸💞" 
+            1: "🌹 Reward: Weekend space assignment phone call pass locked! 📞🥰", 
+            2: "👑 Reward: Lovie gets a Free Hug Coupon to use anytime! 😘👑", 
+            3: "🎁 Reward: Real chocolate box delivery shared next shift! 🍫🤝", 
+            4: "💫 Reward: One Wish Coupon - Aaj main tumhari koi bhi ek baat manunga! 😡❤️", 
+            5: "🌍 Reward: No Argument Pass - Aaj hum dono kisi bhi baat par nahi ladenge! 🔒🧬", 
+            6: "💍 Reward: Movie Night Winner - Agli video call me movie tum choose karna! 📸💞" 
         };
 
         function updateDailyFeatures() {
@@ -746,10 +748,10 @@
                 if(sourceLetters && sourceLetters[todayDate]) {
                     letterParagraph.innerText = sourceLetters[todayDate].text;
                 } else {
-                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho, verification pass clear. ❤️";
+                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho, note verify cleared. ❤️";
                 }
                 document.getElementById('gate-reveal').style.display = 'block';
-                alert("🔒 Letter Open Ho Gaya! Verified.");
+                alert("🔒 Note Open Ho Gaya! Padh Lo.");
             } else {
                 alert("❌ Wrong code value mismatch!");
             }
@@ -842,7 +844,7 @@
         setInterval(createFloatingElement, 500);
 
         // =================================================================
-        // 🎯 DYNAMIC SHUFFLE AUTOPILOT GAME ENGINE
+        // 🎯 DYNAMIC SHUFFLE GAME ENGINE
         // =================================================================
         let activeGameQuestions = [];
         let currentQuestionIndex = 0;
@@ -860,7 +862,7 @@
 
         function loadQuizGameTrack() {
             if (gameLives <= 0) {
-                document.getElementById('game-question-text').innerText = "💔 Game Over segment. Notes locked.";
+                document.getElementById('game-question-text').innerText = "💔 Game Over bacha! Notes locked.";
                 document.getElementById('game-options-container').innerHTML = `<button class="gate-btn" onclick="resetLoveGame()">Retry Note Access 🔄</button>`;
                 return;
             }
@@ -896,7 +898,7 @@
             if (selectedIndex === currentData.correct) {
                 gameScore++;
                 document.getElementById('game-score').innerText = gameScore;
-                alert("🎉 Correct validation check, Lovie.");
+                alert("🎉 Sahi Jawab Lovie!");
                 triggerMassiveBalloonBlast(); 
                 currentQuestionIndex++;
                 loadQuizGameTrack();
@@ -906,7 +908,7 @@
                 for(let i=0; i<gameLives; i++) lifeHearts += "❤️";
                 if(lifeHearts === "") lifeHearts = "💔";
                 document.getElementById('game-lifeline').innerText = lifeHearts;
-                alert("❌ Wrong option, yaad karo maine kya bola thaa.");
+                alert("❌ Galat option, yaad karo maine kya bola thaa.");
                 loadQuizGameTrack();
             }
         }
