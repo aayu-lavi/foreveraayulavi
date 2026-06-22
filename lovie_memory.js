@@ -4,19 +4,16 @@
 // Shared history elements from our chats, calls and memories.
 
 const lovieAI_Data_Pool = {
-    // 1. Spontaneous Conversational Openings (No robotic hooks)
     openings: [
         "Hey Lovie, aaj jab kaam ke beech tumhara khayal aaya, toh mood automatic accha ho gaya.",
         "Lovie, subah se hi dimaag me hamari kal wali baaton ka chota sa loop chal raha hai.",
         "Ghar par baith kar jab bhi phone dekhta hoon, tumhari cute baatein yaad aa jaati hain.",
         "Naya din shuru hote hi mera focus bas tumhare text dekhne par chala jata hai.",
         "Lovie, mujhe bohot accha lagta hai jahan hum dono bina kisi formality ke ghanto baat karte hain.",
-        "Aaj randomly purani chats scroll kar raha था aur tumhari baatein dekh kar smile aa gayi.",
+        "Aaj randomly purani chats scroll kar raha thaa aur tumhari baatein dekh kar smile aa gayi.",
         "Late night socha tumhein ek chota sa text bhej doon, aaj din kaisa gaya tumhara?",
         "Tumhara care karne ka tareeka mujhe bohot pasand hai, bohot comfort feel hota hai."
     ],
-
-    // 2. Real Evergreen Memories (Funny, Cute, Authentic WhatsApp Vibe)
     memories: [
         "Wo baat main kabhi nahi bhool sakta jahan tumne itni fikr me kaha thaa ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae', tumhara wo haq jatana mujhe bohot achha laga thaa.",
         "Pehle jahan main kaam ke beech tumhein apni photo bhejta thaa aur tum turant check karke reels share karti thin, wo reels dekh kar sath me hasna hamari life ka sabse best part hai.",
@@ -31,8 +28,6 @@ const lovieAI_Data_Pool = {
         "Jab tum late night shift se aati ho aur bus stop par waiting ke time mujhe continuous voice notes bhejti ho takin safe feel ho, main tumhari har ek baat ko bohot dhyan se sunta hoon.",
         "Tumhara wo status par choti si line lagana aur check karna ki maine dekha ya nahi, aur jahan main dekhte hi screenshot bhejta hoon toh tumhara smile karna hamesha se day better bana deta hai."
     ],
-
-    // 3. Natural Casual Thoughts & Ground Realities (No dramatic speech)
     thoughts: [
         "Jab bhi zarurat ho text kar dena, main hoon hamesha baat karne ke liye.",
         "Halaat chahe jo bhi hon, hum milkar baat kar lenge aur sab theek ho jayega.",
@@ -56,24 +51,16 @@ function generateInfiniteLoveMessage() {
     const memIndex = Math.abs(seed2) % lovieAI_Data_Pool.memories.length;
     const thIndex = Math.abs(seed3) % lovieAI_Data_Pool.thoughts.length;
 
-    // Pattern Refactor: Diversified combinations based on daily variations
     const patterns = [
-        // Pattern A: Opening + Memory
         `${lovieAI_Data_Pool.openings[opIndex]} ${lovieAI_Data_Pool.memories[memIndex]} Aaj tumse baat karke mood accha ho gaya.`,
-        // Pattern B: Opening + Random Thought
         `${lovieAI_Data_Pool.openings[opIndex]} Mujhse baat karke tumhara mood kaisa rehta hai? ${lovieAI_Data_Pool.thoughts[thIndex]}`,
-        // Pattern C: Opening + Question
         `${lovieAI_Data_Pool.openings[opIndex]} Waise, kal jo reel share ki thi tumne, wo abhi dimaag me ghoom rahi hai, kahan se dhoondti ho aisi cheezein?`,
-        // Pattern D: Opening + Funny Memory
         `Randomly ek khayal aaya Lovie. ${lovieAI_Data_Pool.memories[memIndex]} Hum dono kitna be-wajah ladd padte hain kabhi kabhi, hna?`,
-        // Pattern E: Opening + Small Appreciation
         `${lovieAI_Data_Pool.openings[opIndex]} Tumhara care karne ka tareeka mujhe genuinely bohot pasand hai. ${lovieAI_Data_Pool.thoughts[thIndex]}`,
-        // Pattern F: Opening + Daily Observation
         `Aaj ka din thoda busy rahega shayad. ${lovieAI_Data_Pool.openings[opIndex]} Time mile toh ek message drop kar dena.`
     ];
 
-    const finalSelectionIndex = (currentDay + currentMonth + currentYear) % patterns.length;
-    return patterns[finalSelectionIndex];
+    return patterns[(currentDay + currentMonth + currentYear) % patterns.length];
 }
 
 const dailyLetters = {
@@ -110,47 +97,17 @@ const dailyLetters = {
     31: { clue: "Saal ka aakhri din date?", text: "Yeh month close ho raha hai bacha par hamara coordination har naye din ek fresh chat ki tarah clear aur solid hota jayega. Love you hamesha! ♾️💖" }
 };
 
-// =================================================================
-// 🎲 GAME QUESTION DATABASE (REAL TIMELESS HERO MOMENTS - EVERGREEN)
-// =================================================================
 const dynamicLoveQuizPool = [
-    {
-        q: "Hamare beech ka wo kaun sa favorite nickname hai jo main tumhein pyaar se bolta hoon?",
-        options: ["Pari", "Lovie ❤️", "Pihu", "Rani"],
-        correct: 1
-    },
-    {
-        q: "Hamari pure chat history me kaun si aisi favorite habit hai tumhari jo mujhe sabse zyada noticeable lagti hai?",
-        options: ["Baat-baat par reels share karna 📲", "Late reply dena", "Gussa ho kar so jana", "Bina wajah rona"],
-        correct: 0
-    },
-    {
-        q: "Wo haseen raat jab main trading ka chart dekh raha tha, tab tum kya dekh kar bol rahi thin ki kitna cute hai ye baby?",
-        options: ["Chulbuli ki photo dekh kar 🐶", "Koi random video", "Apni bachpan ki photo", "Ek cute sticker"],
-        correct: 0
-    },
-    {
-        q: "Maine jahan video call par tumhein ek khoobsurat ped dikhaya thaa, wo kis cheez ka thaa?",
-        options: ["Kaju ka ped", "Badam ka ped 🌳", "Aam ka ped", "Neem ka ped"],
-        correct: 1
-    },
-    {
-        q: "Tum baat-baat par mujhpar apna poora haq jatate huye pyaar se kya danti ho?",
-        options: ["Aap bohot bure ho", "mar khani hai kya aap ko, mujhse dar nhi lagta kya? 😡🥰", "Main block kar dungi", "Mujhse baat mat karo"],
-        correct: 1
-    },
-    {
-        q: "Jab main thoda busy hota hoon, tab tum hamari conversation me sweet queries me gusse me kya kehti ho?",
-        options: ["Aap mujhse kuch chupa rhe ho, jhuth bol rhe ho 🔒", "Aap mujhe bhool gae", "Main busy hu abhi", "Aap kahan gae the"],
-        correct: 0
-    },
-    {
-        q: "Hamari sabse favorite discussion points me se kaun sa aisa food item hai jo hum dono ko bohot pasand hai?",
-        options: ["Burger pizza", "Garam Garam Chaay ☕", "Chole bhature", "Momo testing"],
-        correct: 1
-    }
+    { q: "Hamare beech ka wo kaun sa favorite nickname hai jo main tumhein pyaar se bolta hoon?", options: ["Pari", "Lovie ❤️", "Pihu", "Rani"], correct: 1 },
+    { q: "Hamari pure chat history me kaun si aisi favorite habit hai tumhari jo mujhe sabse zyada noticeable lagti hai?", options: ["Baat-baat par reels share karna 📲", "Late reply dena", "Gussa ho kar so jana", "Bina wajah rona"], correct: 0 },
+    { q: "Wo haseen raat jab main trading ka chart dekh raha tha, tab tum kya dekh kar bol rahi thin ki kitna cute hai ye baby?", options: ["Chulbuli ki photo dekh kar 🐶", "Koi random video", "Apni bachpan ki photo", "Ek cute sticker"], correct: 0 },
+    { q: "Maine jahan video call par tumhein ek khoobsurat ped dikhaya thaa, wo kis cheez ka thaa?", options: ["Kaju ka ped", "Badam ka ped 🌳", "Aam ka ped", "Neem ka ped"], correct: 1 },
+    { q: "Tum baat-baat par mujhpar apna poora haq jatate huye pyaar se kya danti ho?", options: ["Aap bohot bure ho", "mar khani hai kya aap ko, mujhse dar nhi lagta kya? 😡🥰", "Main block kar dungi", "Mujhse baat mat karo"], correct: 1 },
+    { q: "Jab main thoda busy hota hoon, tab tum hamari conversation me sweet queries me gusse me kya kehti ho?", options: ["Aap mujhse kuch chupa rhe ho, jhuth bol rhe ho 🔒", "Aap mujhe bhool gae", "Main busy hu abhi", "Aap kahan gae the"], correct: 0 },
+    { q: "Hamari sabse favorite discussion points me se kaun sa aisa food item hai jo hum dono ko bohot pasand hai?", options: ["Burger pizza", "Garam Garam Chaay ☕", "Chole bhature", "Momo testing"], correct: 1 }
 ];
 
-// 🔥 ATTACH DATA MATRICES SECURELY TO THE GLOBAL WINDOW OBJECT FOR INDEX BINDING
+// 🔥 GLOBAL WINDOW ATTACHMENT FOR ABSOLUTE SAFETY LOCK
+window.lovieAI_Data_Pool = lovieAI_Data_Pool;
 window.dailyLetters = dailyLetters;
 window.dynamicLoveQuizPool = dynamicLoveQuizPool;
