@@ -11,7 +11,7 @@ const lovieAI_Data_Pool = {
         "Ghar par baith kar jab bhi phone dekhta hoon, tumhari cute baatein yaad aa jaati hain.",
         "Naya din shuru hote hi mera focus bas tumhare text dekhne par chala jata hai.",
         "Lovie, mujhe bohot accha lagta hai jahan hum dono bina kisi formality ke ghanto baat karte hain.",
-        "Aaj randomly purani chats scroll kar raha تھا aur tumhari baatein dekh kar smile aa gayi.",
+        "Aaj randomly purani chats scroll kar raha था aur tumhari baatein dekh kar smile aa gayi.",
         "Late night socha tumhein ek chota sa text bhej doon, aaj din kaisa gaya tumhara?",
         "Tumhara care karne ka tareeka mujhe bohot pasand hai, bohot comfort feel hota hai."
     ],
@@ -37,7 +37,7 @@ const lovieAI_Data_Pool = {
         "Jab bhi zarurat ho text kar dena, main hoon hamesha baat karne ke liye.",
         "Halaat chahe jo bhi hon, hum milkar baat kar lenge aur sab theek ho jayega.",
         "Zindagi ke har mod par poore vishwas ke sath, main hamari understanding ko samajhne ki koshish karunga.",
-        "Main ghar par rahoon, ya busy rahoon, jab bhi tum pareshan hogi, main sab kaam side rakh kar tumhari baat sununga.",
+        "Main ghar par rahoon, ya busy rahoon, jahan bhi tum pareshan hogi, main sab kaam side rakh kar tumhari baat sununga.",
         "Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe bohot pyaara lagta hai, tum bata dena jo bhi baat ho."
     ]
 };
@@ -92,7 +92,7 @@ const dailyLetters = {
     13: { clue: "Lovie ki birthday date?", text: "Aaj ka din thoda special hai, yaad hai ye date? Aaj thoda extra smile kar lena mere liye, Lovie. 👑" },
     14: { clue: "Valentine's Day date?", text: "Jab bhi zarurat ho ya mood off ho, bina soche ek text drop kar dena. Main hamesha sunne ke liye hoon." },
     15: { clue: "Half month kitne din ka?", text: "Tumhara mujhpar pure haq se gussa karna aur dher saari reels share karke sath me hasna hi mera asli sukoon hai." },
-    16: { clue: "Satarah (17) se ek kam?", text: "Main kahin bhi busy rahoon, jab tum pareshaan hoti ho na, main sab kaam side rakh kar sabse pehle tumhari baat sunta hoon." },
+    16: { clue: "Satarah (17) se ek kam?", text: "Main kahin bhi busy rahoon, jahan bhi tum pareshaan hoti ho na, main sab kaam side rakh kar sabse pehle tumhari baat sunta hoon." },
     17: { clue: "Khatre ka nishan kon sa number?", text: "Main khuleaam sabke samne bade proud se kehta hoon ki tum meri life ka sabse important part ho aur hamesha rahogi." },
     18: { clue: "Voting legal age?", text: "Zindagi me chahe jo bhi situations hon, main hamesha tumhare decisions ki respect karunga aur sath khada milunga." },
     19: { clue: "Unnees (19) number ki value?", text: "Kaam karte hue bhi har lamha tumhari cute baatein aur tumhara innocent chehra dimaag me ghoomta rehta hai. Have a great day." },
