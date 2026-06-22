@@ -1,45 +1,44 @@
 // =================================================================
-// 🚀 PRO-LEVEL REAL DATA-DRIVEN AI AUTOPILOT ROMANTIC CORE ENGINE
+// 🚀 REAL DATA-DRIVEN ROMANTIC CORE ENGINE
 // =================================================================
-// Shared WhatsApp log updates deeply embedded into revolving matrix loops.
+// Shared chat history elements embedded into conversational matrix loops.
 
 const lovieAI_Data_Pool = {
-    // 1. Genuine Dynamic Opening Hooks (Casual & Direct WhatsApp Tone)
+    // 1. Diverse Dynamic Opening Hooks (Pattern Based Styles)
     openings: [
         "Hey Lovie, aaj jab kaam ke beech tumhara khayal aaya, toh mood automatic theek ho gaya.",
         "Lovie, subah se hi dimaag me hamari kal wali baaton ka loop chal raha hai.",
         "Ghar par baith kar jab bhi phone check karta hoon, tumhari cute baatein yaad aa jaati hain.",
         "Naya din shuru hote hi mera poora focus bas tumhare replies dekhne par chala jata hai.",
-        "Lovie, mujhe genuinely bohot accha lagta hai jahan hum dono bina kisi formality ke ghanto baat karte hain."
+        "Lovie, mujhe genuinely bohot accha lagta hai jahan hum dono bina kisi formality ke ghanto baat karte hain.",
+        "Aaj randomly purani chats scroll kar raha tha aur tumhari baatein dekh kar smile aa gayi.",
+        "Late night socha tumhein ek chota sa text bhej doon, aaj din kaisa gaya tumhara?",
+        "Tumhari care karne ka tareeka mujhe genuinely pasand hai, hamesha bohot safe feel hota hai."
     ],
 
-    // 2. Real Deep Emotional Memories (WhatsApp Style Realism - Fresh & Diverse)
+    // 2. Real Human Memories (Funny, Cute, Real WhatsApp Chats format)
     memories: [
-        "Wo baat main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae', tumhara wo haq jatana mujhe genuinely bohot pasand aaya tha.",
-        "Pehle jab main plant par kaam ke beech tumhein photo bhejta tha aur tum turant check karke reels share karti thin, wo reels dekh kar haste haste pet me dard hona hamari life ka sabse real part hai.",
-        "Tum jo din me 2 baje apni duty par chali jaati ho, aur raat ke 11 baje ya kabhi late raat 2 baje tak itni kadi mehnat karti ho na, wo dekh kar tumhare liye izzat dimaag me roz badh jaati hai.",
-        "Jab tumhari tabiyat sahi nahi hoti, periods ke time dard hota hai fir bhi tum duty par jaane ki zidd karti ho, aur jab main fikr me thoda dant deta hoon toh tum mera gussa bhi kitne aaram se jhel leti ho.",
-        "Mujhe aaj bhi yaad hai jab tumhara phone sirf 9 percent charge tha aur tumne kaha tha ghar ja kar karungi, aur maine jab tumhe gussa dilane ke liye laptop se insta par chat karne ko bola tha... tumhari wo bacho ki tarah zidd sabse pyaari lagti hai.",
-        "Wo raat jahan main trading ka chart dekh raha tha aur tum chulbuli ki photo dekh kar bol rahi thin kitna cute hai ye baby... aur jab maine plant ke side se tumhe badam ka ped dikhaya tha, wo pal sachi bohot sukoon wale the.",
-        "Tumhara baat-baat par haq jatana aur bolna na ki 'mar khani hai kya aap ko, mujhse dar nhi lagta kya'... ek mature rishte me apni Lovie ka aisa haq jatana hi sabse bada sukoon lagta hai.",
-        "Jab tum khet par jaane par ya busy schedule me kehti ho na ki 'aap mujhse kuch chupa rhe ho, jhuth bol rhe ho', wo dher saari sweet queries aur tumhara dher saari baar sorry sorry likhna mujhe genuinely pasand hai.",
-        "Kal jahan tumne reel share ki aur maine 10 minute tak reply nahi kiya, toh tumhara wo instant gussa hona aur fir call par bolna ki ignore kar rahe ho, sach me bohot cute argument tha.",
+        "Wo baat main kabhi nahi bhool sakta jab tumne itni fikr me kaha tha ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae', tumhara wo haq jatana mujhe bohot pyaara laga tha.",
+        "Pehle jab main kaam ke beech tumhein apni photo bhejta tha aur tum turant check karke reels share karti thin, wo reels dekh kar haste haste pet me dard hona hamari life ka sabse best part hai.",
+        "Tum jo dopehar me apni kadi duty par chali jaati ho, aur late raat tak itni kadi mehnat karti ho na, wo dekh kar mujhe tum par genuinely bohot proud feel hota hai.",
+        "Jab tumhari tabiyat sahi nahi hoti, periods ke time dard hota hai fir bhi tum duty par jaane ki zidd karti ho, aur jab main thoda dant deta hoon toh tum mera gussa bhi kitne aaram se jhel leti ho.",
+        "Mujhe aaj bhi yaad hai jab tumhara phone switch off hone wala tha aur tumne bacho ki tarah zidd ki thi ki ghar ja kar hi charge karungi aur laptop se chat karne ko bola tha.",
+        "Wo raat yaad hai jab main trading ka chart dekh raha tha aur tum baby photos dekh kar bol rahi thin kitna cute hai ye... aur jab maine tumhe badam ka ped dikhaya tha, wo moments bohot sukoon wale the.",
+        "Tumhara baat-baat par haq jatana aur bolna na ki 'mar khani hai kya aap ko, mujhse dar nhi lagta kya'... sach me tumhara aisa bolna hi sabse bada sukoon lagta hai.",
+        "Jab tum busy schedule me kehti ho na ki 'aap mujhse kuch chupa rhe ho, jhuth bol rhe ho', wo dher saari sweet queries aur tumhara baar-baar sorry sorry likhna mujhe bohot accha lagta hai.",
+        "Kal jahan tumne ek reel share ki aur maine thoda late reply kiya, toh tumhara wo instant gussa hona aur bolna ki ignore kar rahe ho, sach me bohot cute argument tha.",
         "Wo day yaad hai jab hum dono ne phone par chalte hue ek hi samay par chaay peene ka decide kiya tha? WhatsApp par photo exchange karna aur compare karna bohot genuine moment tha.",
         "Jab tum late night shift se aati ho aur bus stop par waiting ke time mujhe continuous audio notes bhejti ho takin safe feel ho, main tumhari har ek voice note ko bohot dhyan se sunta hoon.",
-        "Tumhara wo status par choti si line lagana aur check karna ki maine dekha ya nahi, aur jab main dekhte hi screenshot bhejta hoon toh tumhara blush karna hamesha se day better bana deta hai.",
-        "Jahan hum dono laptop coding aur design discuss kar rahe the aur tumne galti se screen share par apna purana photo folder open kar diya tha, wo teasing session aaj bhi yaad hai.",
-        "Wo cute argument jahan hum dono is baat par ladd rahe the ki pehle call kisne cut kiya tha, aur tumne screenshot check karwane ki zidd ki thi, real couple energy wahi hai hamari.",
-        "Jab tum kadi dhoop me khet par kaam se aakar thak jaati ho aur kehti ho 'aaj bohot thak gayi hoon par aapse baat karke distraction ho jata hai', tumhari ye honesty mujhe genuinely pasand hai.",
-        "Mujhe yaad hai jab tumne bola tha ki tumhara filter waala photo zyada accha hai par maine normal phone camera ka frame save rakha, kyunki tum bina filter ke zyada real lagti ho."
+        "Tumhara wo status par choti si line lagana aur check karna ki maine dekha ya nahi, aur jab main dekhte hi screenshot bhejta hoon toh tumhara blush karna hamesha se day better bana deta hai."
     ],
 
-    // 3. Absolute Promises & Future Vision Connections (Mature & Honest Statements)
+    // 3. Mature & Honest Future Statements (No dramatic vows)
     promises: [
-        "Main tumse wada karta hoon ki tum chahe kitni bhi raat ko call karo, main hamesha calm ho kar poori izzat se call uthaunga aur baat sununga.",
-        "Halaat chahe jo bhi hon, main hamesha tumhara sath bohot honesty se nibhaunga aur communication ko hamesha clear rakhunga.",
-        "Zindagi ke har mod par poore vishwas ke sath, hamara ye sath aur future ka decision poori tarah clear rakhunga.",
-        "Ghar par rahoon, ya busy rahoon, jab bhi tum pareshan hogi, main sab kaam side rakh kar sabse pehle apni Lovie ki baat sununga.",
-        "Tumhare gusse ko, tumhari cute nok-jok ko aur tumhare dher saare nakhro ko hamesha accept karunga kyunki tum hamesha se meri preference ho."
+        "Main tumse kehta hoon ki tum chahe kitni bhi raat ko call karo, main hamesha calm ho kar poori izzat se tumhari baat sununga.",
+        "Halaat chahe jo bhi hon, main hamesha tumhara sath bohot honesty se nibhaunga aur hamari baaton ko hamesha clear rakhunga.",
+        "Zindagi ke har mod par poore vishwas ke sath, hamara ye sath aur aane wale kal ka decision poori tarah clear rakhunga.",
+        "Ghar par rahoon, ya busy rahoon, jab bhi tum pareshan hogi, main sab kaam side rakh kar sabse pehle tumhari baat sununga.",
+        "Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe genuinely sabse pyaara lagta hai kyunki tum hamesha se meri priority ho."
     ]
 };
 
@@ -57,9 +56,16 @@ function generateInfiniteLoveMessage() {
     const memIndex = Math.abs(seed2) % lovieAI_Data_Pool.memories.length;
     const promIndex = Math.abs(seed3) % lovieAI_Data_Pool.promises.length;
 
-    // Structure: Opening + Memory + Current Feeling + Small Realistic Closing
-    const autoCraftedParagraph = `${lovieAI_Data_Pool.openings[opIndex]} ${lovieAI_Data_Pool.memories[memIndex]} Aaj kal tumhare sath baat karke din thoda more sorted aur better lagta hai. ${lovieAI_Data_Pool.promises[promIndex]}`;
-    return autoCraftedParagraph;
+    // Pattern Mixing: Direct First-Person Casual Flow
+    const patterns = [
+        `${lovieAI_Data_Pool.openings[opIndex]} ${lovieAI_Data_Pool.memories[memIndex]} Aaj kal tumse baat karke din thoda more sorted aur better lagta hai. ${lovieAI_Data_Pool.promises[promIndex]}`,
+        `Randomly ek khayal aaya Lovie. ${lovieAI_Data_Pool.memories[memIndex]} ${lovieAI_Data_Pool.openings[opIndex]} Chalo, apni duty par apna dhyan rakhna aaj.`,
+        `Hey, tumhari yaad aa gayi thi. ${lovieAI_Data_Pool.memories[memIndex]} Tumhara care karne ka tareeka genuinely pasand hai mujhe. ${lovieAI_Data_Pool.promises[promIndex]}`,
+        `Aaj mood thoda off tha but tumse baat karke better feel hua. ${lovieAI_Data_Pool.openings[opIndex]} ${lovieAI_Data_Pool.memories[memIndex]} Hamesha aise hi sath rehna.`
+    ];
+
+    const finalSelectionIndex = (currentDay + currentMonth) % patterns.length;
+    return patterns[finalSelectionIndex];
 }
 
 const dailyLetters = {
@@ -67,18 +73,18 @@ const dailyLetters = {
     2: { clue: "Ek aur ek kitne hote hain?", text: "Tum aur main milkar ek alag hi sorted zone balance karte hain na. Pata nahi kyun lekin tumse chat karke har baar genuine relaxation milta hai." },
     3: { clue: "Traffic light me kitne colors hote hain?", text: "Meri subah ki sabse normal aur acchi khushi pata hai kya hai? Jab tumhari side se ek genuine normal smile waala audio note mil jata hai." },
     4: { clue: "Ek gaadi me kitne tyre hote hain?", text: "Mujhe tumhara wo cute gussa bohot natural lagta hai jab tum bolti ho—'mar khani hai kya, dar nhi lagta aap ko'... sachi ye line dimaag me loop karti hai Lovie." },
-    5: { clue: "Haath me kitni ungliyan hoti hain?", text: "Pehle busy routine me ya abhi ghar par, mera focus hamesha tumhare messaging slots par rehta hai. Updates share karti raha karo text par." },
+    5: { clue: "Haath me kitni ungliyan hoti hain?", text: "Pehle busy routine me ya abhi ghar par, mera focus hamesha tumhare messages par rehta hai. Updates share karti raha karo text par." },
     6: { clue: "Chhah (6) ko English me kya kehte hain?", text: "Sachi bol raha hoon Lovie, tumse regular updates exchange kiye bina din adhoora lagta hai. Tumhari ek habit si ho gayi hai mujhe." },
     7: { clue: "Ek week me kitne din hote hain?", text: "Maine dil se hamesha tumhari decisions ki izzat ki hai. Future me main hamesha tumhara hath thame chalunga. Sorted rehna hamesha." },
     8: { clue: "Oat (8) ko Hindi me?", text: "Main chahe kahin bhi busy rahoon, mere dimaag me hamari random chat discussion points chalte rehte hain. Tumhara care karne ka tareeka genuinely solid hai." },
     9: { clue: "Nau (9) number ki english spelling short?", text: "Hamne jo future aur marriage ka decision liya hai na Lovie, main use poori honesty aur dedication se poora karunga. Tum bas text open rakhna." },
-    10: { clue: "Ek decade me kitne saal?", text: "Jab tum gusse me kehti ho na ki main door chali jaungi... tum nahi jaanti ki main sachi me pareshaan ho jata hoon. Gusse me bhi aisi lines mat likha karo." },
-    11: { clue: "Aayu ka birthday day number?", text: "Aaj ka din mere liye bohot important hai bacha kyunki main dil se sirf tumhara support system banne ke liye aaya hoon. Have a great day." },
+    10: { clue: "Ek decade me kitne saal?", text: "Jab tum gusse me kehti ho na ki main door chali jaungi... tum nahi jaanti ki main sachi me pareshaan ho jata hoon. Gusse me bhi aisi lines mat hua karein." },
+    11: { clue: "Aayu ka birthday day number?", text: "Aaj ka din mere liye bohot important hai kyunki main dil se sirf tumhara support system banne ke liye aaya hoon. Have a great day." },
     12: { clue: "Ek saal me kitne mahine?", text: "Lovie, tumhari sensible thinking, tumhara soft behaviour aur sabki help karne ki nature mujhe genuinely pasand hai. Tum sahi me bohot mature ladki ho." },
     13: { clue: "Lovie ki birthday date?", text: "Aaj ka din poore tarah se tumhara hai Lovie! Tumhe pata hai na ki tum meri life ka sabse important part ho aur main tumhari genuinely bohot care karta hoon. 👑" },
     14: { clue: "Valentine's Day date?", text: "Main tumse clear wada karta hoon, tum chahe kitni bhi raat ko text ya call karo, main kabhi irritate nahi hoonga aur hamesha call back karunga." },
     15: { clue: "Half month kitne din ka?", text: "Tumhara wo mujhpar poore haq se gussa karna, dher saari reels share karke sath me hasna aur check points lagana hi mera asli sukoon hai." },
-    16: { clue: "Satarah (17) se ek kam?", text: "Main kahin bhi busy rahoon, jahan bhi tum pareshan hoti ho na, main saare tabs side karke sabse pehle apni Lovie ki problem door karta hoon." },
+    16: { clue: "Satarah (17) se ek kam?", text: "Main kahin bhi busy rahoon, jahan bhi tum pareshan hoti ho na, main saare kaam side karke sabse pehle apni Lovie ki problem door karta hoon." },
     17: { clue: "Khatre ka nishan kon sa number?", text: "Main khuleaam bina kisi hichkichahat ke kehta hoon ki main sirf tumse connect hoon aur hamara sath hamesha priority rahega. 🔥" },
     18: { clue: "Voting legal age?", text: "Yeh promise ek real sensible mard ka hai bacha, jo life long tumhara hath poore samman aur honesty se thame rakhega, situations chahe jo hon." },
     19: { clue: "Unnees (19) number ki value?", text: "Ghar par kaam karte hue bhi har lamha tumhari cute baatein aur tumhara innocent chehra hi dimaag me ghoomta rehta hai. Text check kar lena." },
@@ -97,42 +103,42 @@ const dailyLetters = {
 };
 
 // =================================================================
-// 🎲 AUTOPILOT GAME QUESTION DATABASE (REAL DEEP EMOTIONAL MEMORIES)
+// 🎲 GAME QUESTION DATABASE (REAL DEEP EMOTIONAL MEMORIES - REFINED)
 // =================================================================
 const dynamicLoveQuizPool = [
     {
-        q: "Jab Lovie ko lag raha tha ki maine unhe block kar diya hai, toh unhone itni fikr me rota hua kya kaha tha?",
-        options: ["Main ab baat nahi karungi", "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae 🥺", "Aap bade log ho gae ho", "Main gussa hu aap se"],
+        q: "Jab Lovie ko lag raha tha ki maine unhe block kar diya hai, toh unhone rota hua kya bola tha?",
+        options: ["Main ab baat nahi karungi", "Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae 🥺", "Aap gussa ho kya?", "Main ja rahi hoon"],
         correct: 1
     },
     {
-        q: "Maine jahan Lovie ko gussa dilane ke liye laptop se insta par chat karne ko bola tha, tab unka phone kitna charge tha?",
-        options: ["Sirf 5 percent charge", "Sirf 15 percent charge", "Sirf 9 percent charge 🔋", "Sirf 25 percent charge"],
-        correct: 2
-    },
-    {
-        q: "Wo raat jahan main trading ka chart dekh raha tha, tab Lovie kya dekh kar bol rahi thin ki kitna cute hai ye baby?",
-        options: ["Chulbuli ki photo dekh kar 🐶", "Koi reel dekh kar", "Apni bachpan ki photo", "Ek cute cartoon"],
+        q: "Maine jab Lovie ko thoda gussa dilane ke liye laptop se insta chalane ko bola tha, tab unke phone me kya scene tha?",
+        options: ["Battery low thi 🔋", "Net nahi chal raha tha", "Phone ghar par thaa", "Call busy aa raha thaa"],
         correct: 0
     },
     {
-        q: "Maine jahan plant ke side se video call par Lovie ko ek khoobsurat ped dikhaya tha, wo kis cheez ka ped tha?",
+        q: "Wo haseen raat jab main trading ka chart dekh raha tha, tab Lovie kya dekh kar bol rahi thin ki kitna cute baby hai?",
+        options: ["Chulbuli ki photo dekh kar 🐶", "Koi random reel", "Apni bachpan ki photo", "Ek cartoon status"],
+        correct: 0
+    },
+    {
+        q: "Maine jab video call par Lovie ko plant ke side se ek khoobsurat ped dikhaya tha, wo kis cheez ka thaa?",
         options: ["Kaju ka ped", "Badam ka ped 🌳", "Aam ka ped", "Peepla ka ped"],
         correct: 1
     },
     {
-        q: "Lovie baat-baat par mujhpar apna poora haq jatate huye pyaar se kya danti hain?",
-        options: ["Aap bohot bure ho", "mar khani hai kya aap ko, mujhse dar nhi lagta kya? 😡🥰", "Main block kar dungi", "Mujhse baat mat karo"],
+        q: "Lovie baat-baat par mujhpar apna poora haq jatate huye pyaar se kya bolti hain?",
+        options: ["Aap bure ho", "mar khani hai kya aap ko, mujhse dar nhi lagta kya? 😡🥰", "Main block kar dungi", "Mujhse baat mat karo"],
         correct: 1
     },
     {
-        q: "Jab main khet par jata hoon ya busy schedule me hota hoon, tab Lovie pyaari sweet queries me kya kehti hain?",
+        q: "Jab main busy schedule me hota hoon, tab Lovie gusse me aur pyaari queries me kya kehti hain?",
         options: ["Aap mujhse kuch chupa rhe ho, jhuth bol rhe ho 🔒", "Aap mujhe bhool gae", "Main busy hu abhi", "Aap kahan gae the"],
         correct: 0
     },
     {
-        q: "Lovie din me kitne baje apni kadi duty par nikalti hain aur raat ko kadi mehnat karti hain?",
-        options: ["Subah 10 baje", "Dopehar me exact 2 baje ⏰", "Raat ko 8 baje", "Subah 6 baje"],
+        q: "Lovie dopehar me kitne baje apni kadi duty ke liye nikalti hain?",
+        options: ["Subah 10 baje", "Exact 2 baje ke aas paas ⏰", "Raat ko 8 baje", "Subah 6 baje"],
         correct: 1
     }
 ];
