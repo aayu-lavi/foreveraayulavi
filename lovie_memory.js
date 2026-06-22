@@ -11,7 +11,7 @@ const lovieAI_Data_Pool = {
         "Ghar par baith kar jab bhi phone dekhta hoon, tumhari cute baatein yaad aa jaati hain.",
         "Naya din shuru hote hi mera focus bas tumhare text dekhne par chala jata hai.",
         "Lovie, mujhe bohot accha lagta hai jahan hum dono bina kisi formality ke ghanto baat karte hain.",
-        "Aaj randomly purani chats scroll kar raha تھا aur tumhari baatein dekh kar smile aa gayi.",
+        "Aaj randomly purani chats scroll kar raha thaa aur tumhari baatein dekh kar smile aa gayi.",
         "Late night socha tumhein ek chota sa text bhej doon, aaj din kaisa gaya tumhara?",
         "Tumhara care karne ka tareeka mujhe bohot pasand hai, bohot comfort feel hota hai."
     ],
@@ -21,7 +21,7 @@ const lovieAI_Data_Pool = {
         "Wo baat main kabhi nahi bhool sakta jahan tumne itni fikr me kaha thaa ki 'Mujhe laga aapne block kar diya aur sachi me aakho me aasu aa gae', tumhara wo haq jatana mujhe bohot achha laga thaa.",
         "Pehle jahan main kaam ke beech tumhein apni photo bhejta thaa aur tum turant check karke reels share karti thin, wo reels dekh kar sath me hasna hamari life ka sabse best part hai.",
         "Tum jo dopehar me apni kadi duty par chali jaati ho, aur late raat tak kadi mehnat karti ho na, wo dekh kar mujhe tum par bohot proud feel hota hai.",
-        "Jab tumhari tabiyat sahi nahi hoti, tabiyat kharab hone par bhi tum kaam par jaane ki zidd karti ho, aur jahan main thoda dant deta hoon toh tum mera gussa bhi kitne aaram se jhel leti ho.",
+        "Jab tumhari tabiyat sahi nahi hindi hoti, tabiyat kharab hone par bhi tum kaam par jaane ki zidd karti ho, aur jahan main thoda dant deta hoon toh tum mera gussa bhi kitne aaram se jhel leti ho.",
         "Mujhe aaj bhi yaad hai jahan tumne choti si baat par zidd ki thi ki ghar ja kar hi phone charge karungi aur laptop se chat karne ko bola thaa, wo haseen moment thaa.",
         "Wo raat yaad hai jahan main trading ka chart dekh raha thaa aur tum baby photos dekh kar bol rahi thin kitna cute hai ye... aur jahan maine tumhe badam ka ped dikhaya thaa, wo moments bohot sukoon wale the.",
         "Tumhara baat-baat par haq jatana aur bolna na ki 'mar khani hai kya aap ko, mujhse dar nhi lagta kya'... sach me tumhara aisa bolna hi sabse bada sukoon lagta hai.",
@@ -37,7 +37,7 @@ const lovieAI_Data_Pool = {
         "Jab bhi zarurat ho text kar dena, main hoon hamesha baat karne ke liye.",
         "Halaat chahe jo bhi hon, hum milkar baat kar lenge aur sab theek ho jayega.",
         "Zindagi ke har mod par poore vishwas ke sath, main hamari understanding ko samajhne ki koshish karunga.",
-        "Main ghar par rahoon, ya busy rahoon, jab bhi tum pareshan hogi, main sab kaam side rakh kar tumhari baat sununga.",
+        "Main ghar par rahoon, ya busy rahoon, jahan bhi tum pareshan hogi, main sab kaam side rakh kar tumhari baat sununga.",
         "Tumhari har ek nok-jok aur bacho ki tarah zidd karna mujhe bohot pyaara lagta hai, tum bata dena jo bhi baat ho."
     ]
 };
@@ -56,19 +56,12 @@ function generateInfiniteLoveMessage() {
     const memIndex = Math.abs(seed2) % lovieAI_Data_Pool.memories.length;
     const thIndex = Math.abs(seed3) % lovieAI_Data_Pool.thoughts.length;
 
-    // Pattern Refactor: Diversified combinations based on daily variations
     const patterns = [
-        // Pattern A: Opening + Memory
         `${lovieAI_Data_Pool.openings[opIndex]} ${lovieAI_Data_Pool.memories[memIndex]} Aaj tumse baat karke mood accha ho gaya.`,
-        // Pattern B: Opening + Random Thought
         `${lovieAI_Data_Pool.openings[opIndex]} Mujhse baat karke tumhara mood kaisa rehta hai? ${lovieAI_Data_Pool.thoughts[thIndex]}`,
-        // Pattern C: Opening + Question
         `${lovieAI_Data_Pool.openings[opIndex]} Waise, kal jo reel share ki thi tumne, wo abhi dimaag me ghoom rahi hai, kahan se dhoondti ho aisi cheezein?`,
-        // Pattern D: Opening + Funny Memory
         `Randomly ek khayal aaya Lovie. ${lovieAI_Data_Pool.memories[memIndex]} Hum dono kitna be-wajah ladd padte hain kabhi kabhi, hna?`,
-        // Pattern E: Opening + Small Appreciation
         `${lovieAI_Data_Pool.openings[opIndex]} Tumhara care karne ka tareeka mujhe genuinely bohot pasand hai. ${lovieAI_Data_Pool.thoughts[thIndex]}`,
-        // Pattern F: Opening + Daily Observation
         `Aaj ka din thoda busy rahega shayad. ${lovieAI_Data_Pool.openings[opIndex]} Time mile toh ek message drop kar dena.`
     ];
 
@@ -92,7 +85,7 @@ const dailyLetters = {
     13: { clue: "Lovie ki birthday date?", text: "Aaj ka din thoda special hai, yaad hai ye date? Aaj thoda extra smile kar lena mere liye, Lovie. 👑" },
     14: { clue: "Valentine's Day date?", text: "Jab bhi zarurat ho ya mood off ho, bina soche ek text drop kar dena. Main hamesha sunne ke liye hoon." },
     15: { clue: "Half month kitne din ka?", text: "Tumhara mujhpar pure haq se gussa karna aur dher saari reels share karke sath me hasna hi mera asli sukoon hai." },
-    16: { clue: "Satarah (17) se ek kam?", text: "Main kahin bhi busy rahoon, jab tum pareshaan hoti ho na, main sab kaam side rakh kar sabse pehle tumhari baat sunta hoon." },
+    16: { clue: "Satarah (17) se ek kam?", text: "Main kahin bhi busy rahoon, jahan bhi tum pareshaan hoti ho na, main sab kaam side rakh kar sabse pehle tumhari baat sunta hoon." },
     17: { clue: "Khatre ka nishan kon sa number?", text: "Main khuleaam sabke samne bade proud se kehta hoon ki tum meri life ka sabse important part ho aur hamesha rahogi." },
     18: { clue: "Voting legal age?", text: "Zindagi me chahe jo bhi situations hon, main hamesha tumhare decisions ki respect karunga aur sath khada milunga." },
     19: { clue: "Unnees (19) number ki value?", text: "Kaam karte hue bhi har lamha tumhari cute baatein aur tumhara innocent chehra dimaag me ghoomta rehta hai. Have a great day." },
