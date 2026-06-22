@@ -11,13 +11,9 @@
     <meta name="author" content="Aayu">
     <meta name="theme-color" content="#ff4d6d">
 
-    <meta property="og:title" content="Aayu & Lovie ❤️">
-    <meta property="og:description" content="A few photos, a lot of memories ❤️">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Aayu & Lovie">
-
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
     
+    <!-- ✍️ HANDWRITING FONT FOR NOTES STYLE -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap">
 
     <style>
@@ -52,7 +48,7 @@
             transition: all 1s ease-in-out;
         }
 
-        /* 🌙 2. DYNAMIC BACKGROUND MUTED VIDEO WRAPPER */
+        /* 🌙 DYNAMIC BACKGROUND MUTED VIDEO WRAPPER */
         #dynamic-bg-video-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: 0; pointer-events: none; overflow: hidden; opacity: 0.08;
@@ -61,7 +57,7 @@
             width: 100%; height: 100%; object-fit: cover;
         }
 
-        /* ✍️ 5. HANDWRITTEN NOTES EXCLUSIVE PAPER TEXTURE EMBED STYLE */
+        /* ✍️ HANDWRITTEN NOTES EXCLUSIVE PAPER TEXTURE STYLE */
         .handwritten-paper-note {
             background: #fff8e7 !important;
             background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 0) !important;
@@ -73,7 +69,7 @@
             box-shadow: inset 0 0 20px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.3) !important;
         }
 
-        /* 💬 8. FLOATING MEMORY NOTIFICATIONS BANNER */
+        /* 💬 FLOATING MEMORY NOTIFICATIONS BANNER */
         .floating-memory-popup {
             position: fixed; bottom: -100px; right: 20px;
             background: rgba(15, 10, 25, 0.85); border: 1px solid var(--neon-pink);
@@ -87,7 +83,7 @@
         }
         .floating-memory-popup.active-pop { transform: translateY(-120px); }
 
-        /* 📱 10. LOCK SCREEN STYLE WIDGET CONTAINER */
+        /* 📱 LOCK SCREEN STYLE WIDGET CONTAINER */
         .ios-lock-widget {
             background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 77, 109, 0.15);
             border-radius: 20px; padding: 20px; text-align: center; margin-bottom: 25px;
@@ -183,7 +179,24 @@
             100% { transform: translate3d(-100%, 0, 0); }
         }
 
-        /* INLINE COMPILATION REUSABLE DESIGN CLASSES ADDED */
+        #event-overlay-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(4, 2, 8, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            z-index: 9999; display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.5s ease-in-out;
+        }
+        #event-overlay-modal.show-modal { opacity: 1; pointer-events: auto; }
+        .modal-wish-card {
+            background: rgba(12, 8, 24, 0.85); border: 2px solid var(--neon-pink);
+            padding: 40px 20px; border-radius: 28px; text-align: center; max-width: 550px; width: 90%;
+            box-shadow: 0 0 40px var(--neon-glow); position: relative;
+        }
+        .modal-wish-card h2 { font-size: 2.2rem; background: linear-gradient(to right, #ff4d6d, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px var(--neon-pink)); margin-bottom: 20px; font-weight: 800; }
+        .modal-wish-card p { font-size: 1.1rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 25px; white-space: normal; }
+        .modal-close-txt { color: rgba(255,255,255,0.4); font-size: 0.9rem; text-decoration: underline; cursor: pointer; transition: color 0.2s; }
+        .modal-close-txt:hover { color: var(--neon-pink); }
+
+        /* REUSABLE CLASSES OVERLAYS FIXED */
         .toast-notif-center { position: fixed; top: 20px; right: 20px; background: rgba(12, 8, 24, 0.9); border: 1px solid var(--neon-pink); padding: 15px 25px; border-radius: 14px; box-shadow: 0 0 15px var(--neon-glow); z-index: 200000; color: #fff; font-weight: 600; display: none; transition: opacity 0.3s ease; }
         .quiz-score-indicator { position: absolute; top: 15px; right: 20px; font-size: 0.95rem; font-weight: bold; color: var(--text-sub); }
         .quiz-score-glow { color: #fff; text-shadow: 0 0 8px var(--neon-pink); }
@@ -306,12 +319,14 @@
 </head>
 <body>
 
+    <!-- 🌙 DYNAMIC BACKGROUND VIDEO LAYER -->
     <div id="dynamic-bg-video-container">
         <video autoplay muted loop playsinline id="bg-loop-video">
             <source src="background.mp4" type="video/mp4">
         </video>
     </div>
 
+    <!-- 💬 FLOATING MEMORY NOTIFICATION BANNER -->
     <div id="floating-memory-box" class="floating-memory-popup">
         <span style="font-size: 1.4rem;">💭</span>
         <div>
@@ -348,6 +363,7 @@
 
     <div class="container">
         <header>
+            <!-- 📱 LOCK SCREEN STYLE WIDGET INJECTED -->
             <div class="ios-lock-widget">
                 <div id="widget-date-slot" class="ios-widget-date">22 June</div>
                 <div id="widget-greet-slot" class="ios-widget-greet">Good Evening Lovie ❤️</div>
@@ -406,6 +422,7 @@
                 </div>
             </div>
 
+            <!-- ⏳ TIME CAPSULE CARD SLOT INJECTED -->
             <div class="glowing-box" style="padding: 30px; margin-bottom: 30px; text-align: center;">
                 <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #fff;">⏳ Relationship Time Capsule</h3>
                 <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 15px;">A letter from Aayu locked securely until next anniversary milestone...</p>
@@ -455,6 +472,7 @@
             </div>
         </div>
 
+        <!-- TAB MODULE 2 -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Some Little Things</h2>
@@ -475,7 +493,8 @@
             </section>
         </div>
 
-         <div id="tab-gallery" class="tab-content-panel">
+         <!-- TAB MODULE 3 -->
+        <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Captured Frames</h2>
                 <div class="gallery-grid">
@@ -533,13 +552,15 @@
 
         function showToast(msg) {
             const toast = document.getElementById('custom-toast');
-            toast.innerText = msg;
-            toast.style.display = 'block';
-            toast.style.opacity = '1';
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => { toast.style.display = 'none'; }, 300);
-            }, 3000);
+            if(toast) {
+                toast.innerText = msg;
+                toast.style.display = 'block';
+                toast.style.opacity = '1';
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    setTimeout(() => { toast.style.display = 'none'; }, 300);
+                }, 3000);
+            }
         }
 
         function updateTimer() {
@@ -553,7 +574,7 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 📱 10. REAL-TIME WIDGET DYNAMIC ENGINE REFACTOR
+        // 📱 LOCK SCREEN WIDGET TRACKING DATA SYNC
         function syncLockScreenWidgetData() {
             const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             const now = new Date();
@@ -568,10 +589,11 @@
             document.getElementById('widget-greet-slot').innerText = greetingStr;
         }
 
-        // 💬 8. FLOATING MEMORY NOTIFICATION DISPATCH ENGINE
+        // 💬 FLOATING MEMORY NOTIFICATION SLIDE ENGINE
         function triggerPopMemoryNotification() {
-            if(typeof lovieAI_Data_Pool !== "undefined" && lovieAI_Data_Pool.memories.length) {
-                const randomMem = lovieAI_Data_Pool.memories[Math.floor(Math.random() * lovieAI_Data_Pool.memories.length)];
+            let poolSource = window.lovieAI_Data_Pool || (typeof lovieAI_Data_Pool !== "undefined" ? lovieAI_Data_Pool : null);
+            if(poolSource && poolSource.memories && poolSource.memories.length) {
+                const randomMem = poolSource.memories[Math.floor(Math.random() * poolSource.memories.length)];
                 const shortExcerpt = randomMem.substring(0, 55) + "...";
                 document.getElementById('floating-memory-text').innerText = shortExcerpt;
                 
@@ -580,10 +602,9 @@
                 setTimeout(() => { box.classList.remove('active-pop'); }, 5000);
             }
         }
-        // Trigger floating memory popups randomly every 25 seconds
         setInterval(triggerPopMemoryNotification, 25000);
 
-        // ⏳ RELATIONS TIME CAPSULE UNLOCK CHECK LOGIC BLOCK
+        // ⏳ TIME CAPSULE VERIFICATION UNLOCK NOTE
         function openTimeCapsuleNote() {
             const unlockTargetDate = new Date(2027, 2, 27, 0, 0);
             const now = new Date();
@@ -727,7 +748,7 @@
                 const letterParagraph = document.getElementById('dynamic-letter-text');
                 let sourceLetters = window.dailyLetters || dailyLetters;
                 
-                // ✍️ 5. POPULATE HANDWRITTEN PAPER STYLE WITH CLASS INJECTION
+                // ✍️ 5. INJECT INDEPENDENT PAPER PATTERN TO TEXT LAYER
                 letterParagraph.className = "handwritten-paper-note";
                 letterParagraph.style.padding = "20px";
                 letterParagraph.style.borderRadius = "12px";
@@ -917,7 +938,7 @@
             handleTimeGreetingAndVoice(); 
             checkSpecialEvents(); 
             syncLovieMemoryEngine(); 
-            syncLockScreenWidgetData(); // 📱 Initialize lock widget clock tracking
+            syncLockScreenWidgetData();
             
             const todayDay = new Date().getDay();
             const clueBox = document.getElementById('clue-text');
