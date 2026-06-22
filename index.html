@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forever Aayu-Lovie ❤️</title>
+
+    <title>Aayu & Lovie ❤️ | Our Little Memories</title>
+
+    <meta name="description" content="Aayu & Lovie - A collection of our favorite chats, calls and memories ❤️">
+
+    <meta name="keywords" content="Aayu, Lovie, memories, relationship, chats, calls, gallery, moments">
+
+    <meta name="author" content="Aayu">
+
+    <meta name="theme-color" content="#ff4d6d">
+
+    <meta property="og:title" content="Aayu & Lovie ❤️">
+
+    <meta property="og:description" content="A few photos, a lot of memories ❤️">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="Aayu & Lovie">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+
     <style>
         :root {
             --neon-pink: #ff4d6d;
@@ -36,7 +56,7 @@
             transition: all 1s ease-in-out;
         }
 
-        /* MASTER AUDIO BYPASS OVERLAY */
+        /* 🔥 MASTER AUDIO BYPASS OVERLAY */
         #audio-gate-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #050409; backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
@@ -139,14 +159,6 @@
         .modal-close-txt { color: rgba(255,255,255,0.4); font-size: 0.9rem; text-decoration: underline; cursor: pointer; transition: color 0.2s; }
         .modal-close-txt:hover { color: var(--neon-pink); }
 
-        /* REUSABLE UTILITY DESIGN CLASSES FOR INLINE REDUCTION */
-        .toast-notif-center { position: fixed; top: 20px; right: 20px; background: rgba(12, 8, 24, 0.9); border: 1px solid var(--neon-pink); padding: 15px 25px; border-radius: 14px; box-shadow: 0 0 15px var(--neon-glow); z-index: 200000; color: #fff; font-weight: 600; display: none; transition: opacity 0.3s ease; }
-        .quiz-score-indicator { position: absolute; top: 15px; right: 20px; font-size: 0.95rem; font-weight: bold; color: var(--text-sub); }
-        .quiz-score-glow { color: #fff; text-shadow: 0 0 8px var(--neon-pink); }
-        .quiz-option-btn-style { background: rgba(12, 8, 24, 0.8); border: 1px solid rgba(255, 77, 109, 0.4); color: var(--text-sub); padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-align: center; width: 100%; margin-bottom: 4px; }
-        .quiz-option-btn-style:hover { background: var(--neon-pink); color: #fff; }
-        .future-bucket-card { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15); }
-        
         header { padding: 60px 10px 30px 10px; text-align: center; }
         header h1 { 
             font-size: 3.2rem; font-weight: 900; letter-spacing: 1px;
@@ -262,10 +274,6 @@
 </head>
 <body>
 
-    <!-- CUSTOM TOAST PLUG -->
-    <div id="custom-toast" class="toast-notif-center"></div>
-
-    <!-- UNIVERSAL SCREEN TOUCH OVERLAY -->
     <div id="audio-gate-overlay" onclick="unlockAudioAndStartWebsite()">
         <div class="gate-card">
             <h2>Aayu & Lovie World ❤️</h2>
@@ -275,7 +283,6 @@
         </div>
     </div>
 
-    <!-- Dynamic Event Fullscreen Modal -->
     <div id="event-overlay-modal">
         <div class="modal-wish-card">
             <h2 id="modal-title">Happy Special Day! 🎉</h2>
@@ -295,7 +302,7 @@
         <header>
             <h1>Aayu & Lovie ❤️</h1>
             <span id="dynamic-time-greeting" class="time-greeting-sub">Loading...</span>
-            <p class="tagline">"Built from our chats, calls and memories ❤️"</p>
+            <p class="tagline">"A few photos, a lot of memories ❤️"</p>
         </header>
 
         <div id="event-banner" class="advance-event-banner"></div>
@@ -311,12 +318,11 @@
         </div>
 
         <div class="tabs-nav">
-            <button class="tab-btn active-tab" id="btn-story" onclick="switchTab('tab-story')">Chat Archive 💬</button>
-            <button class="tab-btn" id="btn-about" onclick="switchTab('tab-about')">About Lovie 🌸</button>
-            <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Captured Moments 📸</button>
+            <button class="tab-btn active-tab" id="btn-story" onclick="switchTab('tab-story')">Hamari Baatein 💬</button>
+            <button class="tab-btn" id="btn-about" onclick="switchTab('tab-about')">Little Things About You 🌸</button>
+            <button class="tab-btn" id="btn-gallery" onclick="switchTab('tab-gallery')">Our Moments 📸</button>
         </div>
 
-        <!-- TAB MODULE 1 -->
         <div id="tab-story" class="tab-content-panel active-panel">
             <section class="middle-big-box glowing-box">
                 <h3 id="story-title">Hamari Pyaari Baatein 📝💖</h3>
@@ -346,10 +352,9 @@
                 </div>
             </div>
 
-            <!-- QUIZ GAME MODULE USING REUSABLE CLASS -->
             <div class="glowing-box" style="padding: 30px; margin-top: 30px; text-align: center; position: relative; overflow: hidden;">
-                <div class="quiz-score-indicator">
-                    Score: <span id="game-score" class="quiz-score-glow">0</span>/3 | 
+                <div style="position: absolute; top: 15px; right: 20px; font-size: 0.95rem; font-weight: bold; color: var(--text-sub);">
+                    Score: <span id="game-score" style="color: #fff; text-shadow: 0 0 8px var(--neon-pink);">0</span>/3 | 
                     Life: <span id="game-lifeline" style="letter-spacing: 1px;">❤️❤️❤️</span>
                 </div>
                 
@@ -370,19 +375,18 @@
                 </div>
             </div>
             
-            <!-- FUTURE PLANS TOGETHER INLINE REDUCED -->
             <div class="glowing-box" style="padding: 30px; margin-top: 30px; text-align: center;">
                 <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; color: #fff; text-shadow: 0 0 8px var(--neon-pink);">🌿 Future Plans Together 🌿</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; text-align: left; margin-top: 20px;">
-                    <div class="future-bucket-card">
+                    <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15);">
                         <h4 style="color: #fff; margin-bottom: 10px;">📍 Places we want to visit</h4>
                         <p style="color: var(--text-sub); font-size: 0.9rem;">Hilly stations, long road drives, aur quiet town exploring jahan hum dono bina kisi jaldi ke maze se ghumein.</p>
                     </div>
-                    <div class="future-bucket-card">
+                    <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15);">
                         <h4 style="color: #fff; margin-bottom: 10px;">🍲 Things we want to try</h4>
                         <p style="color: var(--text-sub); font-size: 0.9rem;">Late night street food testing, authentic local dhabas ka khaana, aur kitchen experiments jahan cook main karunga.</p>
                     </div>
-                    <div class="future-bucket-card">
+                    <div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15);">
                         <h4 style="color: #fff; margin-bottom: 10px;">🎯 Small plans for future</h4>
                         <p style="color: var(--text-sub); font-size: 0.9rem;">Apne career ko acchi tarah aage badhana, life me sukoon aur balance rakhna, aur hamara khud ka ek cozy clean space setup karna.</p>
                     </div>
@@ -390,7 +394,6 @@
             </div>
         </div>
 
-        <!-- TAB MODULE 2 -->
         <div id="tab-about" class="tab-content-panel">
             <section class="about-section">
                 <h2 class="section-title">Some Little Things</h2>
@@ -411,39 +414,38 @@
             </section>
         </div>
 
-         <!-- TAB MODULE 3: GITHUB/CLOUDINARY READY MEDIA FALLBACK HOOK -->
-        <div id="tab-gallery" class="tab-content-panel">
+         <div id="tab-gallery" class="tab-content-panel">
             <section class="gallery-section" id="magical-gallery-section">
                 <h2 class="section-title">Our Captured Frames</h2>
                 <div class="gallery-grid">
                     
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
-                        <div class="photo-img-wrapper"><img src="gallery1.jpg" alt="First Meet" onerror="this.src='https://picsum.photos/600/800?random=1'"></div>
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="First Meet"></div>
                         <span class="photo-tag">Moment #01</span><p>"Is photo ko dekh kar abhi bhi hasi aa jati hai 😭"</p>
                     </div>
                     
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
-                        <div class="photo-img-wrapper"><img src="gallery2.jpg" alt="Her Smile" onerror="this.src='https://picsum.photos/600/800?random=2'"></div>
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Her Smile"></div>
                         <span class="photo-tag">Moment #02</span><p>"Ye wali smile mujhe bohot pasand hai."</p>
                     </div>
                     
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
-                        <div class="photo-img-wrapper"><img src="gallery3.jpg" alt="Together" onerror="this.src='https://picsum.photos/600/800?random=3'"></div>
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Together"></div>
                         <span class="photo-tag">Moment #03</span><p>"Yaha tum mujh par bina wajah gussa thi 😭😆"</p>
                     </div>
 
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
-                        <div class="photo-img-wrapper"><img src="gallery4.jpg" alt="Cute Moment" onerror="this.src='https://picsum.photos/600/800?random=4'"></div>
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1bEDskVZxlyqrT-PK4mqWRxg5QuE-LiTq" alt="Cute Moment"></div>
                         <span class="photo-tag">Moment #04</span><p>"Is din humne bohot random baatein ki thi, yaad hai?"</p>
                     </div>
 
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
-                        <div class="photo-img-wrapper"><img src="gallery5.jpg" alt="Cuteness" onerror="this.src='https://picsum.photos/600/800?random=5'"></div>
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Cuteness"></div>
                         <span class="photo-tag">Moment #05</span><p>"Raat ke late video call ka ek chota sa chat screen grab snapshot."</p>
                     </div>
 
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
-                        <div class="photo-img-wrapper"><img src="gallery6.jpg" alt="Memorable Day" onerror="this.src='https://picsum.photos/600/800?random=6'"></div>
+                        <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lWpHzmt1Z7mxmYRPaU_o_x0IbfxkQ1Ta" alt="Memorable Day"></div>
                         <span class="photo-tag">Moment #06</span><p>"Jab hum dono bina kisi target ke bas chalte ja rahe the."</p>
                     </div>
 
@@ -460,26 +462,13 @@
         </div>
     </div>
 
-    <footer>
-        <p>Built from chats, calls and countless memories ❤️</p>
-    </footer>
+<footer>
+    <p>© 2026 Aayu & Lovie ❤️</p>
+    <p>Some memories deserve their own place.</p>
+</footer>
 
     <script>
-        // PAST ESTABLISHED ABSOLUTE MILESTONE RELATIONAL ANCHOR
-        const anniversaryDate = new Date(2025, 2, 27, 0, 0); 
-        let scratchInitialized = false;
-
-        function showToast(msg) {
-            const toast = document.getElementById('custom-toast');
-            toast.innerText = msg;
-            toast.style.display = 'block';
-            toast.style.opacity = '1';
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => { toast.style.display = 'none'; }, 300);
-            }, 3000);
-        }
-
+        const anniversaryDate = new Date(2026, 2, 27, 0, 0); 
         function updateTimer() {
             const now = new Date();
             const diff = now - anniversaryDate;
@@ -491,24 +480,25 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
+        // 🌟 SECTION 5 & 6: 31-DAY VOICE GREETINGS REWRITE (Weather, Chai, Sleep, Memes variety added)
         const dailyVoiceGreetingsMatrix = {
-            1: "Good Morning Lovie, uth gayi ya abhi bhi blanket me ho? Aaj shift par thoda chill rehna.",
+            1: "Good Morning Lovie, uth gayi ya abhi bhi blanket me ho? Aaj thoda chill rehna.",
             2: "Good Morning Lovie, breakfast kar lena time se, aaj ka day kaisa lag raha hai?",
             3: "Good Morning Lovie. Aaj ka din accha jaye bina kisi faltu ke stress ke, bas yahi wish hai.",
             4: "Good Morning Lovie. Kal tumhari wo baat yaad karke mujhe abhi bhi hasi aa rahi hai.",
             5: "Good Morning Lovie. Phone charge kar lena properly, shaam ko aaram se lambi baat karenge.",
             6: "Good Morning Lovie. Aaj weather bohot clear hai, shaam ko walk par chalne ka plan hai kya?",
-            7: "Good Morning Lovie. Kal raat ko tum busy thi phir bhi tumne instant reply kiya, mujhe genuinely accha laga.",
+            7: "Good Morning Lovie. Kal raat ko tum thaki thi phir bhi tumne instant reply kiya, accha laga mujhe.",
             8: "Good Morning Lovie. Uth jao bacha, naya day start ho gaya hai, garam chaay pi lo pehle.",
             9: "Good Morning Lovie. Aaj mood thoda normal hai, par tumse text par baat karke din set ho jata hai.",
             10: "Good Morning Lovie. Kal jahan hum dono call par be-wajah ladd rahe the, wo abhi soch kar hasi aa rahi hai.",
             11: "Good Morning Lovie. Chaay pi li ya abhi bhi sone ka plan chal raha hai? Batana.",
             12: "Good Morning Lovie. Tumhari ek baat genuinely pasand hai, tum har kisi ki help karne ki koshish karti ho.",
-            13: "Good Morning Lovie. Shaam ko free rehna, aaram se baith kar baat karte hain.",
-            14: "Good Morning Lovie. Aaj kaam ka burden zyada mat lena office me, normal chill rehna.",
+            13: "Good Morning Lovie. Shaam ka schedule thoda free rakhna, aaram se baith kar baat karte hain.",
+            14: "Good Morning Lovie. Aaj kaam ka burden zyada mat lena, aaram se chill ho kar tasks handle karna.",
             15: "Good Morning Lovie. Tumhara wo baat-baat par poochna ki 'kahan gae the' genuinely cute lagta hai.",
             16: "Good Morning Lovie. Kal reels share karte-karte jo baatein chal rahi thin, unka logic bohot mast thaa.",
-            17: "Good Morning Lovie. Uth jao bacha, jaldi uthne ki habit dalo thodi, aaj ka weather bohot mast hai.",
+            17: "Good Morning Lovie. Uth jao bacha, Aaj weather mast hai, kaash subah ki chai saath peete.",
             18: "Good Morning Lovie. Raat ko tum late soyi thi, neend poori hui tumhari? Aaj rest properly karna.",
             19: "Good Morning Lovie. Aaj dhoop tez hai bahar, niklo toh dhyan rakhna aur paani sath rakhna.",
             20: "Good Morning Lovie. Kal jo meme bheja thaa tumne, wo abhi dimaag me ghoom raha hai, bohot funny thaa.",
@@ -518,7 +508,7 @@
             24: "Good Morning Lovie. Kuch naye funny memes dekhe hain, abhi shaam ko share karunga free ho kar.",
             25: "Good Morning Lovie. Tumhara care karne ka straight format aur honesty mujhe genuinely bohot acchi lagti hai.",
             26: "Good Morning Lovie. Hamesha focus clear rakha karo, baki problems solve ho hi jaati hain sath me.",
-            27: "Good Morning Lovie. Aaj ka din thoda special hai. Yaad hai ye date?",
+            27: "Good Morning Lovie. yaad hai? Aaj wahi date hai jiske baare me hum baar baar baat karte the.",
             28: "Good Morning Lovie. Aaj bahar travel karte waqt roads ka dhyan rakhna, safely aana-jana bacha.",
             29: "Good Morning Lovie. Kal jahan tum gusse me sorry sorry likh rahi thi, main sach me has raha tha idhar.",
             30: "Good Morning Lovie. Apna calm space maintain rakhna aaj office me, be-wajah pareshan mat hona.",
@@ -568,10 +558,11 @@
             const currentMonth = now.getMonth();
             const currentDate = now.getDate();
 
+            // 🌟 SECTION 10: EMOTIONAL CONVERSATIONAL EVENTS INDICES
             const events = [
                 { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday Lovie! 🎂❤️ Aaj ka ye din tumhari zindagi me bohot saari khushiyan laye. Let's make it better together.", voice: "Happy Birthday Lovie! Aaj tumhara birthday hai. Tum meri life ka bohot important part ho, aaj thoda extra smile kar lena!" },
-                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Aaj ka din thoda special hai. Yaad hai ye date? Hamare sath ka ek aur pyaara saal.", voice: "Happy Anniversary Lovie! Aaj hamari anniversary ka day hai. Hamare is rishte aur sath ko main hamesha honestly balance rakhunga." },
-                { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aaj ka din thoda special hai. Mera birthday live hai.", voice: "Hello Lovie, aaj mera birthday hai." }
+                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Aaj ka din thoda special hai. Yaad hai ye date? Hamare sath ka ek aur pyaara saal cleared.", voice: "Happy Anniversary Lovie! Aaj hamari anniversary ka day hai. Hamare is rishte aur sath ko main hamesha honestly balance rakhunga." },
+                { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aaj ka din thoda special hai. Mera birthday format live hai, hamesha sorted check.", voice: "Hello Lovie, aaj mera birthday hai, naya day segment updated." }
             ];
             
             const banner = document.getElementById('event-banner');
@@ -615,7 +606,24 @@
         let speechSpoken = false;
         let musicStarted = false;
 
+        if (typeof speechSynthesis !== 'undefined') {
+            window.speechSynthesis.getVoices();
+        }
+
         function unlockAudioAndStartWebsite() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (AudioContext) {
+                    const audioCtx = new AudioContext();
+                    if (audioCtx.state === 'suspended') audioCtx.resume();
+                }
+            } catch (e) { console.log("Engine ready"); }
+
+            const audio = document.getElementById('romantic-audio');
+            if(audio) {
+                audio.play().then(() => { audio.pause(); }).catch(e => console.log("Active state pass"));
+            }
+
             const overlay = document.getElementById('audio-gate-overlay');
             if (overlay) {
                 overlay.style.opacity = '0';
@@ -631,21 +639,50 @@
 
                 if (finalSpokenText !== "") {
                     window.speechSynthesis.cancel(); 
+
                     const utterance = new SpeechSynthesisUtterance(finalSpokenText);
                     utterance.lang = 'hi-IN';
                     utterance.pitch = 1.0; utterance.rate = 0.95; utterance.volume = 1.0;
 
                     if (window.speechSynthesis) {
                         let availableVoices = window.speechSynthesis.getVoices();
-                        let perfectFemaleVoice = availableVoices.find(v => 
-                            v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('apple'))
-                        );
-                        if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                        const selectPerfectVoice = () => {
+                            let perfectFemaleVoice = availableVoices.find(v => 
+                                v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('apple'))
+                            );
+                            if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
+                        };
+
+                        if (!availableVoices.length) {
+                            window.speechSynthesis.onvoiceschanged = () => {
+                                availableVoices = window.speechSynthesis.getVoices();
+                                selectPerfectVoice();
+                            };
+                        } else {
+                            selectPerfectVoice();
+                        }
                     }
 
-                    utterance.onend = function() { setTimeout(() => { playSecretMusic(); }, 1500); };
-                    utterance.onerror = function() { if (!musicStarted) { setTimeout(() => { playSecretMusic(); }, 1500); } }; 
+                    utterance.onend = function() { 
+                        console.log("Finished successfully. Triggering song after 1.5 seconds.");
+                        setTimeout(() => { playSecretMusic(); }, 1500); 
+                    };
+                    
+                    utterance.onerror = function(event) { 
+                        console.log("Speech error:", event);
+                        if (!musicStarted) {
+                            setTimeout(() => { playSecretMusic(); }, 1500);
+                        }
+                    }; 
+
                     window.speechSynthesis.speak(utterance);
+
+                    setTimeout(() => { 
+                        if (!musicStarted) {
+                            console.log("Failsafe backup loop triggered.");
+                            playSecretMusic();
+                        }
+                    }, 45000);
                 } else {
                     playSecretMusic();
                 }
@@ -657,7 +694,10 @@
                 const audio = document.getElementById('romantic-audio');
                 if (audio) {
                     audio.volume = 0.45; 
-                    audio.play().then(() => { musicStarted = true; }).catch(() => {
+                    audio.play().then(() => { 
+                        musicStarted = true; 
+                        console.log("Active parsing context pass.");
+                    }).catch(e => {
                         audio.muted = false;
                         audio.play();
                         musicStarted = true;
@@ -668,29 +708,55 @@
 
         function syncLovieMemoryEngine() {
             if (typeof generateInfiniteLoveMessage === "function") {
-                document.getElementById('story-paragraph').innerText = generateInfiniteLoveMessage();
+                const pureAutoGeneratedText = generateInfiniteLoveMessage();
+                document.getElementById('story-paragraph').innerText = pureAutoGeneratedText;
+                
                 document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara soft behaviour aur har choti baat me focus rakhne ka tareeka mujhe genuine pasand hai. Tumhari wajah se mera normal routine kaafi better lagta hai. Tum jo din me 2 baje apni kadi duty par nikalti ho aur late hours tak mehnat karti ho na, mujhe tum par bohot proud feel hota hai.";
-                document.getElementById('fact-desc-2').innerText = "Wo chat jahan tumne gusse me thoda rote hue block hone ki panic baat likhi thi, un baaton ko yaad karke aaj bhi haseen lagta hai. Reels aur notes ka exchange hona hamare beech ka sabse funny aur real part hai.";
+                document.getElementById('fact-desc-2').innerText = "Wo chat logs jahan tumne gusse me thoda rote hue block hone ki panic baat likhi thi, un baaton ko yaad karke aaj bhi haseen lagta hai. Reels aur notes ka exchange hona hamare beech ka sabse funny aur real part hai.";
                 document.getElementById('fact-desc-3').innerText = "Main hamesha regular touch me rahoonga bina kisi be-wajah ke argument ke. Free space me rahoon, ya busy rahoon, jab bhi koi baat share karni ho, main hamesha sabse pehle tumhari baat poore dhyan se sununga aur samajhne ki koshish karunga.";
+            }
+        }
+
+        // 🌟 SECTION 8: SCRATCH CARD REWARDS REWRITE (Fun couple coupons mapped)
+        const weeklyRewards = {
+            0: "🎉 Free Hug Coupon - Use anytime you want! ❤️", 
+            1: "🌹 Reward: Extra Call Pass - Aaj thodi der aur lambi baat karenge! 📞🥰", 
+            2: "👑 Reward: Movie Night Winner - Agli video call me movie tum choose karna! 😘👑", 
+            3: "🎁 Reward: One Wish Coupon - Aaj main tumhari koi bhi ek baat manunga! 🍫🤝", 
+            4: "💫 Reward: No Argument Pass - Aaj hum dono kisi bhi baat par nahi ladenge! 😡❤️", 
+            5: "🌍 Reward: Song Request Pass - Aaj tumhara favorite gana play hoga line par! 🔒🧬", 
+            6: "💍 Reward: Ice Cream Date Coupon - Scheduled for our next physical meet! 📸💞" 
+        };
+
+        function updateDailyFeatures() {
+            const todayDate = new Date().getDate();
+            const todayDay = new Date().getDay();
+            const clueBox = document.getElementById('clue-text');
+            if(clueBox && typeof dailyLetters !== "undefined" && dailyLetters[todayDate]) {
+                clueBox.innerText = `Hint: ${dailyLetters[todayDate].clue}`;
+            }
+            const rewardBox = document.getElementById('scratch-reward-text');
+            if(rewardBox && weeklyRewards[todayDay]) {
+                rewardBox.innerText = weeklyRewards[todayDay];
             }
         }
 
         function verifyPassword() {
             const val = document.getElementById('gate-pass').value;
             const todayDate = new Date().getDate();
-            // XOR RUNTIME EVALUATION OBFUSCATION REPLACEMENT
-            if ((parseInt(val) ^ 456) === 2935) { 
+            if(val === '2703') { 
                 const letterParagraph = document.getElementById('dynamic-letter-text');
+                
                 let sourceLetters = window.dailyLetters || dailyLetters;
                 if(sourceLetters && sourceLetters[todayDate]) {
                     letterParagraph.innerText = sourceLetters[todayDate].text;
                 } else {
-                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho. ❤️";
+                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho, verified and active. ❤️";
                 }
                 document.getElementById('gate-reveal').style.display = 'block';
-                showToast("🔒 Note Verified & Unlocked!");
+                alert("🔒 Note Open Ho Gaya! Padh Lo.");
             } else {
-                showToast("❌ Access Denied: Code Mismatch!");
+                alert("❌ Wrong code mismatch!");
             }
         }
 
@@ -719,10 +785,8 @@
         function closeLightbox() { document.getElementById('lightbox-overlay').classList.remove('show-lightbox'); }
 
         function initScratchCard() {
-            if (scratchInitialized) return; // FIX EVENT DUPLICATION DUPLICATION
             const canvas = document.getElementById('scratch-layer');
             if(!canvas) return;
-            scratchInitialized = true;
             const ctx = canvas.getContext('2d');
             ctx.fillStyle = '#4a3b68'; ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = '#fff0f3'; ctx.font = '16px sans-serif'; ctx.textAlign = 'center';
@@ -764,18 +828,27 @@
             if (isBirthdayToday || isAnniversaryToday) {
                 element.style.top = '-10vh';
                 element.style.animationName = 'none'; 
+                
                 element.animate([
                     { transform: `translate3d(0, 0, 0) scale(0.6) rotate(0deg)`, opacity: 0 },
                     { opacity: 0.9, offset: 0.15 },
                     { opacity: 0.7, offset: 0.85 },
                     { transform: `translate3d(0, 115vh, 0) scale(1.3) rotate(360deg)`, opacity: 0 }
-                ], { duration: duration * 1000, easing: 'linear', fill: 'forwards' });
+                ], {
+                    duration: duration * 1000,
+                    easing: 'linear',
+                    fill: 'forwards'
+                });
             }
+            
             container.appendChild(element);
             setTimeout(() => { element.remove(); }, duration * 1000); 
         }
         setInterval(createFloatingElement, 500);
 
+        // =================================================================
+        // 🎯 DYNAMIC SHUFFLE GAME CORE LINK
+        // =================================================================
         let activeGameQuestions = [];
         let currentQuestionIndex = 0;
         let gameScore = 0;
@@ -800,19 +873,24 @@
             if (currentQuestionIndex >= activeGameQuestions.length || activeGameQuestions.length === 0) {
                 document.getElementById('quiz-game-wrapper').style.display = 'none';
                 document.getElementById('game-victory-gate').style.display = 'block';
-                for (let i = 0; i < 12; i++) { setTimeout(createFloatingElement, i * 80); }
+                triggerMassiveBalloonBlast();
                 return;
             }
 
             const currentData = activeGameQuestions[currentQuestionIndex];
             document.getElementById('game-question-text').innerText = currentData.q;
+            
             const optionsContainer = document.getElementById('game-options-container');
             optionsContainer.innerHTML = "";
 
             currentData.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
                 btn.innerText = opt;
-                btn.className = "quiz-option-btn-style";
+                btn.style.cssText = "background: rgba(12, 8, 24, 0.8); border: 1px solid rgba(255, 77, 109, 0.4); color: var(--text-sub); padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; text-align: center;";
+                
+                btn.onmouseover = () => { btn.style.background = "var(--neon-pink)"; btn.style.color = "#fff"; };
+                btn.onmouseout = () => { btn.style.background = "rgba(12, 8, 24, 0.8)"; btn.style.color = "var(--text-sub)"; };
+                
                 btn.onclick = () => checkGameAnswer(idx);
                 optionsContainer.appendChild(btn);
             });
@@ -823,8 +901,8 @@
             if (selectedIndex === currentData.correct) {
                 gameScore++;
                 document.getElementById('game-score').innerText = gameScore;
-                showToast("🎉 Sahi Jawab Lovie!");
-                for (let i = 0; i < 12; i++) { setTimeout(createFloatingElement, i * 80); }
+                alert("🎉 Sahi Jawab Lovie!");
+                triggerMassiveBalloonBlast(); 
                 currentQuestionIndex++;
                 loadQuizGameTrack();
             } else {
@@ -833,7 +911,7 @@
                 for(let i=0; i<gameLives; i++) lifeHearts += "❤️";
                 if(lifeHearts === "") lifeHearts = "💔";
                 document.getElementById('game-lifeline').innerText = lifeHearts;
-                showToast("❌ Oho! Galat option.");
+                alert("❌ Galat option, yaad karo maine kya bola thaa.");
                 loadQuizGameTrack();
             }
         }
@@ -849,28 +927,20 @@
             initAutopilotGame();
         }
 
+        function triggerMassiveBalloonBlast() {
+            for (let i = 0; i < 12; i++) {
+                setTimeout(createFloatingElement, i * 80);
+            }
+        }
+
         window.onload = () => { 
             initScratchCard(); 
             handleTimeGreetingAndVoice(); 
             checkSpecialEvents(); 
             syncLovieMemoryEngine(); 
-            
-            const todayDay = new Date().getDay();
-            const clueBox = document.getElementById('clue-text');
-            if(clueBox && typeof dailyLetters !== "undefined" && dailyLetters[new Date().getDate()]) {
-                clueBox.innerText = `Hint: ${dailyLetters[new Date().getDate()].clue}`;
-            }
-            const rewardBox = document.getElementById('scratch-reward-text');
-            const weeklyRewards = {
-                0: "🎉 Free Hug Coupon - Use anytime you want! ❤️", 1: "🌹 Reward: Extra Call Pass! 📞🥰", 
-                2: "👑 Reward: Movie Night Winner - Agli video call me movie tum choose karna! 😘👑", 
-                3: "🎁 Reward: One Wish Coupon - Aaj main tumhari koi bhi ek baat manunga! 🍫🤝", 
-                4: "💫 Reward: No Argument Pass - Aaj hum dono kisi bhi baat par nahi ladenge! 😡❤️", 
-                5: "🌍 Reward: Song Request Pass! 🔒🧬", 6: "💍 Reward: Ice Cream Date Coupon! 📸💞" 
-            };
-            if(rewardBox && weeklyRewards[todayDay]) { rewardBox.innerText = weeklyRewards[todayDay]; }
-            
+            updateDailyFeatures(); 
             initAutopilotGame(); 
+            
             if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
                 speechSynthesis.onvoiceschanged = handleTimeGreetingAndVoice;
             }
