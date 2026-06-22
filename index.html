@@ -36,7 +36,7 @@
             transition: all 1s ease-in-out;
         }
 
-        /* SCREEN-WIDE MASTER AUDIO BYPASS OVERLAY */
+        /* 🔥 MASTER AUDIO BYPASS OVERLAY */
         #audio-gate-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #050409; backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
@@ -50,7 +50,7 @@
             box-shadow: 0 0 40px var(--neon-glow);
             pointer-events: none;
         }
-        .gate-card h2 { font-size: 2rem; margin-bottom: 15px; background: linear-gradient(to right, #ff007f, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gate-card h2 { font-size: 2rem; margin-bottom: 15px; background: linear-gradient(to right, #ff4d6d, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .gate-card p { color: var(--text-sub); font-size: 1rem; margin-bottom: 25px; }
         .gate-start-btn {
             background: var(--neon-pink); border: none; color: #fff; padding: 15px 35px;
@@ -134,7 +134,7 @@
             padding: 40px 20px; border-radius: 28px; text-align: center; max-width: 550px; width: 90%;
             box-shadow: 0 0 40px var(--neon-glow); position: relative;
         }
-        .modal-wish-card h2 { font-size: 2.2rem; background: linear-gradient(to right, #ff007f, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px var(--neon-pink)); margin-bottom: 20px; font-weight: 800; }
+        .modal-wish-card h2 { font-size: 2.2rem; background: linear-gradient(to right, #ff4d6d, #ff758f, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px var(--neon-pink)); margin-bottom: 20px; font-weight: 800; }
         .modal-wish-card p { font-size: 1.1rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 25px; white-space: normal; }
         .modal-close-txt { color: rgba(255,255,255,0.4); font-size: 0.9rem; text-decoration: underline; cursor: pointer; transition: color 0.2s; }
         .modal-close-txt:hover { color: var(--neon-pink); }
@@ -348,7 +348,7 @@
 
                 <div id="game-victory-gate" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 2px dashed var(--neon-pink); animation: fadeIn 0.5s ease;">
                     <h4 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">🎉 Game Clear!</h4>
-                    <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px;">Tum jeet gayi! Tumhare liye ek aur hidden chota sa note unlock ho gaya hai:</p>
+                    <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 15px;">Tum jeet gayi bacha! Tumhare liye ek aur hidden chota sa note unlock ho gaya hai:</p>
                     <div style="background: rgba(255, 77, 109, 0.09); padding: 15px; border-radius: 16px; border: 1px solid var(--neon-pink); text-align: left; color: #fff; line-height: 1.7; max-width: 550px; margin: 0 auto;">
                         "Lovie, tumhari memory sach me bohot acchi hai. Tumne game ke saare sahi jawab diye, iska matlab tum hamari har baat ko bohot dhyan se sunti ho. Mujhe tumhara ye care karne ka tareeka genuinely bohot pasand hai. Hamesha aise hi hansti raha karo mere liye. ❤️"
                     </div>
@@ -421,7 +421,7 @@
 
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
                         <div class="photo-img-wrapper"><img src="https://lh3.googleusercontent.com/u/0/d/1lb87N33noxESeLG8wK-ZHfpV2TxE1zZE" alt="Cuteness"></div>
-                        <span class="photo-tag">Moment #05</span><p>"Raat ke late video call ka ek chota sa chat screen layout snapshot."</p>
+                        <span class="photo-tag">Moment #05</span><p>"Raat ke late video call ka ek chota sa chat screen grab snapshot."</p>
                     </div>
 
                     <div class="photo-card glowing-box" onclick="viewLightbox(this)">
@@ -459,39 +459,39 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 🌟 OPTIMIZATION: 31-DAY AUDIO GREETING MATRIX MAP (Real WhatsApp Conversational Tone)
+        // 🌟 SECTION 5 & 6: 31-DAY VOICE GREETINGS REWRITE (Weather, Chai, Sleep, Memes variety added)
         const dailyVoiceGreetingsMatrix = {
-            1: "Good Morning Lovie, uth gayi ya abhi bhi blanket me ho? Aaj shift par thoda chill rehna.",
-            2: "Good Morning Lovie, breakfast kar lena time se, aaj duty thodi busy lag rahi hai mujhe.",
+            1: "Good Morning Lovie, uth gayi ya abhi bhi blanket me ho? Aaj thoda chill rehna.",
+            2: "Good Morning Lovie, breakfast kar lena time se, aaj ka day kaisa lag raha hai?",
             3: "Good Morning Lovie. Aaj ka din accha jaye bina kisi faltu ke stress ke, bas yahi wish hai.",
             4: "Good Morning Lovie. Kal tumhari wo baat yaad karke mujhe abhi bhi hasi aa rahi hai.",
-            5: "Good Morning Lovie. Shift par jaane se pehle phone charge kar lena, baatein zaruri hain.",
-            6: "Good Morning Lovie. Aaj weather thoda clear hai, tumhari shift timing kya hai aaj?",
-            7: "Good Morning Lovie. Kal raat ko tum busy thi phir bhi tumne instant reply kiya, mujhe genuinely accha laga.",
-            8: "Good Morning Lovie. Uth jao, kaam ka schedule check kar lena, aur chill rehna aaj.",
-            9: "Good Morning Lovie. Aaj mood thoda normal hai, par tumse baat karke din thoda better ho jata hai.",
+            5: "Good Morning Lovie. Phone charge kar lena properly, shaam ko aaram se lambi baat karenge.",
+            6: "Good Morning Lovie. Aaj weather bohot clear hai, shaam ko walk par chalne ka plan hai kya?",
+            7: "Good Morning Lovie. Kal raat ko tum thaki thi phir bhi tumne instant reply kiya, accha laga mujhe.",
+            8: "Good Morning Lovie. Uth jao bacha, naya day start ho gaya hai, garam chaay pi lo pehle.",
+            9: "Good Morning Lovie. Aaj mood thoda normal hai, par tumse text par baat karke din set ho jata hai.",
             10: "Good Morning Lovie. Kal jahan hum dono call par be-wajah ladd rahe the, wo abhi soch kar hasi aa rahi hai.",
             11: "Good Morning Lovie. Chaay pi li ya abhi bhi sone ka plan chal raha hai? Batana.",
             12: "Good Morning Lovie. Tumhari ek baat genuinely pasand hai, tum har kisi ki help karne ki koshish karti ho.",
-            13: "Good Morning Lovie. Happy Special Day. Aaj thoda free rehna, shaam ko aaram se baat karte hain.",
-            14: "Good Morning Lovie. Aaj kaam ka burden zyada mat lena office me, normal chill rehna.",
-            15: "Good Morning Lovie. Tumhara wo baat-baat par poochna ki 'kahan gae the' genuinely cute hai.",
+            13: "Good Morning Lovie. Shaam ka schedule thoda free rakhna, aaram se baith kar baat karte hain.",
+            14: "Good Morning Lovie. Aaj kaam ka burden zyada mat lena, aaram se chill ho kar tasks handle karna.",
+            15: "Good Morning Lovie. Tumhara wo baat-baat par poochna ki 'kahan gae the' genuinely cute lagta hai.",
             16: "Good Morning Lovie. Kal reels share karte-karte jo baatein chal rahi thin, unka logic bohot mast thaa.",
-            17: "Good Morning Lovie. Uth jao bacha, naya din shuru ho gaya hai. Normal messages check kar lena.",
-            18: "Good Morning Lovie. Raat ko tum late aayi duty se, thak gayi hogi. Aaj aaram se kaam karna.",
-            19: "Good Morning Lovie. Aaj dhoop tez hai, office niklo toh dhyan rakhna aur paani sath rakhna.",
-            20: "Good Morning Lovie. Sone ke tareeqe thode sudharo, subah jaldi uthne ki habit daalni chahiye.",
-            21: "Good Morning Lovie. Aaj naye din par apni duty ke dauran apna poora dhyan rakhna, shaam ko baat karte hain.",
-            22: "Good Morning Lovie. Tumhari zidd karne ki capacity kaafi high hai, par end me control ho jata hai sab makkhan.",
-            23: "Good Morning Lovie. Aaj bas random dimag me aaya ki tumhari smile genuinely mood automatic line par le aati hai.",
-            24: "Good Morning Lovie. Kuch naye funny memes dekhe hain, abhi shaam ko share karunga work shift ke baad.",
+            17: "Good Morning Lovie. Uth jao bacha, jaldi uthne ki habit dalo thodi, aaj ka weather bohot mast hai.",
+            18: "Good Morning Lovie. Raat ko tum late soyi thi, neend poori hui tumhari? Aaj rest properly karna.",
+            19: "Good Morning Lovie. Aaj dhoop tez hai bahar, niklo toh dhyan rakhna aur paani sath rakhna.",
+            20: "Good Morning Lovie. Kal jo meme bheja thaa tumne, wo abhi dimaag me ghoom raha hai, bohot funny thaa.",
+            21: "Good Morning Lovie. Aaj naye din par apna poora dhyan rakhna, shaam ko regular time par call karta hoon.",
+            22: "Good Morning Lovie. Tumhari zidd karne ki capacity kaafi high hai, par end me sab theek ho jata hai.",
+            23: "Good Morning Lovie. Aaj bas random dimag me aaya ki tumhari smile mood automatic line par le aati hai.",
+            24: "Good Morning Lovie. Kuch naye funny memes dekhe hain, abhi shaam ko share karunga free ho kar.",
             25: "Good Morning Lovie. Tumhara care karne ka straight format aur honesty mujhe genuinely bohot acchi lagti hai.",
             26: "Good Morning Lovie. Hamesha focus clear rakha karo, baki problems solve ho hi jaati hain sath me.",
-            27: "Good Morning Lovie. Happy Anniversary date. Hamare sath ka ek aur haseen saal pass ho gaya.",
-            28: "Good Morning Lovie. Aaj safe transport option hi chunna shift ke liye, roads ka dhyan rakhna.",
+            27: "Good Morning Lovie. Aaj ka din thoda special hai. Yaad hai ye date?",
+            28: "Good Morning Lovie. Aaj bahar travel karte waqt roads ka dhyan rakhna, safely aana-jana bacha.",
             29: "Good Morning Lovie. Kal jahan tum gusse me sorry sorry likh rahi thi, main sach me has raha tha idhar.",
             30: "Good Morning Lovie. Apna calm space maintain rakhna aaj office me, be-wajah pareshan mat hona.",
-            31: "Good Morning Lovie. Month ka last day hai, shaam ko normal regular video call par baat karte hain."
+            31: "Good Morning Lovie. Month ka last day hai, shaam ko regular normal video call par baat karte hain."
         };
 
         let dynamicGreetingMessage = "";
@@ -504,16 +504,16 @@
             
             if (currentHour >= 5 && currentHour < 12) {
                 greetingSubElement.innerText = "Good Morning Lovie ✨";
-                dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Lovie. Apni duty ke dauran apna dhyan rakhna, main hamesha tumhare sath hoon.";
+                dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Lovie. Apna dhyan rakhna, main hamesha tumhare sath hoon.";
             } else if (currentHour >= 12 && currentHour < 17) {
                 greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
-                dynamicGreetingMessage = "Good Afternoon Lovie. Dopehar ki shift me acche se kaam karna aur apna dhyan rakhna.";
+                dynamicGreetingMessage = "Good Afternoon Lovie. Dopehar ke samay acche se khana kha lena aur apna dhyan rakhna.";
             } else if (currentHour >= 17 && currentHour < 22) {
                 greetingSubElement.innerText = "Good Evening Lovie 🌆";
-                dynamicGreetingMessage = "Good Evening Lovie. Kadi mehnat ke beech apna dhyan rakhna. Late duty se ghar aane tak main hamesha available hoon.";
+                dynamicGreetingMessage = "Good Evening Lovie. Kadi mehnat ke beech apna dhyan rakhna, shaam ko free ho kar batana.";
             } else {
                 greetingSubElement.innerText = "Good Night Lovie 🌙";
-                dynamicGreetingMessage = "Good Night Lovie. Duty se aane ke baad bina kisi stress ke aaram se so jana, subah baat karte hain.";
+                dynamicGreetingMessage = "Good Night Lovie. Bina kisi stress ke aaram se so jana, subah fresh mind se baat karte hain.";
             }
             applyAutoTheme();
         }
@@ -537,10 +537,11 @@
             const currentMonth = now.getMonth();
             const currentDate = now.getDate();
 
+            // 🌟 SECTION 10: EMOTIONAL CONVERSATIONAL EVENTS INDICES
             const events = [
-                { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday Lovie! 🎂❤️ Aaj ka ye din tumhari zindagi me bohot saari khushiyan laye. Let's make it better together.", voice: "Happy Birthday Lovie! Aaj tumhara birthday hai. Tum meri life ka bohot important part ho, janamdin mubarak ho bacha!" },
-                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Happy Anniversary My Love! 💍❤️ Hamare sath ka ek aur pyaara saal, trust aur understanding hamesha clear rahe.", voice: "Happy Anniversary Lovie! Aaj hamari anniversary ka day hai. Hamare is rishte aur sath ko main hamesha honestly balance rakhunga." },
-                { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aayu's Special Birthday! 🎈✨ Lovie, aaj mera day format live hai, hamesha sorted check.", voice: "Hello Lovie, aaj mera birthday hai, naya day segment updated." }
+                { name: "Lovie's Birthday", month: 7, date: 13, type: "birthday", msg: "Happy Birthday Lovie! 🎂❤️ Aaj ka ye din tumhari zindagi me bohot saari khushiyan laye. Let's make it better together.", voice: "Happy Birthday Lovie! Aaj tumhara birthday hai. Tum meri life ka bohot important part ho, aaj thoda extra smile kar lena!" },
+                { name: "Our Anniversary", month: 2, date: 27, type: "anniversary", msg: "Aaj ka din thoda special hai. Yaad hai ye date? Hamare sath ka ek aur pyaara saal cleared.", voice: "Happy Anniversary Lovie! Aaj hamari anniversary ka day hai. Hamare is rishte aur sath ko main hamesha honestly balance rakhunga." },
+                { name: "Aayu's Birthday", month: 10, date: 11, type: "aayu_birthday", msg: "Aaj ka din thoda special hai. Mera birthday format live hai, hamesha sorted check.", voice: "Hello Lovie, aaj mera birthday hai, naya day segment updated." }
             ];
             
             const banner = document.getElementById('event-banner');
@@ -564,7 +565,7 @@
                     banner.style.background = 'rgba(255, 77, 109, 0.15)';
                     
                     let decorativeEmoji = ev.type === "anniversary" ? "💍✨" : "🎈🎂";
-                    banner.innerHTML = `<span class="marquee-text-flow">${decorativeEmoji} Jashn Ka Din: Today is ${ev.name}! Celebrating our real-time understanding segment ${decorativeEmoji}</span>`;
+                    banner.innerHTML = `<span class="marquee-text-flow">${decorativeEmoji} Aaj ka din thoda special hai. Celebrating our little shared memories corner ${decorativeEmoji}</span>`;
                 } else {
                     let eventTargetThisYear = new Date(currentYear, ev.month, ev.date);
                     if (now > eventTargetThisYear) eventTargetThisYear.setFullYear(currentYear + 1);
@@ -595,11 +596,11 @@
                     const audioCtx = new AudioContext();
                     if (audioCtx.state === 'suspended') audioCtx.resume();
                 }
-            } catch (e) { console.log("Engine sync ready"); }
+            } catch (e) { console.log("Engine ready"); }
 
             const audio = document.getElementById('romantic-audio');
             if(audio) {
-                audio.play().then(() => { audio.pause(); }).catch(e => console.log("Engine active"));
+                audio.play().then(() => { audio.pause(); }).catch(e => console.log("Active state pass"));
             }
 
             const overlay = document.getElementById('audio-gate-overlay');
@@ -674,7 +675,7 @@
                     audio.volume = 0.45; 
                     audio.play().then(() => { 
                         musicStarted = true; 
-                        console.log("Active tracking on sound.");
+                        console.log("Active parsing context pass.");
                     }).catch(e => {
                         audio.muted = false;
                         audio.play();
@@ -689,20 +690,21 @@
                 const pureAutoGeneratedText = generateInfiniteLoveMessage();
                 document.getElementById('story-paragraph').innerText = pureAutoGeneratedText;
                 
-                document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara soft behaviour aur work shift me focuses maintain karne ka tareeka hamesha se bohot accha hai. Tumhari wajah se mera normal routine kaafi better lagta hai. Tum jo din me 2 baje shift par nikalti ho aur late hours tak mehnat karti ho na, mujhe tumhari is dedication par sach me proud feel hota hai.";
-                document.getElementById('fact-desc-2').innerText = "Wo chat jahan tumne gusse me thoda rote hue block hone ki baat likhi thi, un baaton ko yaad karke aaj bhi haseen lagta hai. Reels aur notes ka exchange hona hamare beech ka sabse funny aur real part hai.";
-                document.getElementById('fact-desc-3').innerText = "Main hamesha regular communication maintain karunga bina kisi be-wajah ke argument ke. Work spaces, late night text ya personal tasks ke beech jab bhi koi baat share karni ho, main hamesha sabse pehle tumhari baat poore dhyan se sununga.";
+                document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara soft behaviour aur har choti baat me focus rakhne ka tareeka mujhe genuine pasand hai. Tumhari wajah se mera normal routine kaafi better lagta hai. Tum jo din me 2 baje apni kadi duty par nikalti ho aur late hours tak mehnat karti ho na, mujhe tum par bohot proud feel hota hai.";
+                document.getElementById('fact-desc-2').innerText = "Wo chat logs jahan tumne gusse me thoda rote hue block hone ki panic baat likhi thi, un baaton ko yaad karke aaj bhi haseen lagta hai. Reels aur notes ka exchange hona hamare beech ka sabse funny aur real part hai.";
+                document.getElementById('fact-desc-3').innerText = "Main hamesha regular touch me rahoonga bina kisi be-wajah ke argument ke. Free space me rahoon, ya busy rahoon, jab bhi koi baat share karni ho, main hamesha sabse pehle tumhari baat poore dhyan se sununga aur samajhne ki koshish karunga.";
             }
         }
 
+        // 🌟 SECTION 8: SCRATCH CARD REWARDS REWRITE (Fun couple coupons mapped)
         const weeklyRewards = {
-            0: "🎉 Safe updates cleared cleanly! ❤️", 
-            1: "🌹 Reward: Weekend phone call slot block locked! 📞🥰", 
-            2: "👑 Reward: Lovie gets a Free Hug Coupon to use anytime! 😘👑", 
-            3: "🎁 Reward: Real chocolate box delivery drop shared next shift! 🍫🤝", 
-            4: "💫 Reward: One Wish Coupon - Aaj main tumhari koi bhi ek baat manunga! 😡❤️", 
-            5: "🌍 Reward: No Argument Pass - Aaj hum dono kisi bhi baat par nahi ladenge! 🔒🧬", 
-            6: "💍 Reward: Movie Night Winner - Agli video call me movie tum choose karna! 📸💞" 
+            0: "🎉 Free Hug Coupon - Use anytime you want! ❤️", 
+            1: "🌹 Reward: Extra Call Pass - Aaj thodi der aur lambi baat karenge! 📞🥰", 
+            2: "👑 Reward: Movie Night Winner - Agli video call me movie tum choose karna! 😘👑", 
+            3: "🎁 Reward: One Wish Coupon - Aaj main tumhari koi bhi ek baat manunga! 🍫🤝", 
+            4: "💫 Reward: No Argument Pass - Aaj hum dono kisi bhi baat par nahi ladenge! 😡❤️", 
+            5: "🌍 Reward: Song Request Pass - Aaj tumhara favorite gana play hoga line par! 🔒🧬", 
+            6: "💍 Reward: Ice Cream Date Coupon - Scheduled for our next physical meet! 📸💞" 
         };
 
         function updateDailyFeatures() {
@@ -728,7 +730,7 @@
                 if(sourceLetters && sourceLetters[todayDate]) {
                     letterParagraph.innerText = sourceLetters[todayDate].text;
                 } else {
-                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho, note updates clear. ❤️";
+                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho, verified and active. ❤️";
                 }
                 document.getElementById('gate-reveal').style.display = 'block';
                 alert("🔒 Note Open Ho Gaya! Padh Lo.");
@@ -824,7 +826,7 @@
         setInterval(createFloatingElement, 500);
 
         // =================================================================
-        // 🎯 DYNAMIC SHUFFLE GAME ENGINE
+        // 🎯 DYNAMIC SHUFFLE GAME CORE LINK
         // =================================================================
         let activeGameQuestions = [];
         let currentQuestionIndex = 0;
