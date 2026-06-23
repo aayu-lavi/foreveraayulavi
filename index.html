@@ -13,7 +13,7 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
     
-    <!-- ✍&zwj; HANDWRITING FONT FOR NOTES STYLE -->
+    <!-- ✍️ HANDWRITING FONT FOR NOTES STYLE -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap">
 
     <style>
@@ -57,7 +57,7 @@
             width: 100%; height: 100%; object-fit: cover;
         }
 
-        /* ✍&zwj; HANDWRITTEN NOTES EXCLUSIVE PAPER TEXTURE STYLE */
+        /* ✍️ HANDWRITTEN NOTES EXCLUSIVE PAPER TEXTURE STYLE */
         .handwritten-paper-note {
             background: #fff8e7 !important;
             background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 0) !important;
@@ -86,7 +86,7 @@
         /* 📱 LOCK SCREEN STYLE WIDGET CONTAINER */
         .ios-lock-widget {
             background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 77, 109, 0.15);
-            border-radius: 20px; padding: 20px; text-align: center; margin-bottom: 25px;
+            border-radius: 20px; padding: 20px; text-align: center; margin-bottom: 30px;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
         }
         .ios-widget-date { font-size: 1.1rem; font-weight: 600; color: var(--neon-pink); text-transform: uppercase; letter-spacing: 1px; }
@@ -203,21 +203,14 @@
         .quiz-option-btn-style:hover { background: var(--neon-pink); color: #fff; }
         .future-bucket-card { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,77,109,0.15); }
 
-        header { padding: 60px 10px 30px 10px; text-align: center; }
+        header { padding: 30px 10px 30px 10px; text-align: center; }
         header h1 { 
             font-size: 3.2rem; font-weight: 900; letter-spacing: 1px;
             background: linear-gradient(to right, #fff, #ff758f, #ff007f, #fff);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 12px var(--neon-glow));
-            margin-bottom: 5px;
-        }
-        .time-greeting-sub {
-            font-size: 1.4rem;
-            color: var(--neon-pink);
-            font-weight: 700;
-            text-shadow: 0 0 12px var(--neon-glow);
             margin-bottom: 15px;
-            display: block;
+            margin-top: 25px;
         }
         header p.tagline { font-size: 1.15rem; color: var(--text-sub); font-style: italic; }
 
@@ -315,7 +308,6 @@
         footer { padding: 40px 20px; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; }
     </style>
     
-    <!-- 🌟 STABLE BACKUP ROUTING TO TARGET CORRECT FILE SOURCING -->
     <script src="lovie_memories.js" onerror="this.onerror=null; var s=document.createElement('script'); s.src='lovie_memory.js'; document.head.appendChild(s);"></script>
 </head>
 <body>
@@ -364,14 +356,17 @@
 
     <div class="container">
         <header>
+            <!-- 📱 1. LOCK SCREEN STYLE WIDGET RUNNING AT THE VERY TOP -->
             <div class="ios-lock-widget">
                 <div id="widget-date-slot" class="ios-widget-date">22 June</div>
                 <div id="widget-greet-slot" class="ios-widget-greet">Good Evening Lovie ❤️</div>
                 <div class="ios-widget-status">Missed you today.</div>
             </div>
 
+            <!-- 📱 2. MAIN HEADER PLACED CORRECTLY BELOW WIDGET -->
             <h1>Aayu & Lovie ❤️</h1>
-            <span id="dynamic-time-greeting" class="time-greeting-sub">Loading...</span>
+            
+            <!-- 📱 4. Tagline cleaner format -->
             <p class="tagline">"A few photos, a lot of memories ❤️"</p>
         </header>
 
@@ -574,6 +569,7 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
+        // 📱 LOCK SCREEN WIDGET DATA UPDATE PASS
         function syncLockScreenWidgetData() {
             const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             const now = new Date();
@@ -588,6 +584,7 @@
             document.getElementById('widget-greet-slot').innerText = greetingStr;
         }
 
+        // 💬 FLOATING NOTIFICATION HANDLER
         function triggerPopMemoryNotification() {
             let poolSource = window.lovieAI_Data_Pool || (typeof lovieAI_Data_Pool !== "undefined" ? lovieAI_Data_Pool : null);
             if(poolSource && poolSource.memories && poolSource.memories.length) {
@@ -657,19 +654,14 @@
         function handleTimeGreetingAndVoice() {
             const currentHour = new Date().getHours();
             const todayDate = new Date().getDate();
-            const greetingSubElement = document.getElementById('dynamic-time-greeting');
             
             if (currentHour >= 5 && currentHour < 12) {
-                greetingSubElement.innerText = "Good Morning Lovie ✨";
                 dynamicGreetingMessage = (typeof dailyVoiceGreetingsMatrix !== "undefined" && dailyVoiceGreetingsMatrix[todayDate]) ? dailyVoiceGreetingsMatrix[todayDate] : "Good Morning Lovie. Apna dhyan rakhna, main hamesha tumhare sath hoon.";
             } else if (currentHour >= 12 && currentHour < 17) {
-                greetingSubElement.innerText = "Good Afternoon Lovie ☀️";
                 dynamicGreetingMessage = "Good Afternoon Lovie. Dopehar ke samay acche se khana kha lena aur apna dhyan rakhna.";
             } else if (currentHour >= 17 && currentHour < 22) {
-                greetingSubElement.innerText = "Good Evening Lovie 🌆";
                 dynamicGreetingMessage = "Good Evening Lovie. Kadi mehnat ke beech apna dhyan rakhna, shaam ko free ho kar batana.";
             } else {
-                greetingSubElement.innerText = "Good Night Lovie 🌙";
                 dynamicGreetingMessage = "Good Night Lovie. Bina kisi stress ke aaram se so jana, subah fresh mind se baat karte hain.";
             }
             applyAutoTheme();
@@ -738,105 +730,6 @@
             });
         }
 
-        function unlockAudioAndStartWebsite() {
-            // Failsafe overlay clearing execution block
-            const overlay = document.getElementById('audio-gate-overlay');
-            if (overlay) {
-                overlay.style.opacity = '0';
-                setTimeout(() => overlay.remove(), 500);
-            }
-
-            try {
-                const AudioContext = window.AudioContext || window.webkitAudioContext;
-                if (AudioContext) {
-                    const audioCtx = new AudioContext();
-                    if (audioCtx.state === 'suspended') audioCtx.resume();
-                }
-            } catch (e) { console.log("AudioContext fallback bypass initiated"); }
-
-            const audio = document.getElementById('romantic-audio');
-            if(audio) {
-                audio.play().then(() => { audio.pause(); }).catch(err => console.log("Audio trigger silent bypass active"));
-            }
-
-            if (!speechSpoken) {
-                speechSpoken = true;
-                let finalSpokenText = specialDayVoiceMessage !== "" ? specialDayVoiceMessage : dynamicGreetingMessage;
-                if (specialDayVoiceMessage === "" && upcomingAnnouncementMessage !== "") {
-                    finalSpokenText += " " + upcomingAnnouncementMessage;
-                }
-
-                if (finalSpokenText !== "") {
-                    window.speechSynthesis.cancel(); 
-
-                    const utterance = new SpeechSynthesisUtterance(finalSpokenText);
-                    utterance.lang = 'hi-IN';
-                    utterance.pitch = 1.0; utterance.rate = 0.95; utterance.volume = 1.0;
-
-                    if (window.speechSynthesis) {
-                        let availableVoices = window.speechSynthesis.getVoices();
-                        const selectPerfectVoice = () => {
-                            let perfectFemaleVoice = availableVoices.find(v => 
-                                v.lang.includes('IN') && (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('swara') || v.name.toLowerCase().includes('apple'))
-                            );
-                            if (perfectFemaleVoice) utterance.voice = perfectFemaleVoice;
-                        };
-
-                        if (!availableVoices.length) {
-                            window.speechSynthesis.onvoiceschanged = () => {
-                                availableVoices = window.speechSynthesis.getVoices();
-                                selectPerfectVoice();
-                            };
-                        } else {
-                            selectPerfectVoice();
-                        }
-                    }
-
-                    utterance.onend = function() { setTimeout(() => { playSecretMusic(); }, 1500); };
-                    utterance.onerror = function() { if (!musicStarted) { setTimeout(() => { playSecretMusic(); }, 1500); } }; 
-                    window.speechSynthesis.speak(utterance);
-                } else {
-                    playSecretMusic();
-                }
-            }
-        }
-
-        function playSecretMusic() {
-            if (!musicStarted) {
-                const audio = document.getElementById('romantic-audio');
-                if (audio) {
-                    audio.volume = 0.45; 
-                    audio.play().then(() => { musicStarted = true; }).catch(e => {
-                        audio.muted = false;
-                        audio.play();
-                        musicStarted = true;
-                    });
-                }
-            }
-        }
-
-        function syncLovieMemoryEngine() {
-            // Safety gate verification block prevents crashes if background .js is loading late
-            if (typeof generateInfiniteLoveMessage === "function") {
-                document.getElementById('story-paragraph').innerText = generateInfiniteLoveMessage();
-                document.getElementById('fact-desc-1').innerText = "Lovie, tumhari thinking, tumhara soft behaviour aur har choti baat me focus rakhne ka tareeka mujhe genuine pasand hai. Tumhari wajah se mera normal routine kaafi better lagta hai. Tum jo din me 2 baje apni kadi duty par nikalti ho aur late hours tak mehnat karti ho na, mujhe tum par bohot proud feel hota hai.";
-                document.getElementById('fact-desc-2').innerText = "Wo chat logs jahan tumne gusse me thoda rote hue block hone ki panic baat likhi thi, un baaton ko yaad karke aaj bhi haseen lagta hai. Reels aur notes ka exchange hona hamare beech ka sabse funny aur real part hai.";
-                document.getElementById('fact-desc-3').innerText = "Main hamesha regular touch me rahoonga bina kisi be-wajah ke argument ke. Free space me rahoon, ya busy rahoon, jahan bhi koi baat share karni ho, main hamesha sabse pehle tumhari baat poore dhyan se sununga aur samajhne ki koshish karunga.";
-            } else {
-                setTimeout(syncLovieMemoryEngine, 300);
-            }
-        }
-
-        const weeklyRewards = {
-            0: "🎉 Free Hug Coupon - Use anytime you want! ❤️", 
-            1: "🌹 Reward: Extra Call Pass - Aaj thodi der aur lambi baat karenge! 📞🥰", 
-            2: "👑 Reward: Movie Night Winner - Agli video call me movie tum choose karna! 😘👑", 
-            3: "🎁 Reward: One Wish Coupon - Aaj main tumhari koi bhi ek baat manunga! 🍫🤝", 
-            4: "💫 Reward: No Argument Pass - Aaj hum dono kisi bhi baat par nahi ladenge! 😡❤️", 
-            5: "🌍 Reward: Song Request Pass - Aaj tumhara favorite gana play hoga line par! 🔒🧬", 
-            6: "💍 Reward: Ice Cream Date Coupon - Scheduled for our next physical meet! 📸💞" 
-        };
-
         function verifyPassword() {
             const val = document.getElementById('gate-pass').value;
             const todayDate = new Date().getDate();
@@ -851,7 +744,7 @@
                 if(sourceLetters && sourceLetters[todayDate]) {
                     letterParagraph.innerText = sourceLetters[todayDate].text;
                 } else {
-                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho, verified and active. ❤️";
+                    letterParagraph.innerText = "Taarekh " + todayDate + ": Lovie, tum meri life ka bohot important part ho. ❤️";
                 }
                 document.getElementById('gate-reveal').style.display = 'block';
                 showToast("🔒 Note Unlocked!");
@@ -1029,7 +922,11 @@
             initScratchCard(); 
             handleTimeGreetingAndVoice(); 
             checkSpecialEvents(); 
-            syncLovieMemoryEngine(); 
+            
+            if (typeof generateInfiniteLoveMessage === "function") {
+                document.getElementById('story-paragraph').innerText = generateInfiniteLoveMessage();
+            }
+            
             syncLockScreenWidgetData();
             
             const todayDay = new Date().getDay();
